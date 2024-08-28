@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - TMS</title>
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  </head>
+  <body>
+    <main>
+      <section class="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+        <div class="hidden lg:block border-0">
+
+            
+            <div class="swiper mySwiper" style="--swiper-pagination-color:#fff;">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide relative">
+                    <img class="h-screen w-full" src="assets/images/login/banner-img.webp" alt="banner image">
+
+                    <div class="absolute bottom-[30px] text-center w-full">
+                        <div class="text-white text-lg font-bold">Welcome to Travel Management System</div>
+                        <div class="text-white text-sm">Sign in to Continue</div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide relative">
+                    <img class="h-screen w-full" src="assets/images/login/banner-img.webp" alt="banner image">
+                    <div class="absolute bottom-[30px] text-center w-full">
+                        <div class="text-white text-lg font-bold">Welcome to Travel Management System</div>
+                        <div class="text-white text-sm">Sign in to Continue</div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide relative">
+                    <img class="h-screen w-full" src="assets/images/login/banner-img.webp" alt="banner image">
+                    <div class="absolute bottom-[30px] text-center w-full">
+                        <div class="text-white text-lg font-bold">Welcome to Travel Management System</div>
+                        <div class="text-white text-sm">Sign in to Continue</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+
+
+
+
+
+        </div>
+        <div class=" mx-auto lg:mx-0 my-auto px-5 lg:px-20">
+          <div>
+            <div class="mb-10">
+                <img width="140" height="100" class="mx-auto lg:mx-0" src="assets/images/logo.svg" alt="">
+            </div>
+            <div class="text-2xl md:text-3xl font-bold mb-2">Enter Phone Number</div>
+            <div class="text-gray text-sm">Verification code will be sent to your Registered Number</div>
+
+            <div class="divider max-w-sm"></div>
+
+            
+          </div>
+          <div class="mt-5">
+            <form class="max-w-sm" id="login-form">
+              <label
+                for="phone-input"
+                class="block mb-2 text-base font-medium text-gray-900 dark:text-white"
+                >Phone number:</label
+              >
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none"
+                >
+                  <svg
+                    class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 19 18"
+                  >
+                    <path
+                      d="M18 13.446a3.02 3.02 0 0 0-.946-1.985l-1.4-1.4a3.054 3.054 0 0 0-4.218 0l-.7.7a.983.983 0 0 1-1.39 0l-2.1-2.1a.983.983 0 0 1 0-1.389l.7-.7a2.98 2.98 0 0 0 0-4.217l-1.4-1.4a2.824 2.824 0 0 0-4.218 0c-3.619 3.619-3 8.229 1.752 12.979C6.785 16.639 9.45 18 11.912 18a7.175 7.175 0 0 0 5.139-2.325A2.9 2.9 0 0 0 18 13.446Z"
+                    />
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  id="phone-input"
+                  aria-describedby="helper-text-explanation"
+                  class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  maxlength="10"
+                  placeholder="Enter phone number"
+                  required
+                />
+              </div>
+              <p
+                id="error-text"
+                class="mt-2 text-sm text-red-600 font-medium hidden"
+              >
+                Enter a valid 10 Digit Phone Number
+              </p>
+
+
+              <button class="btn bg-orange text-white hover:bg-orange hover:text-white block w-full mt-8 disabled:bg-orange disabled:text-white">
+                Continue
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+ <!-- Swiper JS -->
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const phoneInput = document.getElementById("phone-input");
+            const form = document.getElementById("login-form");
+            const submitBtn = form.querySelector("button");
+            const errorText = document.getElementById("error-text");
+    
+            // Restrict input to only numbers
+            phoneInput.addEventListener("input", function(e) {
+                e.target.value = e.target.value.replace(/[^0-9]/g, '');
+            });
+    
+            form.addEventListener("submit", function(e) {
+                e.preventDefault();
+    
+                const phoneNumber = phoneInput.value;
+    
+                // Basic validation: check if the phone number is exactly 10 digits
+                if (phoneNumber.length !== 10) {
+                    errorText.classList.remove("hidden");
+                    return;
+                }
+    
+                errorText.classList.add("hidden");
+    
+                // Show loader in the button
+                submitBtn.innerHTML = '<span class="loading loading-spinner"></span>';
+                submitBtn.disabled = true;
+    
+                // Simulate a delay for processing
+                setTimeout(function() {
+                    // Redirect to /verify-otp
+                    window.location.href = "/verify-otp.html";
+                }, 1500);
+            });
+        });
+    </script>
+
+
+
+
+ 
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      spaceBetween: 10,
+    });
+  </script>
+    
+  </body>
+</html>

@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+nav details[open]{
+    background: #F78D1E;
+    color: #fff;
+}
+nav details[open]:hover{
+    background: #F78D1E;
+    color: #fff;
+}
+
+nav details .collapse-content{
+    background: #EAEAEA;
+}
+.notifications .active{
+    background-color: #FBF4EE;
+}

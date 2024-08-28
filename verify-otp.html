@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verify OTP - TMS</title>
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  </head>
+  <body>
+    <main>
+      <section class="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+        <div class="hidden lg:block border-0">
+
+            
+            <div class="swiper mySwiper" style="--swiper-pagination-color:#fff;">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide relative">
+                    <img class="h-screen w-full" src="assets/images/login/banner-img.webp" alt="banner image">
+
+                    <div class="absolute bottom-[30px] text-center w-full">
+                        <div class="text-white text-lg font-bold">Welcome to Travel Management System</div>
+                        <div class="text-white text-sm">Sign in to Continue</div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide relative">
+                    <img class="h-screen w-full" src="assets/images/login/banner-img.webp" alt="banner image">
+                    <div class="absolute bottom-[30px] text-center w-full">
+                        <div class="text-white text-lg font-bold">Welcome to Travel Management System</div>
+                        <div class="text-white text-sm">Sign in to Continue</div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide relative">
+                    <img class="h-screen w-full" src="assets/images/login/banner-img.webp" alt="banner image">
+                    <div class="absolute bottom-[30px] text-center w-full">
+                        <div class="text-white text-lg font-bold">Welcome to Travel Management System</div>
+                        <div class="text-white text-sm">Sign in to Continue</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+
+
+
+
+
+        </div>
+        <div class=" mx-auto lg:mx-0 my-auto px-5 lg:px-20">
+          <div>
+            <div class="mb-10">
+                <img width="140" height="100" class="mx-auto lg:mx-0" src="assets/images/logo.svg" alt="">
+            </div>
+            <div class="text-2xl md:text-3xl font-bold mb-2">Enter OTP</div>
+            <div class="text-gray text-sm">Code is sent to +91 <span>99*** **643</span></div>
+
+            <div class="divider max-w-sm"></div>
+
+            
+          </div>
+          <div class="mt-5">
+            <form class="max-w-sm" id="otp-form">
+              <div class="flex gap-2 lg:gap-6">
+                <input
+                  type="text"
+                  maxlength="1"
+                  required
+                  class="shadow-xs flex w-[64px] items-center shadow-lg justify-center rounded-lg border border-[#E4E4E4] bg-white p-2 text-center text-2xl font-medium text-gray-5 outline-none sm:text-4xl"
+                />
+                <input
+                  type="text"
+                  required
+                  maxlength="1"
+                  class="shadow-xs flex w-[64px] items-center shadow-lg justify-center rounded-lg border border-[#E4E4E4] bg-white p-2 text-center text-2xl font-medium text-gray-5 outline-none sm:text-4xl"
+                />
+                <input
+                  type="text"
+                  required
+                  maxlength="1"
+                  class="shadow-xs flex w-[64px] items-center shadow-lg justify-center rounded-lg border border-[#E4E4E4] bg-white p-2 text-center text-2xl font-medium text-gray-5 outline-none sm:text-4xl"
+                />
+                <input
+                  type="text"
+                  maxlength="1"
+                  required
+                  class="shadow-xs flex w-[64px] items-center shadow-lg justify-center rounded-lg border border-[#E4E4E4] bg-white p-2 text-center text-2xl font-medium text-gray-5 outline-none sm:text-4xl"
+                />
+              </div>
+              
+              <p
+                id="error-text"
+                class="mt-2 text-sm text-red-600 font-medium hidden"
+              >
+                Incorrect OTP
+              </p>
+
+
+              <button class="btn bg-orange text-white hover:bg-orange hover:text-white block w-full mt-8 disabled:bg-orange disabled:text-white">
+                Continue
+              </button>
+            </form>
+
+            <div class="mt-3">
+              Didn’t receive the OTP? <button dis id="resend-otp" class="text-orange font-medium disabled:cursor-wait">Resend</button> <span id="timer" class="timer hidden text-orange font-medium">00:30</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+ <!-- Swiper JS -->
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+ <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("otp-form");
+      const inputs = [...form.querySelectorAll("input[type=text]")];
+  
+      const handleKeyDown = (e) => {
+        if (
+          !/^[0-9]{1}$/.test(e.key) &&
+          e.key !== "Backspace" &&
+          e.key !== "Delete" &&
+          e.key !== "Tab" &&
+          !e.metaKey
+        ) {
+          e.preventDefault();
+        }
+  
+        if (e.key === "Delete" || e.key === "Backspace") {
+          const index = inputs.indexOf(e.target);
+          if (index >= 0) {
+            if (e.target.value === "") {
+              if (index > 0) {
+                inputs[index - 1].focus();
+              }
+            } else {
+              e.target.value = "";
+            }
+          }
+        }
+      };
+  
+      const handleInput = (e) => {
+        const { target } = e;
+        const index = inputs.indexOf(target);
+        if (target.value) {
+          if (index < inputs.length - 1) {
+            inputs[index + 1].focus();
+          } else {
+            // submit.focus()
+          }
+        }
+      };
+  
+      const handleFocus = (e) => {
+        e.target.select();
+      };
+  
+      const handlePaste = (e) => {
+        e.preventDefault();
+        const text = e.clipboardData.getData("text");
+        if (!new RegExp(`^[0-9]{${inputs.length}}$`).test(text)) {
+          return;
+        }
+        const digits = text.split("");
+        inputs.forEach((input, index) => (input.value = digits[index]));
+        // submit.focus()
+      };
+  
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        
+        // Collect OTP from inputs
+        const otp = inputs.map(input => input.value).join('');
+        
+        // Log OTP to console
+        console.log('Entered OTP:', otp);
+        
+        // Check if OTP is correct
+        if (otp === '1111') {
+          window.location.href = 'index.html';
+        }
+        else{
+          document.getElementById("error-text").classList.remove('hidden');
+        }
+      });
+  
+      inputs.forEach((input) => {
+        input.addEventListener("input", handleInput);
+        input.addEventListener("keydown", handleKeyDown);
+        input.addEventListener("focus", handleFocus);
+        input.addEventListener("paste", handlePaste);
+      });
+
+
+
+      // otp resend
+      const resendOtpLink = document.getElementById("resend-otp");
+        const timerSpan = document.getElementById("timer");
+        let timerInterval;
+
+        const startTimer = () => {
+            let seconds = 30;
+            timerSpan.classList.remove("hidden");
+
+            timerInterval = setInterval(() => {
+                seconds -= 1;
+                const minutes = Math.floor(seconds / 60);
+                const displaySeconds = seconds % 60;
+                timerSpan.textContent = `${minutes < 10 ? '0' : ''}${minutes}:${displaySeconds < 10 ? '0' : ''}${displaySeconds}`;
+
+                if (seconds <= 0) {
+                    clearInterval(timerInterval);
+                    resendOtpLink.disabled=false;
+                    timerSpan.classList.add("hidden");
+                }
+            }, 1000);
+        };
+
+        resendOtpLink.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            // Disable the button and start timer
+            resendOtpLink.disabled=true;
+            startTimer();
+
+            // Simulate OTP resend (e.g., via an API call)
+            console.log("OTP has been resent.");
+        });
+    });
+  </script>
+  
+  
+
+
+ 
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      spaceBetween: 10,
+    });
+  </script>
+    
+  </body>
+</html>
