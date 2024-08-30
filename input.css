@@ -3,31 +3,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer base {
+
+
     html {
       font-family: "Poppins", system-ui, sans-serif;
     }
+    nav details[open]{
+        background: #F78D1E;
+        color: #fff;
+    }
+    nav details[open]:hover{
+        background: #F78D1E;
+        color: #fff;
+    }
+    
+    nav details .collapse-content{
+        background: #EAEAEA;
+    }
+    .notifications .active{
+        background-color: #FBF4EE;
+    }
+    details.collapse summary{
+        display: flex;
+    }
+    
+      
+.card{
+    border: 1px solid #EAEAEA;
+}
+
+  .card-body{
+    padding: 16px !important;
   }
 
 
 
-nav details[open]{
-    background: #F78D1E;
-    color: #fff;
-}
-nav details[open]:hover{
-    background: #F78D1E;
-    color: #fff;
-}
-
-nav details .collapse-content{
-    background: #EAEAEA;
-}
-.notifications .active{
-    background-color: #FBF4EE;
-}
-nav details.collapse summary{
-    display: flex;
-}
-
-  

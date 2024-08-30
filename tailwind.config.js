@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./*.html"],
+  content: ["./**/*.html"],
   theme: {
     container: {
       center:true,
@@ -30,7 +30,7 @@ module.exports = {
       },
         'rkBlack':"#2D2D2D",
         'rkGray':"#6C6C6C",
-
+        'rkLight':'#EAEAEA',
       }
     },
   },
