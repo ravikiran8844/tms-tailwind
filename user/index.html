@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard - Emerald TMS</title>
     <link rel="stylesheet" href="../assets/css/tailwind.css" />
-    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/2.1.4/css/dataTables.tailwindcss.css"> -->
   </head>
   <body>
     <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200">
@@ -21,7 +20,7 @@
       >
         <div class="flex items-center justify-center mt-8">
           <div>
-            <a href="/">
+            <a href="/user">
               <img
                 width="193"
                 height="43"
@@ -286,20 +285,10 @@
               class="flex items-center font-medium text-sm py-1 px-2 rounded text-rkGray hover:text-orange"
               href="#"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75"
-                />
-              </svg>
+            <svg class="w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"/>
+            </svg>
+            
 
               <span class="mx-2">Logout</span>
             </a>
@@ -750,8 +739,15 @@
           </div>
         </header>
         <main class="flex-1 overflow-x-hidden overflow-y-auto bg-white">
+          
           <div class="container px-6 py-8 mx-auto">
-            
+            <div class="sm:hidden mb-6">
+              <h3 class="text-xl font-medium text-rkBlack">
+                Dashboard
+              </h3>
+            </div>
+
+
             <div class="grid gap-4 lg:grid-cols-2 xl:grid-cols-4 mb-6">
               <div
                 class="card shadow border border-rkLight h-full hover:bg-[#FFEBE0]"
@@ -975,7 +971,7 @@
                           </div>
                           <div class="card border border-rkLight mt-4">
                             <div class="card-body p-4">
-                              <div class="flex gap-2 justify-between">
+                              <div class="flex gap-3 justify-between flex-wrap">
                                 <div>
                                   <div class="text-sm text-orange">
                                     On Processing
@@ -992,7 +988,7 @@
                                 </div>
                               </div>
                               <div class="divider my-1"></div>
-                              <div class="flex gap-2 justify-between">
+                              <div class="flex gap-3 justify-between flex-wrap">
                                 <div>
                                   <div class="text-sm text-rkGray">From</div>
                                   <div class="text-sm text-rkBlack font-semibold">
@@ -1031,7 +1027,7 @@
                           </div>
                           <div class="card border border-rkLight mt-4">
                             <div class="card-body p-4">
-                              <div class="flex gap-2 justify-between">
+                              <div class="flex gap-3 justify-between flex-wrap">
                                 <div>
                                   <div class="text-sm text-rkGray">Amount</div>
                                   <div class="text-sm text-orange font-bold">
@@ -1046,7 +1042,7 @@
                                 </div>
                               </div>
                               <div class="divider my-1"></div>
-                              <div class="flex gap-2 justify-between">
+                              <div class="flex gap-3 justify-between flex-wrap">
                                 <div>
                                   <div class="text-sm text-rkGray">From</div>
                                   <div class="text-sm text-rkBlack font-semibold">

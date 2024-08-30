@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - Emerald TMS</title>
-    <link rel="stylesheet" href="assets/css/tailwind.css" />
+    <title>Pending Trips - Emerald TMS</title>
+    <link rel="stylesheet" href="../assets/css/tailwind.css" />
   </head>
   <body>
     <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200">
@@ -20,11 +20,11 @@
       >
         <div class="flex items-center justify-center mt-8">
           <div>
-            <a href="/">
+            <a href="/user">
               <img
                 width="193"
                 height="43"
-                src="assets/images/main-logo.svg"
+                src="../assets/images/main-logo.svg"
                 alt="TMS Main Logo"
               />
             </a>
@@ -289,8 +289,6 @@
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"/>
             </svg>
             
-            
-            
 
               <span class="mx-2">Logout</span>
             </a>
@@ -325,7 +323,7 @@
 
             <div class="hidden sm:block relative mx-4 lg:mx-0">
               <h3 class="text-md md:text-xl font-semibold text-gray-700">
-                Dashboard
+                Pending Trips
               </h3>
             </div>
           </div>
@@ -730,7 +728,7 @@
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-500 hover:text-white"
                   >Profile</a
                 >
-
+                
                 <a
                   href="#"
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-500 hover:text-white"
@@ -742,13 +740,119 @@
         </header>
         <main class="flex-1 overflow-x-hidden overflow-y-auto bg-white">
           <div class="container px-6 py-8 mx-auto">
-            <div class="sm:hidden mb-6">
-              <h3 class="text-xl font-medium text-rkBlack">
-                Dashboard
-              </h3>
+            
+            <div class="sm:hidden mb-8">
+                <h3 class="text-xl font-medium text-rkBlack">
+                  Pending Trips
+                </h3>
             </div>
 
 
+            <div>
+                <div class="flex flex-wrap gap-3 items-center mb-5">
+                    <label for="trip_id" class="block text-base font-semibold text-rkBlack">Trip ID</label>
+                    <input type="text" id="trip_id" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block max-w-sm p-2.5" placeholder="Enter Trip ID"  />
+                </div>
+
+                
+                <ul class="space-y-6">
+                    <li>
+                        <div class="max-w-[1000px]">
+                            <div class="flex items-center flex-wrap gap-4 border border-rkLight rounded-lg p-2 text-sm">
+                                <div class="card bg-[#F1F2F6] w-[320px]">
+                                    <div class="card-body">
+                                        <div class="text-center space-y-1">
+                                            <div>Trip-00014</div>
+                                            <div class="text-blue-500">Meeting with prospect (Showro..)</div>
+                                            <div class="badge bg-orange-200 text-xs text-orange">Pending APPROVAL</div>
+                                        </div>
+                                    </div>
+        
+                                </div>
+                                <div class="flex flex-wrap gap-8 flex-grow">
+                                    <div>
+                                        <div class="text-rkGray">Destination</div>
+                                        <div class="flex items-center gap-2 font-semibold">
+                                            <span>Coimbatore</span>
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                                    <rect width="25" height="25" rx="6.25" fill="#F1F2F6"/>
+                                                    <path d="M18.4836 13.0987L12.893 17.3977C12.5115 17.6788 12.038 17.3481 12.038 16.8025V14.438H6.69725C6.44732 14.438 6.25 14.19 6.25 13.8759V11.1311C6.25 10.817 6.44732 10.569 6.69725 10.569H12.038V8.20454C12.038 7.6589 12.5247 7.31168 12.893 7.6093L18.4836 11.9083C18.8388 12.1728 18.8388 12.8342 18.4836 13.0987Z" fill="#2D2D2D"/>
+                                                  </svg>
+                                            </span>
+                                            <span>Chennai</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="text-rkGray">Requested Date</div>
+                                        <div class="font-semibold">
+                                            09 July 2024
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider divider-horizontal hidden xl:flex"></div>
+                                <div class="w-22">
+                                    <a href="#" class="text-green-500 flex items-center">
+                                        View Details <span>
+                                            <svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                              </svg>                                      
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="max-w-[1000px]">
+                            <div class="flex items-center flex-wrap gap-4 border border-rkLight rounded-lg p-2 text-sm">
+                                <div class="card bg-[#F1F2F6] w-[320px]">
+                                    <div class="card-body">
+                                        <div class="text-center space-y-1">
+                                            <div>Trip-00014</div>
+                                            <div class="text-blue-500">Meeting with prospect (Showro..)</div>
+                                            <div class="badge bg-orange-200 text-xs text-orange">Pending APPROVAL</div>
+                                        </div>
+                                    </div>
+        
+                                </div>
+                                <div class="flex flex-wrap gap-8 flex-grow">
+                                    <div>
+                                        <div class="text-rkGray">Destination</div>
+                                        <div class="flex items-center gap-2 font-semibold">
+                                            <span>Coimbatore</span>
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                                    <rect width="25" height="25" rx="6.25" fill="#F1F2F6"/>
+                                                    <path d="M18.4836 13.0987L12.893 17.3977C12.5115 17.6788 12.038 17.3481 12.038 16.8025V14.438H6.69725C6.44732 14.438 6.25 14.19 6.25 13.8759V11.1311C6.25 10.817 6.44732 10.569 6.69725 10.569H12.038V8.20454C12.038 7.6589 12.5247 7.31168 12.893 7.6093L18.4836 11.9083C18.8388 12.1728 18.8388 12.8342 18.4836 13.0987Z" fill="#2D2D2D"/>
+                                                  </svg>
+                                            </span>
+                                            <span>Chennai</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="text-rkGray">Requested Date</div>
+                                        <div class="font-semibold">
+                                            09 July 2024
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider divider-horizontal hidden xl:flex"></div>
+                                <div class="w-22">
+                                    <a href="#" class="text-green-500 flex items-center">
+                                        View Details <span>
+                                            <svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                              </svg>                                      
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        
 
 
           </div>
@@ -761,12 +865,26 @@
         </footer>
       </div>
     </div>
-    <script src="assets/js/main.js"></script>
 
+
+
+    
     <script
-      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
-      defer
+     src="../assets/js/alpine.min.js"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script src="../assets/js/flowbite.min.js"></script>
+    <script src="../assets/js/simple-datatables.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+
+
+  <script>
+      if (document.getElementById("recent-trips") && typeof simpleDatatables.DataTable !== 'undefined') {
+            const dataTable = new simpleDatatables.DataTable("#recent-trips", {
+                searchable: false,
+                perPageSelect: false
+            });
+        }
+    </script>
   </body>
 </html>
