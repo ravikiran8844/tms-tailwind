@@ -1,14 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-family: "Poppins", system-ui, sans-serif;
+}
 
-    html {
-      font-family: "Poppins", system-ui, sans-serif;
-    }
-    nav details[open]{
+nav #main-menu button[aria-expanded="false"] {
+  @apply hover:text-orange-500;
+}
+
+/* nav details[open]{
         background: #F78D1E;
         color: #fff;
     }
@@ -25,16 +29,28 @@
     }
     details.collapse summary{
         display: flex;
-    }
-    
-      
-.card{
-    border: 1px solid #EAEAEA;
+    } */
+
+.card {
+  border: 1px solid #eaeaea;
 }
 
-  .card-body{
-    padding: 16px !important;
-  }
+.card-body {
+  padding: 16px !important;
+}
 
-
-
+.datatable-bottom {
+  @apply flex justify-between items-center text-xs mt-auto pt-5 border-t border-t-slate-200;
+}
+.datatable-pagination-list {
+  @apply inline-flex -space-x-px text-sm gap-1;
+}
+.datatable-pagination-list-item button {
+  @apply flex items-center justify-center px-3 h-8 rounded leading-tight text-black bg-white border border-rkBlack hover:bg-gray-100 hover:text-black;
+}
+.datatable-pagination-list-item.datatable-active button {
+  @apply flex items-center justify-center px-3 h-8 text-white border border-rkBlack bg-black hover:bg-black hover:text-white;
+}
+.datatable-disabled button {
+  @apply opacity-70 cursor-not-allowed bg-gray-50 hover:bg-gray-50 border-gray-300;
+}
