@@ -54,3 +54,18 @@ nav #main-menu button[aria-expanded="false"] {
 .datatable-disabled button {
   @apply opacity-70 cursor-not-allowed bg-gray-50 hover:bg-gray-50 border-gray-300;
 }
+
+
+.datatable-top{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.datatable-input{
+  border-radius: 6px;
+}
+
+.add-new-trip-tabs button[aria-selected='true']:hover{
+ @apply bg-black text-orange;
+}

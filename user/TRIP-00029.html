@@ -543,7 +543,7 @@
                       <div class="flex justify-between items-center">
                         <div>
                           Trip ID :
-                          <span class="font-bold" href="#">TRIP-00014</span>
+                          <span class="font-bold" href="#">TRIP-00029</span>
                         </div>
                         <div class="text-xs text-rkGray">5 min ago</div>
                       </div>
@@ -765,10 +765,10 @@
                           </a>
                     </div>
                     <div>
-                        <div class="text-lg font-semibold">TRIP-00014</div>
+                        <div class="text-lg font-semibold">TRIP-00029</div>
                     </div>
                     <div>
-                        <div class="badge text-green-500 bg-green-100 px-3 py-1 text-xs">Approved</div>
+                        <div class="badge text-orange-500 bg-orange-100 px-3 py-1 text-xs">Pending APPROVAL</div>
                     </div>
                 </div>
     
@@ -900,7 +900,7 @@
                     </div>
 
                     <div class="mb-6">
-                      <div class="mb-3 text-sm text-blue-500">Manager Approved</div>
+                      <div class="mb-3 text-sm text-blue-500">Manager Rejected</div>
 
                       <div class="flex font-medium text-black items-center bg-white rounded-s-full text-sm max-w-fit">
                         <div>
@@ -911,16 +911,18 @@
                       <div class="ps-10 text-xs text-rkGray mt-1">Manager</div>
                     </div>
 
-                    <div class="mb-6">
-                      <div class="mb-3 text-sm text-blue-500">Travel Desk Approved</div>
+                   
 
-                      <div class="flex font-medium text-black items-center bg-white rounded-s-full text-sm max-w-fit">
-                        <div>
-                          <img width="24" height="24" class="size-8 rounded-full" src="../assets/images/user.png" alt="">
+
+                    <div class="mt-20">
+                       
+                        <div class="text-sm mb-1">
+                            Remarks
                         </div>
-                        <div class="px-2">Lokesh</div>
-                      </div>
-                      <div class="ps-10 text-xs text-rkGray mt-1">Travel Desk Admin</div>
+                        <div>
+                            <textarea class="h-40 resize-none text-xs w-full border border-[#DADADA] rounded-md" name="" placeholder="Please plan for some other day" id=""></textarea>
+                        </div>
+
                     </div>
 
 
@@ -954,14 +956,5 @@
     <script src="../assets/js/main.js"></script>
 
 
-
-  <script>
-      if (document.getElementById("recent-trips") && typeof simpleDatatables.DataTable !== 'undefined') {
-            const dataTable = new simpleDatatables.DataTable("#recent-trips", {
-                searchable: false,
-                perPageSelect: false
-            });
-        }
-    </script>
   </body>
 </html>
