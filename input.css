@@ -69,3 +69,24 @@ nav #main-menu button[aria-expanded="false"] {
 .add-new-trip-tabs button[aria-selected='true']:hover{
  @apply bg-black text-orange;
 }
+
+@media (min-width:992px) {
+  .trip_table-warpper table::before{
+    content: "";
+    position: absolute;
+    background-image: url("../images/add-new-trip.png");
+    width: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 80%;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  
+  
+  .trip_table-warpper table{
+    padding-left: 60px;
+  }
+}
