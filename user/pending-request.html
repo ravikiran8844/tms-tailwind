@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unplanned Trips - Emerald TMS</title>
+    <title>Pending Request - Emerald TMS</title>
     <link rel="stylesheet" href="../assets/css/tailwind.css" />
   </head>
   <body>
@@ -323,7 +323,7 @@
 
             <div class="hidden sm:block relative mx-4 lg:mx-0">
               <h3 class="text-md md:text-xl font-semibold text-gray-700">
-                Unplanned Trips
+                Pending Request
               </h3>
             </div>
           </div>
@@ -741,10 +741,93 @@
         <main class="flex-1 overflow-x-hidden overflow-y-auto bg-white">
           <div class="container  px-6 py-8 mx-auto">
             <div class="sm:hidden mb-8">
-              <h3 class="text-xl font-medium text-rkBlack">Unplanned Trips</h3>
+              <h3 class="text-xl font-medium text-rkBlack">Pending Request</h3>
             </div>
 
-            
+            <div class="relative overflow-x-auto">
+              <table id="all-trips-table" class="table table-sm">
+                <thead class="text-black">
+                  <tr>
+                    <th>
+                      <span class="flex items-center">REQUESTED DATE</span>
+                    </th>
+                    <th>
+                      <span class="flex items-center">TRIP ID</span>
+                    </th>
+                    <th>
+                      <span class="flex items-center">AMOUNT</span>
+                    </th>
+                    <th>
+                      <span class="flex items-center">
+                        NOTES
+                      </span>
+                    </th>
+                    <th>
+                        <span class="flex items-center">
+                            STATUS
+                        </span>
+                      </th>
+                      <th>
+                        <span class="flex items-center">
+                            APPROVER
+                        </span>
+                      </th>
+                      
+                  </tr>
+                </thead>
+                
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="/user/request-details.html">
+                                <div class="text-blue-500">11 July 2024</div>
+                            </a>
+                            
+                        </td>
+                        <td>
+                            <a href="/user/request-details.html">
+                                <div>TRIP-00014</div>
+                            </a>
+                            
+                        </td>
+                        <td>
+                            <a href="/user/request-details.html">
+                                <div>Rs.1,000.00</div>
+                            </a>
+                            
+                        </td>
+                        <td>
+                            <a href="/user/request-details.html">
+                                <div>Reason for  Advance request..</div>
+                            </a>
+                            
+                        </td>
+                        <td>
+                            <a href="/user/request-details.html">
+                                <div class="badge bg-orange-100 text-orange-500">
+                                    Pending
+                                </div>
+                            </a>
+                           
+                        </td>
+                        <td>
+                            <a href="/user/request-details.html">
+                                <div class="flex gap-1 items-center">
+                                    <div>
+                                        <img class="size-8 rounded-full" src="../assets/images/user.png" alt="">
+                                    </div>
+                                    <div>Vivin Raj</div>
+                                </div>
+                            </a>
+                            
+                        </td>
+                    </tr>
+                </tbody>
+                  
+
+              </table>
+            </div>
           </div>
         </main>
         <footer class="bg-[#F1F2F6]">
@@ -761,6 +844,17 @@
     <script src="../assets/js/simple-datatables.js"></script>
     <script src="../assets/js/main.js"></script>
 
-   
+    <script>
+      if (
+        document.getElementById("all-trips-table") &&
+        typeof simpleDatatables.DataTable !== "undefined"
+      ) {
+        const dataTable = new simpleDatatables.DataTable("#all-trips-table", {
+          searchable: true,
+          sortable: false,
+          perPageSelect: false
+        });
+      }
+    </script>
   </body>
 </html>

@@ -90,3 +90,10 @@ nav #main-menu button[aria-expanded="false"] {
     padding-left: 60px;
   }
 }
+
+
+
+div.dt-container select.dt-input {
+  min-width: 60px;
+  font-size: 14px;
+}

@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unplanned Trips - Emerald TMS</title>
+    <title>Add New Expenses - Emerald TMS</title>
     <link rel="stylesheet" href="../assets/css/tailwind.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.5/css/dataTables.dataTables.css">
   </head>
   <body>
     <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200">
@@ -272,7 +273,6 @@
                             <span class="mx-2 ps-6">All Request</span>
                           </a>
                         </li>
-                      
                       </ul>
                     </div>
                   </li>
@@ -285,10 +285,23 @@
               class="flex items-center font-medium text-sm py-1 px-2 rounded text-rkGray hover:text-orange"
               href="#"
             >
-            <svg class="w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"/>
-            </svg>
-            
+              <svg
+                class="w-[24px] h-[24px]"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.4"
+                  d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"
+                />
+              </svg>
 
               <span class="mx-2">Logout</span>
             </a>
@@ -323,7 +336,7 @@
 
             <div class="hidden sm:block relative mx-4 lg:mx-0">
               <h3 class="text-md md:text-xl font-semibold text-gray-700">
-                Unplanned Trips
+                Add New Expenses 
               </h3>
             </div>
           </div>
@@ -739,12 +752,32 @@
           </div>
         </header>
         <main class="flex-1 overflow-x-hidden overflow-y-auto bg-white">
-          <div class="container  px-6 py-8 mx-auto">
+          <div class="container px-6 py-8 mx-auto">
             <div class="sm:hidden mb-8">
-              <h3 class="text-xl font-medium text-rkBlack">Unplanned Trips</h3>
+              <h3 class="text-xl font-medium text-rkBlack">Add New Expenses</h3>
             </div>
 
-            
+
+
+
+            <div>
+                <table id="example" class="table" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Salary</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    
+                </table>
+            </div>
+
+     
+
+
           </div>
         </main>
         <footer class="bg-[#F1F2F6]">
@@ -760,7 +793,62 @@
     <script src="../assets/js/flowbite.min.js"></script>
     <script src="../assets/js/simple-datatables.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.1.5/js/dataTables.js"></script>
 
-   
+
+    <script>
+        // Formatting function for row details - modify as you need
+function format(d) {
+    // `d` is the original data object for the row
+    return (
+        '<dl>' +
+        '<dt>Full name:</dt>' +
+        '<dd>' +
+        d.name +
+        '</dd>' +
+        '<dt>Extension number:</dt>' +
+        '<dd>' +
+        d.extn +
+        '</dd>' +
+        '<dt>Extra info:</dt>' +
+        '<dd>And any further details here (images etc)...</dd>' +
+        '</dl>'
+    );
+}
+ 
+let table = new DataTable('#example', {
+    ajax: './objects.txt',
+    columns: [
+        
+        { data: 'name' },
+        { data: 'position' },
+        { data: 'office' },
+        { data: 'salary' },
+        {
+            className: 'dt-control',
+            orderable: false,
+            data: null,
+            defaultContent: ''
+        },
+    ],
+    order: [[1, 'asc']]
+});
+ 
+// Add event listener for opening and closing details
+table.on('click', 'td.dt-control', function (e) {
+    let tr = e.target.closest('tr');
+    let row = table.row(tr);
+ 
+    if (row.child.isShown()) {
+        // This row is already open - close it
+        row.child.hide();
+    }
+    else {
+        // Open this row
+        row.child(format(row.data())).show();
+    }
+});
+    </script>
   </body>
 </html>
