@@ -97,3 +97,14 @@ div.dt-container select.dt-input {
   min-width: 60px;
   font-size: 14px;
 }
+
+.unplanned-trip-tabs .active .circle{
+@apply bg-orange-500;
+}
+.btn-orange{
+  @apply bg-orange-500 text-white hover:bg-black hover:text-white;
+}
+
+.modal-open, .modal:target, .modal-toggle:checked + .modal, .modal[open] {
+  backdrop-filter: blur(10px);
+}

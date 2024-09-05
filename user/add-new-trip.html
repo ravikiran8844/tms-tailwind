@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ALl New Trip - Emerald TMS</title>
+    <title>ADD New Trip - Emerald TMS</title>
     <link rel="stylesheet" href="../assets/css/tailwind.css" />
   </head>
   <body>
@@ -317,7 +317,7 @@
             <div class="hidden sm:block relative mx-4 lg:mx-0">
               <h3
                 class="text-md md:text-xl font-semibold text-gray-700 page-main-title">
-                Single Trip
+                Add New Trip
               </h3>
             </div>
           </div>
@@ -700,7 +700,7 @@
           <div class="container px-6 py-8 mx-auto">
             <div class="sm:hidden mb-8">
               <h3 class="text-xl font-medium text-rkBlack page-main-title">
-                Single Trip
+                Add New Trip
               </h3>
             </div>
 
@@ -2419,6 +2419,14 @@
                         </tbody>
                       </table>
                     </div>
+
+
+                    <div class="my-4 text-sm">
+                      <button onclick="addMoreAccommodations()" class="flex items-center gap-1 text-green-500 font-semibold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd" />
+                      </svg>
+                       <span>Add More Accommodations</span></button>
+                    </div>
   
                     <div class="card my-10 bg-white relative py-5">
                       <div class="card-body text-sm">
@@ -2701,9 +2709,13 @@
 
         document.getElementById("multi-trip_content-wrapper").classList.remove("hidden");
 
+      }
+    
 
-let AccommodationsContainer=document.getElementById("multi-trip_accomadation-tables");
-let accomodationTableHTML = `<table class="border-separate border-spacing-y-4 text-sm">
+      function addMoreAccommodations(){
+        let id = Math.floor(Math.random() * 1000); // Generate a random ID
+        let AccommodationsContainer=document.getElementById("multi-trip_accomadation-tables");
+        let accomodationTableHTML = `<table class="border-separate border-spacing-y-4 text-sm">
                   <thead class="bg-[#F1F2F6]">
                     <tr class="mt-4">
                       <th class="text-start p-2">Location</th>
@@ -2803,9 +2815,6 @@ let accomodationTableHTML = `<table class="border-separate border-spacing-y-4 te
         accomodationTable.innerHTML = accomodationTableHTML;
         AccommodationsContainer.appendChild(accomodationTable); // Append the new table to the container
       }
-    
-
-
     </script>
     
   </body>
