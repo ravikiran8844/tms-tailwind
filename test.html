@@ -1,186 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Table with Collapsible Row</title>
-  <link rel="stylesheet" href="assets/css/tailwind.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart Button</title>
+    <link rel="stylesheet" href="assets/css/tailwind.css">
 </head>
-<body>
-  <div class="container py-5">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Purpose of Trip</th>
-          <th>Location</th>
-          <th>Total Amount Spent</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="tableBody">
-        <!-- Rows will be injected by JavaScript -->
-      </tbody>
-    </table>
-  </div>
+<body class="flex flex-wrap justify-center items-center py-20 gap-10">
+ 
 
-  <script>
-    const data = [
-      {
-        date: '12 July 2024',
-        purpose_of_trip: 'Showroom Visit',
-        location: 'Chennai',
-        amount_spent: '250',
-        details: [
-          {
-            category: 'Breakfast',
-            bill_available: true,
-            bill_no: '121',
-            shop_name: 'Iswarya Mess',
-            amount_spent: '125'
-          },
-          {
-            category: 'Lunch',
-            bill_available: false,
-            bill_no: '456',
-            shop_name: 'Iswarya Mess',
-            amount_spent: '150'
-          }
-        ]
-      },
-      {
-        date: '15 August 2024',
-        purpose_of_trip: 'Client Meeting',
-        location: 'Mumbai',
-        amount_spent: '400',
-        details: [
-          {
-            category: 'Breakfast',
-            bill_available: true,
-            bill_no: '789',
-            shop_name: 'Mumbai Cafe',
-            amount_spent: '200'
-          },
-          {
-            category: 'Dinner',
-            bill_available: true,
-            bill_no: '101',
-            shop_name: 'Mumbai Diner',
-            amount_spent: '200'
-          }
-        ]
-      },
-      {
-        date: '20 September 2024',
-        purpose_of_trip: 'Conference',
-        location: 'Bangalore',
-        amount_spent: '500',
-        details: [
-          {
-            category: 'Lunch',
-            bill_available: true,
-            bill_no: '112',
-            shop_name: 'Bangalore Bistro',
-            amount_spent: '250'
-          },
-          {
-            category: 'Dinner',
-            bill_available: true,
-            bill_no: '113',
-            shop_name: 'Bangalore Bistro',
-            amount_spent: '250'
-          }
-        ]
-      }
-    ];
+    <button  class="addToCartBtn w-40 h-12 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-blue-300 disabled:cursor-not-allowed transition-colors duration-300">
+        Add to Cart
+    </button>
 
-    const tableBody = document.getElementById('tableBody');
-    let expandedRow = null;
+    <button  class="addToCartBtn w-40 h-12 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-blue-300 disabled:cursor-not-allowed transition-colors duration-300">
+        Add to Cart
+    </button>
 
-    function toggleRow(index) {
-      if (expandedRow === index) {
-        expandedRow = null;
-      } else {
-        expandedRow = index;
-      }
-      renderTable();
-    }
+    <button  class="addToCartBtn w-40 h-12 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-blue-300 disabled:cursor-not-allowed transition-colors duration-300">
+        Add to Cart
+    </button>
 
-    function addReceiptRow(index) {
-      const receiptTableBody = document.getElementById(`receiptTableBody-${index}`);
-      const newRow = document.createElement('tr');
-      newRow.innerHTML = `
-        <td><input type="text" placeholder="Category" class="form-input" /></td>
-        <td>
-          <select class="form-select">
-            <option value="true">Yes</option>
-            <option value="false">No</option>
-          </select>
-        </td>
-        <td><input type="text" placeholder="Bill No" class="form-input" /></td>
-        <td><input type="text" placeholder="Shop Name" class="form-input" /></td>
-        <td><input type="number" placeholder="Amount Spent" class="form-input" /></td>
-        <td><input type="file" class="form-input" /></td>
-      `;
-      receiptTableBody.appendChild(newRow);
-    }
 
-    function renderTable() {
-      tableBody.innerHTML = '';
-      data.forEach((item, index) => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-          <td><input type="date" value="${item.date}" class="form-input" /></td>
-          <td><input type="text" value="${item.purpose_of_trip}" class="form-input" /></td>
-          <td><input type="text" value="${item.location}" class="form-input" /></td>
-          <td><input type="number" value="${item.amount_spent}" class="form-input" /></td>
-          <td onclick="toggleRow(${index})"><button class="btn btn-primary">View Details</button></td>
-        `;
-        tableBody.appendChild(row);
+    <button  class="addToCartBtn w-40 h-12 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-blue-300 disabled:cursor-not-allowed transition-colors duration-300">
+        Add to Cart
+    </button>
 
-        if (expandedRow === index) {
-          const detailRow = document.createElement('tr');
-          detailRow.innerHTML = `
-            <td colspan="5" class="collaps-viewer bg-blue-50">
-              <table class="table">
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Bill Available</th>
-                        <th>Bill No</th>
-                        <th>Shop Name</th>
-                        <th>Amount Spent</th>
-                        <th>Upload Bill</th>
-                    </tr>
-                </thead>
-                <tbody id="receiptTableBody-${index}">
-                  ${item.details.map(detail => `
-                    <tr>
-                      <td><input type="text" value="${detail.category}" class="form-input" /></td>
-                      <td>
-                        <select class="form-select">
-                          <option value="true" ${detail.bill_available ? 'selected' : ''}>Yes</option>
-                          <option value="false" ${!detail.bill_available ? 'selected' : ''}>No</option>
-                        </select>
-                      </td>
-                      <td><input type="text" value="${detail.bill_no}" class="form-input" /></td>
-                      <td><input type="text" value="${detail.shop_name}" class="form-input" /></td>
-                      <td><input type="number" value="${detail.amount_spent}" class="form-input" /></td>
-                      <td><input type="file" class="form-input" /></td>
-                    </tr>
-                  `).join('')}
-                </tbody>
-            </table>
-            <button class="btn btn-secondary" onclick="addReceiptRow(${index})">Add More Receipt</button>
-            </td>
-          `;
-          tableBody.appendChild(detailRow);
-        }
-      });
-    }
 
-    // Initial render
-    renderTable();
-  </script>
+    <button  class="addToCartBtn w-40 h-12 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-blue-300 disabled:cursor-not-allowed transition-colors duration-300">
+        Add to Cart
+    </button>
+
+    <button  class="addToCartBtn w-40 h-12 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-blue-300 disabled:cursor-not-allowed transition-colors duration-300">
+        Add to Cart
+    </button>
+    
+
+    <script>
+        const addToCartBtns = document.querySelectorAll('.addToCartBtn');
+        addToCartBtns.forEach(addToCartBtn => {
+        let isAdding = false;
+
+        addToCartBtn.addEventListener('click', () => {
+        if (!isAdding) {
+            isAdding = true;
+            addToCartBtn.disabled = true;
+            
+            // Save original button content
+            const originalContent = addToCartBtn.innerHTML;
+            
+            // Update button content with loader and "Adding..." text
+            addToCartBtn.innerHTML = `
+                <div class="flex items-center justify-center">
+                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span>Adding...</span>
+                </div>
+            `;
+
+            // Simulate adding process
+            setTimeout(() => {
+                        isAdding = false;
+                        addToCartBtn.disabled = false;
+                        addToCartBtn.innerHTML = originalContent;
+                    }, 3000);
+                }
+            });
+       })
+    </script>
 </body>
 </html>

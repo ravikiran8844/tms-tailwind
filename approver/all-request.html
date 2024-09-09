@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit Details - Emerald TMS</title>
+    <title>All Request - Emerald TMS</title>
     <link rel="stylesheet" href="../assets/css/tailwind.css" />
   </head>
   <body>
@@ -272,6 +272,7 @@
                             <span class="mx-2 ps-6">All Request</span>
                           </a>
                         </li>
+                      
                       </ul>
                     </div>
                   </li>
@@ -284,23 +285,10 @@
               class="flex items-center font-medium text-sm py-1 px-2 rounded text-rkGray hover:text-orange"
               href="#"
             >
-              <svg
-                class="w-[24px] h-[24px]"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.4"
-                  d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"
-                />
-              </svg>
+            <svg class="w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"/>
+            </svg>
+            
 
               <span class="mx-2">Logout</span>
             </a>
@@ -335,7 +323,7 @@
 
             <div class="hidden sm:block relative mx-4 lg:mx-0">
               <h3 class="text-md md:text-xl font-semibold text-gray-700">
-                Edit Details
+                All Request
               </h3>
             </div>
           </div>
@@ -555,7 +543,7 @@
                       <div class="flex justify-between items-center">
                         <div>
                           Trip ID :
-                          <span class="font-bold" href="#">TRIP-00001</span>
+                          <span class="font-bold" href="#">TRIP-00014</span>
                         </div>
                         <div class="text-xs text-rkGray">5 min ago</div>
                       </div>
@@ -751,588 +739,212 @@
           </div>
         </header>
         <main class="flex-1 overflow-x-hidden overflow-y-auto bg-white">
-          <div>
-            <div class="grid gap-3 md:grid-cols-12">
-              <div class="md:col-span-9 px-6 py-8">
-                <div class="sm:hidden mb-8">
-                  <h3 class="text-xl font-medium text-rkBlack">Edit Details</h3>
-                </div>
+          <div class="container  px-6 py-8 mx-auto">
+            <div class="sm:hidden mb-8">
+              <h3 class="text-xl font-medium text-rkBlack">All Request</h3>
+            </div>
 
-                <div class="flex gap-2 items-center mb-8">
-               
-                  <div>
-                    <div class="text-lg font-semibold">TRIP-00001</div>
-                  </div>
-                  <div>
-                    <div
-                      class="badge text-orange-500 bg-orange-100 px-3 py-1 text-xs"
-                    >
-                      Pending APPROVAL
-                    </div>
-                  </div>
-                </div>
-
-                <div class="py-6 border-t border-b">
-                  <div class="text-base font-medium">
-                    Trip to Chennai (Showroom Visit)
-                  </div>
-                  <div class="text-rkGray text-sm">Single Trip</div>
-                </div>
-
-                <div class="card mt-10 bg-[#F1F2F6] relative py-5">
-                  <div class="card-body text-sm">
-                    <div class="flex gap-6 lg:gap-10 flex-wrap">
-                      <div>
-                        <div class="text-rkGray">Grade</div>
-                        <div class="text-rkBlack">3A</div>
-                      </div>
-                      <div>
-                        <div class="text-rkGray">Department</div>
-                        <div class="text-rkBlack">Marketing</div>
-                      </div>
-                      <div>
-                        <div class="text-rkGray">Name</div>
-                        <div class="text-rkBlack">Vishnu Prasad</div>
-                      </div>
-                      <div>
-                        <div class="text-rkGray">Age</div>
-                        <div class="text-rkBlack">29</div>
-                      </div>
-                      <div>
-                        <div class="text-rkGray">Gender</div>
-                        <div class="text-rkBlack">Male</div>
-                      </div>
-                      <div>
-                        <div class="text-rkGray">Phone</div>
-                        <div class="text-rkBlack">+91 95674 73412</div>
-                      </div>
-                      <div>
-                        <div class="text-rkGray">Email</div>
-                        <div class="text-rkBlack">Vishnud@ejindia.com</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    class="absolute left-10 top-[-16px] text-sm h-8 px-3 flex items-center rounded-lg bg-black text-white"
-                  >
-                    Passenger Details
-                  </div>
-                </div>
-
-                <div x-data="{ isEditing: false }">
-                  <!-- Edit Button -->
-                  <div class="mt-10 flex justify-end">
-                    <button
-                      @click="isEditing = !isEditing"
-                      class="flex gap-1 items-center text-sm"
-                    >
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0.521718 7.72554C0.370536 7.87672 0.286546 8.0615 0.269748 8.26308L0.000979893 11.4883C-0.0158181 11.7235 0.185758 11.925 0.42093 11.9082L3.64614 11.6395C3.84772 11.6227 4.0493 11.5387 4.18368 11.3875L9.35746 6.21372L5.7123 2.55176L0.521718 7.72554Z"
-                          fill="#2D2D2D"
-                        />
-                        <path
-                          d="M11.7226 2.97353L8.94582 0.188729C8.69491 -0.0629096 8.31017 -0.0629096 8.05926 0.188729L6.80469 1.44692L10.4513 5.10407L11.7059 3.84588C11.9735 3.61101 11.9735 3.20839 11.7226 2.97353Z"
-                          fill="#2D2D2D"
-                        />
-                      </svg>
-                      Edit Details
-                    </button>
-                  </div>
-
-                  <!-- Travel Details Card -->
-                  <div
-                    class="card mt-5 bg-[#F1F2F6] relative py-5"
-                    x-show="!isEditing"
-                  >
-                    <div class="card-body text-sm">
-                      <div class="flex gap-6 lg:gap-10 flex-wrap">
-                        <div>
-                          <div class="text-rkGray">Location</div>
-                          <div class="text-rkBlack">Coimbatore - Chennai</div>
-                        </div>
-                        <div>
-                          <div class="text-rkGray">Date</div>
-                          <div class="text-rkBlack">11, July 2024</div>
-                        </div>
-                        <div>
-                          <div class="text-rkGray">Name</div>
-                          <div class="text-rkBlack">Vishnu Prasad</div>
-                        </div>
-                        <div>
-                          <div class="text-rkGray">Mode of travel</div>
-                          <div class="text-rkBlack">Bus</div>
-                        </div>
-                        <div>
-                          <div class="text-rkGray">Preferred Time</div>
-                          <div class="text-rkBlack">10:30 PM</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      class="absolute left-10 top-[-16px] text-sm h-8 px-3 flex items-center rounded-lg bg-black text-white"
-                    >
-                      Travel Details
-                    </div>
-                  </div>
-
-                  <div class="mt-10 flex justify-end" x-show="!isEditing">
-                    <button
-                      @click="isEditing = !isEditing"
-                      class="flex gap-1 items-center text-sm"
-                    >
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0.521718 7.72554C0.370536 7.87672 0.286546 8.0615 0.269748 8.26308L0.000979893 11.4883C-0.0158181 11.7235 0.185758 11.925 0.42093 11.9082L3.64614 11.6395C3.84772 11.6227 4.0493 11.5387 4.18368 11.3875L9.35746 6.21372L5.7123 2.55176L0.521718 7.72554Z"
-                          fill="#2D2D2D"
-                        />
-                        <path
-                          d="M11.7226 2.97353L8.94582 0.188729C8.69491 -0.0629096 8.31017 -0.0629096 8.05926 0.188729L6.80469 1.44692L10.4513 5.10407L11.7059 3.84588C11.9735 3.61101 11.9735 3.20839 11.7226 2.97353Z"
-                          fill="#2D2D2D"
-                        />
-                      </svg>
-                      Edit Details
-                    </button>
-                  </div>
-                  <div
-                    class="card mt-5 bg-[#F1F2F6] relative py-5"
-                    x-show="!isEditing"
-                  >
-                    <div class="card-body text-sm">
-                      <div class="flex gap-6 lg:gap-10 flex-wrap">
-                        <div>
-                          <div class="text-rkGray">Location</div>
-                          <div class="text-rkBlack">Chennai</div>
-                        </div>
-                        <div>
-                          <div class="text-rkGray">Duration of Stay</div>
-                          <div class="text-rkBlack">1 Day</div>
-                        </div>
-                        <div>
-                          <div class="text-rkGray">Preferred Area</div>
-                          <div class="text-rkBlack">Guindy</div>
-                        </div>
-                        <div>
-                          <div class="text-rkGray">Preferred Hotel</div>
-                          <div class="text-rkBlack">ITC Hotel</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      class="absolute left-10 top-[-16px] text-sm h-8 px-3 flex items-center rounded-lg bg-black text-white"
-                    >
-                      Accommodation Details
-                    </div>
-                  </div>
-
-
-                  <!-- Input Form for Editing -->
-                  <div x-show="isEditing" class="mt-5">
-                  
-
-
+            <div class="relative overflow-x-auto">
+              <table id="all-trips-table" class="table table-sm">
+                <thead class="text-black">
+                  <tr>
+                    <th>
+                      <span class="flex items-center"> Trip ID </span>
+                    </th>
+                    <th>
+                        <span class="flex items-center">Category</span>
+                    </th>
+                    <th>
+                      <span class="flex items-center"> Purpose of Trip </span>
+                    </th>
                 
-                    <div>
-                        <div class="text-sm font-semibold mb-4">Travel Details</div>
+                    <th>
+                      <span class="flex items-center">
+                        Requested Date
+                      </span>
+                    </th>
+                    <th>
+                        <span class="flex items-center"> Requested By </span>
+                      </th>
 
-                        <div class="card bg-[#F1F2F6] rounded-lg">
-                            <div class="card-body text-sm flex gap-5 flex-wrap flex-row">
+                    <th>
+                        <span class="flex items-center">
+                            Status
+                        </span>
+                      </th>
+                      <th>
+                        <span class="flex items-center">
+                            Details
+                        </span>
+                      </th>
+                      
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-white hover:bg-gray-50">
+                      <td>
+                        <a href="TRIP-00014.html">
+                          <div>TRIP-00014</div>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="TRIP-00014.html">
+                          <div>Trip Request</div>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="TRIP-00014.html">
+                          <div class="text-blue-500">Showroom Visit</div>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="TRIP-00014.html">
+                         <div>
+                            9, July 2024
+                         </div>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="TRIP-00014.html">
+                          <div>Vivin Raj</div>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="TRIP-00014.html">
+                          <div class="text-green-500">Approved</div>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="TRIP-00014.html">
+                          <div class="text-green-500 flex items-center">
 
-                                <div>
-                                    <div class="font-medium">
-                                        From<span class="text-red-500">*</span>
-                                    </div>
-                                    <div>
-                                        <select class="border text-sm border-gray-300 rounded-lg p-2" name="state" fdprocessedid="4ius4i">
-                                          <option value="andhra-pradesh">
-                                            Andhra Pradesh
-                                          </option>
-                                          <option value="arunachal-pradesh">
-                                            Arunachal Pradesh
-                                          </option>
-                                          <option value="assam">Assam</option>
-                                          <option value="bihar">Bihar</option>
-                                          <option value="chhattisgarh">
-                                            Chhattisgarh
-                                          </option>
-                                          <option value="goa">Goa</option>
-                                          <option value="gujarat">Gujarat</option>
-                                          <option value="haryana">Haryana</option>
-                                          <option value="himachal-pradesh">
-                                            Himachal Pradesh
-                                          </option>
-                                          <option value="jharkhand">Jharkhand</option>
-                                          <option value="karnataka">Karnataka</option>
-                                          <option value="kerala">Kerala</option>
-                                          <option value="madhya-pradesh">
-                                            Madhya Pradesh
-                                          </option>
-                                          <option value="maharashtra">Maharashtra</option>
-                                          <option value="manipur">Manipur</option>
-                                          <option value="meghalaya">Meghalaya</option>
-                                          <option value="mizoram">Mizoram</option>
-                                          <option value="nagaland">Nagaland</option>
-                                          <option value="odisha">Odisha</option>
-                                          <option value="punjab">Punjab</option>
-                                          <option value="rajasthan">Rajasthan</option>
-                                          <option value="sikkim">Sikkim</option>
-                                          <option value="tamil-nadu">Tamil Nadu</option>
-                                          <option value="telangana">Telangana</option>
-                                          <option value="tripura">Tripura</option>
-                                          <option value="uttar-pradesh">
-                                            Uttar Pradesh
-                                          </option>
-                                          <option value="uttarakhand">Uttarakhand</option>
-                                          <option value="west-bengal">West Bengal</option>
-                                        </select>
-                                      </div>
-                                </div>
-
-                                <div>
-                                    <div class="font-medium">
-                                        To<span class="text-red-500">*</span>
-                                    </div>
-                                    <div>
-                                        <select class="border text-sm border-gray-300 rounded-lg p-2" name="state" fdprocessedid="4ius4i">
-                                          <option value="andhra-pradesh">
-                                            Andhra Pradesh
-                                          </option>
-                                          <option value="arunachal-pradesh">
-                                            Arunachal Pradesh
-                                          </option>
-                                          <option value="assam">Assam</option>
-                                          <option value="bihar">Bihar</option>
-                                          <option value="chhattisgarh">
-                                            Chhattisgarh
-                                          </option>
-                                          <option value="goa">Goa</option>
-                                          <option value="gujarat">Gujarat</option>
-                                          <option value="haryana">Haryana</option>
-                                          <option value="himachal-pradesh">
-                                            Himachal Pradesh
-                                          </option>
-                                          <option value="jharkhand">Jharkhand</option>
-                                          <option value="karnataka">Karnataka</option>
-                                          <option value="kerala">Kerala</option>
-                                          <option value="madhya-pradesh">
-                                            Madhya Pradesh
-                                          </option>
-                                          <option value="maharashtra">Maharashtra</option>
-                                          <option value="manipur">Manipur</option>
-                                          <option value="meghalaya">Meghalaya</option>
-                                          <option value="mizoram">Mizoram</option>
-                                          <option value="nagaland">Nagaland</option>
-                                          <option value="odisha">Odisha</option>
-                                          <option value="punjab">Punjab</option>
-                                          <option value="rajasthan">Rajasthan</option>
-                                          <option value="sikkim">Sikkim</option>
-                                          <option value="tamil-nadu">Tamil Nadu</option>
-                                          <option selected value="telangana">Telangana</option>
-                                          <option value="tripura">Tripura</option>
-                                          <option value="uttar-pradesh">
-                                            Uttar Pradesh
-                                          </option>
-                                          <option value="uttarakhand">Uttarakhand</option>
-                                          <option value="west-bengal">West Bengal</option>
-                                        </select>
-                                      </div>
-                                </div>
-
-
-                                <div>
-                                    <div class="font-medium">
-                                        Date<span class="text-red-500">*</span>
-                                    </div>
-                                    <div class="relative min-w-[250px]">
-                                        <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-                                          <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"></path>
-                                          </svg>
-                                        </div>
-                                        <input datepicker="" id="trip-datepicker" type="text" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 ps-10 block w-full datepicker-input" placeholder="Select date" >
-                                      </div>
-                                </div>
-
-
-                                <div>
-                                    <div class="font-medium">
-                                        Preferred Time</span>
-                                    </div>
-                                    <div class="relative min-w-[200px]">
-                                        <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
-                                          <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"></path>
-                                          </svg>
-                                        </div>
-                                        <input type="time" id="trip-time" class="bg-white border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full" min="09:00" max="18:00" value="00:00" required="">
-                                    </div>
-                                </div>
-
-
-                                <div>
-                                    <div class="font-medium">
-                                        Mode of Travel<span class="text-red-500">*</span>
-                                    </div>
-                                    <div>
-                                        <ul class="flex border text-sm bg-white border-gray-300 rounded-lg p-2">
-                                            <li>
-                                              <div class="flex items-center me-2">
-                                                <input id="trip-bus-radio" type="radio" value="bus" name="trip-transport-radio" class="w-4 h-4 text-yellow-400 bg-gray-100 border-gray-300 focus:ring-0">
-                                                <label for="trip-bus-radio" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Bus</label>
-                                              </div>
-                                            </li>
-                                            <li>
-                                              <div class="flex items-center me-2">
-                                                <input id="trip-train-radio" type="radio" value="train" name="trip-transport-radio" class="w-4 h-4 text-yellow-400 bg-gray-100 border-gray-300 focus:ring-0">
-                                                <label for="trip-train-radio" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Train</label>
-                                              </div>
-                                            </li>
-                                            <li>
-                                              <div class="flex items-center me-2">
-                                                <input id="trip-flight-radio" type="radio" value="flight" name="trip-transport-radio" class="w-4 h-4 text-yellow-400 bg-gray-100 border-gray-300 focus:ring-0">
-                                                <label for="trip-flight-radio" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Flight</label>
-                                              </div>
-                                            </li>
-                                          </ul>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+                            <span>
+                              View Details
+                            </span>
+                            
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                  </svg>                                  
+                            </span>
+                          </div>
+                        </a>
+                      </td>
+                     
+                    </tr>
 
 
 
+                    <tr class="bg-white hover:bg-gray-50">
+                      <td>
+                        <a href="/approver/TRIP-00029.html">
+                          <div>TRIP-00029</div>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="/approver/TRIP-00029.html">
+                          <div>Advance Request</div>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="/approver/TRIP-00029.html">
+                          <div class="text-blue-500">Showroom Visit</div>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="/approver/TRIP-00029.html">
+                         <div>
+                          11, Aug 2024
+                         </div>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="/approver/TRIP-00029.html">
+                          <div>Vinoth</div>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="/approver/TRIP-00029.html">
+                          <div class="text-red-500">Rejected</div>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="/user/TRIP-00029.html">
+                          <div class="text-green-500 flex items-center">
 
-                    <div class="mt-10">
-                        <div class="text-sm font-semibold mb-4">Accommodations Details</div>
-
-                        <div class="card bg-[#F1F2F6] rounded-lg">
-                            <div class="card-body text-sm flex gap-5 flex-wrap flex-row">
-
-                                <div>
-                                    <div class="font-medium">
-                                        Location
-                                    </div>
-                                    <div>
-                                        <select class="border text-sm border-gray-300 rounded-lg p-2" name="state" fdprocessedid="4ius4i">
-                                          <option value="andhra-pradesh">
-                                            Andhra Pradesh
-                                          </option>
-                                          <option value="arunachal-pradesh">
-                                            Arunachal Pradesh
-                                          </option>
-                                          <option value="assam">Assam</option>
-                                          <option value="bihar">Bihar</option>
-                                          <option value="chhattisgarh">
-                                            Chhattisgarh
-                                          </option>
-                                          <option value="goa">Goa</option>
-                                          <option value="gujarat">Gujarat</option>
-                                          <option value="haryana">Haryana</option>
-                                          <option value="himachal-pradesh">
-                                            Himachal Pradesh
-                                          </option>
-                                          <option value="jharkhand">Jharkhand</option>
-                                          <option value="karnataka">Karnataka</option>
-                                          <option value="kerala">Kerala</option>
-                                          <option value="madhya-pradesh">
-                                            Madhya Pradesh
-                                          </option>
-                                          <option value="maharashtra">Maharashtra</option>
-                                          <option value="manipur">Manipur</option>
-                                          <option value="meghalaya">Meghalaya</option>
-                                          <option value="mizoram">Mizoram</option>
-                                          <option value="nagaland">Nagaland</option>
-                                          <option value="odisha">Odisha</option>
-                                          <option value="punjab">Punjab</option>
-                                          <option value="rajasthan">Rajasthan</option>
-                                          <option value="sikkim">Sikkim</option>
-                                          <option value="tamil-nadu">Tamil Nadu</option>
-                                          <option value="telangana">Telangana</option>
-                                          <option value="tripura">Tripura</option>
-                                          <option value="uttar-pradesh">
-                                            Uttar Pradesh
-                                          </option>
-                                          <option value="uttarakhand">Uttarakhand</option>
-                                          <option value="west-bengal">West Bengal</option>
-                                        </select>
-                                      </div>
-                                </div>
-
-                                <div>
-                                    <div class="font-medium">
-                                        Duration of Stay
-                                    </div>
-                                    <div>
-                                        <select class="border text-sm border-gray-300 rounded-lg p-2" name="stay-duration" id="duration-select" fdprocessedid="z40ehr">
-                                            <option value="1">1 Day</option>
-                                            <option value="2">2 Days</option>
-                                          </select>
-                                      </div>
-                                </div>
+                            <span>
+                              View Details
+                            </span>
+                            
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                  </svg>                                  
+                            </span>
+                          </div>
+                        </a>
+                      </td>
+                     
+                    </tr>
 
 
-                                <div>
-                                    <div class="font-medium">
-                                        Preferred Area
-                                    </div>
-                                   
-                                    <div>
-                                        <input class="text-sm rounded-lg border border-gray-300" type="text" name="" id="" placeholder="Enter Preferred Area">
-                                    </div>
-                                </div>
+                    <tr class="bg-white hover:bg-gray-50">
+                      <td>
+                        <a href="/approver/TRIP-00029.html">
+                          <div>TRIP-00001</div>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="/approver/TRIP-00029.html">
+                          <div>Expense Request</div>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="/approver/TRIP-00029.html">
+                          <div class="text-blue-500">Showroom Visit</div>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="/approver/TRIP-00029.html">
+                         <div>
+                          2, May 2024
+                         </div>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="/approver/TRIP-00029.html">
+                          <div>Sundar</div>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="/approver/TRIP-00029.html">
+                          <div class="text-orange-500">Pending</div>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="/user/TRIP-00029.html">
+                          <div class="text-green-500 flex items-center">
 
-
-
-                                <div>
-                                    <div class="font-medium">
-                                        Preferred Hotel
-                                    </div>
-                                   
-                                    <div>
-                                        <input class="text-sm rounded-lg border border-gray-300" type="text" name="" id="" placeholder="Enter Preferred Hotel">                                    </div>
-                                </div>
-
-
-                          
-
-                            </div>
-                        </div>
-                    </div>
-
+                            <span>
+                              View Details
+                            </span>
+                            
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                  </svg>                                  
+                            </span>
+                          </div>
+                        </a>
+                      </td>
+                     
+                    </tr>
+                  
+              
+                  </tbody>
                   
 
-
-
-                    <!-- Update and Cancel Buttons -->
-                    <div class="mt-14 flex gap-4">
-                      <button
-                        @click="isEditing = false;"
-                        onclick="upadteBtnModal.show()"
-                        class="btn btn-orange text-white px-4"
-                      >
-                        Update
-                      </button>
-                      <button
-                        @click="isEditing = false"
-                        class="px-4 btn btn-outline"
-                      >
-                        Cancel
-                      </button>
-                    </div>
-                  </div>
-
-
-
-                  <div x-show="!isEditing" class="mt-14">
-                    <button onclick="submitBtnModal.show()" class="btn btn-orange px-10">Submit</button>
-                  </div>
-                  <dialog id="submitBtnModal" class="modal shadow-lg">
-                    <div class="modal-box pt-20 pb-10">
-                      <div class="text-center space-y-2 text-sm text-black">
-                        <div class="flex justify-center">
-                            <img class="size-20" src="../assets/images/sucess.gif" alt="">
-                        </div>
-                        <div>Trip ID: <span class="text-green-500 text-base font-semibold">TRIP-00001</span></div>
-                        <div class="text-lg">Your Trip Request Submitted Successfully </div>
-                      </div>
-                      <div class="modal-action justify-center">
-                        <form method="dialog">
-                          <button class="btn bg-orange-500 hover:bg-orange-500 text-white">Ok</button>
-                        </form>
-                      </div>
-                    </div>
-                  </dialog>
-
-                  <dialog id="upadteBtnModal" class="modal shadow-lg">
-                    <div class="modal-box pt-20 pb-10">
-                      <div class="text-center space-y-2 text-sm text-black">
-                        <div class="flex justify-center">
-                            <img class="size-20" src="../assets/images/sucess.gif" alt="">
-                        </div>
-                        <div>Trip ID: <span class="text-green-500 text-base font-semibold">TRIP-00001</span></div>
-                        <div class="text-lg">Your Details Updated Successfully </div>
-                      </div>
-                      <div class="modal-action justify-center">
-                        <form method="dialog">
-                          <button class="btn bg-orange-500 hover:bg-orange-500 text-white">Ok</button>
-                        </form>
-                      </div>
-                    </div>
-                  </dialog>
-
-
-                </div>
-              </div>
-
-
-
-
-           
-
-
-
-              <div class="md:col-span-3 px-6 md:px-0">
-                <div class="bg-[#F1F2F6] py-8 md:h-full px-4">
-                  <div class="mb-6">
-                    <div class="mb-3 text-sm text-blue-500">Requested by</div>
-
-                    <div
-                      class="flex font-medium text-black items-center bg-white rounded-s-full text-sm max-w-fit"
-                    >
-                      <div>
-                        <img
-                          width="24"
-                          height="24"
-                          class="size-8 rounded-full"
-                          src="../assets/images/user.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="px-2">Vishnu Prasad</div>
-                    </div>
-                    <div class="ps-10 text-xs text-rkGray mt-1">Marketing</div>
-                  </div>
-
-                  <div class="mb-6">
-                    <div class="mb-3 text-sm text-blue-500">
-                      Yet to Approved by
-                    </div>
-
-                    <div
-                      class="flex font-medium text-black items-center bg-white rounded-s-full text-sm max-w-fit"
-                    >
-                      <div>
-                        <img
-                          width="24"
-                          height="24"
-                          class="size-8 rounded-full"
-                          src="../assets/images/user.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="px-2">Vivin Raj</div>
-                    </div>
-                    <div class="ps-10 text-xs text-rkGray mt-1">Manager</div>
-                  </div>
-                </div>
-              </div>
+              </table>
             </div>
           </div>
         </main>
@@ -1349,5 +961,18 @@
     <script src="../assets/js/flowbite.min.js"></script>
     <script src="../assets/js/simple-datatables.js"></script>
     <script src="../assets/js/main.js"></script>
+
+    <script>
+      if (
+        document.getElementById("all-trips-table") &&
+        typeof simpleDatatables.DataTable !== "undefined"
+      ) {
+        const dataTable = new simpleDatatables.DataTable("#all-trips-table", {
+          searchable: true,
+          sortable: false,
+          perPageSelect: false
+        });
+      }
+    </script>
   </body>
 </html>

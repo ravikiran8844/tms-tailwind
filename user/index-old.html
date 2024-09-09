@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Emerald TMS</title>
+    <link rel="stylesheet" href="../assets/css/tailwind.css" />
+  </head>
+  <body>
+    <div x-data="{ sidebarOpen: false,toggleSidebar: false }" class="flex h-screen bg-gray-200">
+      <div
+        :class="sidebarOpen ? 'block' : 'hidden'"
+        @click="sidebarOpen = false"
+        class="fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden"
+      ></div>
+
+      <div
+      :class="{
+        'translate-x-0 ease-out': sidebarOpen,
+        '-translate-x-full ease-in': !sidebarOpen,
+        'lg:hidden': toggleSidebar,
+        'lg:block': !toggleSidebar
+      }"        
+        class="fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 transform bg-[#F1F2F6] lg:translate-x-0 lg:static lg:inset-0"
+      >
+        <div class="flex items-center justify-center mt-8">
+          <div>
+            <a href="/user">
+              <img
+                width="193"
+                height="43"
+                src="../assets/images/main-logo.svg"
+                alt="TMS Main Logo"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="divider"></div>
+
+        <nav class="mt-4 min-h-[70%] flex gap-5 justify-between flex-col">
+          <div class="px-1">
+            <div>
+              <a
+                class="flex items-center px-4 mb-1 py-2 text-sm font-medium rounded text-rkGray hover:text-orange"
+                href="/user/index.html"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"
+                  />
+                </svg>
+
+                <span class="mx-2">Dashboard</span>
+              </a>
+            </div>
+
+            <div>
+              <div
+                id="main-menu"
+                class="px-2"
+                data-accordion="collapse"
+                data-active-classes="bg-orange rounded-md text-white"
+                data-inactive-classes="text-rkGray hover:text-orange"
+              >
+                <ul>
+                  <li class="mb-1">
+                    <div id="main-menu-dropdown-1">
+                      <button
+                        type="button"
+                        class="flex px-2 items-center justify-between w-full py-2 text-sm text-rkGray rtl:text-right gap-3"
+                        data-accordion-target="#main-menu-dropdown-body-1"
+                        aria-expanded="false"
+                        aria-controls="main-menu-dropdown-body-1"
+                      >
+                        <div class="flex items-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-6"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z"
+                            />
+                          </svg>
+
+                          <span class="mx-2">Trips</span>
+                        </div>
+                        <svg
+                          data-accordion-icon
+                          class="w-3 h-3 rotate-180 shrink-0"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 10 6"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5 5 1 1 5"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div
+                      id="main-menu-dropdown-body-1"
+                      class="hidden"
+                      aria-labelledby="main-menu-dropdown-1"
+                    >
+                      <ul class="bg-[#EAEAEA] p-2">
+                        <li>
+                          <a
+                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            href="/user/add-new-trip.html"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              class="size-6"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                            <span class="mx-2">Add New Trip</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            href="/user/unplanned-trip.html"
+                          >
+                            <span class="mx-2 ps-6">Unplanned Trip</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            href="/user/pending-trips.html"
+                          >
+                            <span class="mx-2 ps-6">Pending Trips</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            href="/user/all-trips.html"
+                          >
+                            <span class="mx-2 ps-6">All Trips</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="mb-1">
+                    <div id="main-menu-dropdown-2">
+                      <button
+                        type="button"
+                        class="flex px-2 items-center justify-between w-full py-2 text-sm text-rkGray rtl:text-right gap-3"
+                        data-accordion-target="#main-menu-dropdown-body-2"
+                        aria-expanded="false"
+                        aria-controls="main-menu-dropdown-body-2"
+                      >
+                        <div class="flex items-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-6"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z"
+                            />
+                          </svg>
+
+                          <span class="mx-2">Expenses & Advance</span>
+                        </div>
+                        <svg
+                          data-accordion-icon
+                          class="w-3 h-3 rotate-180 shrink-0"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 10 6"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5 5 1 1 5"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div
+                      id="main-menu-dropdown-body-2"
+                      class="hidden"
+                      aria-labelledby="main-menu-dropdown-2"
+                    >
+                      <ul class="bg-[#EAEAEA] p-2">
+                        <li>
+                          <a
+                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            href="/user/add-new-expenses.html"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              class="size-6"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                            <span class="mx-2">Add New Expenses</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            href="/user/add-new-advances.html"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              class="size-6"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                            <span class="mx-2">Add New Advances</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            href="/user/pending-request.html"
+                          >
+                            <span class="mx-2 ps-6">Pending Request</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            href="/user/all-request.html"
+                          >
+                            <span class="mx-2 ps-6">All Request</span>
+                          </a>
+                        </li>
+                      
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="px-4">
+            <a
+              class="flex items-center font-medium text-sm py-1 px-2 rounded text-rkGray hover:text-orange"
+              href="#"
+            >
+            <svg class="w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"/>
+            </svg>
+            
+
+              <span class="mx-2">Logout</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+
+      <div class="flex flex-col flex-1 overflow-hidden">
+        <header
+          class="flex items-center justify-between px-6 py-4 bg-[#F1F2F6] border-b-1 border-[#ECECEC]"
+        >
+          <div class="flex items-center">
+            <button
+              @click="sidebarOpen = true"
+              class="text-gray-500 focus:outline-none lg:hidden"
+            >
+              <svg
+                class="w-6 h-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 6H20M4 12H20M4 18H11"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </button>
+
+            <div class="hidden sm:block relative mx-4 lg:mx-0">
+             <div class="flex items-center gap-2">
+                <button class="p-2 rounded-lg bg-orange-600 text-white hidden lg:block" @click="toggleSidebar = ! toggleSidebar">
+                    <span x-show="! toggleSidebar" x-cloak>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                          </svg>                      
+                    </span>
+                    <span x-show="toggleSidebar" x-cloak>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                          </svg>                      
+                    </span>
+                  </button>
+
+              <h3 class=" text-md md:text-xl font-semibold text-gray-700">
+                Dashboard
+              </h3>
+             
+             </div>
+            </div>
+          </div>
+
+          <div class="flex items-center notifications">
+            <div x-data="{ messageOpen: false }">
+              <div class="relative">
+                <button
+                  @click="messageOpen = ! messageOpen"
+                  class="flex text-gray-600 mx-4 focus:outline-none hover:text-orange focus:text-orange"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 0 1 1.037-.443 48.282 48.282 0 0 0 5.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"
+                    />
+                  </svg>
+                </button>
+                <div
+                  class="absolute bg-red-600 text-white badge rounded-full -top-3 end-0 text-center text-xs"
+                >
+                  1
+                </div>
+              </div>
+
+              <div
+                x-show="messageOpen"
+                @click="messageOpen = false"
+                class="fixed inset-0 z-10 w-full h-full"
+                style="display: none"
+              ></div>
+
+              <div
+                x-show="messageOpen"
+                class="absolute right-2 z-10 mt-2 overflow-hidden bg-white rounded-lg shadow-xl w-80"
+                style="display: none"
+              >
+                <div class="py-4 px-3 flex justify-between items-center gap-2">
+                  <div class="text-black text-base font-bold">Messages</div>
+                  <div>
+                    <button class="text-orange text-sm">
+                      Mark all as read
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  class="mt-2 border-t-2 border-t-[#D9D9D9] shadow overflow-auto h-80"
+                >
+                  <a href="#" class="flex items-start p-3 text-rkBlac active">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vivin</span> wants to
+                        sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00015</span>
+                        </div>
+                        <div class="text-xs text-rkGray">30 mins ago</div>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vivin</span> wants to
+                        sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00015</span>
+                        </div>
+                        <div class="text-xs text-rkGray">30 mins ago</div>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vivin</span> wants to
+                        sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00015</span>
+                        </div>
+                        <div class="text-xs text-rkGray">30 mins ago</div>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vivin</span> wants to
+                        sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00015</span>
+                        </div>
+                        <div class="text-xs text-rkGray">30 mins ago</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div x-data="{ notificationOpen: false }">
+              <div class="relative">
+                <button
+                  @click="notificationOpen = ! notificationOpen"
+                  class="flex text-gray-600 focus:outline-none hover:text-orange focus:text-orange"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
+                    />
+                  </svg>
+                </button>
+                <div
+                  class="absolute bg-red-600 text-white badge rounded-full -top-3 -end-3 text-center text-xs"
+                >
+                  1
+                </div>
+              </div>
+              <div
+                x-show="notificationOpen"
+                @click="notificationOpen = false"
+                class="fixed inset-0 z-10 w-full h-full"
+                style="display: none"
+              ></div>
+
+              <div
+                x-show="notificationOpen"
+                class="absolute right-2 z-10 mt-2 overflow-hidden bg-white rounded-lg shadow-xl w-80"
+                style="display: none"
+              >
+                <div class="py-4 px-3 flex justify-between items-center gap-2">
+                  <div class="text-black text-base font-bold">
+                    Notifications
+                  </div>
+                  <div>
+                    <button class="text-orange text-sm">
+                      Mark all as read
+                    </button>
+                  </div>
+                </div>
+
+                <div>
+                  <span
+                    class="px-4 text-orange pb-2 border-b-2 text-sm border-orange"
+                  >
+                    All
+                    <div class="badge bg-orange-200 text-sm font-medium">2</div>
+                  </span>
+                </div>
+
+                <div
+                  class="mt-2 border-t-2 border-t-[#D9D9D9] shadow overflow-auto h-80"
+                >
+                  <a href="#" class="flex items-start p-3 text-rkBlack active">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vinoth Kumar</span>
+                        wants to sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00014</span>
+                        </div>
+                        <div class="text-xs text-rkGray">5 min ago</div>
+                      </div>
+                      <div class="mt-2">
+                        <button
+                          class="btn btn-sm bg-orange hover:bg-orange-600 text-white"
+                        >
+                          Approve
+                        </button>
+
+                        <button class="btn btn-sm btn-outline">Reject</button>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vivin</span> wants to
+                        sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00015</span>
+                        </div>
+                        <div class="text-xs text-rkGray">30 mins ago</div>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vivin</span> wants to
+                        sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00015</span>
+                        </div>
+                        <div class="text-xs text-rkGray">30 mins ago</div>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vivin</span> wants to
+                        sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00015</span>
+                        </div>
+                        <div class="text-xs text-rkGray">30 mins ago</div>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vivin</span> wants to
+                        sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00015</span>
+                        </div>
+                        <div class="text-xs text-rkGray">30 mins ago</div>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vivin</span> wants to
+                        sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00015</span>
+                        </div>
+                        <div class="text-xs text-rkGray">30 mins ago</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="divider divider-horizontal"></div>
+
+            <div x-data="{ dropdownOpen: false }" class="relative">
+              <div class="flex gap-2 items-center">
+                <div class="hidden md:block">
+                  <div class="font-semibold text-rkBlack text-sm">
+                    Vishnu prasath
+                  </div>
+                  <div class="text-xs text-rkGray">Marketing</div>
+                </div>
+
+                <div>
+                  <button
+                    @click="dropdownOpen = !dropdownOpen"
+                    class="flex gap-2 items-center"
+                  >
+                    <span>
+                      <img
+                        class="object-cover size-10 rounded-full shadow focus:outline-none"
+                        src="https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=296&amp;q=80"
+                        alt="Your avatar"
+                      />
+                    </span>
+
+                    <span>
+                      <svg
+                        :class="{'rotate-180': dropdownOpen}"
+                        class="w-4 h-4 transition-transform duration-200"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              <div
+                x-show="dropdownOpen"
+                @click="dropdownOpen = false"
+                class="fixed inset-0 z-10 w-full h-full"
+                style="display: none"
+              ></div>
+
+              <div
+                x-show="dropdownOpen"
+                class="absolute right-0 z-10 w-48 mt-2 overflow-hidden bg-white rounded-md shadow-xl"
+                style="display: none"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-500 hover:text-white"
+                  >Profile</a
+                >
+                
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-500 hover:text-white"
+                  >Logout</a
+                >
+              </div>
+            </div>
+          </div>
+        </header>
+        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-white">
+          
+          <div class="container px-6 py-8 mx-auto">
+            <div class="sm:hidden mb-6">
+              <h3 class="text-xl font-medium text-rkBlack">
+                           Dashboard
+              </h3>
+            </div>
+
+
+            <div class="grid gap-4 lg:grid-cols-2 xl:grid-cols-4 mb-6">
+              <div
+                class="card shadow border border-rkLight h-full hover:bg-[#FFEBE0]"
+              >
+                <div class="card-body">
+                  <div class="text-sm text-rkGray">Total Trips</div>
+                  <div class="flex justify-between">
+                    <div class="text-xl font-bold">120</div>
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="39"
+                        height="39"
+                        viewBox="0 0 39 39"
+                        fill="none"
+                      >
+                        <rect
+                          x="0.581055"
+                          y="0.152588"
+                          width="37.9895"
+                          height="37.9895"
+                          rx="10.0286"
+                          fill="#FFEBE0"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M26.2821 15.6473H13.5443V23.5888C13.5443 24.2923 14.1146 24.8626 14.8181 24.8626H25.0083C25.7119 24.8626 26.2821 24.2923 26.2821 23.5888V15.6473ZM13.5443 14.3735C12.8408 14.3735 12.2705 14.9438 12.2705 15.6473V23.5888C12.2705 24.9958 13.4111 26.1364 14.8181 26.1364H25.0083C26.4154 26.1364 27.5559 24.9958 27.5559 23.5888V15.6473C27.5559 14.9438 26.9856 14.3735 26.2821 14.3735H13.5443Z"
+                          fill="#313131"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M27.1364 18.306L20.2176 20.8219C20.0208 20.8935 19.805 20.8935 19.6082 20.8219L12.6895 18.306L13.1248 17.1089L19.9129 19.5773L26.701 17.1089L27.1364 18.306Z"
+                          fill="#313131"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M16.7988 13.7522C16.7988 12.697 17.6543 11.8416 18.7095 11.8416H21.1151C22.1703 11.8416 23.0258 12.697 23.0258 13.7522V15.6519H16.7988V13.7522ZM18.7095 13.1153C18.3577 13.1153 18.0726 13.4005 18.0726 13.7522V14.3781H21.752V13.7522C21.752 13.4005 21.4668 13.1153 21.1151 13.1153H18.7095Z"
+                          fill="#313131"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="card shadow border border-rkLight h-full hover:bg-[#E4EBFE] relative"
+              >
+                <div class="card-body">
+                  <div class="absolute right-2 top-2">
+                    <select
+                      id="small"
+                      class="block max-w-fit ps-2 p-1 text-xs text-rkBlack border border-[#E3E3E3] rounded-lg bg-transparent shadow focus:ring-orange-400 focus:border-orange-400"
+                    >
+                      <option value="TD">Today</option>
+                      <option value="LW">Last Week</option>
+                      <option value="LM">Last Month</option>
+                      <option value="TY">This Year</option>
+                    </select>
+                  </div>
+                  <div class="text-sm text-rkGray">Expenses</div>
+                  <div class="flex justify-between">
+                    <div class="text-xl font-bold">₹5055</div>
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="38"
+                        height="38"
+                        viewBox="0 0 38 38"
+                        fill="none"
+                      >
+                        <rect
+                          x="0.193359"
+                          y="0.510498"
+                          width="37.2736"
+                          height="37.2736"
+                          rx="10.0286"
+                          fill="#E4EBFE"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M24.3073 10.2146H12.5447C12.0765 10.2146 11.6278 10.4005 11.2972 10.7316C10.9661 11.0621 10.7803 11.5108 10.7803 11.979C10.7803 15.0102 10.7803 23.0629 10.7803 26.0942C10.7803 26.5623 10.9661 27.011 11.2972 27.3416C11.6278 27.6727 12.0765 27.8585 12.5447 27.8585C15.203 27.8585 21.6489 27.8585 24.3073 27.8585C24.7755 27.8585 25.2242 27.6727 25.5547 27.3416C25.8858 27.011 26.0717 26.5623 26.0717 26.0942V11.979C26.0717 11.5108 25.8858 11.0621 25.5547 10.7316C25.2242 10.4005 24.7755 10.2146 24.3073 10.2146ZM14.3091 11.3909H12.5447C12.3888 11.3909 12.2388 11.4526 12.1289 11.5632C12.0183 11.6732 11.9565 11.8231 11.9565 11.979V26.0942C11.9565 26.25 12.0183 26.4 12.1289 26.51C12.2388 26.6205 12.3888 26.6823 12.5447 26.6823H24.3073C24.4632 26.6823 24.6131 26.6205 24.7231 26.51C24.8337 26.4 24.8954 26.25 24.8954 26.0942V11.979C24.8954 11.8231 24.8337 11.6732 24.7231 11.5632C24.6131 11.4526 24.4632 11.3909 24.3073 11.3909H22.5429V11.979C22.5429 12.9535 21.753 13.7434 20.7785 13.7434H16.0735C15.0989 13.7434 14.3091 12.9535 14.3091 11.979V11.3909ZM21.3666 11.3909V11.979C21.3666 12.3036 21.1032 12.5671 20.7785 12.5671H16.0735C15.7488 12.5671 15.4853 12.3036 15.4853 11.979V11.3909H21.3666Z"
+                          fill="#313131"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M14.8967 23.1533H21.9543C22.279 23.1533 22.5424 22.8898 22.5424 22.5652C22.5424 22.2405 22.279 21.9771 21.9543 21.9771H14.8967C14.5721 21.9771 14.3086 22.2405 14.3086 22.5652C14.3086 22.8898 14.5721 23.1533 14.8967 23.1533Z"
+                          fill="#313131"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M14.8967 20.801H21.9543C22.279 20.801 22.5424 20.5375 22.5424 20.2129C22.5424 19.8882 22.279 19.6248 21.9543 19.6248H14.8967C14.5721 19.6248 14.3086 19.8882 14.3086 20.2129C14.3086 20.5375 14.5721 20.801 14.8967 20.801Z"
+                          fill="#313131"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M14.8967 18.4485H21.9543C22.279 18.4485 22.5424 18.185 22.5424 17.8603C22.5424 17.5357 22.279 17.2722 21.9543 17.2722H14.8967C14.5721 17.2722 14.3086 17.5357 14.3086 17.8603C14.3086 18.185 14.5721 18.4485 14.8967 18.4485Z"
+                          fill="#313131"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="card shadow border border-rkLight h-full hover:bg-[#E1F8F0]"
+              >
+                <div class="card-body">
+                  <div class="text-sm text-rkGray">Advance in Hand</div>
+                  <div class="flex justify-between">
+                    <div class="text-xl font-bold">0/₹20000</div>
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="38"
+                        height="38"
+                        viewBox="0 0 38 38"
+                        fill="none"
+                      >
+                        <rect
+                          x="0.387695"
+                          y="0.437744"
+                          width="37.4195"
+                          height="37.4195"
+                          rx="10.0286"
+                          fill="#E1F8F0"
+                        />
+                        <path
+                          d="M26.4797 22.009V24.0612C26.4735 25.1273 25.5599 26.0895 24.461 26.11C21.2652 26.1298 18.0693 26.1202 14.8734 26.11C13.1049 26.0936 11.4936 24.5614 11.4882 22.6931V14.4898C11.5045 14.1037 11.8329 13.7914 12.2287 13.8085C12.5687 13.8536 12.8357 14.1413 12.8507 14.4898C12.8507 17.2329 12.8248 19.976 12.8507 22.719C12.8678 23.7714 13.7752 24.7323 14.8816 24.7432C18.0693 24.7528 21.257 24.763 24.444 24.7432C24.7983 24.7364 25.1151 24.4302 25.1171 24.0571V22.009H23.0706C22.0289 22.0022 21.084 21.1076 21.0308 20.0628C20.9756 18.9666 21.9144 17.9149 23.0706 17.9074H27.1616C27.1739 17.9081 27.1868 17.9081 27.1998 17.9088C27.3238 17.919 27.3572 17.9327 27.4226 17.9593C27.646 18.0523 27.8116 18.271 27.8388 18.5142C27.8422 18.5484 27.8422 18.5566 27.8429 18.5908V21.325C27.8395 21.45 27.8279 21.4849 27.8048 21.5512C27.721 21.7917 27.4934 21.9755 27.2379 22.0042C27.2039 22.0083 27.1957 22.0077 27.1616 22.009H26.4797ZM23.0747 19.2748C22.5562 19.2776 22.1747 20.004 22.5794 20.4297C22.7061 20.563 22.8866 20.6402 23.0747 20.6416H26.4797V19.2748C25.3447 19.2748 24.2097 19.2748 23.0747 19.2748ZM23.7552 13.8024C23.7552 13.5728 23.7552 13.3431 23.7539 13.1135C23.7471 12.7575 23.4425 12.4411 23.0706 12.439H16.2585C16.0861 12.4329 16.035 12.4097 15.9444 12.3625C15.537 12.1507 15.4641 11.481 15.8654 11.1967C15.9758 11.1188 16.0493 11.0791 16.2585 11.0716C18.5387 11.0716 20.8189 11.0573 23.0992 11.0723C24.1572 11.0921 25.1103 12.0065 25.1171 13.1204V13.9343C25.8842 14.2261 26.4742 14.9785 26.4797 15.8545C26.4797 15.8545 26.4293 16.3015 26.1077 16.4655C25.7323 16.6582 25.1948 16.4033 25.1253 15.9639C25.1014 15.8094 25.1198 15.8764 25.1151 15.8033C25.0871 15.463 24.786 15.1753 24.4338 15.1732H14.8952C14.7208 15.1664 14.6732 15.1432 14.5859 15.0987C14.2106 14.9067 14.0961 14.3245 14.4136 14.006C14.5396 13.8796 14.7154 13.8133 14.8952 13.8058C17.8486 13.8058 20.8019 13.7887 23.7552 13.8024ZM13.532 12.439H10.8062C10.3702 12.4302 10.0166 11.9491 10.1638 11.5288C10.2564 11.2636 10.5242 11.0778 10.8062 11.0716H13.532C13.5416 11.0723 13.5504 11.0723 13.5593 11.0723C14.0682 11.103 14.4163 11.7939 14.0375 12.2142C13.9101 12.355 13.7207 12.4349 13.532 12.439Z"
+                          fill="#313131"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="card shadow border border-rkLight h-full hover:bg-[#F0F5E7]"
+              >
+                <div class="card-body">
+                  <div class="text-sm text-rkGray">Pending to be Collected</div>
+                  <div class="flex justify-between">
+                    <div class="text-xl font-bold">₹2500</div>
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="38"
+                        height="38"
+                        viewBox="0 0 38 38"
+                        fill="none"
+                      >
+                        <rect
+                          x="0.577148"
+                          y="0.507568"
+                          width="37.2795"
+                          height="37.2795"
+                          rx="10.0286"
+                          fill="#F0F5E7"
+                        />
+                        <path
+                          d="M19.1458 29.0116C18.9002 29.0243 18.6542 29.0243 18.4086 29.0116C17.4978 28.9187 16.6143 28.6466 15.809 28.2109C15.0038 27.7752 14.2926 27.1845 13.7166 26.4729C13.1405 25.7612 12.7108 24.9427 12.4524 24.0644C12.1939 23.186 12.1117 22.2652 12.2105 21.355L13.3914 21.4818C13.2628 22.7151 13.537 23.9569 14.1732 25.0212C14.8093 26.0856 15.773 26.9153 16.9202 27.3861C18.0673 27.8569 19.336 27.9434 20.5365 27.6328C21.7369 27.3222 22.8044 26.6311 23.5792 25.663C24.354 24.6949 24.7944 23.5019 24.8344 22.2626C24.8745 21.0232 24.512 19.8043 23.8013 18.7882C23.0906 17.7721 22.0699 17.0136 20.892 16.6261C19.7141 16.2387 18.4424 16.2432 17.2673 16.639L16.8868 15.5135C17.8424 15.176 18.8603 15.0521 19.8689 15.1504C20.8775 15.2486 21.8523 15.5668 22.7247 16.0823C23.5972 16.5979 24.346 17.2984 24.9186 18.1346C25.4911 18.9707 25.8735 19.9222 26.0388 20.922C26.204 21.9218 26.1482 22.9457 25.8751 23.9216C25.6021 24.8975 25.1185 25.8017 24.4584 26.5706C23.7983 27.3395 22.9777 27.9544 22.0544 28.372C21.131 28.7896 20.1274 28.9998 19.1141 28.9878L19.1458 29.0116Z"
+                          fill="#313131"
+                        />
+                        <path
+                          d="M19.1304 31.3897C16.6638 31.3834 14.3002 30.3997 12.5575 28.654C10.8149 26.9084 9.83517 24.5432 9.83309 22.0766C9.82788 20.8065 10.085 19.549 10.5882 18.3829C11.0915 17.2168 11.8301 16.1672 12.7578 15.2998L13.5504 16.1637C12.7425 16.9213 12.0996 17.8375 11.6618 18.8549C11.224 19.8723 11.0008 20.969 11.0061 22.0766C11.0061 23.6834 11.4826 25.2541 12.3753 26.5901C13.268 27.9262 14.5369 28.9675 16.0214 29.5824C17.5059 30.1973 19.1394 30.3582 20.7153 30.0447C22.2913 29.7312 23.7389 28.9575 24.8751 27.8213C26.0113 26.6851 26.785 25.2375 27.0985 23.6615C27.412 22.0856 27.2511 20.4521 26.6362 18.9676C26.0213 17.483 24.98 16.2142 23.6439 15.3215C22.3079 14.4288 20.7372 13.9523 19.1304 13.9523C17.9594 13.9485 16.8018 14.2 15.738 14.6895L15.2387 13.6115C16.5037 13.0313 17.8826 12.7419 19.2741 12.7647C20.6657 12.7875 22.0344 13.1218 23.2797 13.7432C24.525 14.3646 25.6153 15.2572 26.4702 16.3553C27.3252 17.4535 27.9232 18.7293 28.2202 20.0889C28.5172 21.4486 28.5058 22.8575 28.1866 24.2122C27.8675 25.5668 27.2488 26.8327 26.3761 27.9168C25.5033 29.0008 24.3987 29.8755 23.1434 30.4765C21.8882 31.0775 20.5142 31.3896 19.1224 31.3897H19.1304Z"
+                          fill="#313131"
+                        />
+                        <path
+                          d="M20.9138 11.7725H19.7249V9.59278H20.9138V9.19648H17.3471V9.59278H18.536V11.7725H17.3471V10.7817H16.1582V8.00757H22.1028V10.7817H20.9138V11.7725Z"
+                          fill="#313131"
+                        />
+                        <path
+                          d="M26.8192 10.5822L25.9785 11.4229L28.2203 13.6647L29.061 12.824L26.8192 10.5822Z"
+                          fill="#313131"
+                        />
+                        <path
+                          d="M27.1081 11.7017L25.4268 13.3831L26.2674 14.2237L27.9488 12.5424L27.1081 11.7017Z"
+                          fill="#313131"
+                        />
+                        <path
+                          d="M14.1766 19.3021H12.9956V15.9335H9.61914V14.7446H14.1766V19.3021Z"
+                          fill="#313131"
+                        />
+                        <path
+                          d="M19.1303 23.2655C19.4456 23.2655 19.748 23.1403 19.971 22.9173C20.194 22.6943 20.3192 22.3919 20.3192 22.0766C20.3192 21.7613 20.194 21.4589 19.971 21.2359C19.748 21.013 19.4456 20.8877 19.1303 20.8877C18.815 20.8877 18.5126 21.013 18.2896 21.2359C18.0667 21.4589 17.9414 21.7613 17.9414 22.0766C17.9414 22.3919 18.0667 22.6943 18.2896 22.9173C18.5126 23.1403 18.815 23.2655 19.1303 23.2655Z"
+                          fill="#313131"
+                        />
+                        <path
+                          d="M22.3012 23.2655C22.6165 23.2655 22.9189 23.1403 23.1419 22.9173C23.3649 22.6943 23.4901 22.3919 23.4901 22.0766C23.4901 21.7613 23.3649 21.4589 23.1419 21.2359C22.9189 21.013 22.6165 20.8877 22.3012 20.8877C21.9859 20.8877 21.6835 21.013 21.4605 21.2359C21.2376 21.4589 21.1123 21.7613 21.1123 22.0766C21.1123 22.3919 21.2376 22.6943 21.4605 22.9173C21.6835 23.1403 21.9859 23.2655 22.3012 23.2655Z"
+                          fill="#313131"
+                        />
+                        <path
+                          d="M15.9594 23.2655C16.2747 23.2655 16.5771 23.1403 16.8001 22.9173C17.0231 22.6943 17.1483 22.3919 17.1483 22.0766C17.1483 21.7613 17.0231 21.4589 16.8001 21.2359C16.5771 21.013 16.2747 20.8877 15.9594 20.8877C15.6441 20.8877 15.3417 21.013 15.1187 21.2359C14.8958 21.4589 14.7705 21.7613 14.7705 22.0766C14.7705 22.3919 14.8958 22.6943 15.1187 22.9173C15.3417 23.1403 15.6441 23.2655 15.9594 23.2655Z"
+                          fill="#313131"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid gap-4 grid-cols-12">
+              <div class="col-span-12 xl:col-span-8">
+                <div class="flex flex-col justify-between h-full">
+                  <div class="card shadow border border-rkLight">
+                    <div class="card-body p-4">
+                      <div class="grid grid-cols-1 gap-4 xl:grid-cols-2">
+                        <div>
+                          <div class="text-sm font-bold text-rkBlack">
+                            Trip Request
+                          </div>
+                          <div class="card border border-rkLight mt-4">
+                            <div class="card-body p-4">
+                              <div class="flex gap-3 justify-between flex-wrap">
+                                <div>
+                                  <div class="text-sm text-orange">
+                                    On Processing
+                                  </div>
+                                  <div class="text-sm text-rkBlack font-semibold">
+                                    Lokesh - Travel Desk
+                                  </div>
+                                </div>
+                                <div>
+                                  <div class="text-sm text-rkGray">Date</div>
+                                  <div class="text-sm text-rkBlack font-semibold">
+                                    11 July, 2024
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="divider my-1"></div>
+                              <div class="flex gap-3 justify-between flex-wrap">
+                                <div>
+                                  <div class="text-sm text-rkGray">From</div>
+                                  <div class="text-sm text-rkBlack font-semibold">
+                                    Coimbatore Junction
+                                  </div>
+                                  <div class="mt-2">
+                                    <div
+                                      class="p-3 font-semibold text-orange text-xs text-center bg-white hover:bg-white rounded-lg border border-[#D9D9D9]"
+                                    >
+                                      Pending Approved
+                                    </div>
+                                  </div>
+                                </div>
+                                <div>
+                                  <div class="text-sm text-rkGray">To</div>
+                                  <div class="text-sm text-rkBlack font-semibold">
+                                    Chennai Central
+                                  </div>
+                                  <div class="mt-2">
+                                    <a
+                                      href="TRIP-00001.html"
+                                      class="p-3 block font-semibold text-rkBlack text-xs cursor-pointer text-center hover:text-white hover:bg-orange rounded-lg border border-[#D9D9D9]"
+                                    >
+                                      Details
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+  
+                        <div>
+                          <div class="text-sm font-bold text-rkBlack">
+                            Unreported Advances
+                          </div>
+                          <div class="card border border-rkLight mt-4">
+                            <div class="card-body p-4">
+                              <div class="flex gap-3 justify-between flex-wrap">
+                                <div>
+                                  <div class="text-sm text-rkGray">Amount</div>
+                                  <div class="text-sm text-orange font-bold">
+                                    ₹1,000.00
+                                  </div>
+                                </div>
+                                <div>
+                                  <div class="text-sm text-rkGray">Date</div>
+                                  <div class="text-sm text-rkBlack font-semibold">
+                                    11 July, 2024
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="divider my-1"></div>
+                              <div class="flex gap-3 justify-between flex-wrap">
+                                <div>
+                                  <div class="text-sm text-rkGray">From</div>
+                                  <div class="text-sm text-rkBlack font-semibold">
+                                    Coimbatore Junction
+                                  </div>
+                                  <div class="mt-2">
+                                    <div
+                                      class="p-3 text-orange font-semibold text-xs text-center bg-white hover:bg-white rounded-lg border border-[#D9D9D9]"
+                                    >
+                                      Pending Approved
+                                    </div>
+                                  </div>
+                                </div>
+                                <div>
+                                  <div class="text-sm text-rkGray">To</div>
+                                  <div class="text-sm text-rkBlack font-semibold">
+                                    Chennai Central
+                                  </div>
+                                  <div class="mt-2">
+                                    <a
+                                      href="#"
+                                      class="p-3 block font-semibold text-rkBlack text-xs cursor-pointer text-center hover:text-white hover:bg-orange rounded-lg border border-[#D9D9D9]"
+                                    >
+                                      Details
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="card shadow border mt-8 border-rkLight h-full flex-1">
+                    <div class="card-body flex flex-col gap-4">
+                      <div class="flex justify-between items-center gap-3">
+                        <div class="text-lg font-semibold">
+                          Recent Trips
+                        </div>
+                        <div>
+                          <div>
+                            <a href="all-trips.html" class="flex items-center text-sm text-orange">
+                              <span>View all Trips</span>
+                              <span>
+                                <svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
+                                
+                              </span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flex-grow">
+                        <div class="overflow-x-auto">
+                          <table class="table text-xs" id="recent-trips">
+                            <thead>
+                              <th class="text-rkBlack">Trip ID</th>
+                              <th class="text-rkBlack">Date</th>
+                              <th class="text-rkBlack">Purpose of Trip</th>
+                              <th class="text-rkBlack">Type</th>
+                              <th class="text-rkBlack">Status</th>
+                            </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Trip-00014</td>
+                                  <td>11-July-2024</td>
+                                  <td>Showroom visit</td>
+                                  <td class="text-green-500">Single Trip</td>
+                                  <td class="text-orange">Pending</td>
+                                </tr>
+                                <tr>
+                                  <td>Trip-00014</td>
+                                  <td>11-July-2024</td>
+                                  <td>Showroom visit</td>
+                                  <td class="text-green-500">Single Trip</td>
+                                  <td class="text-orange">Pending</td>
+                                </tr>
+                                <tr>
+                                  <td>Trip-00014</td>
+                                  <td>11-July-2024</td>
+                                  <td>Showroom visit</td>
+                                  <td class="text-green-500">Single Trip</td>
+                                  <td class="text-orange">Pending</td>
+                                </tr>
+                                <tr>
+                                  <td>Trip-00014</td>
+                                  <td>11-July-2024</td>
+                                  <td>Showroom visit</td>
+                                  <td class="text-green-500">Single Trip</td>
+                                  <td class="text-orange">Pending</td>
+                                </tr>
+                                <tr>
+                                  <td>Trip-00014</td>
+                                  <td>11-July-2024</td>
+                                  <td>Showroom visit</td>
+                                  <td class="text-green-500">Single Trip</td>
+                                  <td class="text-orange">Pending</td>
+                                </tr> <tr>
+                                  <td>Trip-00014</td>
+                                  <td>11-July-2024</td>
+                                  <td>Showroom visit</td>
+                                  <td class="text-green-500">Single Trip</td>
+                                  <td class="text-orange">Pending</td>
+                                </tr> <tr>
+                                  <td>Trip-00014</td>
+                                  <td>11-July-2024</td>
+                                  <td>Showroom visit</td>
+                                  <td class="text-green-500">Single Trip</td>
+                                  <td class="text-orange">Pending</td>
+                                </tr> <tr>
+                                  <td>Trip-00014</td>
+                                  <td>11-July-2024</td>
+                                  <td>Showroom visit</td>
+                                  <td class="text-green-500">Single Trip</td>
+                                  <td class="text-orange">Pending</td>
+                                </tr> <tr>
+                                  <td>Trip-00014</td>
+                                  <td>11-July-2024</td>
+                                  <td>Showroom visit</td>
+                                  <td class="text-green-500">Single Trip</td>
+                                  <td class="text-orange">Pending</td>
+                                </tr> <tr>
+                                  <td>Trip-00014</td>
+                                  <td>11-July-2024</td>
+                                  <td>Showroom visit</td>
+                                  <td class="text-green-500">Single Trip</td>
+                                  <td class="text-orange">Pending</td>
+                                </tr> <tr>
+                                  <td>Trip-00014</td>
+                                  <td>11-July-2024</td>
+                                  <td>Showroom visit</td>
+                                  <td class="text-green-500">Single Trip</td>
+                                  <td class="text-orange">Pending</td>
+                                </tr> <tr>
+                                  <td>Trip-00014</td>
+                                  <td>11-July-2024</td>
+                                  <td>Showroom visit</td>
+                                  <td class="text-green-500">Single Trip</td>
+                                  <td class="text-orange">Pending</td>
+                                </tr> <tr>
+                                  <td>Trip-00014</td>
+                                  <td>11-July-2024</td>
+                                  <td>Showroom visit</td>
+                                  <td class="text-green-500">Single Trip</td>
+                                  <td class="text-orange">Pending</td>
+                                </tr> <tr>
+                                  <td>Trip-00014</td>
+                                  <td>11-July-2024</td>
+                                  <td>Showroom visit</td>
+                                  <td class="text-green-500">Single Trip</td>
+                                  <td class="text-orange">Pending</td>
+                                </tr>
+                              </tbody>
+                          </table>
+                        </div>
+                        
+
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-span-12 xl:col-span-4">
+                <div class="card shadow border border-rkLight h-full">
+                  <div class="card-body p-4">
+                    <div class="text-sm font-bold text-rkBlack">
+                      Employee Slab - 3A
+                    </div>
+
+                    <div class="card mb-2">
+                      <div class="card-body">
+                        <div
+                          class="flex gap-1 items-center text-sm text-rkBlack font-semibold"
+                        >
+                          <span>
+                            <svg
+                              width="15"
+                              height="13"
+                              viewBox="0 0 15 13"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M10.1646 1.65922C10.1646 0.741721 9.42356 0.000689335 8.50606 0.000689335L6.51107 0C5.59357 0 4.85254 0.741032 4.85254 1.65853V2.47058H4.55268V3.45909L4.85254 3.70587L5.11724 3.91749V5.91177H3.89988V3.91749L4.46444 3.45838V2.46987H3.3877V12.652H11.6467V2.47058H10.1818V1.65922L10.1646 1.65922ZM5.6115 2.47058V1.65853C5.6115 1.16428 6.01752 0.758256 6.51178 0.758256H8.48806C8.98232 0.758256 9.38834 1.16428 9.38834 1.65853V2.47058H5.6115Z"
+                                fill="#2D2D2D"
+                              />
+                              <path
+                                d="M0 3.61776V11.4887C0 12.1242 0.51148 12.6357 1.14705 12.6357H2.29411V2.4707H1.14705C0.51148 2.4707 0 2.98287 0 3.61776Z"
+                                fill="#2D2D2D"
+                              />
+                              <path
+                                d="M13.8531 2.4707H12.7061V12.6528H13.8531C14.4887 12.6528 15.0002 12.1414 15.0002 11.5058V3.61776C15.0002 2.98287 14.4887 2.4707 13.8531 2.4707Z"
+                                fill="#2D2D2D"
+                              />
+                            </svg>
+                          </span>
+                          <span>Transport Eligibility</span>
+                        </div>
+
+                        <div>
+                          <table
+                            class="table text-sm border shadow-sm border-rkLight rounded-lg"
+                          >
+                            <tr>
+                              <td class="font-semibold text-rkBlack">Air</td>
+                              <td class="text-rkGray">No</td>
+                            </tr>
+                            <tr>
+                              <td class="font-semibold text-rkBlack">Train</td>
+                              <td class="text-rkGray">2nd class sleeper</td>
+                            </tr>
+                            <tr>
+                              <td class="font-semibold text-rkBlack">Bus</td>
+                              <td class="text-rkGray">Non AC Bus</td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mb-2">
+                      <div class="card-body">
+                        <div
+                          class="flex gap-1 items-center text-sm text-rkBlack font-semibold"
+                        >
+                          <span>
+                            <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5 0.153809H1.5C1.102 0.153809 0.720501 0.311809 0.439501 0.593309C0.158001 0.874309 0 1.25581 0 1.65381C0 4.23081 0 11.0768 0 13.6538C0 14.0518 0.158001 14.4333 0.439501 14.7143C0.720501 14.9958 1.102 15.1538 1.5 15.1538C3.76 15.1538 9.24 15.1538 11.5 15.1538C11.898 15.1538 12.2795 14.9958 12.5605 14.7143C12.842 14.4333 13 14.0518 13 13.6538V1.65381C13 1.25581 12.842 0.874309 12.5605 0.593309C12.2795 0.311809 11.898 0.153809 11.5 0.153809ZM3 1.15381H1.5C1.3675 1.15381 1.24 1.20631 1.1465 1.30031C1.0525 1.39381 1 1.52131 1 1.65381V13.6538C1 13.7863 1.0525 13.9138 1.1465 14.0073C1.24 14.1013 1.3675 14.1538 1.5 14.1538H11.5C11.6325 14.1538 11.76 14.1013 11.8535 14.0073C11.9475 13.9138 12 13.7863 12 13.6538V1.65381C12 1.52131 11.9475 1.39381 11.8535 1.30031C11.76 1.20631 11.6325 1.15381 11.5 1.15381H10V1.65381C10 2.48231 9.3285 3.15381 8.5 3.15381H4.5C3.6715 3.15381 3 2.48231 3 1.65381V1.15381ZM9 1.15381V1.65381C9 1.92981 8.776 2.15381 8.5 2.15381H4.5C4.224 2.15381 4 1.92981 4 1.65381V1.15381H9Z" fill="#2D2D2D"/>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M3.50098 11.1533H9.50098C9.77698 11.1533 10.001 10.9293 10.001 10.6533C10.001 10.3773 9.77698 10.1533 9.50098 10.1533H3.50098C3.22498 10.1533 3.00098 10.3773 3.00098 10.6533C3.00098 10.9293 3.22498 11.1533 3.50098 11.1533Z" fill="#2D2D2D"/>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M3.50098 9.1543H9.50098C9.77698 9.1543 10.001 8.9303 10.001 8.6543C10.001 8.3783 9.77698 8.1543 9.50098 8.1543H3.50098C3.22498 8.1543 3.00098 8.3783 3.00098 8.6543C3.00098 8.9303 3.22498 9.1543 3.50098 9.1543Z" fill="#2D2D2D"/>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M3.50098 7.15332H9.50098C9.77698 7.15332 10.001 6.92932 10.001 6.65332C10.001 6.37732 9.77698 6.15332 9.50098 6.15332H3.50098C3.22498 6.15332 3.00098 6.37732 3.00098 6.65332C3.00098 6.92932 3.22498 7.15332 3.50098 7.15332Z" fill="#2D2D2D"/>
+                              </svg>
+                              
+                          </span>
+                          <span>Transport Expenses</span>
+                        </div>
+
+                        <div>
+                          <table
+                            class="table text-sm border shadow-sm border-rkLight rounded-lg"
+                          >
+                            <tr>
+                              <td class="font-semibold text-rkBlack">A+</td>
+                              <td class="text-rkGray">₹550.00</td>
+                            </tr>
+                            <tr>
+                              <td class="font-semibold text-rkBlack">A</td>
+                              <td class="text-rkGray">₹500.00</td>
+                            </tr>
+                            <tr>
+                              <td class="font-semibold text-rkBlack">B</td>
+                              <td class="text-rkGray">₹450.00</td>
+                            </tr>
+                            <tr>
+                              <td class="font-semibold text-rkBlack">C</td>
+                              <td class="text-rkGray">₹400.00</td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mb-2">
+                      <div class="card-body">
+                        <div
+                          class="flex gap-1 items-center text-sm text-rkBlack font-semibold"
+                        >
+                          <span>
+                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M17.1083 13.0063H15.9827V11.0458C16.8833 10.6705 17.1387 9.17571 17.1387 8.32501C17.1387 7.42856 16.7989 5.53062 15.6182 5.53062C14.4374 5.53062 14.0979 7.42856 14.0979 8.32501C14.0979 9.17571 14.3532 10.6707 15.2538 11.0458V13.0063H13.6425C13.6425 9.34006 13.6425 5.67382 13.6425 2.00735C13.6425 0.902653 12.7399 0 11.6352 0H5.50394C4.39924 0 3.49659 0.902653 3.49659 2.00735C3.49659 5.67382 3.49659 9.34006 3.49659 13.0063H1.88551V11.0458C2.78586 10.6705 3.04123 9.17571 3.04123 8.32501C3.04123 7.42856 2.70174 5.53062 1.52096 5.53062C0.339943 5.53062 0.000442505 7.42856 0.000442505 8.32501C0.000442505 9.17571 0.255814 10.6707 1.1564 11.0458V13.0063H0.0307827V13.7354C5.72345 13.7386 11.4157 13.7354 17.1083 13.7354V13.0063ZM12.9136 7.51315H11.5209V6.63164H12.9136V7.51315ZM10.7918 7.51315H8.93411V6.63164H10.7918V7.51315ZM8.205 7.51315H6.32269V6.63164H8.205V7.51315ZM5.59381 7.51315H4.22546V6.63164H5.59381V7.51315ZM4.22546 8.24226H12.9136V13.0063H10.0666V9.18169C9.06858 9.18169 8.07053 9.18169 7.07249 9.18169V13.0063H4.22546V8.24226ZM12.9136 5.90276H11.5209V5.02125H12.9136V5.90276ZM10.7918 5.90276H8.93411V5.02125H10.7918V5.90276ZM8.205 5.90276H6.32269V5.02125H8.205V5.90276ZM5.59381 5.90276H4.22546V5.02125H5.59381V5.90276ZM12.9136 4.29214H11.5209V3.22882H12.9136V4.29214ZM10.7918 4.29214H8.93411V3.22882H10.7918V4.29214ZM8.205 4.29214H6.32269V3.22882H8.205V4.29214ZM5.59381 4.29214H4.22546V3.22882H5.59381V4.29214ZM7.8016 9.91057H9.33774V13.0063H7.8016V9.91057ZM1.88551 9.77909C1.88551 9.29961 1.1564 9.29961 1.1564 9.77909V10.111C0.835285 9.62508 0.729551 8.89253 0.729551 8.32501C0.729551 7.92069 0.922865 6.2595 1.52096 6.2595C2.11905 6.2595 2.31236 7.92069 2.31236 8.32501C2.31236 8.89299 2.20662 9.62463 1.88551 10.111V9.77909ZM15.9827 9.77909C15.9827 9.29961 15.2538 9.29961 15.2538 9.77909V10.111C14.9327 9.62508 14.8268 8.89253 14.8268 8.32501C14.8268 7.92069 15.0201 6.2595 15.6182 6.2595C16.2163 6.2595 16.4096 7.92069 16.4096 8.32501C16.4096 8.89299 16.3038 9.62463 15.9827 10.111V9.77909ZM12.9136 2.49994H4.22546V2.00735C4.22546 1.30491 4.80149 0.72888 5.50394 0.72888H11.6352C12.3376 0.72888 12.9136 1.30491 12.9136 2.00735V2.49994Z" fill="#2D2D2D"/>
+                              </svg>
+                              
+                          </span>
+                          <span>Lodging Expenses</span>
+                        </div>
+
+                        <div>
+                          <table
+                            class="table text-sm border shadow-sm border-rkLight rounded-lg"
+                          >
+                            <tr>
+                              <td class="font-semibold text-rkBlack">A+</td>
+                              <td class="text-rkGray">1600</td>
+                            </tr>
+                            <tr>
+                              <td class="font-semibold text-rkBlack">A</td>
+                              <td class="text-rkGray">1400</td>
+                            </tr>
+                            <tr>
+                              <td class="font-semibold text-rkBlack">B</td>
+                              <td class="text-rkGray">1200</td>
+                            </tr>
+                            <tr>
+                              <td class="font-semibold text-rkBlack">C</td>
+                              <td class="text-rkGray">1050</td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card">
+                      <div class="card-body">
+                        <div
+                          class="flex gap-1 items-center text-sm text-rkBlack font-semibold"
+                        >
+                          <span>
+                            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5.19385 5.71412C5.24826 5.75968 5.31775 5.7832 5.38864 5.78007C5.45953 5.77693 5.52668 5.74737 5.57686 5.69719C5.62703 5.64701 5.6566 5.57987 5.65973 5.50897C5.66287 5.43808 5.63934 5.36859 5.59379 5.31418C5.45585 5.17541 5.37842 4.9877 5.37842 4.79203C5.37842 4.59637 5.45585 4.40866 5.59379 4.26989C5.83862 4.02498 5.97616 3.69286 5.97616 3.34657C5.97616 3.00027 5.83862 2.66815 5.59379 2.42324C5.56762 2.39682 5.53647 2.37584 5.50215 2.36153C5.46783 2.34721 5.43101 2.33984 5.39382 2.33984C5.35663 2.33984 5.31981 2.34721 5.28549 2.36153C5.25116 2.37584 5.22002 2.39682 5.19385 2.42324C5.16735 2.44962 5.14632 2.48098 5.13197 2.51551C5.11763 2.55003 5.11024 2.58706 5.11024 2.62445C5.11024 2.66184 5.11763 2.69886 5.13197 2.73339C5.14632 2.76792 5.16735 2.79927 5.19385 2.82565C5.33104 2.96432 5.40799 3.1515 5.40799 3.34657C5.40799 3.54163 5.33104 3.72882 5.19385 3.86748C4.94962 4.1127 4.8125 4.4447 4.8125 4.7908C4.8125 5.1369 4.94962 5.4689 5.19385 5.71412Z" fill="#2D2D2D"/>
+                              <path d="M11.4282 5.71412C11.4826 5.75968 11.5521 5.7832 11.623 5.78007C11.6939 5.77693 11.7611 5.74737 11.8112 5.69719C11.8614 5.64701 11.891 5.57987 11.8941 5.50897C11.8972 5.43808 11.8737 5.36859 11.8282 5.31418C11.6902 5.17541 11.6128 4.9877 11.6128 4.79203C11.6128 4.59637 11.6902 4.40866 11.8282 4.26989C12.073 4.02498 12.2105 3.69286 12.2105 3.34657C12.2105 3.00027 12.073 2.66815 11.8282 2.42324C11.802 2.39682 11.7708 2.37584 11.7365 2.36153C11.7022 2.34721 11.6654 2.33984 11.6282 2.33984C11.591 2.33984 11.5542 2.34721 11.5199 2.36153C11.4855 2.37584 11.4544 2.39682 11.4282 2.42324C11.4017 2.44962 11.3807 2.48098 11.3663 2.51551C11.352 2.55003 11.3446 2.58706 11.3446 2.62445C11.3446 2.66184 11.352 2.69886 11.3663 2.73339C11.3807 2.76792 11.4017 2.79927 11.4282 2.82565C11.5654 2.96432 11.6424 3.1515 11.6424 3.34657C11.6424 3.54163 11.5654 3.72882 11.4282 3.86748C11.184 4.1127 11.0469 4.4447 11.0469 4.7908C11.0469 5.1369 11.184 5.4689 11.4282 5.71412Z" fill="#2D2D2D"/>
+                              <path d="M8.3118 4.01704C8.33764 4.04524 8.36892 4.06793 8.40375 4.08375C8.43858 4.09956 8.47625 4.10817 8.51449 4.10907C8.55273 4.10996 8.59076 4.10312 8.62629 4.08894C8.66182 4.07477 8.69412 4.05357 8.72125 4.0266C8.74839 3.99964 8.76979 3.96747 8.78418 3.93203C8.79857 3.89658 8.80565 3.8586 8.80499 3.82035C8.80433 3.7821 8.79595 3.74438 8.78035 3.70946C8.76475 3.67453 8.74225 3.64311 8.71421 3.6171C8.57627 3.47833 8.49884 3.29061 8.49884 3.09495C8.49884 2.89929 8.57627 2.71157 8.71421 2.5728C8.83536 2.45175 8.93147 2.308 8.99704 2.14979C9.06261 1.99157 9.09636 1.82198 9.09636 1.65072C9.09636 1.47945 9.06261 1.30986 8.99704 1.15164C8.93147 0.993427 8.83536 0.849683 8.71421 0.728627C8.68783 0.702128 8.65647 0.681101 8.62195 0.666754C8.58742 0.652406 8.55039 0.64502 8.513 0.64502C8.47561 0.64502 8.43859 0.652406 8.40406 0.666754C8.36953 0.681101 8.33818 0.702128 8.3118 0.728627C8.28537 0.754796 8.2644 0.785942 8.25008 0.820265C8.23577 0.854589 8.2284 0.891409 8.2284 0.928598C8.2284 0.965787 8.23577 1.00261 8.25008 1.03693C8.2644 1.07125 8.28537 1.1024 8.3118 1.12857C8.38107 1.1964 8.436 1.27747 8.47333 1.36696C8.51065 1.45645 8.5296 1.55252 8.52905 1.64948C8.52888 1.84584 8.45073 2.0341 8.3118 2.17286C8.06772 2.41767 7.93066 2.74926 7.93066 3.09495C7.93066 3.44064 8.06772 3.77223 8.3118 4.01704Z" fill="#2D2D2D"/>
+                              <path d="M7.17527 7.92677C7.19578 7.92919 7.21649 7.92919 7.23699 7.92677C7.64869 7.83476 8.06928 7.7884 8.49113 7.78852C8.56643 7.78852 8.63864 7.75861 8.69188 7.70537C8.74513 7.65212 8.77504 7.57991 8.77504 7.50461C8.77504 7.42932 8.74513 7.3571 8.69188 7.30386C8.63864 7.25061 8.56643 7.2207 8.49113 7.2207C8.02851 7.22062 7.56731 7.27196 7.11602 7.37377C7.04837 7.38952 6.98884 7.42952 6.9487 7.4862C6.90856 7.54289 6.89059 7.61232 6.89819 7.68136C6.9058 7.7504 6.93844 7.81426 6.98996 7.86085C7.04148 7.90744 7.10829 7.93353 7.17774 7.93418L7.17527 7.92677Z" fill="#2D2D2D"/>
+                              <path d="M2.77817 12.5937C2.79536 12.5961 2.81282 12.5961 2.83001 12.5937C2.89599 12.5936 2.95983 12.5702 3.01037 12.5278C3.06091 12.4854 3.09494 12.4266 3.10651 12.3616C3.24627 11.5749 3.5505 10.8265 3.99932 10.1654C4.44814 9.50429 5.03143 8.94536 5.71107 8.52514C5.77552 8.48617 5.82202 8.42338 5.8405 8.35038C5.85898 8.27737 5.84796 8.20002 5.80983 8.13508C5.77132 8.07081 5.70897 8.02436 5.63637 8.00586C5.56376 7.98736 5.48679 7.99831 5.42223 8.03633C4.67216 8.49853 4.0285 9.11436 3.53362 9.84328C3.03874 10.5722 2.70387 11.3977 2.55104 12.2653C2.54393 12.3019 2.5442 12.3394 2.55182 12.3758C2.55945 12.4122 2.57428 12.4468 2.59544 12.4774C2.6166 12.508 2.64367 12.534 2.67505 12.554C2.70643 12.574 2.74149 12.5875 2.77817 12.5937Z" fill="#2D2D2D"/>
+                              <path d="M15.7557 12.2082C15.5012 10.7339 14.8051 9.37168 13.7594 8.30175C12.7137 7.23183 11.3678 6.50464 9.8998 6.21644C9.90223 6.17121 9.90223 6.12588 9.8998 6.08065C9.8998 5.70482 9.7505 5.34438 9.48474 5.07863C9.21899 4.81287 8.85855 4.66357 8.48272 4.66357C8.10689 4.66357 7.74645 4.81287 7.48069 5.07863C7.21494 5.34438 7.06564 5.70482 7.06564 6.08065C7.0632 6.12588 7.0632 6.17121 7.06564 6.21644C5.60213 6.50912 4.26161 7.23828 3.22068 8.30785C2.17975 9.37743 1.48725 10.7372 1.23439 12.2082C0.641882 12.5439 0 13.0377 0 13.5907C0 15.03 4.39442 15.9977 8.5 15.9977C12.6056 15.9977 17 15.03 17 13.5907C16.9951 13.0377 16.3482 12.5439 15.7557 12.2082ZM8.49506 5.23139C8.7203 5.23139 8.93631 5.32087 9.09558 5.48014C9.25485 5.6394 9.34432 5.85542 9.34432 6.08065V6.13003H9.30482C9.20607 6.13003 9.10732 6.11028 9.00857 6.10287H8.89994C8.76663 6.10287 8.63084 6.10287 8.49506 6.10287C8.35928 6.10287 8.2235 6.10287 8.09018 6.10287H7.98156C7.88281 6.10287 7.78405 6.11768 7.68777 6.13003H7.6458V6.08065C7.6458 5.85542 7.73528 5.6394 7.89455 5.48014C8.05381 5.32087 8.26982 5.23139 8.49506 5.23139ZM1.72074 12.8476C1.72074 12.8179 1.72074 12.7859 1.72074 12.7538C1.72074 12.6624 1.74049 12.5711 1.7553 12.4822C1.96644 11.0372 2.63638 9.69837 3.6663 8.66312C4.69623 7.62786 6.0316 6.95101 7.47546 6.73241C7.62605 6.71019 7.77912 6.69291 7.93218 6.68057H8.02846C8.33922 6.66082 8.65091 6.66082 8.96166 6.68057H9.05794C9.21101 6.69291 9.36407 6.71019 9.51467 6.73241C10.9566 6.95332 12.2895 7.63115 13.3174 8.66618C14.3454 9.70121 15.014 11.0388 15.2249 12.4822C15.2398 12.5711 15.2496 12.6624 15.2595 12.7538C15.2595 12.7859 15.2595 12.8179 15.2595 12.8476C15.2595 12.9735 15.2793 13.0944 15.2817 13.2253C10.8095 14.2573 6.16091 14.2573 1.68864 13.2253C1.70016 13.1002 1.71086 12.9743 1.72074 12.8476ZM8.49506 15.4324C3.65132 15.4324 0.560413 14.2227 0.560413 13.5907C0.560413 13.482 0.696195 13.2426 1.14551 12.9315C1.14674 12.9471 1.14674 12.9628 1.14551 12.9784C1.14551 13.1339 1.1307 13.2895 1.1307 13.4475V13.6721L1.34795 13.724C3.69312 14.2846 6.09615 14.5672 8.50741 14.5658C10.9187 14.5672 13.3217 14.2846 15.6669 13.724L15.8841 13.6721V13.4475C15.8841 13.2895 15.8841 13.1339 15.8668 12.9784V12.9315C16.3161 13.2426 16.4519 13.482 16.4519 13.5907C16.4297 14.2227 13.3388 15.4324 8.49506 15.4324Z" fill="#2D2D2D"/>
+                              </svg>
+                              
+                              
+                          </span>
+                          <span>Food Expenses</span>
+                        </div>
+
+                        <div>
+                          <table
+                            class="table text-sm border shadow-sm border-rkLight rounded-lg"
+                          >
+                            <tr>
+                              <td class="font-semibold text-rkBlack">Breakfast</td>
+                              <td class="text-rkGray">100</td>
+                            </tr>
+                            <tr>
+                              <td class="font-semibold text-rkBlack">Lunch</td>
+                              <td class="text-rkGray">110</td>
+                            </tr>
+                            <tr>
+                              <td class="font-semibold text-rkBlack">Dinner</td>
+                              <td class="text-rkGray">110</td>
+                            </tr>
+                            <tr>
+                              <td class="font-semibold text-rkBlack">Snacks</td>
+                              <td class="text-rkGray">60</td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            
+
+<!-- Modal toggle -->
+<button data-modal-target="default-modal" data-modal-toggle="default-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+    Toggle modal
+  </button>
+  
+  <!-- Main modal -->
+  <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+      <div class="relative p-4 w-full max-w-2xl max-h-full">
+          <!-- Modal content -->
+          <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+              <!-- Modal header -->
+              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                  <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                      Terms of Service
+                  </h3>
+                  <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                      </svg>
+                      <span class="sr-only">Close modal</span>
+                  </button>
+              </div>
+              <!-- Modal body -->
+              <div class="p-4 md:p-5 space-y-4">
+                  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                      With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                  </p>
+                  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                      The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+                  </p>
+              </div>
+              <!-- Modal footer -->
+              <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                  <button data-modal-hide="default-modal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">I accept</button>
+                  <button data-modal-hide="default-modal" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Decline</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+
+
+          </div>
+        </main>
+        <footer class="bg-[#F1F2F6]">
+          <div class="text-xs text-center py-1">
+            Emerald © <span id="current-year"></span> All Rights Reserved.
+            Developed by BBIT
+          </div>
+        </footer>
+      </div>
+    </div>
+
+
+
+    
+    <script
+     src="../assets/js/alpine.min.js"
+    ></script>
+    <script src="../assets/js/flowbite.min.js"></script>
+    <script src="../assets/js/simple-datatables.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+
+
+  <script>
+      if (document.getElementById("recent-trips") && typeof simpleDatatables.DataTable !== 'undefined') {
+            const dataTable = new simpleDatatables.DataTable("#recent-trips", {
+                searchable: false,
+                perPageSelect: false
+            });
+        }
+    </script>
+  </body>
+</html>
