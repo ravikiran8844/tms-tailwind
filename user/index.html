@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,14 +11,14 @@
       <div
         :class="sidebarOpen ? 'block' : 'hidden'"
         @click="sidebarOpen = false"
-        class="fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden"
+        class="fixed inset-0 z-20 bg-black opacity-50 transition-opacity lg:hidden"
       ></div>
 
       <div
         :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
-        class="fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 transform bg-[#F1F2F6] lg:translate-x-0 lg:static lg:inset-0"
+        class="fixed inset-y-0 left-0 z-30 w-64 transform overflow-y-auto bg-[#F1F2F6] transition duration-300 lg:static lg:inset-0 lg:translate-x-0"
       >
-        <div class="flex items-center justify-center mt-8">
+        <div class="mt-8 flex items-center justify-center">
           <div>
             <a href="/user">
               <img
@@ -32,11 +32,11 @@
         </div>
         <div class="divider"></div>
 
-        <nav class="mt-4 min-h-[70%] flex gap-5 justify-between flex-col">
+        <nav class="mt-4 flex min-h-[70%] flex-col justify-between gap-5">
           <div class="px-1">
             <div>
               <a
-                class="flex items-center px-4 mb-1 py-2 text-sm font-medium rounded text-rkGray hover:text-orange"
+                class="mb-1 flex items-center rounded px-4 py-2 text-sm font-medium text-rkGray hover:text-orange"
                 href="/user/index.html"
               >
                 <svg
@@ -71,7 +71,7 @@
                     <div id="main-menu-dropdown-1">
                       <button
                         type="button"
-                        class="flex px-2 items-center justify-between w-full py-2 text-sm text-rkGray rtl:text-right gap-3"
+                        class="flex w-full items-center justify-between gap-3 px-2 py-2 text-sm text-rkGray rtl:text-right"
                         data-accordion-target="#main-menu-dropdown-body-1"
                         aria-expanded="false"
                         aria-controls="main-menu-dropdown-body-1"
@@ -96,7 +96,7 @@
                         </div>
                         <svg
                           data-accordion-icon
-                          class="w-3 h-3 rotate-180 shrink-0"
+                          class="h-3 w-3 shrink-0 rotate-180"
                           aria-hidden="true"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -120,7 +120,7 @@
                       <ul class="bg-[#EAEAEA] p-2">
                         <li>
                           <a
-                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
                             href="/user/add-new-trip.html"
                           >
                             <svg
@@ -140,7 +140,7 @@
                         </li>
                         <li>
                           <a
-                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
                             href="/user/unplanned-trip.html"
                           >
                             <span class="mx-2 ps-6">Unplanned Trip</span>
@@ -148,7 +148,7 @@
                         </li>
                         <li>
                           <a
-                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
                             href="/user/pending-trips.html"
                           >
                             <span class="mx-2 ps-6">Pending Trips</span>
@@ -156,7 +156,7 @@
                         </li>
                         <li>
                           <a
-                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
                             href="/user/all-trips.html"
                           >
                             <span class="mx-2 ps-6">All Trips</span>
@@ -169,7 +169,7 @@
                     <div id="main-menu-dropdown-2">
                       <button
                         type="button"
-                        class="flex px-2 items-center justify-between w-full py-2 text-sm text-rkGray rtl:text-right gap-3"
+                        class="flex w-full items-center justify-between gap-3 px-2 py-2 text-sm text-rkGray rtl:text-right"
                         data-accordion-target="#main-menu-dropdown-body-2"
                         aria-expanded="false"
                         aria-controls="main-menu-dropdown-body-2"
@@ -194,7 +194,7 @@
                         </div>
                         <svg
                           data-accordion-icon
-                          class="w-3 h-3 rotate-180 shrink-0"
+                          class="h-3 w-3 shrink-0 rotate-180"
                           aria-hidden="true"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -218,7 +218,7 @@
                       <ul class="bg-[#EAEAEA] p-2">
                         <li>
                           <a
-                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
                             href="/user/add-new-expenses.html"
                           >
                             <svg
@@ -238,7 +238,7 @@
                         </li>
                         <li>
                           <a
-                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
                             href="/user/add-new-advances.html"
                           >
                             <svg
@@ -258,7 +258,7 @@
                         </li>
                         <li>
                           <a
-                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
                             href="/user/pending-request.html"
                           >
                             <span class="mx-2 ps-6">Pending Request</span>
@@ -266,13 +266,12 @@
                         </li>
                         <li>
                           <a
-                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
                             href="/user/all-request.html"
                           >
                             <span class="mx-2 ps-6">All Request</span>
                           </a>
                         </li>
-                      
                       </ul>
                     </div>
                   </li>
@@ -282,13 +281,26 @@
           </div>
           <div class="px-4">
             <a
-              class="flex items-center font-medium text-sm py-1 px-2 rounded text-rkGray hover:text-orange"
+              class="flex items-center rounded px-2 py-1 text-sm font-medium text-rkGray hover:text-orange"
               href="#"
             >
-            <svg class="w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"/>
-            </svg>
-            
+              <svg
+                class="h-[24px] w-[24px]"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.4"
+                  d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"
+                />
+              </svg>
 
               <span class="mx-2">Logout</span>
             </a>
@@ -296,9 +308,9 @@
         </nav>
       </div>
 
-      <div class="flex flex-col flex-1 overflow-hidden">
+      <div class="flex flex-1 flex-col overflow-hidden">
         <header
-          class="flex items-center justify-between px-6 py-4 bg-[#F1F2F6] border-b-1 border-[#ECECEC]"
+          class="border-b-1 flex items-center justify-between border-[#ECECEC] bg-[#F1F2F6] px-6 py-4"
         >
           <div class="flex items-center">
             <button
@@ -306,7 +318,7 @@
               class="text-gray-500 focus:outline-none lg:hidden"
             >
               <svg
-                class="w-6 h-6"
+                class="h-6 w-6"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -321,19 +333,19 @@
               </svg>
             </button>
 
-            <div class="hidden sm:block relative mx-4 lg:mx-0">
-              <h3 class="text-md md:text-xl font-semibold text-gray-700">
+            <div class="relative mx-4 hidden sm:block lg:mx-0">
+              <h3 class="text-md font-semibold text-gray-700 md:text-xl">
                 Dashboard
               </h3>
             </div>
           </div>
 
-          <div class="flex items-center notifications">
+          <div class="notifications flex items-center">
             <div x-data="{ messageOpen: false }">
               <div class="relative">
                 <button
                   @click="messageOpen = ! messageOpen"
-                  class="flex text-gray-600 mx-4 focus:outline-none hover:text-orange focus:text-orange"
+                  class="mx-4 flex text-gray-600 hover:text-orange focus:text-orange focus:outline-none"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -351,7 +363,7 @@
                   </svg>
                 </button>
                 <div
-                  class="absolute bg-red-600 text-white badge rounded-full -top-3 end-0 text-center text-xs"
+                  class="badge absolute -top-3 end-0 rounded-full bg-red-600 text-center text-xs text-white"
                 >
                   1
                 </div>
@@ -360,39 +372,39 @@
               <div
                 x-show="messageOpen"
                 @click="messageOpen = false"
-                class="fixed inset-0 z-10 w-full h-full"
+                class="fixed inset-0 z-10 h-full w-full"
                 style="display: none"
               ></div>
 
               <div
                 x-show="messageOpen"
-                class="absolute right-2 z-10 mt-2 overflow-hidden bg-white rounded-lg shadow-xl w-80"
+                class="absolute right-2 z-10 mt-2 w-80 overflow-hidden rounded-lg bg-white shadow-xl"
                 style="display: none"
               >
-                <div class="py-4 px-3 flex justify-between items-center gap-2">
-                  <div class="text-black text-base font-bold">Messages</div>
+                <div class="flex items-center justify-between gap-2 px-3 py-4">
+                  <div class="text-base font-bold text-black">Messages</div>
                   <div>
-                    <button class="text-orange text-sm">
+                    <button class="text-sm text-orange">
                       Mark all as read
                     </button>
                   </div>
                 </div>
 
                 <div
-                  class="mt-2 border-t-2 border-t-[#D9D9D9] shadow overflow-auto h-80"
+                  class="mt-2 h-80 overflow-auto border-t-2 border-t-[#D9D9D9] shadow"
                 >
-                  <a href="#" class="flex items-start p-3 text-rkBlac active">
+                  <a href="#" class="text-rkBlac active flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -402,18 +414,18 @@
                     </div>
                   </a>
 
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -423,18 +435,18 @@
                     </div>
                   </a>
 
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -443,18 +455,18 @@
                       </div>
                     </div>
                   </a>
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -471,7 +483,7 @@
               <div class="relative">
                 <button
                   @click="notificationOpen = ! notificationOpen"
-                  class="flex text-gray-600 focus:outline-none hover:text-orange focus:text-orange"
+                  class="flex text-gray-600 hover:text-orange focus:text-orange focus:outline-none"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -489,7 +501,7 @@
                   </svg>
                 </button>
                 <div
-                  class="absolute bg-red-600 text-white badge rounded-full -top-3 -end-3 text-center text-xs"
+                  class="badge absolute -end-3 -top-3 rounded-full bg-red-600 text-center text-xs text-white"
                 >
                   1
                 </div>
@@ -497,21 +509,21 @@
               <div
                 x-show="notificationOpen"
                 @click="notificationOpen = false"
-                class="fixed inset-0 z-10 w-full h-full"
+                class="fixed inset-0 z-10 h-full w-full"
                 style="display: none"
               ></div>
 
               <div
                 x-show="notificationOpen"
-                class="absolute right-2 z-10 mt-2 overflow-hidden bg-white rounded-lg shadow-xl w-80"
+                class="absolute right-2 z-10 mt-2 w-80 overflow-hidden rounded-lg bg-white shadow-xl"
                 style="display: none"
               >
-                <div class="py-4 px-3 flex justify-between items-center gap-2">
-                  <div class="text-black text-base font-bold">
+                <div class="flex items-center justify-between gap-2 px-3 py-4">
+                  <div class="text-base font-bold text-black">
                     Notifications
                   </div>
                   <div>
-                    <button class="text-orange text-sm">
+                    <button class="text-sm text-orange">
                       Mark all as read
                     </button>
                   </div>
@@ -519,7 +531,7 @@
 
                 <div>
                   <span
-                    class="px-4 text-orange pb-2 border-b-2 text-sm border-orange"
+                    class="border-b-2 border-orange px-4 pb-2 text-sm text-orange"
                   >
                     All
                     <div class="badge bg-orange-200 text-sm font-medium">2</div>
@@ -527,20 +539,20 @@
                 </div>
 
                 <div
-                  class="mt-2 border-t-2 border-t-[#D9D9D9] shadow overflow-auto h-80"
+                  class="mt-2 h-80 overflow-auto border-t-2 border-t-[#D9D9D9] shadow"
                 >
-                  <a href="#" class="flex items-start p-3 text-rkBlack active">
+                  <a href="#" class="active flex items-start p-3 text-rkBlack">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vinoth Kumar</span>
                         wants to sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00014</span>
@@ -549,28 +561,28 @@
                       </div>
                       <div class="mt-2">
                         <button
-                          class="btn btn-sm bg-orange hover:bg-orange-600 text-white"
+                          class="btn btn-sm bg-orange text-white hover:bg-orange-600"
                         >
                           Approve
                         </button>
 
-                        <button class="btn btn-sm btn-outline">Reject</button>
+                        <button class="btn btn-outline btn-sm">Reject</button>
                       </div>
                     </div>
                   </a>
 
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -580,18 +592,18 @@
                     </div>
                   </a>
 
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -601,18 +613,18 @@
                     </div>
                   </a>
 
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -622,18 +634,18 @@
                     </div>
                   </a>
 
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -642,18 +654,18 @@
                       </div>
                     </div>
                   </a>
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -669,9 +681,9 @@
             <div class="divider divider-horizontal"></div>
 
             <div x-data="{ dropdownOpen: false }" class="relative">
-              <div class="flex gap-2 items-center">
+              <div class="flex items-center gap-2">
                 <div class="hidden md:block">
-                  <div class="font-semibold text-rkBlack text-sm">
+                  <div class="text-sm font-semibold text-rkBlack">
                     Vishnu prasath
                   </div>
                   <div class="text-xs text-rkGray">Marketing</div>
@@ -680,11 +692,11 @@
                 <div>
                   <button
                     @click="dropdownOpen = !dropdownOpen"
-                    class="flex gap-2 items-center"
+                    class="flex items-center gap-2"
                   >
                     <span>
                       <img
-                        class="object-cover size-10 rounded-full shadow focus:outline-none"
+                        class="size-10 rounded-full object-cover shadow focus:outline-none"
                         src="https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=296&amp;q=80"
                         alt="Your avatar"
                       />
@@ -693,7 +705,7 @@
                     <span>
                       <svg
                         :class="{'rotate-180': dropdownOpen}"
-                        class="w-4 h-4 transition-transform duration-200"
+                        class="h-4 w-4 transition-transform duration-200"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -714,13 +726,13 @@
               <div
                 x-show="dropdownOpen"
                 @click="dropdownOpen = false"
-                class="fixed inset-0 z-10 w-full h-full"
+                class="fixed inset-0 z-10 h-full w-full"
                 style="display: none"
               ></div>
 
               <div
                 x-show="dropdownOpen"
-                class="absolute right-0 z-10 w-48 mt-2 overflow-hidden bg-white rounded-md shadow-xl"
+                class="absolute right-0 z-10 mt-2 w-48 overflow-hidden rounded-md bg-white shadow-xl"
                 style="display: none"
               >
                 <a
@@ -728,7 +740,7 @@
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-500 hover:text-white"
                   >Profile</a
                 >
-                
+
                 <a
                   href="#"
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-500 hover:text-white"
@@ -738,19 +750,15 @@
             </div>
           </div>
         </header>
-        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-white">
-          
-          <div class="container px-6 py-8 mx-auto">
-            <div class="sm:hidden mb-6">
-              <h3 class="text-xl font-medium text-rkBlack">
-                           Dashboard
-              </h3>
+        <main class="flex-1 overflow-y-auto overflow-x-hidden bg-white">
+          <div class="container mx-auto px-6 py-8">
+            <div class="mb-6 sm:hidden">
+              <h3 class="text-xl font-medium text-rkBlack">Dashboard</h3>
             </div>
 
-
-            <div class="grid gap-4 lg:grid-cols-2 xl:grid-cols-4 mb-6">
+            <div class="mb-6 grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
               <div
-                class="card shadow border border-rkLight h-full hover:bg-[#FFEBE0]"
+                class="card h-full border border-rkLight shadow hover:bg-[#FFEBE0]"
               >
                 <div class="card-body">
                   <div class="text-sm text-rkGray">Total Trips</div>
@@ -797,13 +805,13 @@
               </div>
 
               <div
-                class="card shadow border border-rkLight h-full hover:bg-[#E4EBFE] relative"
+                class="card relative h-full border border-rkLight shadow hover:bg-[#E4EBFE]"
               >
                 <div class="card-body">
                   <div class="absolute right-2 top-2">
                     <select
                       id="small"
-                      class="block max-w-fit ps-2 p-1 text-xs text-rkBlack border border-[#E3E3E3] rounded-lg bg-transparent shadow focus:ring-orange-400 focus:border-orange-400"
+                      class="block max-w-fit rounded-lg border border-[#E3E3E3] bg-transparent p-1 ps-2 text-xs text-rkBlack shadow focus:border-orange-400 focus:ring-orange-400"
                     >
                       <option value="TD">Today</option>
                       <option value="LW">Last Week</option>
@@ -861,7 +869,7 @@
               </div>
 
               <div
-                class="card shadow border border-rkLight h-full hover:bg-[#E1F8F0]"
+                class="card h-full border border-rkLight shadow hover:bg-[#E1F8F0]"
               >
                 <div class="card-body">
                   <div class="text-sm text-rkGray">Advance in Hand</div>
@@ -894,7 +902,7 @@
               </div>
 
               <div
-                class="card shadow border border-rkLight h-full hover:bg-[#F0F5E7]"
+                class="card h-full border border-rkLight shadow hover:bg-[#F0F5E7]"
               >
                 <div class="card-body">
                   <div class="text-sm text-rkGray">Pending to be Collected</div>
@@ -959,44 +967,50 @@
               </div>
             </div>
 
-            <div class="grid gap-4 grid-cols-12">
+            <div class="grid grid-cols-12 gap-4">
               <div class="col-span-12 xl:col-span-8">
-                <div class="flex flex-col justify-between h-full">
-                  <div class="card shadow border border-rkLight">
+                <div class="flex h-full flex-col justify-between">
+                  <div class="card border border-rkLight shadow">
                     <div class="card-body p-4">
                       <div class="grid grid-cols-1 gap-4 xl:grid-cols-2">
                         <div>
                           <div class="text-sm font-bold text-rkBlack">
                             Trip Request
                           </div>
-                          <div class="card border border-rkLight mt-4">
+                          <div class="card mt-4 border border-rkLight">
                             <div class="card-body p-4">
-                              <div class="flex gap-3 justify-between flex-wrap">
+                              <div class="flex flex-wrap justify-between gap-3">
                                 <div>
                                   <div class="text-sm text-orange">
                                     On Processing
                                   </div>
-                                  <div class="text-sm text-rkBlack font-semibold">
+                                  <div
+                                    class="text-sm font-semibold text-rkBlack"
+                                  >
                                     Lokesh - Travel Desk
                                   </div>
                                 </div>
                                 <div>
                                   <div class="text-sm text-rkGray">Date</div>
-                                  <div class="text-sm text-rkBlack font-semibold">
+                                  <div
+                                    class="text-sm font-semibold text-rkBlack"
+                                  >
                                     11 July, 2024
                                   </div>
                                 </div>
                               </div>
                               <div class="divider my-1"></div>
-                              <div class="flex gap-3 justify-between flex-wrap">
+                              <div class="flex flex-wrap justify-between gap-3">
                                 <div>
                                   <div class="text-sm text-rkGray">From</div>
-                                  <div class="text-sm text-rkBlack font-semibold">
+                                  <div
+                                    class="text-sm font-semibold text-rkBlack"
+                                  >
                                     Coimbatore Junction
                                   </div>
                                   <div class="mt-2">
                                     <div
-                                      class="p-3 font-semibold text-orange text-xs text-center bg-white hover:bg-white rounded-lg border border-[#D9D9D9]"
+                                      class="rounded-lg border border-[#D9D9D9] bg-white p-3 text-center text-xs font-semibold text-orange hover:bg-white"
                                     >
                                       Pending Approved
                                     </div>
@@ -1004,13 +1018,15 @@
                                 </div>
                                 <div>
                                   <div class="text-sm text-rkGray">To</div>
-                                  <div class="text-sm text-rkBlack font-semibold">
+                                  <div
+                                    class="text-sm font-semibold text-rkBlack"
+                                  >
                                     Chennai Central
                                   </div>
                                   <div class="mt-2">
                                     <a
                                       href="TRIP-00001.html"
-                                      class="p-3 block font-semibold text-rkBlack text-xs cursor-pointer text-center hover:text-white hover:bg-orange rounded-lg border border-[#D9D9D9]"
+                                      class="block cursor-pointer rounded-lg border border-[#D9D9D9] p-3 text-center text-xs font-semibold text-rkBlack hover:bg-orange hover:text-white"
                                     >
                                       Details
                                     </a>
@@ -1020,37 +1036,41 @@
                             </div>
                           </div>
                         </div>
-  
+
                         <div>
                           <div class="text-sm font-bold text-rkBlack">
                             Unreported Advances
                           </div>
-                          <div class="card border border-rkLight mt-4">
+                          <div class="card mt-4 border border-rkLight">
                             <div class="card-body p-4">
-                              <div class="flex gap-3 justify-between flex-wrap">
+                              <div class="flex flex-wrap justify-between gap-3">
                                 <div>
                                   <div class="text-sm text-rkGray">Amount</div>
-                                  <div class="text-sm text-orange font-bold">
+                                  <div class="text-sm font-bold text-orange">
                                     ₹1,000.00
                                   </div>
                                 </div>
                                 <div>
                                   <div class="text-sm text-rkGray">Date</div>
-                                  <div class="text-sm text-rkBlack font-semibold">
+                                  <div
+                                    class="text-sm font-semibold text-rkBlack"
+                                  >
                                     11 July, 2024
                                   </div>
                                 </div>
                               </div>
                               <div class="divider my-1"></div>
-                              <div class="flex gap-3 justify-between flex-wrap">
+                              <div class="flex flex-wrap justify-between gap-3">
                                 <div>
                                   <div class="text-sm text-rkGray">From</div>
-                                  <div class="text-sm text-rkBlack font-semibold">
+                                  <div
+                                    class="text-sm font-semibold text-rkBlack"
+                                  >
                                     Coimbatore Junction
                                   </div>
                                   <div class="mt-2">
                                     <div
-                                      class="p-3 text-orange font-semibold text-xs text-center bg-white hover:bg-white rounded-lg border border-[#D9D9D9]"
+                                      class="rounded-lg border border-[#D9D9D9] bg-white p-3 text-center text-xs font-semibold text-orange hover:bg-white"
                                     >
                                       Pending Approved
                                     </div>
@@ -1058,13 +1078,15 @@
                                 </div>
                                 <div>
                                   <div class="text-sm text-rkGray">To</div>
-                                  <div class="text-sm text-rkBlack font-semibold">
+                                  <div
+                                    class="text-sm font-semibold text-rkBlack"
+                                  >
                                     Chennai Central
                                   </div>
                                   <div class="mt-2">
                                     <a
                                       href="#"
-                                      class="p-3 block font-semibold text-rkBlack text-xs cursor-pointer text-center hover:text-white hover:bg-orange rounded-lg border border-[#D9D9D9]"
+                                      class="block cursor-pointer rounded-lg border border-[#D9D9D9] p-3 text-center text-xs font-semibold text-rkBlack hover:bg-orange hover:text-white"
                                     >
                                       Details
                                     </a>
@@ -1077,22 +1099,36 @@
                       </div>
                     </div>
                   </div>
-  
-                  <div class="card shadow border mt-8 border-rkLight h-full flex-1">
+
+                  <div
+                    class="card mt-8 h-full flex-1 border border-rkLight shadow"
+                  >
                     <div class="card-body flex flex-col gap-4">
-                      <div class="flex justify-between items-center gap-3">
-                        <div class="text-lg font-semibold">
-                          Recent Trips
-                        </div>
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="text-lg font-semibold">Recent Trips</div>
                         <div>
                           <div>
-                            <a href="all-trips.html" class="flex items-center text-sm text-orange">
+                            <a
+                              href="all-trips.html"
+                              class="flex items-center text-sm text-orange"
+                            >
                               <span>View all Trips</span>
                               <span>
-                                <svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                <svg
+                                  class="size-4"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="1.5"
+                                  stroke="currentColor"
+                                  class="size-6"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                  />
                                 </svg>
-                                
                               </span>
                             </a>
                           </div>
@@ -1109,111 +1145,116 @@
                               <th class="text-rkBlack">Type</th>
                               <th class="text-rkBlack">Status</th>
                             </thead>
-                              <tbody>
-                                <tr>
-                                  <td>Trip-00014</td>
-                                  <td>11-July-2024</td>
-                                  <td>Showroom visit</td>
-                                  <td class="text-green-500">Single Trip</td>
-                                  <td class="text-orange">Pending</td>
-                                </tr>
-                                <tr>
-                                  <td>Trip-00014</td>
-                                  <td>11-July-2024</td>
-                                  <td>Showroom visit</td>
-                                  <td class="text-green-500">Single Trip</td>
-                                  <td class="text-orange">Pending</td>
-                                </tr>
-                                <tr>
-                                  <td>Trip-00014</td>
-                                  <td>11-July-2024</td>
-                                  <td>Showroom visit</td>
-                                  <td class="text-green-500">Single Trip</td>
-                                  <td class="text-orange">Pending</td>
-                                </tr>
-                                <tr>
-                                  <td>Trip-00014</td>
-                                  <td>11-July-2024</td>
-                                  <td>Showroom visit</td>
-                                  <td class="text-green-500">Single Trip</td>
-                                  <td class="text-orange">Pending</td>
-                                </tr>
-                                <tr>
-                                  <td>Trip-00014</td>
-                                  <td>11-July-2024</td>
-                                  <td>Showroom visit</td>
-                                  <td class="text-green-500">Single Trip</td>
-                                  <td class="text-orange">Pending</td>
-                                </tr> <tr>
-                                  <td>Trip-00014</td>
-                                  <td>11-July-2024</td>
-                                  <td>Showroom visit</td>
-                                  <td class="text-green-500">Single Trip</td>
-                                  <td class="text-orange">Pending</td>
-                                </tr> <tr>
-                                  <td>Trip-00014</td>
-                                  <td>11-July-2024</td>
-                                  <td>Showroom visit</td>
-                                  <td class="text-green-500">Single Trip</td>
-                                  <td class="text-orange">Pending</td>
-                                </tr> <tr>
-                                  <td>Trip-00014</td>
-                                  <td>11-July-2024</td>
-                                  <td>Showroom visit</td>
-                                  <td class="text-green-500">Single Trip</td>
-                                  <td class="text-orange">Pending</td>
-                                </tr> <tr>
-                                  <td>Trip-00014</td>
-                                  <td>11-July-2024</td>
-                                  <td>Showroom visit</td>
-                                  <td class="text-green-500">Single Trip</td>
-                                  <td class="text-orange">Pending</td>
-                                </tr> <tr>
-                                  <td>Trip-00014</td>
-                                  <td>11-July-2024</td>
-                                  <td>Showroom visit</td>
-                                  <td class="text-green-500">Single Trip</td>
-                                  <td class="text-orange">Pending</td>
-                                </tr> <tr>
-                                  <td>Trip-00014</td>
-                                  <td>11-July-2024</td>
-                                  <td>Showroom visit</td>
-                                  <td class="text-green-500">Single Trip</td>
-                                  <td class="text-orange">Pending</td>
-                                </tr> <tr>
-                                  <td>Trip-00014</td>
-                                  <td>11-July-2024</td>
-                                  <td>Showroom visit</td>
-                                  <td class="text-green-500">Single Trip</td>
-                                  <td class="text-orange">Pending</td>
-                                </tr> <tr>
-                                  <td>Trip-00014</td>
-                                  <td>11-July-2024</td>
-                                  <td>Showroom visit</td>
-                                  <td class="text-green-500">Single Trip</td>
-                                  <td class="text-orange">Pending</td>
-                                </tr> <tr>
-                                  <td>Trip-00014</td>
-                                  <td>11-July-2024</td>
-                                  <td>Showroom visit</td>
-                                  <td class="text-green-500">Single Trip</td>
-                                  <td class="text-orange">Pending</td>
-                                </tr>
-                              </tbody>
+                            <tbody>
+                              <tr>
+                                <td>Trip-00014</td>
+                                <td>11-July-2024</td>
+                                <td>Showroom visit</td>
+                                <td class="text-green-500">Single Trip</td>
+                                <td class="text-orange">Pending</td>
+                              </tr>
+                              <tr>
+                                <td>Trip-00014</td>
+                                <td>11-July-2024</td>
+                                <td>Showroom visit</td>
+                                <td class="text-green-500">Single Trip</td>
+                                <td class="text-orange">Pending</td>
+                              </tr>
+                              <tr>
+                                <td>Trip-00014</td>
+                                <td>11-July-2024</td>
+                                <td>Showroom visit</td>
+                                <td class="text-green-500">Single Trip</td>
+                                <td class="text-orange">Pending</td>
+                              </tr>
+                              <tr>
+                                <td>Trip-00014</td>
+                                <td>11-July-2024</td>
+                                <td>Showroom visit</td>
+                                <td class="text-green-500">Single Trip</td>
+                                <td class="text-orange">Pending</td>
+                              </tr>
+                              <tr>
+                                <td>Trip-00014</td>
+                                <td>11-July-2024</td>
+                                <td>Showroom visit</td>
+                                <td class="text-green-500">Single Trip</td>
+                                <td class="text-orange">Pending</td>
+                              </tr>
+                              <tr>
+                                <td>Trip-00014</td>
+                                <td>11-July-2024</td>
+                                <td>Showroom visit</td>
+                                <td class="text-green-500">Single Trip</td>
+                                <td class="text-orange">Pending</td>
+                              </tr>
+                              <tr>
+                                <td>Trip-00014</td>
+                                <td>11-July-2024</td>
+                                <td>Showroom visit</td>
+                                <td class="text-green-500">Single Trip</td>
+                                <td class="text-orange">Pending</td>
+                              </tr>
+                              <tr>
+                                <td>Trip-00014</td>
+                                <td>11-July-2024</td>
+                                <td>Showroom visit</td>
+                                <td class="text-green-500">Single Trip</td>
+                                <td class="text-orange">Pending</td>
+                              </tr>
+                              <tr>
+                                <td>Trip-00014</td>
+                                <td>11-July-2024</td>
+                                <td>Showroom visit</td>
+                                <td class="text-green-500">Single Trip</td>
+                                <td class="text-orange">Pending</td>
+                              </tr>
+                              <tr>
+                                <td>Trip-00014</td>
+                                <td>11-July-2024</td>
+                                <td>Showroom visit</td>
+                                <td class="text-green-500">Single Trip</td>
+                                <td class="text-orange">Pending</td>
+                              </tr>
+                              <tr>
+                                <td>Trip-00014</td>
+                                <td>11-July-2024</td>
+                                <td>Showroom visit</td>
+                                <td class="text-green-500">Single Trip</td>
+                                <td class="text-orange">Pending</td>
+                              </tr>
+                              <tr>
+                                <td>Trip-00014</td>
+                                <td>11-July-2024</td>
+                                <td>Showroom visit</td>
+                                <td class="text-green-500">Single Trip</td>
+                                <td class="text-orange">Pending</td>
+                              </tr>
+                              <tr>
+                                <td>Trip-00014</td>
+                                <td>11-July-2024</td>
+                                <td>Showroom visit</td>
+                                <td class="text-green-500">Single Trip</td>
+                                <td class="text-orange">Pending</td>
+                              </tr>
+                              <tr>
+                                <td>Trip-00014</td>
+                                <td>11-July-2024</td>
+                                <td>Showroom visit</td>
+                                <td class="text-green-500">Single Trip</td>
+                                <td class="text-orange">Pending</td>
+                              </tr>
+                            </tbody>
                           </table>
                         </div>
-                        
-
                       </div>
-
-
                     </div>
                   </div>
                 </div>
               </div>
 
               <div class="col-span-12 xl:col-span-4">
-                <div class="card shadow border border-rkLight h-full">
+                <div class="card h-full border border-rkLight shadow">
                   <div class="card-body p-4">
                     <div class="text-sm font-bold text-rkBlack">
                       Employee Slab - 3A
@@ -1222,7 +1263,7 @@
                     <div class="card mb-2">
                       <div class="card-body">
                         <div
-                          class="flex gap-1 items-center text-sm text-rkBlack font-semibold"
+                          class="flex items-center gap-1 text-sm font-semibold text-rkBlack"
                         >
                           <span>
                             <svg
@@ -1251,7 +1292,7 @@
 
                         <div>
                           <table
-                            class="table text-sm border shadow-sm border-rkLight rounded-lg"
+                            class="table rounded-lg border border-rkLight text-sm shadow-sm"
                           >
                             <tr>
                               <td class="font-semibold text-rkBlack">Air</td>
@@ -1273,23 +1314,48 @@
                     <div class="card mb-2">
                       <div class="card-body">
                         <div
-                          class="flex gap-1 items-center text-sm text-rkBlack font-semibold"
+                          class="flex items-center gap-1 text-sm font-semibold text-rkBlack"
                         >
                           <span>
-                            <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5 0.153809H1.5C1.102 0.153809 0.720501 0.311809 0.439501 0.593309C0.158001 0.874309 0 1.25581 0 1.65381C0 4.23081 0 11.0768 0 13.6538C0 14.0518 0.158001 14.4333 0.439501 14.7143C0.720501 14.9958 1.102 15.1538 1.5 15.1538C3.76 15.1538 9.24 15.1538 11.5 15.1538C11.898 15.1538 12.2795 14.9958 12.5605 14.7143C12.842 14.4333 13 14.0518 13 13.6538V1.65381C13 1.25581 12.842 0.874309 12.5605 0.593309C12.2795 0.311809 11.898 0.153809 11.5 0.153809ZM3 1.15381H1.5C1.3675 1.15381 1.24 1.20631 1.1465 1.30031C1.0525 1.39381 1 1.52131 1 1.65381V13.6538C1 13.7863 1.0525 13.9138 1.1465 14.0073C1.24 14.1013 1.3675 14.1538 1.5 14.1538H11.5C11.6325 14.1538 11.76 14.1013 11.8535 14.0073C11.9475 13.9138 12 13.7863 12 13.6538V1.65381C12 1.52131 11.9475 1.39381 11.8535 1.30031C11.76 1.20631 11.6325 1.15381 11.5 1.15381H10V1.65381C10 2.48231 9.3285 3.15381 8.5 3.15381H4.5C3.6715 3.15381 3 2.48231 3 1.65381V1.15381ZM9 1.15381V1.65381C9 1.92981 8.776 2.15381 8.5 2.15381H4.5C4.224 2.15381 4 1.92981 4 1.65381V1.15381H9Z" fill="#2D2D2D"/>
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M3.50098 11.1533H9.50098C9.77698 11.1533 10.001 10.9293 10.001 10.6533C10.001 10.3773 9.77698 10.1533 9.50098 10.1533H3.50098C3.22498 10.1533 3.00098 10.3773 3.00098 10.6533C3.00098 10.9293 3.22498 11.1533 3.50098 11.1533Z" fill="#2D2D2D"/>
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M3.50098 9.1543H9.50098C9.77698 9.1543 10.001 8.9303 10.001 8.6543C10.001 8.3783 9.77698 8.1543 9.50098 8.1543H3.50098C3.22498 8.1543 3.00098 8.3783 3.00098 8.6543C3.00098 8.9303 3.22498 9.1543 3.50098 9.1543Z" fill="#2D2D2D"/>
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M3.50098 7.15332H9.50098C9.77698 7.15332 10.001 6.92932 10.001 6.65332C10.001 6.37732 9.77698 6.15332 9.50098 6.15332H3.50098C3.22498 6.15332 3.00098 6.37732 3.00098 6.65332C3.00098 6.92932 3.22498 7.15332 3.50098 7.15332Z" fill="#2D2D2D"/>
-                              </svg>
-                              
+                            <svg
+                              width="13"
+                              height="16"
+                              viewBox="0 0 13 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M11.5 0.153809H1.5C1.102 0.153809 0.720501 0.311809 0.439501 0.593309C0.158001 0.874309 0 1.25581 0 1.65381C0 4.23081 0 11.0768 0 13.6538C0 14.0518 0.158001 14.4333 0.439501 14.7143C0.720501 14.9958 1.102 15.1538 1.5 15.1538C3.76 15.1538 9.24 15.1538 11.5 15.1538C11.898 15.1538 12.2795 14.9958 12.5605 14.7143C12.842 14.4333 13 14.0518 13 13.6538V1.65381C13 1.25581 12.842 0.874309 12.5605 0.593309C12.2795 0.311809 11.898 0.153809 11.5 0.153809ZM3 1.15381H1.5C1.3675 1.15381 1.24 1.20631 1.1465 1.30031C1.0525 1.39381 1 1.52131 1 1.65381V13.6538C1 13.7863 1.0525 13.9138 1.1465 14.0073C1.24 14.1013 1.3675 14.1538 1.5 14.1538H11.5C11.6325 14.1538 11.76 14.1013 11.8535 14.0073C11.9475 13.9138 12 13.7863 12 13.6538V1.65381C12 1.52131 11.9475 1.39381 11.8535 1.30031C11.76 1.20631 11.6325 1.15381 11.5 1.15381H10V1.65381C10 2.48231 9.3285 3.15381 8.5 3.15381H4.5C3.6715 3.15381 3 2.48231 3 1.65381V1.15381ZM9 1.15381V1.65381C9 1.92981 8.776 2.15381 8.5 2.15381H4.5C4.224 2.15381 4 1.92981 4 1.65381V1.15381H9Z"
+                                fill="#2D2D2D"
+                              />
+                              <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M3.50098 11.1533H9.50098C9.77698 11.1533 10.001 10.9293 10.001 10.6533C10.001 10.3773 9.77698 10.1533 9.50098 10.1533H3.50098C3.22498 10.1533 3.00098 10.3773 3.00098 10.6533C3.00098 10.9293 3.22498 11.1533 3.50098 11.1533Z"
+                                fill="#2D2D2D"
+                              />
+                              <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M3.50098 9.1543H9.50098C9.77698 9.1543 10.001 8.9303 10.001 8.6543C10.001 8.3783 9.77698 8.1543 9.50098 8.1543H3.50098C3.22498 8.1543 3.00098 8.3783 3.00098 8.6543C3.00098 8.9303 3.22498 9.1543 3.50098 9.1543Z"
+                                fill="#2D2D2D"
+                              />
+                              <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M3.50098 7.15332H9.50098C9.77698 7.15332 10.001 6.92932 10.001 6.65332C10.001 6.37732 9.77698 6.15332 9.50098 6.15332H3.50098C3.22498 6.15332 3.00098 6.37732 3.00098 6.65332C3.00098 6.92932 3.22498 7.15332 3.50098 7.15332Z"
+                                fill="#2D2D2D"
+                              />
+                            </svg>
                           </span>
                           <span>Transport Expenses</span>
                         </div>
 
                         <div>
                           <table
-                            class="table text-sm border shadow-sm border-rkLight rounded-lg"
+                            class="table rounded-lg border border-rkLight text-sm shadow-sm"
                           >
                             <tr>
                               <td class="font-semibold text-rkBlack">A+</td>
@@ -1315,20 +1381,28 @@
                     <div class="card mb-2">
                       <div class="card-body">
                         <div
-                          class="flex gap-1 items-center text-sm text-rkBlack font-semibold"
+                          class="flex items-center gap-1 text-sm font-semibold text-rkBlack"
                         >
                           <span>
-                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M17.1083 13.0063H15.9827V11.0458C16.8833 10.6705 17.1387 9.17571 17.1387 8.32501C17.1387 7.42856 16.7989 5.53062 15.6182 5.53062C14.4374 5.53062 14.0979 7.42856 14.0979 8.32501C14.0979 9.17571 14.3532 10.6707 15.2538 11.0458V13.0063H13.6425C13.6425 9.34006 13.6425 5.67382 13.6425 2.00735C13.6425 0.902653 12.7399 0 11.6352 0H5.50394C4.39924 0 3.49659 0.902653 3.49659 2.00735C3.49659 5.67382 3.49659 9.34006 3.49659 13.0063H1.88551V11.0458C2.78586 10.6705 3.04123 9.17571 3.04123 8.32501C3.04123 7.42856 2.70174 5.53062 1.52096 5.53062C0.339943 5.53062 0.000442505 7.42856 0.000442505 8.32501C0.000442505 9.17571 0.255814 10.6707 1.1564 11.0458V13.0063H0.0307827V13.7354C5.72345 13.7386 11.4157 13.7354 17.1083 13.7354V13.0063ZM12.9136 7.51315H11.5209V6.63164H12.9136V7.51315ZM10.7918 7.51315H8.93411V6.63164H10.7918V7.51315ZM8.205 7.51315H6.32269V6.63164H8.205V7.51315ZM5.59381 7.51315H4.22546V6.63164H5.59381V7.51315ZM4.22546 8.24226H12.9136V13.0063H10.0666V9.18169C9.06858 9.18169 8.07053 9.18169 7.07249 9.18169V13.0063H4.22546V8.24226ZM12.9136 5.90276H11.5209V5.02125H12.9136V5.90276ZM10.7918 5.90276H8.93411V5.02125H10.7918V5.90276ZM8.205 5.90276H6.32269V5.02125H8.205V5.90276ZM5.59381 5.90276H4.22546V5.02125H5.59381V5.90276ZM12.9136 4.29214H11.5209V3.22882H12.9136V4.29214ZM10.7918 4.29214H8.93411V3.22882H10.7918V4.29214ZM8.205 4.29214H6.32269V3.22882H8.205V4.29214ZM5.59381 4.29214H4.22546V3.22882H5.59381V4.29214ZM7.8016 9.91057H9.33774V13.0063H7.8016V9.91057ZM1.88551 9.77909C1.88551 9.29961 1.1564 9.29961 1.1564 9.77909V10.111C0.835285 9.62508 0.729551 8.89253 0.729551 8.32501C0.729551 7.92069 0.922865 6.2595 1.52096 6.2595C2.11905 6.2595 2.31236 7.92069 2.31236 8.32501C2.31236 8.89299 2.20662 9.62463 1.88551 10.111V9.77909ZM15.9827 9.77909C15.9827 9.29961 15.2538 9.29961 15.2538 9.77909V10.111C14.9327 9.62508 14.8268 8.89253 14.8268 8.32501C14.8268 7.92069 15.0201 6.2595 15.6182 6.2595C16.2163 6.2595 16.4096 7.92069 16.4096 8.32501C16.4096 8.89299 16.3038 9.62463 15.9827 10.111V9.77909ZM12.9136 2.49994H4.22546V2.00735C4.22546 1.30491 4.80149 0.72888 5.50394 0.72888H11.6352C12.3376 0.72888 12.9136 1.30491 12.9136 2.00735V2.49994Z" fill="#2D2D2D"/>
-                              </svg>
-                              
+                            <svg
+                              width="18"
+                              height="14"
+                              viewBox="0 0 18 14"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M17.1083 13.0063H15.9827V11.0458C16.8833 10.6705 17.1387 9.17571 17.1387 8.32501C17.1387 7.42856 16.7989 5.53062 15.6182 5.53062C14.4374 5.53062 14.0979 7.42856 14.0979 8.32501C14.0979 9.17571 14.3532 10.6707 15.2538 11.0458V13.0063H13.6425C13.6425 9.34006 13.6425 5.67382 13.6425 2.00735C13.6425 0.902653 12.7399 0 11.6352 0H5.50394C4.39924 0 3.49659 0.902653 3.49659 2.00735C3.49659 5.67382 3.49659 9.34006 3.49659 13.0063H1.88551V11.0458C2.78586 10.6705 3.04123 9.17571 3.04123 8.32501C3.04123 7.42856 2.70174 5.53062 1.52096 5.53062C0.339943 5.53062 0.000442505 7.42856 0.000442505 8.32501C0.000442505 9.17571 0.255814 10.6707 1.1564 11.0458V13.0063H0.0307827V13.7354C5.72345 13.7386 11.4157 13.7354 17.1083 13.7354V13.0063ZM12.9136 7.51315H11.5209V6.63164H12.9136V7.51315ZM10.7918 7.51315H8.93411V6.63164H10.7918V7.51315ZM8.205 7.51315H6.32269V6.63164H8.205V7.51315ZM5.59381 7.51315H4.22546V6.63164H5.59381V7.51315ZM4.22546 8.24226H12.9136V13.0063H10.0666V9.18169C9.06858 9.18169 8.07053 9.18169 7.07249 9.18169V13.0063H4.22546V8.24226ZM12.9136 5.90276H11.5209V5.02125H12.9136V5.90276ZM10.7918 5.90276H8.93411V5.02125H10.7918V5.90276ZM8.205 5.90276H6.32269V5.02125H8.205V5.90276ZM5.59381 5.90276H4.22546V5.02125H5.59381V5.90276ZM12.9136 4.29214H11.5209V3.22882H12.9136V4.29214ZM10.7918 4.29214H8.93411V3.22882H10.7918V4.29214ZM8.205 4.29214H6.32269V3.22882H8.205V4.29214ZM5.59381 4.29214H4.22546V3.22882H5.59381V4.29214ZM7.8016 9.91057H9.33774V13.0063H7.8016V9.91057ZM1.88551 9.77909C1.88551 9.29961 1.1564 9.29961 1.1564 9.77909V10.111C0.835285 9.62508 0.729551 8.89253 0.729551 8.32501C0.729551 7.92069 0.922865 6.2595 1.52096 6.2595C2.11905 6.2595 2.31236 7.92069 2.31236 8.32501C2.31236 8.89299 2.20662 9.62463 1.88551 10.111V9.77909ZM15.9827 9.77909C15.9827 9.29961 15.2538 9.29961 15.2538 9.77909V10.111C14.9327 9.62508 14.8268 8.89253 14.8268 8.32501C14.8268 7.92069 15.0201 6.2595 15.6182 6.2595C16.2163 6.2595 16.4096 7.92069 16.4096 8.32501C16.4096 8.89299 16.3038 9.62463 15.9827 10.111V9.77909ZM12.9136 2.49994H4.22546V2.00735C4.22546 1.30491 4.80149 0.72888 5.50394 0.72888H11.6352C12.3376 0.72888 12.9136 1.30491 12.9136 2.00735V2.49994Z"
+                                fill="#2D2D2D"
+                              />
+                            </svg>
                           </span>
                           <span>Lodging Expenses</span>
                         </div>
 
                         <div>
                           <table
-                            class="table text-sm border shadow-sm border-rkLight rounded-lg"
+                            class="table rounded-lg border border-rkLight text-sm shadow-sm"
                           >
                             <tr>
                               <td class="font-semibold text-rkBlack">A+</td>
@@ -1354,29 +1428,53 @@
                     <div class="card">
                       <div class="card-body">
                         <div
-                          class="flex gap-1 items-center text-sm text-rkBlack font-semibold"
+                          class="flex items-center gap-1 text-sm font-semibold text-rkBlack"
                         >
                           <span>
-                            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M5.19385 5.71412C5.24826 5.75968 5.31775 5.7832 5.38864 5.78007C5.45953 5.77693 5.52668 5.74737 5.57686 5.69719C5.62703 5.64701 5.6566 5.57987 5.65973 5.50897C5.66287 5.43808 5.63934 5.36859 5.59379 5.31418C5.45585 5.17541 5.37842 4.9877 5.37842 4.79203C5.37842 4.59637 5.45585 4.40866 5.59379 4.26989C5.83862 4.02498 5.97616 3.69286 5.97616 3.34657C5.97616 3.00027 5.83862 2.66815 5.59379 2.42324C5.56762 2.39682 5.53647 2.37584 5.50215 2.36153C5.46783 2.34721 5.43101 2.33984 5.39382 2.33984C5.35663 2.33984 5.31981 2.34721 5.28549 2.36153C5.25116 2.37584 5.22002 2.39682 5.19385 2.42324C5.16735 2.44962 5.14632 2.48098 5.13197 2.51551C5.11763 2.55003 5.11024 2.58706 5.11024 2.62445C5.11024 2.66184 5.11763 2.69886 5.13197 2.73339C5.14632 2.76792 5.16735 2.79927 5.19385 2.82565C5.33104 2.96432 5.40799 3.1515 5.40799 3.34657C5.40799 3.54163 5.33104 3.72882 5.19385 3.86748C4.94962 4.1127 4.8125 4.4447 4.8125 4.7908C4.8125 5.1369 4.94962 5.4689 5.19385 5.71412Z" fill="#2D2D2D"/>
-                              <path d="M11.4282 5.71412C11.4826 5.75968 11.5521 5.7832 11.623 5.78007C11.6939 5.77693 11.7611 5.74737 11.8112 5.69719C11.8614 5.64701 11.891 5.57987 11.8941 5.50897C11.8972 5.43808 11.8737 5.36859 11.8282 5.31418C11.6902 5.17541 11.6128 4.9877 11.6128 4.79203C11.6128 4.59637 11.6902 4.40866 11.8282 4.26989C12.073 4.02498 12.2105 3.69286 12.2105 3.34657C12.2105 3.00027 12.073 2.66815 11.8282 2.42324C11.802 2.39682 11.7708 2.37584 11.7365 2.36153C11.7022 2.34721 11.6654 2.33984 11.6282 2.33984C11.591 2.33984 11.5542 2.34721 11.5199 2.36153C11.4855 2.37584 11.4544 2.39682 11.4282 2.42324C11.4017 2.44962 11.3807 2.48098 11.3663 2.51551C11.352 2.55003 11.3446 2.58706 11.3446 2.62445C11.3446 2.66184 11.352 2.69886 11.3663 2.73339C11.3807 2.76792 11.4017 2.79927 11.4282 2.82565C11.5654 2.96432 11.6424 3.1515 11.6424 3.34657C11.6424 3.54163 11.5654 3.72882 11.4282 3.86748C11.184 4.1127 11.0469 4.4447 11.0469 4.7908C11.0469 5.1369 11.184 5.4689 11.4282 5.71412Z" fill="#2D2D2D"/>
-                              <path d="M8.3118 4.01704C8.33764 4.04524 8.36892 4.06793 8.40375 4.08375C8.43858 4.09956 8.47625 4.10817 8.51449 4.10907C8.55273 4.10996 8.59076 4.10312 8.62629 4.08894C8.66182 4.07477 8.69412 4.05357 8.72125 4.0266C8.74839 3.99964 8.76979 3.96747 8.78418 3.93203C8.79857 3.89658 8.80565 3.8586 8.80499 3.82035C8.80433 3.7821 8.79595 3.74438 8.78035 3.70946C8.76475 3.67453 8.74225 3.64311 8.71421 3.6171C8.57627 3.47833 8.49884 3.29061 8.49884 3.09495C8.49884 2.89929 8.57627 2.71157 8.71421 2.5728C8.83536 2.45175 8.93147 2.308 8.99704 2.14979C9.06261 1.99157 9.09636 1.82198 9.09636 1.65072C9.09636 1.47945 9.06261 1.30986 8.99704 1.15164C8.93147 0.993427 8.83536 0.849683 8.71421 0.728627C8.68783 0.702128 8.65647 0.681101 8.62195 0.666754C8.58742 0.652406 8.55039 0.64502 8.513 0.64502C8.47561 0.64502 8.43859 0.652406 8.40406 0.666754C8.36953 0.681101 8.33818 0.702128 8.3118 0.728627C8.28537 0.754796 8.2644 0.785942 8.25008 0.820265C8.23577 0.854589 8.2284 0.891409 8.2284 0.928598C8.2284 0.965787 8.23577 1.00261 8.25008 1.03693C8.2644 1.07125 8.28537 1.1024 8.3118 1.12857C8.38107 1.1964 8.436 1.27747 8.47333 1.36696C8.51065 1.45645 8.5296 1.55252 8.52905 1.64948C8.52888 1.84584 8.45073 2.0341 8.3118 2.17286C8.06772 2.41767 7.93066 2.74926 7.93066 3.09495C7.93066 3.44064 8.06772 3.77223 8.3118 4.01704Z" fill="#2D2D2D"/>
-                              <path d="M7.17527 7.92677C7.19578 7.92919 7.21649 7.92919 7.23699 7.92677C7.64869 7.83476 8.06928 7.7884 8.49113 7.78852C8.56643 7.78852 8.63864 7.75861 8.69188 7.70537C8.74513 7.65212 8.77504 7.57991 8.77504 7.50461C8.77504 7.42932 8.74513 7.3571 8.69188 7.30386C8.63864 7.25061 8.56643 7.2207 8.49113 7.2207C8.02851 7.22062 7.56731 7.27196 7.11602 7.37377C7.04837 7.38952 6.98884 7.42952 6.9487 7.4862C6.90856 7.54289 6.89059 7.61232 6.89819 7.68136C6.9058 7.7504 6.93844 7.81426 6.98996 7.86085C7.04148 7.90744 7.10829 7.93353 7.17774 7.93418L7.17527 7.92677Z" fill="#2D2D2D"/>
-                              <path d="M2.77817 12.5937C2.79536 12.5961 2.81282 12.5961 2.83001 12.5937C2.89599 12.5936 2.95983 12.5702 3.01037 12.5278C3.06091 12.4854 3.09494 12.4266 3.10651 12.3616C3.24627 11.5749 3.5505 10.8265 3.99932 10.1654C4.44814 9.50429 5.03143 8.94536 5.71107 8.52514C5.77552 8.48617 5.82202 8.42338 5.8405 8.35038C5.85898 8.27737 5.84796 8.20002 5.80983 8.13508C5.77132 8.07081 5.70897 8.02436 5.63637 8.00586C5.56376 7.98736 5.48679 7.99831 5.42223 8.03633C4.67216 8.49853 4.0285 9.11436 3.53362 9.84328C3.03874 10.5722 2.70387 11.3977 2.55104 12.2653C2.54393 12.3019 2.5442 12.3394 2.55182 12.3758C2.55945 12.4122 2.57428 12.4468 2.59544 12.4774C2.6166 12.508 2.64367 12.534 2.67505 12.554C2.70643 12.574 2.74149 12.5875 2.77817 12.5937Z" fill="#2D2D2D"/>
-                              <path d="M15.7557 12.2082C15.5012 10.7339 14.8051 9.37168 13.7594 8.30175C12.7137 7.23183 11.3678 6.50464 9.8998 6.21644C9.90223 6.17121 9.90223 6.12588 9.8998 6.08065C9.8998 5.70482 9.7505 5.34438 9.48474 5.07863C9.21899 4.81287 8.85855 4.66357 8.48272 4.66357C8.10689 4.66357 7.74645 4.81287 7.48069 5.07863C7.21494 5.34438 7.06564 5.70482 7.06564 6.08065C7.0632 6.12588 7.0632 6.17121 7.06564 6.21644C5.60213 6.50912 4.26161 7.23828 3.22068 8.30785C2.17975 9.37743 1.48725 10.7372 1.23439 12.2082C0.641882 12.5439 0 13.0377 0 13.5907C0 15.03 4.39442 15.9977 8.5 15.9977C12.6056 15.9977 17 15.03 17 13.5907C16.9951 13.0377 16.3482 12.5439 15.7557 12.2082ZM8.49506 5.23139C8.7203 5.23139 8.93631 5.32087 9.09558 5.48014C9.25485 5.6394 9.34432 5.85542 9.34432 6.08065V6.13003H9.30482C9.20607 6.13003 9.10732 6.11028 9.00857 6.10287H8.89994C8.76663 6.10287 8.63084 6.10287 8.49506 6.10287C8.35928 6.10287 8.2235 6.10287 8.09018 6.10287H7.98156C7.88281 6.10287 7.78405 6.11768 7.68777 6.13003H7.6458V6.08065C7.6458 5.85542 7.73528 5.6394 7.89455 5.48014C8.05381 5.32087 8.26982 5.23139 8.49506 5.23139ZM1.72074 12.8476C1.72074 12.8179 1.72074 12.7859 1.72074 12.7538C1.72074 12.6624 1.74049 12.5711 1.7553 12.4822C1.96644 11.0372 2.63638 9.69837 3.6663 8.66312C4.69623 7.62786 6.0316 6.95101 7.47546 6.73241C7.62605 6.71019 7.77912 6.69291 7.93218 6.68057H8.02846C8.33922 6.66082 8.65091 6.66082 8.96166 6.68057H9.05794C9.21101 6.69291 9.36407 6.71019 9.51467 6.73241C10.9566 6.95332 12.2895 7.63115 13.3174 8.66618C14.3454 9.70121 15.014 11.0388 15.2249 12.4822C15.2398 12.5711 15.2496 12.6624 15.2595 12.7538C15.2595 12.7859 15.2595 12.8179 15.2595 12.8476C15.2595 12.9735 15.2793 13.0944 15.2817 13.2253C10.8095 14.2573 6.16091 14.2573 1.68864 13.2253C1.70016 13.1002 1.71086 12.9743 1.72074 12.8476ZM8.49506 15.4324C3.65132 15.4324 0.560413 14.2227 0.560413 13.5907C0.560413 13.482 0.696195 13.2426 1.14551 12.9315C1.14674 12.9471 1.14674 12.9628 1.14551 12.9784C1.14551 13.1339 1.1307 13.2895 1.1307 13.4475V13.6721L1.34795 13.724C3.69312 14.2846 6.09615 14.5672 8.50741 14.5658C10.9187 14.5672 13.3217 14.2846 15.6669 13.724L15.8841 13.6721V13.4475C15.8841 13.2895 15.8841 13.1339 15.8668 12.9784V12.9315C16.3161 13.2426 16.4519 13.482 16.4519 13.5907C16.4297 14.2227 13.3388 15.4324 8.49506 15.4324Z" fill="#2D2D2D"/>
-                              </svg>
-                              
-                              
+                            <svg
+                              width="17"
+                              height="16"
+                              viewBox="0 0 17 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M5.19385 5.71412C5.24826 5.75968 5.31775 5.7832 5.38864 5.78007C5.45953 5.77693 5.52668 5.74737 5.57686 5.69719C5.62703 5.64701 5.6566 5.57987 5.65973 5.50897C5.66287 5.43808 5.63934 5.36859 5.59379 5.31418C5.45585 5.17541 5.37842 4.9877 5.37842 4.79203C5.37842 4.59637 5.45585 4.40866 5.59379 4.26989C5.83862 4.02498 5.97616 3.69286 5.97616 3.34657C5.97616 3.00027 5.83862 2.66815 5.59379 2.42324C5.56762 2.39682 5.53647 2.37584 5.50215 2.36153C5.46783 2.34721 5.43101 2.33984 5.39382 2.33984C5.35663 2.33984 5.31981 2.34721 5.28549 2.36153C5.25116 2.37584 5.22002 2.39682 5.19385 2.42324C5.16735 2.44962 5.14632 2.48098 5.13197 2.51551C5.11763 2.55003 5.11024 2.58706 5.11024 2.62445C5.11024 2.66184 5.11763 2.69886 5.13197 2.73339C5.14632 2.76792 5.16735 2.79927 5.19385 2.82565C5.33104 2.96432 5.40799 3.1515 5.40799 3.34657C5.40799 3.54163 5.33104 3.72882 5.19385 3.86748C4.94962 4.1127 4.8125 4.4447 4.8125 4.7908C4.8125 5.1369 4.94962 5.4689 5.19385 5.71412Z"
+                                fill="#2D2D2D"
+                              />
+                              <path
+                                d="M11.4282 5.71412C11.4826 5.75968 11.5521 5.7832 11.623 5.78007C11.6939 5.77693 11.7611 5.74737 11.8112 5.69719C11.8614 5.64701 11.891 5.57987 11.8941 5.50897C11.8972 5.43808 11.8737 5.36859 11.8282 5.31418C11.6902 5.17541 11.6128 4.9877 11.6128 4.79203C11.6128 4.59637 11.6902 4.40866 11.8282 4.26989C12.073 4.02498 12.2105 3.69286 12.2105 3.34657C12.2105 3.00027 12.073 2.66815 11.8282 2.42324C11.802 2.39682 11.7708 2.37584 11.7365 2.36153C11.7022 2.34721 11.6654 2.33984 11.6282 2.33984C11.591 2.33984 11.5542 2.34721 11.5199 2.36153C11.4855 2.37584 11.4544 2.39682 11.4282 2.42324C11.4017 2.44962 11.3807 2.48098 11.3663 2.51551C11.352 2.55003 11.3446 2.58706 11.3446 2.62445C11.3446 2.66184 11.352 2.69886 11.3663 2.73339C11.3807 2.76792 11.4017 2.79927 11.4282 2.82565C11.5654 2.96432 11.6424 3.1515 11.6424 3.34657C11.6424 3.54163 11.5654 3.72882 11.4282 3.86748C11.184 4.1127 11.0469 4.4447 11.0469 4.7908C11.0469 5.1369 11.184 5.4689 11.4282 5.71412Z"
+                                fill="#2D2D2D"
+                              />
+                              <path
+                                d="M8.3118 4.01704C8.33764 4.04524 8.36892 4.06793 8.40375 4.08375C8.43858 4.09956 8.47625 4.10817 8.51449 4.10907C8.55273 4.10996 8.59076 4.10312 8.62629 4.08894C8.66182 4.07477 8.69412 4.05357 8.72125 4.0266C8.74839 3.99964 8.76979 3.96747 8.78418 3.93203C8.79857 3.89658 8.80565 3.8586 8.80499 3.82035C8.80433 3.7821 8.79595 3.74438 8.78035 3.70946C8.76475 3.67453 8.74225 3.64311 8.71421 3.6171C8.57627 3.47833 8.49884 3.29061 8.49884 3.09495C8.49884 2.89929 8.57627 2.71157 8.71421 2.5728C8.83536 2.45175 8.93147 2.308 8.99704 2.14979C9.06261 1.99157 9.09636 1.82198 9.09636 1.65072C9.09636 1.47945 9.06261 1.30986 8.99704 1.15164C8.93147 0.993427 8.83536 0.849683 8.71421 0.728627C8.68783 0.702128 8.65647 0.681101 8.62195 0.666754C8.58742 0.652406 8.55039 0.64502 8.513 0.64502C8.47561 0.64502 8.43859 0.652406 8.40406 0.666754C8.36953 0.681101 8.33818 0.702128 8.3118 0.728627C8.28537 0.754796 8.2644 0.785942 8.25008 0.820265C8.23577 0.854589 8.2284 0.891409 8.2284 0.928598C8.2284 0.965787 8.23577 1.00261 8.25008 1.03693C8.2644 1.07125 8.28537 1.1024 8.3118 1.12857C8.38107 1.1964 8.436 1.27747 8.47333 1.36696C8.51065 1.45645 8.5296 1.55252 8.52905 1.64948C8.52888 1.84584 8.45073 2.0341 8.3118 2.17286C8.06772 2.41767 7.93066 2.74926 7.93066 3.09495C7.93066 3.44064 8.06772 3.77223 8.3118 4.01704Z"
+                                fill="#2D2D2D"
+                              />
+                              <path
+                                d="M7.17527 7.92677C7.19578 7.92919 7.21649 7.92919 7.23699 7.92677C7.64869 7.83476 8.06928 7.7884 8.49113 7.78852C8.56643 7.78852 8.63864 7.75861 8.69188 7.70537C8.74513 7.65212 8.77504 7.57991 8.77504 7.50461C8.77504 7.42932 8.74513 7.3571 8.69188 7.30386C8.63864 7.25061 8.56643 7.2207 8.49113 7.2207C8.02851 7.22062 7.56731 7.27196 7.11602 7.37377C7.04837 7.38952 6.98884 7.42952 6.9487 7.4862C6.90856 7.54289 6.89059 7.61232 6.89819 7.68136C6.9058 7.7504 6.93844 7.81426 6.98996 7.86085C7.04148 7.90744 7.10829 7.93353 7.17774 7.93418L7.17527 7.92677Z"
+                                fill="#2D2D2D"
+                              />
+                              <path
+                                d="M2.77817 12.5937C2.79536 12.5961 2.81282 12.5961 2.83001 12.5937C2.89599 12.5936 2.95983 12.5702 3.01037 12.5278C3.06091 12.4854 3.09494 12.4266 3.10651 12.3616C3.24627 11.5749 3.5505 10.8265 3.99932 10.1654C4.44814 9.50429 5.03143 8.94536 5.71107 8.52514C5.77552 8.48617 5.82202 8.42338 5.8405 8.35038C5.85898 8.27737 5.84796 8.20002 5.80983 8.13508C5.77132 8.07081 5.70897 8.02436 5.63637 8.00586C5.56376 7.98736 5.48679 7.99831 5.42223 8.03633C4.67216 8.49853 4.0285 9.11436 3.53362 9.84328C3.03874 10.5722 2.70387 11.3977 2.55104 12.2653C2.54393 12.3019 2.5442 12.3394 2.55182 12.3758C2.55945 12.4122 2.57428 12.4468 2.59544 12.4774C2.6166 12.508 2.64367 12.534 2.67505 12.554C2.70643 12.574 2.74149 12.5875 2.77817 12.5937Z"
+                                fill="#2D2D2D"
+                              />
+                              <path
+                                d="M15.7557 12.2082C15.5012 10.7339 14.8051 9.37168 13.7594 8.30175C12.7137 7.23183 11.3678 6.50464 9.8998 6.21644C9.90223 6.17121 9.90223 6.12588 9.8998 6.08065C9.8998 5.70482 9.7505 5.34438 9.48474 5.07863C9.21899 4.81287 8.85855 4.66357 8.48272 4.66357C8.10689 4.66357 7.74645 4.81287 7.48069 5.07863C7.21494 5.34438 7.06564 5.70482 7.06564 6.08065C7.0632 6.12588 7.0632 6.17121 7.06564 6.21644C5.60213 6.50912 4.26161 7.23828 3.22068 8.30785C2.17975 9.37743 1.48725 10.7372 1.23439 12.2082C0.641882 12.5439 0 13.0377 0 13.5907C0 15.03 4.39442 15.9977 8.5 15.9977C12.6056 15.9977 17 15.03 17 13.5907C16.9951 13.0377 16.3482 12.5439 15.7557 12.2082ZM8.49506 5.23139C8.7203 5.23139 8.93631 5.32087 9.09558 5.48014C9.25485 5.6394 9.34432 5.85542 9.34432 6.08065V6.13003H9.30482C9.20607 6.13003 9.10732 6.11028 9.00857 6.10287H8.89994C8.76663 6.10287 8.63084 6.10287 8.49506 6.10287C8.35928 6.10287 8.2235 6.10287 8.09018 6.10287H7.98156C7.88281 6.10287 7.78405 6.11768 7.68777 6.13003H7.6458V6.08065C7.6458 5.85542 7.73528 5.6394 7.89455 5.48014C8.05381 5.32087 8.26982 5.23139 8.49506 5.23139ZM1.72074 12.8476C1.72074 12.8179 1.72074 12.7859 1.72074 12.7538C1.72074 12.6624 1.74049 12.5711 1.7553 12.4822C1.96644 11.0372 2.63638 9.69837 3.6663 8.66312C4.69623 7.62786 6.0316 6.95101 7.47546 6.73241C7.62605 6.71019 7.77912 6.69291 7.93218 6.68057H8.02846C8.33922 6.66082 8.65091 6.66082 8.96166 6.68057H9.05794C9.21101 6.69291 9.36407 6.71019 9.51467 6.73241C10.9566 6.95332 12.2895 7.63115 13.3174 8.66618C14.3454 9.70121 15.014 11.0388 15.2249 12.4822C15.2398 12.5711 15.2496 12.6624 15.2595 12.7538C15.2595 12.7859 15.2595 12.8179 15.2595 12.8476C15.2595 12.9735 15.2793 13.0944 15.2817 13.2253C10.8095 14.2573 6.16091 14.2573 1.68864 13.2253C1.70016 13.1002 1.71086 12.9743 1.72074 12.8476ZM8.49506 15.4324C3.65132 15.4324 0.560413 14.2227 0.560413 13.5907C0.560413 13.482 0.696195 13.2426 1.14551 12.9315C1.14674 12.9471 1.14674 12.9628 1.14551 12.9784C1.14551 13.1339 1.1307 13.2895 1.1307 13.4475V13.6721L1.34795 13.724C3.69312 14.2846 6.09615 14.5672 8.50741 14.5658C10.9187 14.5672 13.3217 14.2846 15.6669 13.724L15.8841 13.6721V13.4475C15.8841 13.2895 15.8841 13.1339 15.8668 12.9784V12.9315C16.3161 13.2426 16.4519 13.482 16.4519 13.5907C16.4297 14.2227 13.3388 15.4324 8.49506 15.4324Z"
+                                fill="#2D2D2D"
+                              />
+                            </svg>
                           </span>
                           <span>Food Expenses</span>
                         </div>
 
                         <div>
                           <table
-                            class="table text-sm border shadow-sm border-rkLight rounded-lg"
+                            class="table rounded-lg border border-rkLight text-sm shadow-sm"
                           >
                             <tr>
-                              <td class="font-semibold text-rkBlack">Breakfast</td>
+                              <td class="font-semibold text-rkBlack">
+                                Breakfast
+                              </td>
                               <td class="text-rkGray">100</td>
                             </tr>
                             <tr>
@@ -1395,17 +1493,14 @@
                         </div>
                       </div>
                     </div>
-                    
                   </div>
                 </div>
               </div>
             </div>
-
-
           </div>
         </main>
         <footer class="bg-[#F1F2F6]">
-          <div class="text-xs text-center py-1">
+          <div class="py-1 text-center text-xs">
             Emerald © <span id="current-year"></span> All Rights Reserved.
             Developed by BBIT
           </div>
@@ -1413,25 +1508,21 @@
       </div>
     </div>
 
-
-
-    
-    <script
-     src="../assets/js/alpine.min.js"
-    ></script>
+    <script src="../assets/js/alpine.min.js"></script>
     <script src="../assets/js/flowbite.min.js"></script>
     <script src="../assets/js/simple-datatables.js"></script>
     <script src="../assets/js/main.js"></script>
 
-
-
-  <script>
-      if (document.getElementById("recent-trips") && typeof simpleDatatables.DataTable !== 'undefined') {
-            const dataTable = new simpleDatatables.DataTable("#recent-trips", {
-                searchable: false,
-                perPageSelect: false
-            });
-        }
+    <script>
+      if (
+        document.getElementById("recent-trips") &&
+        typeof simpleDatatables.DataTable !== "undefined"
+      ) {
+        const dataTable = new simpleDatatables.DataTable("#recent-trips", {
+          searchable: false,
+          perPageSelect: false,
+        });
+      }
     </script>
   </body>
 </html>
