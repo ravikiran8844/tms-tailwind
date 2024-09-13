@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,14 +11,14 @@
       <div
         :class="sidebarOpen ? 'block' : 'hidden'"
         @click="sidebarOpen = false"
-        class="fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden"
+        class="fixed inset-0 z-20 bg-black opacity-50 transition-opacity lg:hidden"
       ></div>
 
       <div
         :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
-        class="fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 transform bg-[#F1F2F6] lg:translate-x-0 lg:static lg:inset-0"
+        class="fixed inset-y-0 left-0 z-30 w-64 transform overflow-y-auto bg-[#F1F2F6] transition duration-300 lg:static lg:inset-0 lg:translate-x-0"
       >
-        <div class="flex items-center justify-center mt-8">
+        <div class="mt-8 flex items-center justify-center">
           <div>
             <a href="/user">
               <img
@@ -32,273 +32,285 @@
         </div>
         <div class="divider"></div>
 
-        <nav class="mt-4 min-h-[70%] flex gap-5 justify-between flex-col">
-            <div class="px-1">
-              <div>
-                <a
-                  class="flex items-center px-4 mb-1 py-2 text-sm font-medium rounded text-rkGray hover:text-orange"
-                  href="/user/index.html"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="size-6"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"
-                    />
-                  </svg>
-  
-                  <span class="mx-2">Dashboard</span>
-                </a>
-              </div>
-  
-              <div>
-                <div
-                  id="main-menu"
-                  class="px-2"
-                  data-accordion="collapse"
-                  data-active-classes="bg-orange rounded-md text-white"
-                  data-inactive-classes="text-rkGray hover:text-orange"
-                >
-                  <ul>
-                    <li class="mb-1">
-                      <div id="main-menu-dropdown-1">
-                        <button
-                          type="button"
-                          class="flex px-2 items-center justify-between w-full py-2 text-sm text-rkGray rtl:text-right gap-3"
-                          data-accordion-target="#main-menu-dropdown-body-1"
-                          aria-expanded="false"
-                          aria-controls="main-menu-dropdown-body-1"
-                        >
-                          <div class="flex items-center">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke-width="1.5"
-                              stroke="currentColor"
-                              class="size-6"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z"
-                              />
-                            </svg>
-  
-                            <span class="mx-2">Trips</span>
-                          </div>
-                          <svg
-                            data-accordion-icon
-                            class="w-3 h-3 rotate-180 shrink-0"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 10 6"
-                          >
-                            <path
-                              stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M9 5 5 1 1 5"
-                            />
-                          </svg>
-                        </button>
-                      </div>
-                      <div
-                        id="main-menu-dropdown-body-1"
-                        class="hidden"
-                        aria-labelledby="main-menu-dropdown-1"
-                      >
-                        <ul class="bg-[#EAEAEA] p-2">
-                          <li>
-                            <a
-                              class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
-                              href="/user/add-new-trip.html"
-                            >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                fill="currentColor"
-                                class="size-6"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
-                                  clip-rule="evenodd"
-                                />
-                              </svg>
-                              <span class="mx-2">Add New Trip</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
-                              href="/user/unplanned-trip.html"
-                            >
-                              <span class="mx-2 ps-6">Unplanned Trip</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
-                              href="/user/pending-trips.html"
-                            >
-                              <span class="mx-2 ps-6">Pending Trips</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
-                              href="/user/all-trips.html"
-                            >
-                              <span class="mx-2 ps-6">All Trips</span>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="mb-1">
-                      <div id="main-menu-dropdown-2">
-                        <button
-                          type="button"
-                          class="flex px-2 items-center justify-between w-full py-2 text-sm text-rkGray rtl:text-right gap-3"
-                          data-accordion-target="#main-menu-dropdown-body-2"
-                          aria-expanded="false"
-                          aria-controls="main-menu-dropdown-body-2"
-                        >
-                          <div class="flex items-center">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke-width="1.5"
-                              stroke="currentColor"
-                              class="size-6"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z"
-                              />
-                            </svg>
-  
-                            <span class="mx-2">Expenses & Advance</span>
-                          </div>
-                          <svg
-                            data-accordion-icon
-                            class="w-3 h-3 rotate-180 shrink-0"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 10 6"
-                          >
-                            <path
-                              stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M9 5 5 1 1 5"
-                            />
-                          </svg>
-                        </button>
-                      </div>
-                      <div
-                        id="main-menu-dropdown-body-2"
-                        class="hidden"
-                        aria-labelledby="main-menu-dropdown-2"
-                      >
-                        <ul class="bg-[#EAEAEA] p-2">
-                          <li>
-                            <a
-                              class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
-                              href="/user/add-new-expenses.html"
-                            >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                fill="currentColor"
-                                class="size-6"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
-                                  clip-rule="evenodd"
-                                />
-                              </svg>
-                              <span class="mx-2">Add New Expenses</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
-                              href="/user/add-new-advances.html"
-                            >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                fill="currentColor"
-                                class="size-6"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
-                                  clip-rule="evenodd"
-                                />
-                              </svg>
-                              <span class="mx-2">Add New Advances</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
-                              href="/user/pending-request.html"
-                            >
-                              <span class="mx-2 ps-6">Pending Request</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
-                              href="/user/all-request.html"
-                            >
-                              <span class="mx-2 ps-6">All Request</span>
-                            </a>
-                          </li>
-                        
-                        </ul>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="px-4">
+        <nav class="mt-4 flex min-h-[70%] flex-col justify-between gap-5">
+          <div class="px-1">
+            <div>
               <a
-                class="flex items-center font-medium text-sm py-1 px-2 rounded text-rkGray hover:text-orange"
-                href="#"
+                class="mb-1 flex items-center rounded px-4 py-2 text-sm font-medium text-rkGray hover:text-orange"
+                href="/user/index.html"
               >
-              <svg class="w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"/>
-              </svg>
-              
-  
-                <span class="mx-2">Logout</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"
+                  />
+                </svg>
+
+                <span class="mx-2">Dashboard</span>
               </a>
             </div>
-          </nav>
+
+            <div>
+              <div
+                id="main-menu"
+                class="px-2"
+                data-accordion="collapse"
+                data-active-classes="bg-orange rounded-md text-white"
+                data-inactive-classes="text-rkGray hover:text-orange"
+              >
+                <ul>
+                  <li class="mb-1">
+                    <div id="main-menu-dropdown-1">
+                      <button
+                        type="button"
+                        class="flex w-full items-center justify-between gap-3 px-2 py-2 text-sm text-rkGray rtl:text-right"
+                        data-accordion-target="#main-menu-dropdown-body-1"
+                        aria-expanded="false"
+                        aria-controls="main-menu-dropdown-body-1"
+                      >
+                        <div class="flex items-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-6"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z"
+                            />
+                          </svg>
+
+                          <span class="mx-2">Trips</span>
+                        </div>
+                        <svg
+                          data-accordion-icon
+                          class="h-3 w-3 shrink-0 rotate-180"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 10 6"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5 5 1 1 5"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div
+                      id="main-menu-dropdown-body-1"
+                      class="hidden"
+                      aria-labelledby="main-menu-dropdown-1"
+                    >
+                      <ul class="bg-[#EAEAEA] p-2">
+                        <li>
+                          <a
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                            href="/user/add-new-trip.html"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              class="size-6"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                            <span class="mx-2">Add New Trip</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                            href="/user/unplanned-trip.html"
+                          >
+                            <span class="mx-2 ps-6">Unplanned Trip</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                            href="/user/pending-trips.html"
+                          >
+                            <span class="mx-2 ps-6">Pending Trips</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                            href="/user/all-trips.html"
+                          >
+                            <span class="mx-2 ps-6">All Trips</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="mb-1">
+                    <div id="main-menu-dropdown-2">
+                      <button
+                        type="button"
+                        class="flex w-full items-center justify-between gap-3 px-2 py-2 text-sm text-rkGray rtl:text-right"
+                        data-accordion-target="#main-menu-dropdown-body-2"
+                        aria-expanded="false"
+                        aria-controls="main-menu-dropdown-body-2"
+                      >
+                        <div class="flex items-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-6"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z"
+                            />
+                          </svg>
+
+                          <span class="mx-2">Expenses & Advance</span>
+                        </div>
+                        <svg
+                          data-accordion-icon
+                          class="h-3 w-3 shrink-0 rotate-180"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 10 6"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5 5 1 1 5"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div
+                      id="main-menu-dropdown-body-2"
+                      class="hidden"
+                      aria-labelledby="main-menu-dropdown-2"
+                    >
+                      <ul class="bg-[#EAEAEA] p-2">
+                        <li>
+                          <a
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                            href="/user/add-new-expenses.html"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              class="size-6"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                            <span class="mx-2">Add New Expenses</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                            href="/user/add-new-advances.html"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              class="size-6"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                            <span class="mx-2">Add New Advances</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                            href="/user/pending-request.html"
+                          >
+                            <span class="mx-2 ps-6">Pending Request</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                            href="/user/all-request.html"
+                          >
+                            <span class="mx-2 ps-6">All Request</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="px-4">
+            <a
+              class="flex items-center rounded px-2 py-1 text-sm font-medium text-rkGray hover:text-orange"
+              href="#"
+            >
+              <svg
+                class="h-[24px] w-[24px]"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.4"
+                  d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"
+                />
+              </svg>
+
+              <span class="mx-2">Logout</span>
+            </a>
+          </div>
+        </nav>
       </div>
 
-      <div class="flex flex-col flex-1 overflow-hidden">
+      <div class="flex flex-1 flex-col overflow-hidden">
         <header
-          class="flex items-center justify-between px-6 py-4 bg-[#F1F2F6] border-b-1 border-[#ECECEC]"
+          class="border-b-1 flex items-center justify-between border-[#ECECEC] bg-[#F1F2F6] px-6 py-4"
         >
           <div class="flex items-center">
             <button
@@ -306,7 +318,7 @@
               class="text-gray-500 focus:outline-none lg:hidden"
             >
               <svg
-                class="w-6 h-6"
+                class="h-6 w-6"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -321,19 +333,19 @@
               </svg>
             </button>
 
-            <div class="hidden sm:block relative mx-4 lg:mx-0">
-              <h3 class="text-md md:text-xl font-semibold text-gray-700">
+            <div class="relative mx-4 hidden sm:block lg:mx-0">
+              <h3 class="text-md font-semibold text-gray-700 md:text-xl">
                 Add New Advances
               </h3>
             </div>
           </div>
 
-          <div class="flex items-center notifications">
+          <div class="notifications flex items-center">
             <div x-data="{ messageOpen: false }">
               <div class="relative">
                 <button
                   @click="messageOpen = ! messageOpen"
-                  class="flex text-gray-600 mx-4 focus:outline-none hover:text-orange focus:text-orange"
+                  class="mx-4 flex text-gray-600 hover:text-orange focus:text-orange focus:outline-none"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -351,7 +363,7 @@
                   </svg>
                 </button>
                 <div
-                  class="absolute bg-red-600 text-white badge rounded-full -top-3 end-0 text-center text-xs"
+                  class="badge absolute -top-3 end-0 rounded-full bg-red-600 text-center text-xs text-white"
                 >
                   1
                 </div>
@@ -360,39 +372,39 @@
               <div
                 x-show="messageOpen"
                 @click="messageOpen = false"
-                class="fixed inset-0 z-10 w-full h-full"
+                class="fixed inset-0 z-10 h-full w-full"
                 style="display: none"
               ></div>
 
               <div
                 x-show="messageOpen"
-                class="absolute right-2 z-10 mt-2 overflow-hidden bg-white rounded-lg shadow-xl w-80"
+                class="absolute right-2 z-10 mt-2 w-80 overflow-hidden rounded-lg bg-white shadow-xl"
                 style="display: none"
               >
-                <div class="py-4 px-3 flex justify-between items-center gap-2">
-                  <div class="text-black text-base font-bold">Messages</div>
+                <div class="flex items-center justify-between gap-2 px-3 py-4">
+                  <div class="text-base font-bold text-black">Messages</div>
                   <div>
-                    <button class="text-orange text-sm">
+                    <button class="text-sm text-orange">
                       Mark all as read
                     </button>
                   </div>
                 </div>
 
                 <div
-                  class="mt-2 border-t-2 border-t-[#D9D9D9] shadow overflow-auto h-80"
+                  class="mt-2 h-80 overflow-auto border-t-2 border-t-[#D9D9D9] shadow"
                 >
-                  <a href="#" class="flex items-start p-3 text-rkBlac active">
+                  <a href="#" class="text-rkBlac active flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -402,18 +414,18 @@
                     </div>
                   </a>
 
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -423,18 +435,18 @@
                     </div>
                   </a>
 
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -443,18 +455,18 @@
                       </div>
                     </div>
                   </a>
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -471,7 +483,7 @@
               <div class="relative">
                 <button
                   @click="notificationOpen = ! notificationOpen"
-                  class="flex text-gray-600 focus:outline-none hover:text-orange focus:text-orange"
+                  class="flex text-gray-600 hover:text-orange focus:text-orange focus:outline-none"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -489,7 +501,7 @@
                   </svg>
                 </button>
                 <div
-                  class="absolute bg-red-600 text-white badge rounded-full -top-3 -end-3 text-center text-xs"
+                  class="badge absolute -end-3 -top-3 rounded-full bg-red-600 text-center text-xs text-white"
                 >
                   1
                 </div>
@@ -497,21 +509,21 @@
               <div
                 x-show="notificationOpen"
                 @click="notificationOpen = false"
-                class="fixed inset-0 z-10 w-full h-full"
+                class="fixed inset-0 z-10 h-full w-full"
                 style="display: none"
               ></div>
 
               <div
                 x-show="notificationOpen"
-                class="absolute right-2 z-10 mt-2 overflow-hidden bg-white rounded-lg shadow-xl w-80"
+                class="absolute right-2 z-10 mt-2 w-80 overflow-hidden rounded-lg bg-white shadow-xl"
                 style="display: none"
               >
-                <div class="py-4 px-3 flex justify-between items-center gap-2">
-                  <div class="text-black text-base font-bold">
+                <div class="flex items-center justify-between gap-2 px-3 py-4">
+                  <div class="text-base font-bold text-black">
                     Notifications
                   </div>
                   <div>
-                    <button class="text-orange text-sm">
+                    <button class="text-sm text-orange">
                       Mark all as read
                     </button>
                   </div>
@@ -519,7 +531,7 @@
 
                 <div>
                   <span
-                    class="px-4 text-orange pb-2 border-b-2 text-sm border-orange"
+                    class="border-b-2 border-orange px-4 pb-2 text-sm text-orange"
                   >
                     All
                     <div class="badge bg-orange-200 text-sm font-medium">2</div>
@@ -527,20 +539,20 @@
                 </div>
 
                 <div
-                  class="mt-2 border-t-2 border-t-[#D9D9D9] shadow overflow-auto h-80"
+                  class="mt-2 h-80 overflow-auto border-t-2 border-t-[#D9D9D9] shadow"
                 >
-                  <a href="#" class="flex items-start p-3 text-rkBlack active">
+                  <a href="#" class="active flex items-start p-3 text-rkBlack">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vinoth Kumar</span>
                         wants to sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00014</span>
@@ -549,28 +561,28 @@
                       </div>
                       <div class="mt-2">
                         <button
-                          class="btn btn-sm bg-orange hover:bg-orange-600 text-white"
+                          class="btn btn-sm bg-orange text-white hover:bg-orange-600"
                         >
                           Approve
                         </button>
 
-                        <button class="btn btn-sm btn-outline">Reject</button>
+                        <button class="btn btn-outline btn-sm">Reject</button>
                       </div>
                     </div>
                   </a>
 
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -580,18 +592,18 @@
                     </div>
                   </a>
 
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -601,18 +613,18 @@
                     </div>
                   </a>
 
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -622,18 +634,18 @@
                     </div>
                   </a>
 
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -642,18 +654,18 @@
                       </div>
                     </div>
                   </a>
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -669,9 +681,9 @@
             <div class="divider divider-horizontal"></div>
 
             <div x-data="{ dropdownOpen: false }" class="relative">
-              <div class="flex gap-2 items-center">
+              <div class="flex items-center gap-2">
                 <div class="hidden md:block">
-                  <div class="font-semibold text-rkBlack text-sm">
+                  <div class="text-sm font-semibold text-rkBlack">
                     Vishnu prasath
                   </div>
                   <div class="text-xs text-rkGray">Marketing</div>
@@ -680,11 +692,11 @@
                 <div>
                   <button
                     @click="dropdownOpen = !dropdownOpen"
-                    class="flex gap-2 items-center"
+                    class="flex items-center gap-2"
                   >
                     <span>
                       <img
-                        class="object-cover size-10 rounded-full shadow focus:outline-none"
+                        class="size-10 rounded-full object-cover shadow focus:outline-none"
                         src="https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=296&amp;q=80"
                         alt="Your avatar"
                       />
@@ -693,7 +705,7 @@
                     <span>
                       <svg
                         :class="{'rotate-180': dropdownOpen}"
-                        class="w-4 h-4 transition-transform duration-200"
+                        class="h-4 w-4 transition-transform duration-200"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -714,13 +726,13 @@
               <div
                 x-show="dropdownOpen"
                 @click="dropdownOpen = false"
-                class="fixed inset-0 z-10 w-full h-full"
+                class="fixed inset-0 z-10 h-full w-full"
                 style="display: none"
               ></div>
 
               <div
                 x-show="dropdownOpen"
-                class="absolute right-0 z-10 w-48 mt-2 overflow-hidden bg-white rounded-md shadow-xl"
+                class="absolute right-0 z-10 mt-2 w-48 overflow-hidden rounded-md bg-white shadow-xl"
                 style="display: none"
               >
                 <a
@@ -738,56 +750,56 @@
             </div>
           </div>
         </header>
-        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-white">
-          <div class="container px-6 py-8 mx-auto">
-            <div class="sm:hidden mb-8">
+        <main class="flex-1 overflow-y-auto overflow-x-hidden bg-white">
+          <div class="container mx-auto px-6 py-8">
+            <div class="mb-8 sm:hidden">
               <h3 class="text-xl font-medium text-rkBlack">Add New Advances</h3>
             </div>
 
-           <form id="add-new-advances-form">
-            <div class="max-w-sm space-y-6">
+            <form id="add-new-advances-form">
+              <div class="max-w-sm space-y-6">
                 <div>
                   <label
                     for="trip-id"
-                    class="block font-semibold mb-2 text-sm text-gray-900"
+                    class="mb-2 block text-sm font-semibold text-gray-900"
                     >Trip ID<span class="text-red-500">*</span></label
                   >
                   <input
                     type="text"
                     id="trip-id"
-                    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5"
+                    class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
                     placeholder="Enter Trip ID"
                     required
                   />
                 </div>
-  
+
                 <div>
                   <label
                     for="trip-purpose"
-                    class="block mb-2 text-sm font-semibold text-gray-900"
+                    class="mb-2 block text-sm font-semibold text-gray-900"
                     >Purpose of Trip</label
                   >
                   <input
                     type="text"
                     id="trip-purpose"
-                    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5"
+                    class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
                     placeholder="Enter Purpose of Trip"
                     required
                   />
                 </div>
-  
+
                 <div>
                   <label
                     for="journey-date"
-                    class="block mb-2 text-sm font-semibold text-gray-900"
+                    class="mb-2 block text-sm font-semibold text-gray-900"
                     >Journey Date</label
                   >
                   <div class="relative max-w-sm">
                     <div
-                      class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                      class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5"
                     >
                       <svg
-                        class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                        class="z-10 h-4 w-4 text-gray-500 dark:text-gray-400"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor"
@@ -799,65 +811,63 @@
                       </svg>
                     </div>
                     <input
-                      datepicker
                       id="journey-date"
-                      type="text"
-                      class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full ps-10 p-2.5"
-                      placeholder="Select date"
+                      type="date"
+                      class="picker block w-full rounded-lg border border-gray-300 bg-white p-2.5 ps-10 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
                     />
                   </div>
                 </div>
-  
-  
-  
+
                 <div>
                   <label
                     for="trip-id"
-                    class="block font-semibold mb-2 text-sm text-gray-900"
+                    class="mb-2 block text-sm font-semibold text-gray-900"
                     >Requesting Amount<span class="text-red-500">*</span></label
                   >
-                  
+
                   <div class="flex min-w-fit">
-                      <select id="countries" 
-                      class="bg-white border min-w-fit border-gray-300 text-gray-900 text-sm rounded-s-lg focus:ring-orange-500 focus:border-orange-500 p-2.5"
-                      >
-                          <option value="INR">INR</option>
-                          <option value="USD">USD</option>
-                        </select>
-                  <input
-                    type="text"
-                    id="trip-id"
-                    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-e-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5"
-                    placeholder="Requesting Amount"
-                    required
-                  />
+                    <select
+                      id="countries"
+                      class="min-w-fit rounded-s-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
+                    >
+                      <option value="INR">INR</option>
+                      <option value="USD">USD</option>
+                    </select>
+                    <input
+                      type="text"
+                      id="trip-id"
+                      class="block w-full rounded-e-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
+                      placeholder="Requesting Amount"
+                      required
+                    />
                   </div>
                 </div>
-  
-  
+
                 <div>
                   <div>
                     <label
                       for="payee-account-no"
-                      class="block font-semibold mb-2 text-sm text-gray-900"
-                      >Payee Account No<span class="text-red-500">*</span></label
+                      class="mb-2 block text-sm font-semibold text-gray-900"
+                      >Payee Account No<span class="text-red-500"
+                        >*</span
+                      ></label
                     >
                     <input
                       type="text"
                       id="payee-account-no"
-                      class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5"
+                      class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
                       placeholder="Enter Payee Account No"
                       required
                     />
                   </div>
-  
-                  <div class="flex items-start mt-2">
+
+                  <div class="mt-2 flex items-start">
                     <div class="flex items-center">
                       <input
                         id="remember"
                         type="checkbox"
                         value=""
-                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 text-orange-500 focus:ring-3 focus:ring-orange-300"
+                        class="focus:ring-3 h-4 w-4 rounded border border-gray-300 bg-gray-50 text-orange-500 focus:ring-orange-300"
                         required
                       />
                     </div>
@@ -868,54 +878,66 @@
                     >
                   </div>
                 </div>
-  
-                
+
                 <div>
                   <label
                     for="notes"
-                    class="block font-semibold mb-2 text-sm text-gray-900"
+                    class="mb-2 block text-sm font-semibold text-gray-900"
                     >Notes<span class="text-red-500">*</span></label
                   >
-  
+
                   <textarea
                     name="notes"
                     id="notes"
-                    class="w-full border resize-none border-gray-300 bg-white rounded-lg focus:ring-orange-500 focus:border-orange-500 block p-2.5"
+                    class="block w-full resize-none rounded-lg border border-gray-300 bg-white p-2.5 focus:border-orange-500 focus:ring-orange-500"
                   ></textarea>
                 </div>
 
-
                 <div class="md:text-end">
-                    <button class="btn btn-md text-sm px-6 bg-orange-500 hover:bg-orange-500 text-white">Request Advance</button>
-                    <button type="reset" class="btn btn-md text-sm px-6 btn-outline">Cancel</button>
+                  <button
+                    class="btn btn-md bg-orange-500 px-6 text-sm text-white hover:bg-orange-500"
+                  >
+                    Request Advance
+                  </button>
+                  <button
+                    type="reset"
+                    class="btn btn-outline btn-md px-6 text-sm"
+                  >
+                    Cancel
+                  </button>
                 </div>
               </div>
-           </form>
-
-
+            </form>
           </div>
         </main>
 
-
-
-
-      <dialog id="mymodal" class="modal shadow-lg">
-          <div class="modal-box pt-20 pb-10">
-            <div class="text-center space-y-2 text-sm text-black">
-              <div>Trip ID: <span class="text-green-500 text-base font-semibold">TRIP-00014</span></div>
-              <div class="text-lg">Your Request Advance Submitted Successfully </div>
+        <dialog id="mymodal" class="modal shadow-lg">
+          <div class="modal-box pb-10 pt-20">
+            <div class="space-y-2 text-center text-sm text-black">
+              <div>
+                Trip ID:
+                <span class="text-base font-semibold text-green-500"
+                  >TRIP-00014</span
+                >
+              </div>
+              <div class="text-lg">
+                Your Request Advance Submitted Successfully
+              </div>
             </div>
             <div class="modal-action justify-center">
               <form method="dialog">
-                <button class="btn bg-orange-500 hover:bg-orange-500 text-white">Ok</button>
+                <button
+                  class="btn bg-orange-500 text-white hover:bg-orange-500"
+                >
+                  Ok
+                </button>
               </form>
             </div>
           </div>
         </dialog>
 
-
         <footer class="bg-[#F1F2F6]">
-          <div class="text-xs text-center py-1">
+          <div class="py-1 text-center text-xs">
             Emerald © <span id="current-year"></span> All Rights Reserved.
             Developed by BBIT
           </div>
@@ -928,19 +950,13 @@
     <script src="../assets/js/simple-datatables.js"></script>
     <script src="../assets/js/main.js"></script>
 
-  
-
-
     <script>
-        let form = document.getElementById("add-new-advances-form");
-        form.onsubmit = (event) => {
-          event.preventDefault();
-          console.log("Form submitted");
-          mymodal.showModal()
-        };
-
-
-
+      let form = document.getElementById("add-new-advances-form");
+      form.onsubmit = (event) => {
+        event.preventDefault();
+        console.log("Form submitted");
+        mymodal.showModal();
+      };
     </script>
   </body>
 </html>
