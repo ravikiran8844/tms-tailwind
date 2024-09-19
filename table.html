@@ -8,572 +8,270 @@
     <link rel="stylesheet" href="assets/css/tailwind.css" />
   </head>
   <body>
-    <div class="overflow-x-auto px-4">
-      <table
-        class="main-table border3 table w-full table-fixed border-separate border-spacing-y-4"
-      >
-        <thead class="bg-black p-4 text-center uppercase text-white">
-          <tr>
-            <th width="200px">Date</th>
-            <th width="200px">Purpose of Trip</th>
-            <th width="200px">Location</th>
-            <th width="200px">Total Amount Spent</th>
-            <th width="200px"></th>
-          </tr>
-        </thead>
+    <!-- Timeline -->
+    <div>
+      <!-- Heading -->
+      <div class="my-2 ps-2 first:mt-0">
+        <h3
+          class="text-xs font-medium uppercase text-gray-500 dark:text-neutral-400"
+        >
+          1 Aug, 2023
+        </h3>
+      </div>
+      <!-- End Heading -->
 
-        <tbody id="main-table-body">
-          <tr>
-            <td colspan="5">
-              <table class="table">
-                <tr>
-                  <td>
-                    <div class="relative max-w-sm px-2">
-                      <div
-                        class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5"
-                      >
-                        <svg
-                          class="z-10 h-4 w-4 text-gray-500"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
-                          />
-                        </svg>
-                      </div>
-                      <input
-                        type="date"
-                        class="picker block w-full rounded-lg border border-gray-300 bg-white p-2.5 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                      />
-                    </div>
-                  </td>
-                  <td>
-                    <div>
-                      <input
-                        class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder="Purpose of Trip"
-                      />
-                    </div>
-                  </td>
-                  <td>
-                    <div>
-                      <input
-                        class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder="Enter Location"
-                      />
-                    </div>
-                  </td>
-                  <td>
-                    <div>
-                      <input
-                        class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder="Total Amount Spent"
-                      />
-                    </div>
-                  </td>
-                  <td class="flex justify-end">
-                    <button
-                      class="view-details btn btn-sm gap-0 border-orange-500 bg-white px-4 text-sm text-orange-500 hover:border-orange-500 hover:bg-white"
-                      onclick="toggleDetails(1,this)"
-                    >
-                      View Details
+      <!-- Item -->
+      <div class="flex gap-x-3">
+        <!-- Icon -->
+        <div
+          class="relative after:absolute after:bottom-0 after:start-3.5 after:top-7 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 last:after:hidden dark:after:bg-neutral-700"
+        >
+          <div class="relative z-10 flex size-7 items-center justify-center">
+            <div
+              class="size-2 rounded-full bg-gray-400 dark:bg-neutral-600"
+            ></div>
+          </div>
+        </div>
+        <!-- End Icon -->
 
-                      <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          class="size-5"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </td>
-                </tr>
-                <tr id="details-row-1" style="display: none">
-                  <!-- Initially hidden -->
-                  <td colspan="5">
-                    <table class="table" id="nested-table-1">
-                      <thead class="bg-[#F1F2F6] text-black">
-                        <tr>
-                          <th>Category</th>
-                          <th>Bill Available</th>
-                          <th>Bill No</th>
-                          <th>Shop Name</th>
-                          <th>Amount Spent</th>
-                          <th>Upload Bill</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <select
-                              class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-                            >
-                              <option value="">Select Category</option>
-                              <option value="Breakfast">Breakfast</option>
-                              <option value="Lunch">Lunch</option>
-                              <option value="Dinner">Dinner</option>
-                            </select>
-                          </td>
-                          <td>
-                            <div class="flex items-center">
-                              <div class="me-4 flex items-center">
-                                <label
-                                  class="text-sm font-medium text-gray-900 dark:text-gray-300"
-                                >
-                                  <input
-                                    type="radio"
-                                    name="billAvailable-bill-upload-1-1"
-                                    value="yes"
-                                    class="me-1 h-4 w-4 rounded border-gray-300 bg-gray-100 text-yellow-400 focus:ring-yellow-500"
-                                    onclick="toggleFileInput('bill-upload-1-1', true)"
-                                  />
-                                  Yes
-                                </label>
-                              </div>
-                              <div class="me-4 flex items-center">
-                                <label
-                                  class="text-sm font-medium text-gray-900 dark:text-gray-300"
-                                >
-                                  <input
-                                    name="billAvailable-bill-upload-1-1"
-                                    type="radio"
-                                    value="no"
-                                    class="me-1 h-4 w-4 rounded border-gray-300 bg-gray-100 text-yellow-400 focus:ring-yellow-500"
-                                    onclick="toggleFileInput('bill-upload-1-1', false)"
-                                  />
-                                  No
-                                </label>
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <input
-                              class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-                              type="text"
-                              placeholder="Bill No"
-                            />
-                          </td>
-                          <td>
-                            <input
-                              class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-                              type="text"
-                              placeholder="Shop Name"
-                            />
-                          </td>
-                          <td>
-                            <input
-                              class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-                              type="text"
-                              placeholder="Amount Spent"
-                            />
-                          </td>
-                          <td>
-                            <div id="bill-upload-1-1" style="display: none">
-                              <input
-                                class="block w-full rounded-lg border border-gray-300 bg-white text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-                                type="file"
-                                id="file-input-1"
-                              />
-                            </div>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr id="add-receipt-row-1" style="display: none">
-                  <!-- Initially hidden -->
-                  <td colspan="5">
-                    <div>
-                      <button
-                        onclick="addMoreReceipt(1)"
-                        class="flex items-center gap-1 ps-5 text-sm font-semibold text-green-500"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="size-6"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
-                            clip-rule="evenodd"
-                          ></path>
-                        </svg>
-                        <span>Add More Receipt</span>
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="py-6">
-        <div class="flex flex-wrap justify-between gap-5">
-          <div>
-            <button
-              onclick="addMoreExpenses()"
-              class="flex items-center gap-1 ps-5 text-sm font-semibold text-green-500"
+        <!-- Right Content -->
+        <div class="grow pb-8 pt-0.5">
+          <h3
+            class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white"
+          >
+            <svg
+              class="mt-1 size-4 shrink-0"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                class="size-6"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-              <span>Add More Expenses</span>
-            </button>
-          </div>
+              <path
+                d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+              ></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" x2="8" y1="13" y2="13"></line>
+              <line x1="16" x2="8" y1="17" y2="17"></line>
+              <line x1="10" x2="8" y1="9" y2="9"></line>
+            </svg>
+            Created "Preline in React" task
+          </h3>
+          <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
+            Find more detailed insctructions here.
+          </p>
+          <button
+            type="button"
+            class="-ms-1 mt-1 inline-flex items-center gap-x-2 rounded-lg border border-transparent p-1 text-xs text-gray-500 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+          >
+            <img
+              class="size-4 shrink-0 rounded-full"
+              src="https://images.unsplash.com/photo-1659482633369-9fe69af50bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8auto=format&fit=facearea&facepad=3&w=320&h=320&q=80"
+              alt="Avatar"
+            />
+            James Collins
+          </button>
+        </div>
+        <!-- End Right Content -->
+      </div>
+      <!-- End Item -->
 
-          <div class="max-w-sm">
-            <div>
-              <table class="table border border-gray-300">
-                <tr>
-                  <td class="font-semibold border border-r-gray-200">Total Expenses</td>
-                  <td >₹00,000</td>
-                </tr>
-                <tr>
-                  <tr>
-                    <td class="font-semibold border border-r-gray-200">Advance Received</td>
-                    <td>₹00,000</td>
-                  </tr>
-                </tr>
-                  <td class="font-semibold border border-r-gray-200">Reimbursement Amount</td>
-                  <td>₹00,000</td>
-                </tr>
-              </table>
-            </div>
-            <div class="mt-5 flex justify-end">
-              <button class="btn btn-orange px-8 uppercase">Verify</button>
-            </div>
+      <!-- Item -->
+      <div class="flex gap-x-3">
+        <!-- Icon -->
+        <div
+          class="relative after:absolute after:bottom-0 after:start-3.5 after:top-7 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 last:after:hidden dark:after:bg-neutral-700"
+        >
+          <div class="relative z-10 flex size-7 items-center justify-center">
+            <div
+              class="size-2 rounded-full bg-gray-400 dark:bg-neutral-600"
+            ></div>
           </div>
         </div>
+        <!-- End Icon -->
+
+        <!-- Right Content -->
+        <div class="grow pb-8 pt-0.5">
+          <h3
+            class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white"
+          >
+            Release v5.2.0 quick bug fix 🐞
+          </h3>
+          <button
+            type="button"
+            class="-ms-1 mt-1 inline-flex items-center gap-x-2 rounded-lg border border-transparent p-1 text-xs text-gray-500 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+          >
+            <span
+              class="flex size-4 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-[10px] font-semibold uppercase text-gray-600 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400"
+            >
+              A
+            </span>
+            Alex Gregarov
+          </button>
+        </div>
+        <!-- End Right Content -->
       </div>
-    </div>
+      <!-- End Item -->
 
-    <script>
-      // Toggle visibility of nested table and receipt section
-      function toggleDetails(id, button) {
-        const detailsRow = document.getElementById(`details-row-${id}`);
-        const addReceiptRow = document.getElementById(`add-receipt-row-${id}`);
-        const parentTd = detailsRow.closest("td"); // Get the parent td with colspan="5"
+      <!-- Item -->
+      <div class="flex gap-x-3">
+        <!-- Icon -->
+        <div
+          class="relative after:absolute after:bottom-0 after:start-3.5 after:top-7 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 last:after:hidden dark:after:bg-neutral-700"
+        >
+          <div class="relative z-10 flex size-7 items-center justify-center">
+            <div
+              class="size-2 rounded-full bg-gray-400 dark:bg-neutral-600"
+            ></div>
+          </div>
+        </div>
+        <!-- End Icon -->
 
-        // Toggle visibility of details
-        const isVisible = detailsRow.style.display === "table-row";
-        detailsRow.style.display = isVisible ? "none" : "table-row";
-        addReceiptRow.style.display = isVisible ? "none" : "table-row";
+        <!-- Right Content -->
+        <div class="grow pb-8 pt-0.5">
+          <h3
+            class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white"
+          >
+            Marked "Install Charts" completed
+          </h3>
+          <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
+            Finally! You can check it out here.
+          </p>
+          <button
+            type="button"
+            class="-ms-1 mt-1 inline-flex items-center gap-x-2 rounded-lg border border-transparent p-1 text-xs text-gray-500 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+          >
+            <img
+              class="size-4 shrink-0 rounded-full"
+              src="https://images.unsplash.com/photo-1659482633369-9fe69af50bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=3&w=320&h=320&q=80"
+              alt="Avatar"
+            />
+            James Collins
+          </button>
+        </div>
+        <!-- End Right Content -->
+      </div>
+      <!-- End Item -->
 
-        // Toggle the border on the parent td and all inner elements
-        if (!isVisible) {
-          parentTd.classList.add("details-border");
-          button.classList.add("active"); // Add the 'active' class to the button
-        } else {
-          parentTd.classList.remove("details-border");
-          button.classList.remove("active"); // Remove the 'active' class from the button
-        }
-      }
+      <!-- Heading -->
+      <div class="my-2 ps-2 first:mt-0">
+        <h3
+          class="text-xs font-medium uppercase text-gray-500 dark:text-neutral-400"
+        >
+          31 Jul, 2023
+        </h3>
+      </div>
+      <!-- End Heading -->
 
-      // Function to add more receipt rows inside nested table
-      function addMoreReceipt(tableId) {
-        const nestedTable = document
-          .getElementById(`nested-table-${tableId}`)
-          .querySelector("tbody");
-        const newRow = document.createElement("tr");
-        const uniqueId = `bill-upload-${tableId}-${nestedTable.rows.length + 1}`;
+      <!-- Item -->
+      <div class="flex gap-x-3">
+        <!-- Icon -->
+        <div
+          class="relative after:absolute after:bottom-0 after:start-3.5 after:top-7 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 last:after:hidden dark:after:bg-neutral-700"
+        >
+          <div class="relative z-10 flex size-7 items-center justify-center">
+            <div
+              class="size-2 rounded-full bg-gray-400 dark:bg-neutral-600"
+            ></div>
+          </div>
+        </div>
+        <!-- End Icon -->
 
-        newRow.innerHTML = `
-    <td>
-      <select
-        class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
+        <!-- Right Content -->
+        <div class="grow pb-8 pt-0.5">
+          <h3
+            class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white"
+          >
+            Take a break ⛳️
+          </h3>
+          <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
+            Just chill for now... 😉
+          </p>
+        </div>
+        <!-- End Right Content -->
+      </div>
+      <!-- End Item -->
+
+      <!-- Collapse -->
+      <div
+        id="hs-timeline-collapse"
+        class="hs-collapse hidden w-full overflow-hidden transition-[height] duration-300"
+        aria-labelledby="hs-timeline-collapse-content"
       >
-        <option value="">Select Category</option>
-        <option value="Breakfast">Breakfast</option>
-        <option value="Lunch">Lunch</option>
-        <option value="Dinner">Dinner</option>
-      </select>
-    </td>
-    <td>
-      <div class="flex items-center">
-        <div class="me-4 flex items-center">
-          <label>
-            <input
-              type="radio"
-              name="billAvailable-${uniqueId}"
-              value="yes"
-              class="me-1 h-4 w-4 rounded border-gray-300 bg-gray-100 text-yellow-400 focus:ring-yellow-500"
-              onclick="toggleFileInput('${uniqueId}', true)"
-            /> Yes
-          </label>
+        <!-- Heading -->
+        <div class="my-2 ps-2">
+          <h3
+            class="text-xs font-medium uppercase text-gray-500 dark:text-neutral-400"
+          >
+            30 Jul, 2023
+          </h3>
         </div>
-        <div class="me-4 flex items-center">
-          <label>
-            <input
-              type="radio"
-              name="billAvailable-${uniqueId}"
-              value="no"
-              class="me-1 h-4 w-4 rounded border-gray-300 bg-gray-100 text-yellow-400 focus:ring-yellow-500"
-              onclick="toggleFileInput('${uniqueId}', false)"
-            /> No
-          </label>
+        <!-- End Heading -->
+
+        <!-- Item -->
+        <div class="flex gap-x-3">
+          <!-- Icon -->
+          <div
+            class="relative after:absolute after:bottom-0 after:start-3.5 after:top-7 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 last:after:hidden dark:after:bg-neutral-700"
+          >
+            <div class="relative z-10 flex size-7 items-center justify-center">
+              <div
+                class="size-2 rounded-full bg-gray-400 dark:bg-neutral-600"
+              ></div>
+            </div>
+          </div>
+          <!-- End Icon -->
+
+          <!-- Right Content -->
+          <div class="grow pb-8 pt-0.5">
+            <h3
+              class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white"
+            >
+              Final touch ups
+            </h3>
+            <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
+              Double check everything and make sure we're ready to go.
+            </p>
+          </div>
+          <!-- End Right Content -->
         </div>
+        <!-- End Item -->
       </div>
-    </td>
-    <td>
-      <input
-        class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-        type="text"
-        placeholder="Enter Bill No"
-      />
-    </td>
-    <td>
-      <input
-        class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-        type="text"
-        placeholder="Enter Shop Name"
-      />
-    </td>
-    <td>
-      <input
-        class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-        type="text"
-        placeholder="Enter Amount Spent"
-      />
-    </td>
-    <td>
-      <input
-        id="${uniqueId}"
-        class="block w-full rounded-lg border border-gray-300 bg-white text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-        type="file"
-        style="display: none"
-      />
-    </td>
-  `;
-        nestedTable.appendChild(newRow);
-      }
+      <!-- End Collapse -->
 
-      // Function to dynamically add a new expense row to the main table
-      function addMoreExpenses() {
-        const mainTableBody = document.getElementById("main-table-body");
-        const rowCount = mainTableBody.querySelectorAll("tr").length / 3 + 1; // Calculating row number
-        const uniqueId = `bill-upload-${rowCount}-1`;
-
-        const newRow = document.createElement("tr");
-        newRow.innerHTML = `
-    <td colspan="5">
-      <table class="table">
-        <tr>
-          <td>
-            <div class="relative max-w-sm px-2">
-                      <div
-                        class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5"
-                      >
-                        <svg
-                          class="z-10 h-4 w-4 text-gray-500"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
-                          />
-                        </svg>
-                      </div>
-                      <input
-                        type="date"
-                        class="picker block w-full rounded-lg border border-gray-300 bg-white p-2.5 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                      />
-                    </div>
-          </td>
-          <td>
-            <input
-              class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-              type="text"
-              placeholder="Purpose of Trip"
-            />
-          </td>
-          <td>
-            <input
-              class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-              type="text"
-              placeholder="Enter Location"
-            />
-          </td>
-          <td>
-            <input
-              class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-              type="text"
-              placeholder="Total Amount Spent"
-            />
-          </td>
-          <td class="flex justify-end">
-            <button class="view-details btn btn-sm gap-0 border-orange-500 bg-white px-4 text-sm text-orange-500 hover:border-orange-500 hover:bg-white" onclick="toggleDetails(${rowCount},this)">
-              View Details
-              <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          class="size-5"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      </span>
-            </button>
-          </td>
-        </tr>
-        <tr id="details-row-${rowCount}" style="display: none;">
-          <td colspan="5">
-            <table class="table" id="nested-table-${rowCount}">
-              <thead class="bg-[#F1F2F6] text-black">
-                <tr>
-                  <th>Category</th>
-                  <th>Bill Available</th>
-                  <th>Bill No</th>
-                  <th>Shop Name</th>
-                  <th>Amount Spent</th>
-                  <th>Upload Bill</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <select
-                      class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-                    >
-                      <option value="">Select Category</option>
-                      <option value="Breakfast">Breakfast</option>
-                      <option value="Lunch">Lunch</option>
-                      <option value="Dinner">Dinner</option>
-                    </select>
-                  </td>
-                  <td>
-                    <div class="flex items-center">
-                      <div class="me-4 flex items-center">
-                        <label>
-                          <input
-                            type="radio"
-                            name="billAvailable-${uniqueId}"
-                            value="yes"
-                            class="me-1 h-4 w-4 rounded border-gray-300 bg-gray-100 text-yellow-400 focus:ring-yellow-500"
-                            onclick="toggleFileInput('${uniqueId}', true)"
-                          /> Yes
-                        </label>
-                      </div>
-                      <div class="me-4 flex items-center">
-                        <label>
-                          <input
-                            type="radio"
-                            name="billAvailable-${uniqueId}"
-                            value="no"
-                            class="me-1 h-4 w-4 rounded border-gray-300 bg-gray-100 text-yellow-400 focus:ring-yellow-500"
-                            onclick="toggleFileInput('${uniqueId}', false)"
-                          /> No
-                        </label>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <input
-                      class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-                      type="text"
-                      placeholder="Enter Bill No"
-                    />
-                  </td>
-                  <td>
-                    <input
-                      class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-                      type="text"
-                      placeholder="Enter Shop Name"
-                    />
-                  </td>
-                  <td>
-                    <input
-                      class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-                      type="text"
-                      placeholder="Enter Amount Spent"
-                    />
-                  </td>
-                  <td>
-                    <input
-                      id="${uniqueId}"
-                      class="block w-full rounded-lg border border-gray-300 bg-white text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-                      type="file"
-                      style="display: none"
-                    />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-        <tr id="add-receipt-row-${rowCount}" style="display: none;">
-          <td colspan="5">
-            <div>
-              <button onclick="addMoreReceipt(${rowCount})" class="flex items-center gap-1 ps-5 text-sm font-semibold text-green-500"
+      <!-- Item -->
+      <div class="flex gap-x-3 ps-[7px]">
+        <button
+          type="button"
+          class="hs-collapse-toggle hs-collapse-open:hidden inline-flex items-center gap-x-1 text-start text-sm font-medium text-blue-600 decoration-2 hover:underline focus:underline focus:outline-none dark:text-blue-500"
+          id="hs-timeline-collapse-content"
+          aria-expanded="false"
+          aria-controls="hs-timeline-collapse"
+          data-hs-collapse="#hs-timeline-collapse"
         >
           <svg
+            class="size-3.5 shrink-0"
             xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
-            fill="currentColor"
-            class="size-6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <path
-              fill-rule="evenodd"
-              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
-              clip-rule="evenodd"
-            ></path>
+            <path d="m6 9 6 6 6-6"></path>
           </svg>
-          <span>Add More Receipt</span>
+          Show older
         </button>
-            </div>
-          </td>
-        </tr>
-      </table>
-    </td>
-  `;
-
-        mainTableBody.appendChild(newRow);
-      }
-
-      // Toggle visibility of file input based on "Bill Available" option
-      function toggleFileInput(inputId, isVisible) {
-        const fileInput = document.getElementById(inputId);
-        fileInput.style.display = isVisible ? "block" : "none";
-      }
-    </script>
+      </div>
+      <!-- End Item -->
+    </div>
+    <!-- End Timeline -->
   </body>
 </html>
