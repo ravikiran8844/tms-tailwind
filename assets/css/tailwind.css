@@ -800,14 +800,6 @@ html{
   left: -5px;
 }
 
-[role="tooltip"].invisible > [data-popper-arrow]:before{
-  visibility: hidden;
-}
-
-[role="tooltip"].invisible > [data-popper-arrow]:after{
-  visibility: hidden;
-}
-
 [type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select{
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -3557,10 +3549,6 @@ details.collapse summary::-webkit-details-marker{
   pointer-events: none;
 }
 
-.invisible{
-  visibility: hidden;
-}
-
 .collapse{
   visibility: collapse;
 }
@@ -3664,6 +3652,10 @@ details.collapse summary::-webkit-details-marker{
 
 .m-1{
   margin: 0.25rem;
+}
+
+.m-auto{
+  margin: auto;
 }
 
 .mx-1{
@@ -3792,6 +3784,10 @@ details.collapse summary::-webkit-details-marker{
 
 .mt-8{
   margin-top: 2rem;
+}
+
+.mb-20{
+  margin-bottom: 5rem;
 }
 
 .block{
@@ -4155,6 +4151,24 @@ details.collapse summary::-webkit-details-marker{
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+
+.space-y-10 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+}
+
+.space-y-5 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}
+
+.space-y-8 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
 .overflow-auto{
@@ -4554,6 +4568,11 @@ details.collapse summary::-webkit-details-marker{
   line-height: 2rem;
 }
 
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-base{
   font-size: 1rem;
   line-height: 1.5rem;
@@ -4579,9 +4598,9 @@ details.collapse summary::-webkit-details-marker{
   line-height: 1rem;
 }
 
-.text-9xl{
-  font-size: 8rem;
-  line-height: 1;
+.text-4xl{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .font-bold{
@@ -4692,9 +4711,9 @@ details.collapse summary::-webkit-details-marker{
   color: rgb(227 160 8 / var(--tw-text-opacity));
 }
 
-.antialiased{
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.text-blue-400{
+  --tw-text-opacity: 1;
+  color: rgb(118 169 250 / var(--tw-text-opacity));
 }
 
 .opacity-50{
@@ -5302,6 +5321,10 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
 
   .md\:p-1{
     padding: 0.25rem;
+  }
+
+  .md\:p-10{
+    padding: 2.5rem;
   }
 
   .md\:p-4{
