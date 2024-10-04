@@ -942,6 +942,7 @@
                                             value="yes"
                                             class="me-1 h-4 w-4 rounded border-gray-300 bg-gray-100 text-yellow-400 focus:ring-yellow-500"
                                             onclick="toggleFileInput('bill-upload-1-1', true)"
+                                            checked
                                           />
                                           Yes
                                         </label>
@@ -966,31 +967,57 @@
                                     <input
                                       class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
                                       type="text"
-                                      placeholder="Bill No"
+                                      placeholder="Enter Bill No"
                                     />
                                   </td>
                                   <td>
                                     <input
                                       class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
                                       type="text"
-                                      placeholder="Shop Name"
+                                      placeholder="Enter Shop Name"
                                     />
                                   </td>
                                   <td>
                                     <input
                                       class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
                                       type="text"
-                                      placeholder="Amount Spent"
+                                      placeholder="Enter Amount Spent"
                                     />
                                   </td>
-                                  <td>
-                                    <div id="bill-upload-1-1" style="display: none">
-                                      <input
-                                        class="block w-full rounded-lg border border-gray-300 bg-white text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-                                        type="file"
-                                        id="file-input-1"
-                                      />
+                                  <td width="200px">
+                                    
+                                    <div id="bill-upload-1-1">
+                                      <button class="py-2 flex-nowrap bg-white text-orange-500 px-4 rounded-sm border-2 text-sm border-dashed flex items-center gap-1 justify-center" onclick="document.getElementById('file-input-1-modal').showModal()">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4">
+                                          <path fill-rule="evenodd" d="M11.47 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06l-3.22-3.22V16.5a.75.75 0 0 1-1.5 0V4.81L8.03 8.03a.75.75 0 0 1-1.06-1.06l4.5-4.5ZM3 15.75a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                                        </svg>
+                                        Attach Receipt
+                                      </button>
+                                      <dialog id="file-input-1-modal" class="modal">
+                                        <div class="modal-box">
+                                          <label for="fileInput-1" class="drop-zone gap-2">
+                                            <div class="mb-2">
+                                              <span class="btn btn-circle bg-white text-orange-500">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                                                  <path fill-rule="evenodd" d="M11.47 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06l-3.22-3.22V16.5a.75.75 0 0 1-1.5 0V4.81L8.03 8.03a.75.75 0 0 1-1.06-1.06l4.5-4.5ZM3 15.75a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                                                </svg>
+                                              </span>
+                                            </div>
+                                            <div>
+                                              <span class="text-blue-500">Click here</span> to upload
+                                            </div>
+                                            <input type="file" id="fileInput-1" multiple accept="image/*" style="display: none;" onchange="handleFileUpload(event, 'image-preview-1')">
+                                          </label>
+                                    
+                                          <div class="image-preview" id="image-preview-1"></div>
+                                    
+                                          <div class="text-center mt-10">
+                                            <button class="btn bg-orange-500 text-white hover:bg-orange-600 hover:text-white" onclick="document.getElementById('file-input-1-modal').close()">Confirm</button>
+                                          </div>
+                                        </div>
+                                      </dialog>
                                     </div>
+                                    
                                   </td>
                                 </tr>
                               </tbody>
@@ -1070,8 +1097,28 @@
                       </table>
                     </div>
                     <div class="mt-5 flex justify-end">
-                      <button class="btn btn-orange px-8 uppercase">Verify</button>
+                      <button id="verifyBtn" class="btn btn-orange px-8 uppercase" onclick="handleVerify()">Verify</button>
                     </div>
+
+                    <dialog id="successModal" class="modal">
+                      <div class="modal-box py-16">
+                        
+                        <div class="text-center mb-8">
+                          <div class="mb-2 flex items-center justify-center gap-1"><span>
+                            Trip ID:
+                          </span> <span class="text-green-500 font-semibold text-xl">TRIP-00014</span>
+                        </div>
+                          <div>Your Details Updated Successfully</div>
+                        </div>
+
+                          <form method="dialog" class="text-center">
+                            <!-- if there is a button in form, it will close the modal -->
+                            <button class="btn bg-orange-500 text-white hover:bg-orange-500">Ok</button>
+                          </form>
+                      </div>
+                    </dialog>
+
+
                   </div>
                 </div>
               </div>
@@ -1147,6 +1194,7 @@
               value="yes"
               class="me-1 h-4 w-4 rounded border-gray-300 bg-gray-100 text-yellow-400 focus:ring-yellow-500"
               onclick="toggleFileInput('${uniqueId}', true)"
+              checked
             /> Yes
           </label>
         </div>
@@ -1184,14 +1232,43 @@
         placeholder="Enter Amount Spent"
       />
     </td>
-    <td>
-      <input
-        id="${uniqueId}"
-        class="block w-full rounded-lg border border-gray-300 bg-white text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-        type="file"
-        style="display: none"
-      />
-    </td>
+     <td width="200px">
+                                    
+                                    <div id="${uniqueId}">
+                                      <button class="py-2 flex-nowrap bg-white text-orange-500 px-4 rounded-sm border-2 text-sm border-dashed flex items-center gap-1 justify-center" onclick="document.getElementById('file-input-${uniqueId}-modal').showModal()">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4">
+                                          <path fill-rule="evenodd" d="M11.47 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06l-3.22-3.22V16.5a.75.75 0 0 1-1.5 0V4.81L8.03 8.03a.75.75 0 0 1-1.06-1.06l4.5-4.5ZM3 15.75a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                                        </svg>
+                                        Attach Receipt
+                                      </button>
+                                      <dialog id="file-input-${uniqueId}-modal" class="modal">
+                                        <div class="modal-box">
+                                          <label for="fileInput-${uniqueId}" class="drop-zone gap-2">
+                                            <div class="mb-2">
+                                              <span class="btn btn-circle bg-white text-orange-500">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                                                  <path fill-rule="evenodd" d="M11.47 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06l-3.22-3.22V16.5a.75.75 0 0 1-1.5 0V4.81L8.03 8.03a.75.75 0 0 1-1.06-1.06l4.5-4.5ZM3 15.75a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                                                </svg>
+                                              </span>
+                                            </div>
+                                            <div>
+                                              <span class="text-blue-500">Click here</span> to upload
+                                            </div>
+                                            <input type="file" id="fileInput-${uniqueId}" multiple accept="image/*" style="display: none;" onchange="handleFileUpload(event, 'image-preview-${uniqueId}')">
+                                          </label>
+                                    
+                                          <div class="image-preview" id="image-preview-${uniqueId}"></div>
+                                    
+                                          <div class="text-center mt-10">
+                                            <button class="btn bg-orange-500 text-white hover:bg-orange-600 hover:text-white" onclick="document.getElementById('file-input-${uniqueId}-modal').close()">Confirm</button>
+                                          </div>
+                                        </div>
+                                      </dialog>
+                                    </div>
+                                    
+                                  </td>
+
+    
   `;
         nestedTable.appendChild(newRow);
       }
@@ -1306,6 +1383,7 @@
                             value="yes"
                             class="me-1 h-4 w-4 rounded border-gray-300 bg-gray-100 text-yellow-400 focus:ring-yellow-500"
                             onclick="toggleFileInput('${uniqueId}', true)"
+                            checked
                           /> Yes
                         </label>
                       </div>
@@ -1343,14 +1421,42 @@
                       placeholder="Enter Amount Spent"
                     />
                   </td>
-                  <td>
-                    <input
-                      id="${uniqueId}"
-                      class="block w-full rounded-lg border border-gray-300 bg-white text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
-                      type="file"
-                      style="display: none"
-                    />
-                  </td>
+                  <td width="200px">
+                                    
+                                    <div id="${uniqueId}">
+                                      <button class="py-2 flex-nowrap bg-white text-orange-500 px-4 rounded-sm border-2 text-sm border-dashed flex items-center gap-1 justify-center" onclick="document.getElementById('file-input-${uniqueId}-modal').showModal()">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4">
+                                          <path fill-rule="evenodd" d="M11.47 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06l-3.22-3.22V16.5a.75.75 0 0 1-1.5 0V4.81L8.03 8.03a.75.75 0 0 1-1.06-1.06l4.5-4.5ZM3 15.75a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                                        </svg>
+                                        Attach Receipt
+                                      </button>
+                                      <dialog id="file-input-${uniqueId}-modal" class="modal">
+                                        <div class="modal-box">
+                                          <label for="fileInput-${uniqueId}" class="drop-zone gap-2">
+                                            <div class="mb-2">
+                                              <span class="btn btn-circle bg-white text-orange-500">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                                                  <path fill-rule="evenodd" d="M11.47 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06l-3.22-3.22V16.5a.75.75 0 0 1-1.5 0V4.81L8.03 8.03a.75.75 0 0 1-1.06-1.06l4.5-4.5ZM3 15.75a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                                                </svg>
+                                              </span>
+                                            </div>
+                                            <div>
+                                              <span class="text-blue-500">Click here</span> to upload
+                                            </div>
+                                            <input type="file" id="fileInput-${uniqueId}" multiple accept="image/*" style="display: none;" onchange="handleFileUpload(event, 'image-preview-${uniqueId}')">
+                                          </label>
+                                    
+                                          <div class="image-preview" id="image-preview-${uniqueId}"></div>
+                                    
+                                          <div class="text-center mt-10">
+                                            <button class="btn bg-orange-500 text-white hover:bg-orange-600 hover:text-white" onclick="document.getElementById('file-input-${uniqueId}-modal').close()">Confirm</button>
+                                          </div>
+                                        </div>
+                                      </dialog>
+                                    </div>
+                                    
+                                  </td>
+
                 </tr>
               </tbody>
             </table>
@@ -1391,5 +1497,111 @@
         fileInput.style.display = isVisible ? "block" : "none";
       }
     </script>
+
+
+
+<script>
+  function handleFileUpload(event, previewId) {
+    const fileInput = event.target;
+    const previewContainer = document.getElementById(previewId);
+    
+    // Clear previous previews
+    previewContainer.innerHTML = "";
+
+    // Get the selected files
+    const files = Array.from(fileInput.files);
+
+    files.forEach((file, index) => {
+      if (file && file.type.startsWith('image/')) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+          // Create container for image and delete button
+          const imageContainer = document.createElement('div');
+          imageContainer.classList.add('relative', 'size-20', 'group');
+
+          // Create image element
+          const imgElement = document.createElement('img');
+          imgElement.src = e.target.result;
+          imgElement.style.maxWidth = "100%";
+          imgElement.style.maxHeight = "100%";
+          imgElement.classList.add("object-cover", "w-full", "h-full");
+
+          // Create delete button overlay
+          const deleteButton = document.createElement('button');
+          deleteButton.innerHTML = '×';
+          deleteButton.classList.add('absolute', 'top-[-10px]', 'right-[-10px]', 'bg-black', 'text-white', 'w-6', 'h-6', 'rounded-full', 'flex', 'items-center', 'justify-center', 'cursor-pointer');
+          deleteButton.onclick = () => removeImage(previewId, index, fileInput);
+
+          // Append image and delete button to the container
+          imageContainer.appendChild(imgElement);
+          imageContainer.appendChild(deleteButton);
+
+          // Add image container to the preview area
+          previewContainer.appendChild(imageContainer);
+        };
+
+        reader.readAsDataURL(file);
+      }
+    });
+  }
+
+  // Function to remove the image from preview and update input files
+  function removeImage(previewId, index, fileInput) {
+    const previewContainer = document.getElementById(previewId);
+    const filesArray = Array.from(fileInput.files);
+
+    // Remove the selected file
+    filesArray.splice(index, 1);
+
+    // Create a new DataTransfer object to update file input
+    const dataTransfer = new DataTransfer();
+    filesArray.forEach(file => dataTransfer.items.add(file));
+
+    // Update the file input files
+    fileInput.files = dataTransfer.files;
+
+    // Refresh the preview
+    handleFileUpload({ target: fileInput }, previewId);
+  }
+</script>
+
+
+
+
+<script>
+  let isVerified = false;
+  
+  function handleVerify() {
+    const button = document.getElementById('verifyBtn');
+  
+    if (!isVerified) {
+      // First click: change the button text to 'Submit'
+      button.innerText = 'Submit';
+      isVerified = true;
+    } else {
+      // Second click: open the success modal
+      successModal.showModal()
+    }
+  }
+  
+  function openModal() {
+    const modal = document.getElementById('successModal');
+    modal.classList.remove('hidden');
+  }
+  
+  function closeModal() {
+    const modal = document.getElementById('successModal');
+    modal.classList.add('hidden');
+    resetButton();
+  }
+  
+  function resetButton() {
+    const button = document.getElementById('verifyBtn');
+    button.innerText = 'Verify';
+    isVerified = false;
+  }
+  </script>
+
   </body>
 </html>

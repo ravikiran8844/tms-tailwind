@@ -1,23 +1,165 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add to Cart Button</title>
-    <link rel="stylesheet" href="assets/css/tailwind.css" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag & Drop File Uploader with Preview</title>
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+  <style>
+    .drop-zone {
+      width: 100%;
+      height: 150px;
+      border: 2px dashed #ccc;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-align: center;
+    }
 
+    .drop-zone.dragover {
+      background-color: #e6e6e6;
+    }
 
+    .image-preview {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
 
-  
+    .image-preview-item {
+      position: relative;
+      margin: 5px;
+    }
 
+    .image-preview-item img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
 
+    .delete-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background-color: rgba(255, 0, 0, 0.8);
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
 
+<!-- Modal Trigger Buttons -->
 
-    <script src="assets/js/flowbite.min.js"></script>
-    <script src="assets/js/alpine.min.js"></script>
+<div>
+  <button class="py-2 bg-white text-orange-500 border-2 text-sm px-4 border-dashed flex items-center gap-2 justify-center" onclick="document.getElementById('my_modal_1').showModal()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4">
+      <path fill-rule="evenodd" d="M11.47 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06l-3.22-3.22V16.5a.75.75 0 0 1-1.5 0V4.81L8.03 8.03a.75.75 0 0 1-1.06-1.06l4.5-4.5ZM3 15.75a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+    </svg>
+      Attach Receipt
+  </button>
+</div>
+<button class="py-2 bg-white text-orange-500 border-2 text-sm px-4 border-dashed flex items-center gap-2 justify-center" onclick="document.getElementById('my_modal_2').showModal()">Open Modal 2</button>
 
+<!-- Modal 1 -->
+<dialog id="my_modal_1" class="modal">
+  <div class="modal-box">
+    <h3 class="text-lg font-bold">Upload Images (Modal 1)</h3>
+    <p class="py-4">Drag and drop your images or click to browse.</p>
 
-  </body>
+    <div class="drop-zone" id="drop-zone-1">
+      Drag & Drop your files here or click to upload
+      <input type="file" id="fileInput-1" multiple accept="image/*" style="display: none;">
+    </div>
+
+    <div class="image-preview" id="image-preview-1"></div>
+
+    <div class="modal-action">
+      <button class="btn" onclick="document.getElementById('my_modal_1').close()">Close</button>
+    </div>
+  </div>
+</dialog>
+
+<!-- Modal 2 -->
+<dialog id="my_modal_2" class="modal">
+  <div class="modal-box">
+    <h3 class="text-lg font-bold">Upload Images (Modal 2)</h3>
+    <p class="py-4">Drag and drop your images or click to browse.</p>
+
+    <div class="drop-zone" id="drop-zone-2">
+      Drag & Drop your files here or click to upload
+      <input type="file" id="fileInput-2" multiple accept="image/*" style="display: none;">
+    </div>
+
+    <div class="image-preview" id="image-preview-2"></div>
+
+    <div class="modal-action">
+      <button class="btn" onclick="document.getElementById('my_modal_2').close()">Close</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  function setupUploader(modalId) {
+    const dropZone = document.getElementById(`drop-zone-${modalId}`);
+    const fileInput = document.getElementById(`fileInput-${modalId}`);
+    const imagePreview = document.getElementById(`image-preview-${modalId}`);
+
+    dropZone.addEventListener('click', () => fileInput.click());
+
+    fileInput.addEventListener('change', handleFiles);
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropZone.classList.add('dragover');
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+      dropZone.classList.remove('dragover');
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropZone.classList.remove('dragover');
+      handleFiles(e.dataTransfer);
+    });
+
+    function handleFiles(e) {
+      const files = e.files || e.target.files;
+      Array.from(files).forEach(file => {
+        if (file.type.startsWith('image/')) {
+          const reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onload = () => {
+            const imageElement = document.createElement('div');
+            imageElement.classList.add('image-preview-item');
+            imageElement.innerHTML = `
+              <img src="${reader.result}" alt="${file.name}">
+              <button class="delete-btn">&times;</button>
+            `;
+            imageElement.querySelector('.delete-btn').addEventListener('click', () => {
+              imageElement.remove();
+            });
+            imagePreview.appendChild(imageElement);
+          };
+        }
+      });
+    }
+  }
+
+  // Initialize each modal uploader
+  setupUploader(1);
+  setupUploader(2);
+</script>
+
+</body>
 </html>
