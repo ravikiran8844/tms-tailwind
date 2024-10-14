@@ -795,13 +795,13 @@
             </div>
             <div id="default-styled-tab-content">
               <div
-                class="hidden md:p-4"
+                class="hidden md:py-4"
                 id="styled-single-trip"
                 role="tabpanel"
                 aria-labelledby="request-expenses-tab"
               >
                 <div class="overflow-x-auto">
-                  <table class="table table-sm">
+                  <table class="table table-sm tms-table2">
                     <thead class="uppercase">
                       <th>Expense Details</th>
                       <th>Trip Id</th>
@@ -819,16 +819,17 @@
                               <div class="flex items-center me-2">
                                 <input
                                   type="checkbox"
+                                  id="TRIP-00014"
                                   value=""
                                   class="w-4 h-4 text-yellow-400 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                                 />
                               </div>
-                              <div>
+                              <label for="TRIP-00014">
                                 <div>12 July - 13 July, 2024</div>
                                 <div class="text-blue-500">
                                   Food and Transport Expenses
                                 </div>
-                              </div>
+                              </label>
                             </div>
                           </a>
                         </td>
@@ -870,13 +871,13 @@
                 </div>
               </div>
               <div
-                class="hidden md:p-4"
+                class="hidden md:py-4"
                 id="styled-round-trip"
                 role="tabpanel"
                 aria-labelledby="request-advances-tab"
               >
                 <div class="overflow-x-auto">
-                  <table class="table table-sm">
+                  <table class="table table-sm tms-table ">
                     <thead>
                       <th>REQUESTED DATE</th>
                       <th>TRIP ID</th>
@@ -921,7 +922,7 @@
                         </td>
                         <td>
                           <a href="">
-                            <div class="flex gap-1 items-center">
+                            <div class="flex gap-1 items-center justify-center">
                               <div>
                                 <img
                                   class="size-8 rounded-full"

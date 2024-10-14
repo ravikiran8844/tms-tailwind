@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Marquee Example</title>
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-infinite-marquee@1.0.12/infinite-marquee.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-infinite-marquee@1.0.12/infinite-marquee.bundle.js"></script>
+
+  <style>
+    .marquee-container{
+      background-color: blueviolet;
+      color: #fff;
+    }
+    .marquee-container .marquee-item{
+      margin-right: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<section>
+  <div class="marquee-container py-4 text-sm md:text-lg">
+    <div class="flex gap-2 items-center marquee-item"><span>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      </svg>
+    </span>
+      <span>Item 1</span>
+    </div>
+    <div class="flex gap-2 items-center marquee-item"><span>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      </svg>
+    </span>
+      <span>Item 2</span>
+    </div>
+    <div class="flex gap-2 items-center marquee-item"><span>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      </svg>
+    </span>
+      <span>Item 3</span>
+    </div>
+    <div class="flex gap-2 items-center marquee-item"><span>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      </svg>
+    </span>
+      <span>Item 4</span>
+    </div>
+    <div class="flex gap-2 items-center marquee-item"><span>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      </svg>
+    </span>
+      <span>Item 5</span>
+    </div>
+
+  </div>
+</section>
+  
+<script>
+  new InfiniteMarquee({
+	element: '.marquee-container',
+	speed: 25000,
+	smoothEdges: false,
+	direction: 'left',
+	gap: '15px',
+	duplicateCount: 2,
+
+});
+</script>
+</body>
+</html>

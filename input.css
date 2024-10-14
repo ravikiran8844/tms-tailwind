@@ -96,7 +96,7 @@ nav #main-menu button[aria-expanded="false"] {
 
 
   .trip_table-warpper table {
-    padding-left: 60px;
+    margin-left: 60px;
   }
 }
 
@@ -195,4 +195,81 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   margin-top: 20px;
   gap: 16px;
 }
+.tms-table thead {
+  border-radius: 4px 4px 0px 0px;
+  border-bottom: 1px solid #ECECEC;
+  background: #F1F2F6;
+  color: #2D2D2D;
 
+}
+.tms-table tr{
+  border: 1px solid #ECECEC;
+}
+.tms-table tbody tr:hover{
+  border: 1px solid #2D2D2D;
+}
+.tms-table tbody tr:hover td{
+  border-top: 1px solid #2D2D2D;
+}
+.tms-table th{
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.tms-table td{
+  padding: 22px;
+  text-align: center;
+}
+
+
+/* table2 */
+.tms-table2 thead {
+  border: none;
+  background-color: #fff;
+
+}
+.tms-table2 tr{
+  border: 1px solid #ECECEC;
+}
+.tms-table2 tbody tr:hover{
+  border: 1px solid #2D2D2D;
+}
+.tms-table2 tbody tr:hover td{
+  border-top: 1px solid #2D2D2D;
+}
+.tms-table2 th{
+  padding: 20px;
+  text-align: start;
+  text-transform: uppercase;
+}
+.tms-table2 td{
+  padding: 22px;
+  text-align: start;
+}
+
+
+
+.main-table tr{
+  border: 1px solid #ECECEC;
+}
+
+
+.main-table table.table tr{
+  border: none;
+}
+
+.trips-table tr{
+  border: 1px solid #ECECEC;
+}
+
+.trips-table th{
+  border-radius: 4px 4px 0px 0px;
+border-bottom: 1px solid #ECECEC;
+background: #F1F2F6;
+color: #2D2D2D;
+padding: 16px 14px;
+
+}
+.trips-table td{
+  padding: 16px 14px;
+}
