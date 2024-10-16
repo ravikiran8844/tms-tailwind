@@ -9,3 +9,10 @@ function formatToDisplay(date) {
     year: "numeric",
   });
 }
+
+
+
+
+function redirectTo(url) {
+  window.location.href = url;
+}
