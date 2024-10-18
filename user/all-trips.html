@@ -745,6 +745,19 @@
             </div>
 
             <div class="relative overflow-x-auto">
+              <div class="sm:absolute sm:right-2 max-sm:mb-5">
+                <div class="flex gap-1 items-center">
+                  <label class="block min-w-fit text-sm">Trip Filter</label>
+                  <select class="select select-sm  focus:select-warning text-xs select-gray-700 select-bordered max-w-xs m-1">
+                    <option>All</option>
+                    <option>Approved</option>
+                    <option>Pending</option>
+                    <option>Rejected</option>
+                    <option>Delete</option>
+                  </select>
+                </div>
+              </div>
+
               <table id="all-trips-table" class="table table-sm tms-table">
                 <thead class="text-black">
                   <tr >
