@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Request Details - Emerald TMS</title>
+    <title>All Requests - Emerald TMS</title>
     <link rel="stylesheet" href="../assets/css/tailwind.css" />
     <link
       rel="stylesheet"
@@ -248,7 +248,7 @@
                         <li>
                           <a
                             class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
-                            href="/user/add-new-advances.html"
+                            href="/user/add-new-expenses.html"
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -344,7 +344,7 @@
 
             <div class="relative mx-4 hidden sm:block lg:mx-0">
               <h3 class="text-md font-semibold text-gray-700 md:text-xl">
-                Request Details
+                All Requests
               </h3>
             </div>
           </div>
@@ -762,16 +762,16 @@
         <main class="flex-1 overflow-y-auto overflow-x-hidden bg-white">
           <div class="mx-auto px-6 py-8">
             <div class="mb-8 sm:hidden">
-              <h3 class="text-xl font-medium text-rkBlack">Request Details</h3>
+              <h3 class="text-xl font-medium text-rkBlack">All Requests</h3>
             </div>
 
             <div class="grid min-h-screen grid-cols-12" x-data="tabsData()">
               <div class="col-span-12 mb-4 md:col-span-3">
                 <div class="mb-5 flex items-center justify-between">
-                  <div class="text-xl font-semibold">All Advances</div>
+                  <div class="text-xl font-semibold">All Expenses</div>
                   <div class="me-2">
                     <a
-                      href="/user/add-new-advances.html"
+                      href="/user/add-new-expenses.html"
                       class="btn btn-square bg-orange-500 text-white hover:bg-orange-500"
                     >
                       <svg
@@ -792,36 +792,43 @@
 
                 <ul
                   class="flex flex-col flex-wrap gap-1 text-sm font-medium"
-                  id="advances-tab"
+                  id="expenses-tab"
                   role="tablist"
                 >
-                  <template x-for="(advance, index) in advances" :key="index">
+                  <template x-for="(expense, index) in expenses" :key="index">
                     <li class="me-2" role="presentation">
                       <button
                         class="block w-full border border-gray-200 bg-gray-50 p-4 text-start"
-                        :id="'advance-' + index + '-tab'"
+                        :id="'expense-' + index + '-tab'"
                         :class="selectedTab === index ? 'active border-orange-500' : ''"
                         @click="selectTab(index)"
-                        :aria-controls="'advance-' + index"
+                        :aria-controls="'expense-' + index"
                         type="button"
                         role="tab"
                         :aria-selected="selectedTab === index"
                       >
-                        <div class="flex flex-wrap justify-between gap-2">
-                          <div class="flex flex-col flex-wrap gap-2">
-                            <div
-                              class="text-blue-500"
-                              x-text="formatToDisplay(advance.date)"
-                            ></div>
-                            <div
-                              class="badge bg-orange-200 text-xs uppercase text-orange-500"
-                              x-text="advance.status"
-                            ></div>
+                        <div class="flex justify-between gap-2">
+                          <div class="flex gap-2">
+                            <div class="size-5 rounded-md border border-gray-300 rk-checkbox"></div>
+                            <div class="flex flex-col flex-wrap gap-2">
+                                <div
+                                  class="text-gray-"
+                                  x-text="formatToDisplay(expense.date)"
+                                ></div>
+                                <div
+                                  class="text-blue-500"
+                                  x-text="expense.type"
+                                ></div>
+                                <div
+                                  class="badge bg-green-100 text-xs uppercase text-green-500"
+                                  x-text="expense.status"
+                                ></div>
+                              </div>
                           </div>
                           <div>
                             <div
                               class="font-semibold text-black"
-                              x-text="advance.amount"
+                              x-text="expense.amount"
                             ></div>
                           </div>
                         </div>
@@ -832,26 +839,22 @@
               </div>
 
               <div
-                id="advances-tab-content"
+                id="expenses-tab-content"
                 class="col-span-12 md:col-span-9 md:border-l md:border-l-gray-200"
               >
-                <template x-for="(advance, index) in advances" :key="index">
+                <template x-for="(expense, index) in expenses" :key="index">
                   <div
                     x-show="selectedTab === index"
                     class="rounded-lg p-4"
-                    :id="'advance-' + index"
+                    :id="'expense-' + index"
                     role="tabpanel"
-                    :aria-labelledby="'advance-' + index + '-tab'"
+                    :aria-labelledby="'expense-' + index + '-tab'"
                   >
                     <div class="flex flex-wrap justify-between gap-4">
-                      <div class="flex flex-wrap items-center gap-2">
+                      <div>
                         <div
-                          class="text-lg font-medium"
-                          x-text="formatToDisplay(advance.date)"
-                        ></div>
-                        <div
-                          class="badge bg-orange-200 text-orange-500"
-                          x-text="advance.status"
+                          class="text-lg font-semibold text-black"
+                          x-text="expense.type"
                         ></div>
                       </div>
 
@@ -859,9 +862,9 @@
                         <button
                           @click="toggleUpdate(index)"
                           class="rounded-lg border border-gray-400 p-2 text-rkGray"
-                          :class="advance.isEditing ? 'bg-orange-500 text-white' : ''"
+                          :class="expense.isEditing ? 'bg-orange-500 text-white' : ''"
                         >
-                          <span x-show="!advance.isEditing">
+                          <span x-show="!expense.isEditing">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
@@ -877,7 +880,7 @@
                               />
                             </svg>
                           </span>
-                          <span x-show="advance.isEditing"> Update </span>
+                          <span x-show="expense.isEditing"> Update </span>
                         </button>
                         <button
                           @click="deleteAdvance(index)"
@@ -900,7 +903,7 @@
                         </button>
 
                         <a
-                          href="/user/pending-request.html"
+                          href="/user/all-request.html"
                           class="inline-block rounded-lg border border-gray-400 p-2 text-rkGray"
                         >
                           <svg
@@ -919,120 +922,215 @@
                       </div>
                     </div>
 
-                    <!-- Editable Content Table -->
-                    <div class="rk-editable-inputs mt-6 grid grid-cols-3">
-                      <div class="col-span-3 md:col-span-1">
-                        <div
-                          class="flex h-80 flex-col items-center justify-center gap-1 rounded-lg border border-gray-300 bg-gray-50"
-                        >
-                          <div>
-                            <img
-                              src="../assets/images/coin.svg"
-                              class="size-14"
-                              alt="coin"
-                            />
-                          </div>
-                          <div class="text-md font-semibold text-rkGray">
-                            Advance Amount
-                          </div>
-                          <div class="text-xl font-semibold">
-                            <div x-text="advance.amount"></div>
-                          </div>
+                    <div class="mt-5">
+                        <div class="flex justify-between gap-2 border border-gray-200 shadow-md p-4 rounded-md">
+                            <div class="flex gap-2">
+                                <div>
+                                    <div class=" bg-gray-200 p-2 rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                          </svg>
+                                          
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-md text-black font-medium">TRIP-00014</div>
+                                    <div class="text-md font-semibold text-orange-500">Chennai</div>
+                                </div>
+                            </div>
+    
+                            <div>
+                                <div class="text-sm text-blue-500">Yet to Approved by</div>
+                                <div class="flex gap-1 items-center justify-center">
+                                    <div>
+                                      <img class="size-8 rounded-full" src="../assets/images/user.png" alt="">
+                                    </div>
+                                    <div>
+                                        <span class="text-sm">Vivin Raj</span>
+                                        <span class="text-xs text-gray-400">(<span>Manager</span>)</span>
+                                    </div>
+                                  </div>
+                            </div>
                         </div>
-                      </div>
-
-                      <div class="col-span-3 md:col-span-2">
-                        <table class="table">
-                          <tr>
-                            <td>Advance Amount</td>
-                            <td>
-                              <input
-                                type="text"
-                                class="form-input w-full"
-                                x-model="advance.amount"
-                                :readonly="!advance.isEditing"
-                              />
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Requested Date</td>
-                            <td>
-                              <input
-                                type="date"
-                                onclick="showPicker()"
-                                class="form-input w-full"
-                                x-model="advance.date"
-                                :readonly="!advance.isEditing"
-                              />
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Requested by</td>
-                            <td>
-                              <div x-text="advance.requestedBy"></div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Approve by</td>
-                            <td>
-                              <div x-text="advance.approvedBy"></div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="align-top">Notes</td>
-                            <td>
-                              <textarea
-                                class="form-input h-20 w-full resize-none"
-                                x-model="advance.notes"
-                                :readonly="!advance.isEditing"
-                              ></textarea>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Payee Account No</td>
-                            <td>
-                              <input
-                                type="text"
-                                class="form-input w-full"
-                                x-model="advance.accountNo"
-                                :readonly="!advance.isEditing"
-                              />
-                            </td>
-                          </tr>
-                        </table>
-                      </div>
                     </div>
+
+                    <div class="mt-5 bg-gray-100 p-4 rounded-md">
+                        <div class="grid xl:grid-cols-3 gap-4">
+                            <div class="xl:col-span-1">
+                                <!-- show first image as main -->
+                                <div class="bg-gray-200 rounded-lg">
+                                    <img class="aspect-square rounded-lg" src="../assets/images/bill.png" alt="">
+                                </div>
+                                <!-- list of images -->
+                                 <div class="grid grid-cols-4 gap-4 mt-4">
+                                    <div class="relative">
+                                        <img class="aspect-square rounded-lg" src="../assets/images/bill.png" alt="">
+                                        <div class="absolute top-[-10px] right-[-10px]" x-show="expense.isEditing">
+                                            <button class="text-white bg-black p-1 rounded-full">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                                  </svg>
+                                                  
+                                                  
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="relative">
+                                        <img class="aspect-square rounded-lg" src="../assets/images/bill.png" alt="">
+                                        <div class="absolute top-[-10px] right-[-10px]" x-show="expense.isEditing">
+                                            <button class="text-white bg-black p-1 rounded-full">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                                  </svg>
+                                                  
+                                                  
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="relative">
+                                        <img class="aspect-square rounded-lg" src="../assets/images/bill.png" alt="">
+                                        <div class="absolute top-[-10px] right-[-10px]" x-show="expense.isEditing">
+                                            <button class="text-white bg-black p-1 rounded-full">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                                  </svg>
+                                                  
+                                                  
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="relative">
+                                        <img class="aspect-square rounded-lg" src="../assets/images/bill.png" alt="">
+                                        <div class="absolute top-[-10px] right-[-10px]" x-show="expense.isEditing">
+                                            <button class="text-white bg-black p-1 rounded-full">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                                  </svg>
+                                                  
+                                                  
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="relative">
+                                        <img class="aspect-square rounded-lg" src="../assets/images/bill.png" alt="">
+                                        <div class="absolute top-[-10px] right-[-10px]" x-show="expense.isEditing">
+                                            <button class="text-white bg-black p-1 rounded-full">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                                  </svg>
+                                                  
+                                                  
+                                            </button>
+                                        </div>
+                                    </div>
+                                   
+
+                                    <div class="bg-gray-200 rounded-lg flex items-center justify-center">
+                                        <label for="file-input" class="p-2 rounded-full text-orange-500 bg-white" :class="expense.isEditing ? 'cursor-pointer' : '' ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
+                                                  </svg>  
+                                        </label>
+                                        <input type="file" id="file-input" class="hidden" :disabled="!expense.isEditing">
+                                    </div>
+                                 </div>
+                            </div>
+                            <div class="overflow-x-auto xl:col-span-2">
+                                <div class="flex items-center justify-between gap-2">
+                                    <div class="text-xs"> <span>12 July - 13 July, 2024</span></div>
+                                    <div class="mt-2">
+                                        <div class="badge bg-green-100 text-xs uppercase text-green-500">SUBMITTED</div>
+                                    </div>
+                                </div>
+
+                                <div class="text-sm font-semibold text-black">
+                                    Food and Domestic Expenses
+                                </div>
+
+                                <div class="divider"></div>
+
+
+                                <div>
+                                    <div class="badge bg-gray-200 rounded-none text-black text-xs">REIMBURSABLE</div>
+                                    <div class="text-md font-semibold text-black">Rs.500.00</div>
+                                </div>
+
+                                <div class="mt-5">
+                                    <div class="card bg-white">
+                                        <div class="card-body">
+                                            <div class="border-b border-gray-200">
+                                                <span class="text-blue-500 text-sm font-medium border-b-2 border-blue-500">History</span>
+                                            </div>
+
+
+                                            <div class=" overflow-x-auto">
+                                                <table class="table table-xs text-xs">
+                                                    <thead>
+                                                        <tr class="text-center">
+                                                            <th>Date</th>
+                                                            <th>Category</th>
+                                                            <th class="text-center">Reimbursable Amount</th>
+                                                            <th>Receipt</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="text-center">
+                                                        <tr>
+                                                            <td>12 July 2024</td>
+                                                            <td>Lunch, Cab & Tea & Snacks</td>
+                                                            <td>₹250</td>
+                                                            <td>Uploaded</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>13 July 2024</td>
+                                                            <td>Dinner, Cab & Tea & Snacks</td>
+                                                            <td>₹250</td>
+                                                            <td>Uploaded</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div>
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            Total Expenses
+                                                        </td>
+                                                        <td>
+                                                            ₹500
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Advance Received</td>
+                                                        <td>₹1,000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Reimbursement Amount</td>
+                                                        <td>₹500</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Editable Content Table -->
+                    <div class="rk-editable-inputs mt-6 grid grid-cols-3"></div>
                   </div>
                 </template>
               </div>
             </div>
+
+
           </div>
         </main>
-
-        <!-- <div class="relative max-w-sm">
-          <div
-            class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3"
-          >
-            <svg
-              class="h-4 w-4 text-gray-500 dark:text-gray-400"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
-              />
-            </svg>
-          </div>
-
-          <input
-            type="text"
-            id="datepicker"
-            value="2024-07-11"
-            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-          />
-        </div> -->
 
         <footer class="bg-[#F1F2F6]">
           <div class="py-1 text-center text-xs">
@@ -1052,39 +1150,37 @@
 
     <script src="../assets/js/main.js"></script>
 
-    <!-- <script>
-      $(function () {
-        $("#datepicker").datepicker({
-          onSelect: function (dateText) {
-            console.log("Selected date: " + dateText);
-          },
-        });
-      });
-    </script> -->
-
     <script>
       function tabsData() {
         return {
           selectedTab: 0,
-          advances: [
+          expenses: [
             {
               date: "2024-07-11",
-              status: "Pending APPROVAL",
-              amount: "1,000",
+              status: "Submitted",
+              amount: "500",
               requestedBy: "Vishnu Prasath",
               approvedBy: "Vivin Raj",
+              type: "Food and Domestic Expenses",
+              id: "TRIP-00011",
+              location: "Chennai",
+              isEditing: false,
               notes: "-",
               accountNo: "657895432093",
               isEditing: false,
             },
             {
-              date: "2024-07-13",
-              status: "Pending APPROVAL",
-              amount: "1,200",
-              requestedBy: "John Doe",
-              approvedBy: "Jane Doe",
-              notes: "Urgent",
-              accountNo: "789654321012",
+              date: "2025-07-11",
+              status: "Submitted",
+              amount: "700",
+              requestedBy: "Vishnu Prasath",
+              approvedBy: "Vivin Raj",
+              type: "Food and ",
+              id: "TRIP-00014",
+              location: "Chennai",
+              isEditing: false,
+              notes: "-",
+              accountNo: "657895432093",
               isEditing: false,
             },
           ],
@@ -1092,18 +1188,18 @@
             this.selectedTab = index;
           },
           deleteAdvance(index) {
-            this.advances.splice(index, 1);
+            this.expenses.splice(index, 1);
             if (this.selectedTab === index) {
               this.selectedTab = 0;
             }
           },
           toggleUpdate(index) {
-            this.advances[index].isEditing = !this.advances[index].isEditing;
-            if (!this.advances[index].isEditing) {
+            this.expenses[index].isEditing = !this.expenses[index].isEditing;
+            if (!this.expenses[index].isEditing) {
               // Log the data when Update is clicked
               console.log(
                 "Advance Data: ",
-                JSON.parse(JSON.stringify(this.advances[index])),
+                JSON.parse(JSON.stringify(this.expenses[index])),
               );
             }
           },

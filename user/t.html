@@ -1,24 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Request - Emerald TMS</title>
+    <title>All Requests - Emerald TMS</title>
     <link rel="stylesheet" href="../assets/css/tailwind.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
+    <!-- <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css"
+    /> -->
   </head>
   <body>
     <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200">
       <div
         :class="sidebarOpen ? 'block' : 'hidden'"
         @click="sidebarOpen = false"
-        class="fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden"
+        class="fixed inset-0 z-20 bg-black opacity-50 transition-opacity lg:hidden"
       ></div>
 
       <div
         :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
-        class="fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 transform bg-[#F1F2F6] lg:translate-x-0 lg:static lg:inset-0"
+        class="fixed inset-y-0 left-0 z-30 w-64 transform overflow-y-auto bg-[#F1F2F6] transition duration-300 lg:static lg:inset-0 lg:translate-x-0"
       >
-        <div class="flex items-center justify-center mt-8">
+        <div class="mt-8 flex items-center justify-center">
           <div>
             <a href="/user">
               <img
@@ -32,11 +41,11 @@
         </div>
         <div class="divider"></div>
 
-        <nav class="mt-4 min-h-[70%] flex gap-5 justify-between flex-col">
+        <nav class="mt-4 flex min-h-[70%] flex-col justify-between gap-5">
           <div class="px-1">
             <div>
               <a
-                class="flex items-center px-4 mb-1 py-2 text-sm font-medium rounded text-rkGray hover:text-orange"
+                class="mb-1 flex items-center rounded px-4 py-2 text-sm font-medium text-rkGray hover:text-orange"
                 href="/user/index.html"
               >
                 <svg
@@ -71,7 +80,7 @@
                     <div id="main-menu-dropdown-1">
                       <button
                         type="button"
-                        class="flex px-2 items-center justify-between w-full py-2 text-sm text-rkGray rtl:text-right gap-3"
+                        class="flex w-full items-center justify-between gap-3 px-2 py-2 text-sm text-rkGray rtl:text-right"
                         data-accordion-target="#main-menu-dropdown-body-1"
                         aria-expanded="false"
                         aria-controls="main-menu-dropdown-body-1"
@@ -96,7 +105,7 @@
                         </div>
                         <svg
                           data-accordion-icon
-                          class="w-3 h-3 rotate-180 shrink-0"
+                          class="h-3 w-3 shrink-0 rotate-180"
                           aria-hidden="true"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -120,7 +129,7 @@
                       <ul class="bg-[#EAEAEA] p-2">
                         <li>
                           <a
-                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
                             href="/user/add-new-trip.html"
                           >
                             <svg
@@ -140,7 +149,7 @@
                         </li>
                         <li>
                           <a
-                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
                             href="/user/unplanned-trip.html"
                           >
                             <span class="mx-2 ps-6">Unplanned Trip</span>
@@ -148,7 +157,7 @@
                         </li>
                         <li>
                           <a
-                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
                             href="/user/pending-trips.html"
                           >
                             <span class="mx-2 ps-6">Pending Trips</span>
@@ -156,7 +165,7 @@
                         </li>
                         <li>
                           <a
-                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
                             href="/user/all-trips.html"
                           >
                             <span class="mx-2 ps-6">All Trips</span>
@@ -169,7 +178,7 @@
                     <div id="main-menu-dropdown-2">
                       <button
                         type="button"
-                        class="flex px-2 items-center justify-between w-full py-2 text-sm text-rkGray rtl:text-right gap-3"
+                        class="flex w-full items-center justify-between gap-3 px-2 py-2 text-sm text-rkGray rtl:text-right"
                         data-accordion-target="#main-menu-dropdown-body-2"
                         aria-expanded="false"
                         aria-controls="main-menu-dropdown-body-2"
@@ -194,7 +203,7 @@
                         </div>
                         <svg
                           data-accordion-icon
-                          class="w-3 h-3 rotate-180 shrink-0"
+                          class="h-3 w-3 shrink-0 rotate-180"
                           aria-hidden="true"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -218,7 +227,7 @@
                       <ul class="bg-[#EAEAEA] p-2">
                         <li>
                           <a
-                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
                             href="/user/add-new-expenses.html"
                           >
                             <svg
@@ -238,7 +247,7 @@
                         </li>
                         <li>
                           <a
-                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
                             href="/user/add-new-advances.html"
                           >
                             <svg
@@ -258,7 +267,7 @@
                         </li>
                         <li>
                           <a
-                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
                             href="/user/pending-request.html"
                           >
                             <span class="mx-2 ps-6">Pending Request</span>
@@ -266,7 +275,7 @@
                         </li>
                         <li>
                           <a
-                            class="flex items-center py-1 px-2 rounded text-sm text-rkGray hover:text-orange hover:bg-[#F1F1F1]"
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
                             href="/user/all-request.html"
                           >
                             <span class="mx-2 ps-6">All Request</span>
@@ -281,11 +290,11 @@
           </div>
           <div class="px-4">
             <a
-              class="flex items-center font-medium text-sm py-1 px-2 rounded text-rkGray hover:text-orange"
+              class="flex items-center rounded px-2 py-1 text-sm font-medium text-rkGray hover:text-orange"
               href="#"
             >
               <svg
-                class="w-[24px] h-[24px]"
+                class="h-[24px] w-[24px]"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -308,9 +317,9 @@
         </nav>
       </div>
 
-      <div class="flex flex-col flex-1 overflow-hidden">
+      <div class="flex flex-1 flex-col overflow-hidden">
         <header
-          class="flex items-center justify-between px-6 py-4 bg-[#F1F2F6] border-b-1 border-[#ECECEC]"
+          class="border-b-1 flex items-center justify-between border-[#ECECEC] bg-[#F1F2F6] px-6 py-4"
         >
           <div class="flex items-center">
             <button
@@ -318,7 +327,7 @@
               class="text-gray-500 focus:outline-none lg:hidden"
             >
               <svg
-                class="w-6 h-6"
+                class="h-6 w-6"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -333,19 +342,19 @@
               </svg>
             </button>
 
-            <div class="hidden sm:block relative mx-4 lg:mx-0">
-              <h3 class="text-md md:text-xl font-semibold text-gray-700">
-                All Request
+            <div class="relative mx-4 hidden sm:block lg:mx-0">
+              <h3 class="text-md font-semibold text-gray-700 md:text-xl">
+                All Requests
               </h3>
             </div>
           </div>
 
-          <div class="flex items-center notifications">
+          <div class="notifications flex items-center">
             <div x-data="{ messageOpen: false }">
               <div class="relative">
                 <button
                   @click="messageOpen = ! messageOpen"
-                  class="flex text-gray-600 mx-4 focus:outline-none hover:text-orange focus:text-orange"
+                  class="mx-4 flex text-gray-600 hover:text-orange focus:text-orange focus:outline-none"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -363,7 +372,7 @@
                   </svg>
                 </button>
                 <div
-                  class="absolute bg-red-600 text-white badge rounded-full -top-3 end-0 text-center text-xs"
+                  class="badge absolute -top-3 end-0 rounded-full bg-red-600 text-center text-xs text-white"
                 >
                   1
                 </div>
@@ -372,39 +381,39 @@
               <div
                 x-show="messageOpen"
                 @click="messageOpen = false"
-                class="fixed inset-0 z-10 w-full h-full"
+                class="fixed inset-0 z-10 h-full w-full"
                 style="display: none"
               ></div>
 
               <div
                 x-show="messageOpen"
-                class="absolute right-2 z-10 mt-2 overflow-hidden bg-white rounded-lg shadow-xl w-80"
+                class="absolute right-2 z-10 mt-2 w-80 overflow-hidden rounded-lg bg-white shadow-xl"
                 style="display: none"
               >
-                <div class="py-4 px-3 flex justify-between items-center gap-2">
-                  <div class="text-black text-base font-bold">Messages</div>
+                <div class="flex items-center justify-between gap-2 px-3 py-4">
+                  <div class="text-base font-bold text-black">Messages</div>
                   <div>
-                    <button class="text-orange text-sm">
+                    <button class="text-sm text-orange">
                       Mark all as read
                     </button>
                   </div>
                 </div>
 
                 <div
-                  class="mt-2 border-t-2 border-t-[#D9D9D9] shadow overflow-auto h-80"
+                  class="mt-2 h-80 overflow-auto border-t-2 border-t-[#D9D9D9] shadow"
                 >
-                  <a href="#" class="flex items-start p-3 text-rkBlac active">
+                  <a href="#" class="text-rkBlac active flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -414,18 +423,18 @@
                     </div>
                   </a>
 
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -435,18 +444,18 @@
                     </div>
                   </a>
 
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -455,18 +464,18 @@
                       </div>
                     </div>
                   </a>
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -483,7 +492,7 @@
               <div class="relative">
                 <button
                   @click="notificationOpen = ! notificationOpen"
-                  class="flex text-gray-600 focus:outline-none hover:text-orange focus:text-orange"
+                  class="flex text-gray-600 hover:text-orange focus:text-orange focus:outline-none"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -501,7 +510,7 @@
                   </svg>
                 </button>
                 <div
-                  class="absolute bg-red-600 text-white badge rounded-full -top-3 -end-3 text-center text-xs"
+                  class="badge absolute -end-3 -top-3 rounded-full bg-red-600 text-center text-xs text-white"
                 >
                   1
                 </div>
@@ -509,21 +518,21 @@
               <div
                 x-show="notificationOpen"
                 @click="notificationOpen = false"
-                class="fixed inset-0 z-10 w-full h-full"
+                class="fixed inset-0 z-10 h-full w-full"
                 style="display: none"
               ></div>
 
               <div
                 x-show="notificationOpen"
-                class="absolute right-2 z-10 mt-2 overflow-hidden bg-white rounded-lg shadow-xl w-80"
+                class="absolute right-2 z-10 mt-2 w-80 overflow-hidden rounded-lg bg-white shadow-xl"
                 style="display: none"
               >
-                <div class="py-4 px-3 flex justify-between items-center gap-2">
-                  <div class="text-black text-base font-bold">
+                <div class="flex items-center justify-between gap-2 px-3 py-4">
+                  <div class="text-base font-bold text-black">
                     Notifications
                   </div>
                   <div>
-                    <button class="text-orange text-sm">
+                    <button class="text-sm text-orange">
                       Mark all as read
                     </button>
                   </div>
@@ -531,7 +540,7 @@
 
                 <div>
                   <span
-                    class="px-4 text-orange pb-2 border-b-2 text-sm border-orange"
+                    class="border-b-2 border-orange px-4 pb-2 text-sm text-orange"
                   >
                     All
                     <div class="badge bg-orange-200 text-sm font-medium">2</div>
@@ -539,20 +548,20 @@
                 </div>
 
                 <div
-                  class="mt-2 border-t-2 border-t-[#D9D9D9] shadow overflow-auto h-80"
+                  class="mt-2 h-80 overflow-auto border-t-2 border-t-[#D9D9D9] shadow"
                 >
-                  <a href="#" class="flex items-start p-3 text-rkBlack active">
+                  <a href="#" class="active flex items-start p-3 text-rkBlack">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vinoth Kumar</span>
                         wants to sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00014</span>
@@ -561,28 +570,28 @@
                       </div>
                       <div class="mt-2">
                         <button
-                          class="btn btn-sm bg-orange hover:bg-orange-600 text-white"
+                          class="btn btn-sm bg-orange text-white hover:bg-orange-600"
                         >
                           Approve
                         </button>
 
-                        <button class="btn btn-sm btn-outline">Reject</button>
+                        <button class="btn btn-outline btn-sm">Reject</button>
                       </div>
                     </div>
                   </a>
 
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -592,18 +601,18 @@
                     </div>
                   </a>
 
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -613,18 +622,18 @@
                     </div>
                   </a>
 
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -634,18 +643,18 @@
                     </div>
                   </a>
 
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -654,18 +663,18 @@
                       </div>
                     </div>
                   </a>
-                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                  <a href="#" class="text-rkBlac flex items-start p-3">
                     <img
-                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      class="mx-1 h-8 w-8 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
                       alt="avatar"
                     />
-                    <div class="mx-2 text-xs flex-grow">
+                    <div class="mx-2 flex-grow text-xs">
                       <div>
                         <span class="font-bold" href="#">Vivin</span> wants to
                         sent Trip Request
                       </div>
-                      <div class="flex justify-between items-center">
+                      <div class="flex items-center justify-between">
                         <div>
                           Trip ID :
                           <span class="font-bold" href="#">TRIP-00015</span>
@@ -681,9 +690,9 @@
             <div class="divider divider-horizontal"></div>
 
             <div x-data="{ dropdownOpen: false }" class="relative">
-              <div class="flex gap-2 items-center">
+              <div class="flex items-center gap-2">
                 <div class="hidden md:block">
-                  <div class="font-semibold text-rkBlack text-sm">
+                  <div class="text-sm font-semibold text-rkBlack">
                     Vishnu prasath
                   </div>
                   <div class="text-xs text-rkGray">Marketing</div>
@@ -692,11 +701,11 @@
                 <div>
                   <button
                     @click="dropdownOpen = !dropdownOpen"
-                    class="flex gap-2 items-center"
+                    class="flex items-center gap-2"
                   >
                     <span>
                       <img
-                        class="object-cover size-10 rounded-full shadow focus:outline-none"
+                        class="size-10 rounded-full object-cover shadow focus:outline-none"
                         src="https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=296&amp;q=80"
                         alt="Your avatar"
                       />
@@ -705,7 +714,7 @@
                     <span>
                       <svg
                         :class="{'rotate-180': dropdownOpen}"
-                        class="w-4 h-4 transition-transform duration-200"
+                        class="h-4 w-4 transition-transform duration-200"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -726,13 +735,13 @@
               <div
                 x-show="dropdownOpen"
                 @click="dropdownOpen = false"
-                class="fixed inset-0 z-10 w-full h-full"
+                class="fixed inset-0 z-10 h-full w-full"
                 style="display: none"
               ></div>
 
               <div
                 x-show="dropdownOpen"
-                class="absolute right-0 z-10 w-48 mt-2 overflow-hidden bg-white rounded-md shadow-xl"
+                class="absolute right-0 z-10 mt-2 w-48 overflow-hidden rounded-md bg-white shadow-xl"
                 style="display: none"
               >
                 <a
@@ -750,247 +759,164 @@
             </div>
           </div>
         </header>
-        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-white">
-          <div class="container px-6 py-8 mx-auto">
-            <div class="sm:hidden mb-8">
-              <h3 class="text-xl font-medium text-rkBlack">All Request</h3>
+        <main class="flex-1 overflow-y-auto overflow-x-hidden bg-white">
+          <div class="mx-auto px-6 py-8">
+            <div class="mb-8 sm:hidden">
+              <h3 class="text-xl font-medium text-rkBlack">All Requests</h3>
             </div>
 
-            <div x-data="{ showFilter: true }">
-
-            <div class="mb-4 flex justify-between gap-4">
-              <ul
-                class="flex flex-wrap gap-y-3 text-sm font-semibold text-center"
-                id="default-styled-tab"
-                data-tabs-toggle="#default-styled-tab-content"
-                data-tabs-active-classes="bg-[#2D2D2D] text-orange-500"
-                data-tabs-inactive-classes="bg-[#F1F2F6] text-black"
-                role="tablist"
-              >
-                <li class="me-2" role="presentation">
-                  <button
-                    class="inline-block p-2 text-sm sm:p-4 rounded-lg text-black border border-gray-300"
-                    id="request-expenses-tab"
-                    data-tabs-target="#styled-single-trip"
-                    type="button"
-                    role="tab"
-                    aria-controls="single-trip"
-                    aria-selected="false"
-                  >
-                    All Request Expenses
-                  </button>
-                </li>
-                <li class="me-2" role="presentation">
-                  <button
-                    class="inline-block p-2 text-sm rounded-lg sm:p-4 text-black border border-gray-300"
-                    id="request-advances-tab"
-                    data-tabs-target="#styled-round-trip"
-                    type="button"
-                    role="tab"
-                    aria-controls="round-trip"
-                    aria-selected="false"
-                  >
-                    All Request Advances
-                  </button>
-                </li>
-              </ul>
-
-              <div>
-                <button @click="showFilter = !showFilter" class="btn-square border rounded-lg border-gray-300 bg-white text-black flex justify-center items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z" />
-                  </svg>                                 
-                </button>
-              </div>
-            </div>
-
-
-            <div class="mb-4">
-              <div class="bg-[#F1F2F6] w-full overflow-x-auto p-2 rounded-md" x-show="showFilter">
+            <div class="grid min-h-screen grid-cols-12" x-data="tabsData()">
+                <!-- Expenses Sidebar -->
+                <div class="col-span-12 mb-4 md:col-span-3">
+                  <!-- Expense List (Repeats) -->
+                  <ul class="flex flex-col flex-wrap gap-1 text-sm font-medium" id="advances-tab" role="tablist">
+                    <template x-for="(advance, index) in advances" :key="index">
+                      <li class="me-2" role="presentation">
+                        <button
+                          class="block w-full border border-gray-200 bg-gray-50 p-4 text-start"
+                          :id="'advance-' + index + '-tab'"
+                          :class="selectedTab === index ? 'active border-orange-500' : ''"
+                          @click="selectTab(index)"
+                          :aria-controls="'advance-' + index"
+                          type="button"
+                          role="tab"
+                          :aria-selected="selectedTab === index"
+                        >
+                          <div class="flex justify-between gap-2">
+                            <div class="flex gap-2">
+                              <div class="size-5 rounded-md border border-gray-300 rk-checkbox"></div>
+                              <div class="flex flex-col gap-2">
+                                <div class="text-gray-" x-text="formatToDisplay(advance.date)"></div>
+                                <div class="text-blue-500" x-text="advance.type"></div>
+                                <div class="badge bg-green-100 text-xs uppercase text-green-500" x-text="advance.status"></div>
+                              </div>
+                            </div>
+                            <div>
+                              <div class="font-semibold text-black" x-text="advance.amount"></div>
+                            </div>
+                          </div>
+                        </button>
+                      </li>
+                    </template>
+                  </ul>
+                </div>
               
-                <div class="flex justify-between gap-2 items-center">
-                  <div class="flex gap-4 items-center">
-                    <div class="btn-circle bg-[#3D3D3D] text-white flex justify-center items-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z" />
-                      </svg>                  
-                    </div>
-    
-                    <div>
-                        <div class="flex items-center border border-[#DEDEDE] rounded-3xl text-sm overflow-hidden">
-                          <div class="px-3 font-medium">Date</div>
-                          <div>
-                            <input class="border-[#DEDEDE] picker  border focus:border-[#DEDEDE] active:focus:border-[#DEDEDE] focus:ring-0 text-sm" type="date" name="" id="">
+                <!-- Expense Details -->
+                <div id="advances-tab-content" class="col-span-12 md:col-span-9 md:border-l md:border-l-gray-200">
+                  <template x-for="(advance, index) in advances" :key="index">
+                    <div
+                      x-show="selectedTab === index"
+                      class="rounded-lg p-4"
+                      :id="'advance-' + index"
+                      role="tabpanel"
+                      :aria-labelledby="'advance-' + index + '-tab'"
+                    >
+                      <!-- Images Section -->
+                      <div class="mt-5">
+                        <div class="flex justify-between gap-2 border border-gray-200 shadow-md p-4 rounded-md">
+                          <div class="flex gap-2">
+                            <!-- Image List -->
+                            <div class="bg-gray-200 rounded-lg">
+                              <!-- Show first image as main -->
+                              <img class="aspect-square rounded-lg" :src="advance.images[0]" alt="">
+                            </div>
+                            <!-- Thumbnails -->
+                            <div class="grid grid-cols-4 gap-4 mt-4">
+                              <template x-for="(image, imgIndex) in advance.images" :key="imgIndex">
+                                <div class="relative">
+                                  <img class="aspect-square rounded-lg" :src="image" alt="">
+                                  <!-- Remove Icon -->
+                                  <div class="absolute top-[-10px] right-[-10px]" x-show="advance.isEditing">
+                                    <button @click="removeImage(index, imgIndex)" class="text-white bg-black p-1 rounded-full">
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                </div>
+                              </template>
+                              <!-- Add Image Button -->
+                              <div class="bg-gray-200 rounded-lg flex items-center justify-center">
+                                <label for="file-input" class="p-2 rounded-full text-orange-500 bg-white" :class="advance.isEditing ? 'cursor-pointer' : ''">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
+                                  </svg>
+                                </label>
+                                <input type="file" id="file-input" class="hidden" :disabled="!advance.isEditing" @change="addImage(index, $event)">
+                              </div>
+                            </div>
                           </div>
-                          <div>
-                            <input class="border-[#DEDEDE] picker border focus:border-[#DEDEDE] active:focus:border-[#DEDEDE] focus:ring-0 text-sm" type="date" name="" id="">
-                          </div>
-                        </div>
-                    </div>
-                    <div>
-                      <div class="flex items-center border border-[#DEDEDE] rounded-3xl text-sm overflow-hidden">
-                        <div class="px-3 font-medium">Category</div>
-                        <div>
-                          <select class="border-[#DEDEDE] picker  border focus:border-[#DEDEDE] active:focus:border-[#DEDEDE] focus:ring-0 text-sm" name="" id="">
-                            <option>Select</option>
-                          </select>
                         </div>
                       </div>
-                  </div>
-
-                  </div>
-    
-                  <div>
-                    <button @click="showFilter = !showFilter" class="btn-circle bg-white text-black flex justify-center items-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                      </svg>                  
-                    </button>
-                  </div>
-                 </div>
-        
-  
-              </div>
-            </div>
-
-
-            <div id="default-styled-tab-content">
-              <div
-                class="hidden md:py-4"
-                id="styled-single-trip"
-                role="tabpanel"
-                aria-labelledby="request-expenses-tab"
-              >
-                <div class="overflow-x-auto">
-                  <table class="table table-sm tms-table2">
-                    <thead class="uppercase">
-                      <th>Expense Details</th>
-                      <th>Trip Id</th>
-                      <th>Total Amount</th>
-                      <th>Reimbursable Amount</th>
-                      <th>Status</th>
-                      <th>Approval</th>
-                    </thead>
-
-                    <tbody>
-                      <tr class="group"  onclick="redirectTo('/user/all-expenses.html')">
-                        <td>
-                            <div class="flex items-center gap-2">
-                              <div class="flex items-center me-2">
-                                <div class="size-6 border border-gray-300 rounded-md group-hover:bg-orange-500">
-
-                                </div>
-                              </div>
-                              <div>
-                                <div>12 July - 13 July, 2024</div>
-                                <div class="text-blue-500">
-                                  Food and Transport Expenses
-                                </div>
-                              </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div>
-                              <div>TRIP-00014</div>
-                              <div class="text-gray-400">Chennai</div>
-                            </div>
-                        </td>
-                        <td>
-                            <div>₹1,500.00</div>
-                        </td>
-                        <td>
-                            <div>₹500.00</div>
-                        </td>
-                        <td>
-                            <div
-                              class="bg-green-100 text-green-500 badge font-medium uppercase"
-                            >
-                              SUBMITTED
-                            </div>
-                        </td>
-                        <td>
-                            <div class="text-orange-500">Pending</div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                    </div>
+                  </template>
                 </div>
               </div>
-              <div
-                class="hidden md:py-4"
-                id="styled-round-trip"
-                role="tabpanel"
-                aria-labelledby="request-advances-tab"
-              >
-                <div class="overflow-x-auto">
-                  <table class="table table-sm tms-table ">
-                    <thead>
-                      <th>REQUESTED DATE</th>
-                      <th>TRIP ID</th>
-                      <th>AMOUNT</th>
-                      <th>NOTES</th>
-                      <th>STATUS</th>
-                      <th>APPROVER</th>
-                    </thead>
+              
+         
+              
 
-                    <tbody>
-                      <tr onclick="redirectTo('/user/all-advances.html')">
-                        <td>
-                            <div class="text-blue-500">11 July 2024</div>
-                        </td>
-                        <td>
-                            <div>
-                              <div>TRIP-00014</div>
-                            </div>
-                        </td>
-                        <td>
-                            <div>Rs.1,000.00</div>
-                        </td>
-                        <td>
-                            <div>Reason for Advance request..</div>
-                        </td>
-                        <td>
-                            <div
-                              class="bg-orange-100 text-orange-500 badge font-medium uppercase"
-                            >
-                              pending
-                            </div>
-                        </td>
-                        <td>
-                            <div class="flex gap-1 items-center justify-center">
-                              <div>
-                                <img
-                                  class="size-8 rounded-full"
-                                  src="../assets/images/user.png"
-                                  alt=""
-                                />
-                              </div>
-                              <div>Vivin Raj</div>
-                            </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
+            
           </div>
         </main>
+
         <footer class="bg-[#F1F2F6]">
-          <div class="text-xs text-center py-1">
+          <div class="py-1 text-center text-xs">
             Emerald © <span id="current-year"></span> All Rights Reserved.
             Developed by BBIT
           </div>
         </footer>
       </div>
     </div>
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script> -->
 
     <script src="../assets/js/alpine.min.js"></script>
     <script src="../assets/js/flowbite.min.js"></script>
     <script src="../assets/js/simple-datatables.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
     <script src="../assets/js/main.js"></script>
-  </body>
-</html>
+
+   
+   
+    <script>
+        function tabsData() {
+          return {
+            selectedTab: 0,
+            advances: [
+              {
+                date: '2024-07-12',
+                type: 'Food and Domestic',
+                status: 'Submitted',
+                amount: '₹500',
+                images: ['/path/to/image1.png', '/path/to/image2.png', '/path/to/image3.png'],
+                isEditing: false,
+              },
+              // Other advances
+            ],
+            selectTab(index) {
+              this.selectedTab = index;
+            },
+            toggleUpdate(index) {
+              this.advances[index].isEditing = !this.advances[index].isEditing;
+            },
+            deleteAdvance(index) {
+              this.advances.splice(index, 1);
+            },
+            removeImage(advanceIndex, imgIndex) {
+              this.advances[advanceIndex].images.splice(imgIndex, 1);
+            },
+            addImage(advanceIndex, event) {
+              const file = event.target.files[0];
+              if (file) {
+                const reader = new FileReader();
+                reader.onload = () => {
+                  this.advances[advanceIndex].images.push(reader.result);
+                };
+                reader.readAsDataURL(file);
+              }
+            },
+          };
+        }
+        </script>
