@@ -3,17 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Requests - Emerald TMS</title>
+    <title>Dashboard - Emerald TMS</title>
     <link rel="stylesheet" href="../assets/css/tailwind.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
-    />
-
-    <!-- <link
-      rel="stylesheet"
-      href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css"
-    /> -->
   </head>
   <body>
     <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200">
@@ -29,7 +20,7 @@
       >
         <div class="mt-8 flex items-center justify-center">
           <div>
-            <a href="/user">
+            <a href="/manager/">
               <img
                 width="193"
                 height="43"
@@ -46,7 +37,7 @@
             <div>
               <a
                 class="mb-1 flex items-center rounded px-4 py-2 text-sm font-medium text-rkGray hover:text-orange"
-                href="/user/index.html"
+                href="/manager/index.html"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +121,7 @@
                         <li>
                           <a
                             class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
-                            href="/user/add-new-trip.html"
+                            href="/manager/add-new-trip.html"
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -150,7 +141,7 @@
                         <li>
                           <a
                             class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
-                            href="/user/unplanned-trip.html"
+                            href="/manager/unplanned-trip.html"
                           >
                             <span class="mx-2 ps-6">Unplanned Trip</span>
                           </a>
@@ -158,7 +149,7 @@
                         <li>
                           <a
                             class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
-                            href="/user/pending-trips.html"
+                            href="/manager/pending-trips.html"
                           >
                             <span class="mx-2 ps-6">Pending Trips</span>
                           </a>
@@ -166,7 +157,7 @@
                         <li>
                           <a
                             class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
-                            href="/user/all-trips.html"
+                            href="/manager/all-trips.html"
                           >
                             <span class="mx-2 ps-6">All Trips</span>
                           </a>
@@ -174,6 +165,7 @@
                       </ul>
                     </div>
                   </li>
+
                   <li class="mb-1">
                     <div id="main-menu-dropdown-2">
                       <button
@@ -182,6 +174,90 @@
                         data-accordion-target="#main-menu-dropdown-body-2"
                         aria-expanded="false"
                         aria-controls="main-menu-dropdown-body-2"
+                      >
+                        <div class="flex items-center">
+                         
+
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                              </svg>
+                              
+
+                          <span class="mx-2">Approval</span>
+                        </div>
+                        <svg
+                          data-accordion-icon
+                          class="h-3 w-3 shrink-0 rotate-180"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 10 6"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5 5 1 1 5"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div
+                      id="main-menu-dropdown-body-2"
+                      class="hidden"
+                      aria-labelledby="main-menu-dropdown-2"
+                    >
+                      <ul class="bg-[#EAEAEA] p-2">
+                     
+                       
+                        <li>
+                            <a
+                              class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                              href="/manager/trip-request.html"
+                            >
+                              <span class="mx-2 ps-6">Trip Request</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a
+                              class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                              href="/manager/expense-request.html"
+                            >
+                              <span class="mx-2 ps-6">Expense Request</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a
+                              class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                              href="/manager/advance-request.html"
+                            >
+                              <span class="mx-2 ps-6">Advance Request</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a
+                              class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                              href="/manager/all-request.html"
+                            >
+                              <span class="mx-2 ps-6">All Request</span>
+                            </a>
+                          </li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="mb-1">
+                    <div id="main-menu-dropdown-3">
+                      <button
+                        type="button"
+                        class="flex w-full items-center justify-between gap-3 px-2 py-2 text-sm text-rkGray rtl:text-right"
+                        data-accordion-target="#main-menu-dropdown-body-3"
+                        aria-expanded="false"
+                        aria-controls="main-menu-dropdown-body-3"
                       >
                         <div class="flex items-center">
                           <svg
@@ -220,15 +296,15 @@
                       </button>
                     </div>
                     <div
-                      id="main-menu-dropdown-body-2"
+                      id="main-menu-dropdown-body-3"
                       class="hidden"
-                      aria-labelledby="main-menu-dropdown-2"
+                      aria-labelledby="main-menu-dropdown-3"
                     >
                       <ul class="bg-[#EAEAEA] p-2">
                         <li>
                           <a
                             class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
-                            href="/user/add-new-expenses.html"
+                            href="/manager/add-new-expenses.html"
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -248,7 +324,7 @@
                         <li>
                           <a
                             class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
-                            href="/user/add-new-advances.html"
+                            href="/manager/add-new-advances.html"
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -268,7 +344,7 @@
                         <li>
                           <a
                             class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
-                            href="/user/pending-request.html"
+                            href="/manager/pending-request.html"
                           >
                             <span class="mx-2 ps-6">Pending Request</span>
                           </a>
@@ -276,7 +352,7 @@
                         <li>
                           <a
                             class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
-                            href="/user/all-request.html"
+                            href="/manager/all-request.html"
                           >
                             <span class="mx-2 ps-6">All Request</span>
                           </a>
@@ -344,7 +420,7 @@
 
             <div class="relative mx-4 hidden sm:block lg:mx-0">
               <h3 class="text-md font-semibold text-gray-700 md:text-xl">
-                All Requests
+                Dashboard
               </h3>
             </div>
           </div>
@@ -760,106 +836,14 @@
           </div>
         </header>
         <main class="flex-1 overflow-y-auto overflow-x-hidden bg-white">
-          <div class="mx-auto px-6 py-8">
-            <div class="mb-8 sm:hidden">
-              <h3 class="text-xl font-medium text-rkBlack">All Requests</h3>
+          <div class="container mx-auto px-6 py-8">
+            <div class="mb-6 sm:hidden">
+              <h3 class="text-xl font-medium text-rkBlack">Dashboard</h3>
             </div>
 
-            <div class="grid min-h-screen grid-cols-12" x-data="tabsData()">
-                <!-- Expenses Sidebar -->
-                <div class="col-span-12 mb-4 md:col-span-3">
-                  <!-- Expense List (Repeats) -->
-                  <ul class="flex flex-col flex-wrap gap-1 text-sm font-medium" id="advances-tab" role="tablist">
-                    <template x-for="(advance, index) in advances" :key="index">
-                      <li class="me-2" role="presentation">
-                        <button
-                          class="block w-full border border-gray-200 bg-gray-50 p-4 text-start"
-                          :id="'advance-' + index + '-tab'"
-                          :class="selectedTab === index ? 'active border-orange-500' : ''"
-                          @click="selectTab(index)"
-                          :aria-controls="'advance-' + index"
-                          type="button"
-                          role="tab"
-                          :aria-selected="selectedTab === index"
-                        >
-                          <div class="flex justify-between gap-2">
-                            <div class="flex gap-2">
-                              <div class="size-5 rounded-md border border-gray-300 rk-checkbox"></div>
-                              <div class="flex flex-col gap-2">
-                                <div class="text-gray-" x-text="formatToDisplay(advance.date)"></div>
-                                <div class="text-blue-500" x-text="advance.type"></div>
-                                <div class="badge bg-green-100 text-xs uppercase text-green-500" x-text="advance.status"></div>
-                              </div>
-                            </div>
-                            <div>
-                              <div class="font-semibold text-black" x-text="advance.amount"></div>
-                            </div>
-                          </div>
-                        </button>
-                      </li>
-                    </template>
-                  </ul>
-                </div>
-              
-                <!-- Expense Details -->
-                <div id="advances-tab-content" class="col-span-12 md:col-span-9 md:border-l md:border-l-gray-200">
-                  <template x-for="(advance, index) in advances" :key="index">
-                    <div
-                      x-show="selectedTab === index"
-                      class="rounded-lg p-4"
-                      :id="'advance-' + index"
-                      role="tabpanel"
-                      :aria-labelledby="'advance-' + index + '-tab'"
-                    >
-                      <!-- Images Section -->
-                      <div class="mt-5">
-                        <div class="flex justify-between gap-2 border border-gray-200 shadow-md p-4 rounded-md">
-                          <div class="flex gap-2">
-                            <!-- Image List -->
-                            <div class="bg-gray-200 rounded-lg">
-                              <!-- Show first image as main -->
-                              <img class="aspect-square rounded-lg" :src="advance.images[0]" alt="">
-                            </div>
-                            <!-- Thumbnails -->
-                            <div class="grid grid-cols-4 gap-4 mt-4">
-                              <template x-for="(image, imgIndex) in advance.images" :key="imgIndex">
-                                <div class="relative">
-                                  <img class="aspect-square rounded-lg" :src="image" alt="">
-                                  <!-- Remove Icon -->
-                                  <div class="absolute top-[-10px] right-[-10px]" x-show="advance.isEditing">
-                                    <button @click="removeImage(index, imgIndex)" class="text-white bg-black p-1 rounded-full">
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                                      </svg>
-                                    </button>
-                                  </div>
-                                </div>
-                              </template>
-                              <!-- Add Image Button -->
-                              <div class="bg-gray-200 rounded-lg flex items-center justify-center">
-                                <label for="file-input" class="p-2 rounded-full text-orange-500 bg-white" :class="advance.isEditing ? 'cursor-pointer' : ''">
-                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
-                                  </svg>
-                                </label>
-                                <input type="file" id="file-input" class="hidden" :disabled="!advance.isEditing" @change="addImage(index, $event)">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </template>
-                </div>
-              </div>
-              
-         
-              
-
-            
+          
           </div>
         </main>
-
         <footer class="bg-[#F1F2F6]">
           <div class="py-1 text-center text-xs">
             Emerald © <span id="current-year"></span> All Rights Reserved.
@@ -868,55 +852,12 @@
         </footer>
       </div>
     </div>
-    <!-- <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script> -->
 
     <script src="../assets/js/alpine.min.js"></script>
     <script src="../assets/js/flowbite.min.js"></script>
     <script src="../assets/js/simple-datatables.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-
     <script src="../assets/js/main.js"></script>
 
-   
-   
-    <script>
-        function tabsData() {
-          return {
-            selectedTab: 0,
-            advances: [
-              {
-                date: '2024-07-12',
-                type: 'Food and Domestic',
-                status: 'Submitted',
-                amount: '₹500',
-                images: ['/path/to/image1.png', '/path/to/image2.png', '/path/to/image3.png'],
-                isEditing: false,
-              },
-              // Other advances
-            ],
-            selectTab(index) {
-              this.selectedTab = index;
-            },
-            toggleUpdate(index) {
-              this.advances[index].isEditing = !this.advances[index].isEditing;
-            },
-            deleteAdvance(index) {
-              this.advances.splice(index, 1);
-            },
-            removeImage(advanceIndex, imgIndex) {
-              this.advances[advanceIndex].images.splice(imgIndex, 1);
-            },
-            addImage(advanceIndex, event) {
-              const file = event.target.files[0];
-              if (file) {
-                const reader = new FileReader();
-                reader.onload = () => {
-                  this.advances[advanceIndex].images.push(reader.result);
-                };
-                reader.readAsDataURL(file);
-              }
-            },
-          };
-        }
-        </script>
+  
+  </body>
+</html>
