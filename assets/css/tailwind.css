@@ -4410,12 +4410,20 @@ details.collapse summary::-webkit-details-marker{
   border-bottom-width: 1px;
 }
 
+.border-b-0{
+  border-bottom-width: 0px;
+}
+
 .border-b-2{
   border-bottom-width: 2px;
 }
 
 .border-t{
   border-top-width: 1px;
+}
+
+.border-t-0{
+  border-top-width: 0px;
 }
 
 .border-t-2{
@@ -5797,6 +5805,10 @@ input[disabled]:focus{
 
   .lg\:hidden{
     display: none;
+  }
+
+  .lg\:max-w-md{
+    max-width: 28rem;
   }
 
   .lg\:translate-x-0{
