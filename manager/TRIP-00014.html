@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALl Trips - Emerald TMS</title>
+    <link rel="stylesheet" href="../assets/css/tailwind.css" />
+  </head>
+  <body>
+    <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200">
+      <div
+        :class="sidebarOpen ? 'block' : 'hidden'"
+        @click="sidebarOpen = false"
+        class="fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden"
+      ></div>
+
+      <div
+        :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
+        class="fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 transform bg-[#F1F2F6] lg:translate-x-0 lg:static lg:inset-0"
+      >
+        <div class="flex items-center justify-center mt-8">
+          <div>
+            <a href="/user">
+              <img
+                width="193"
+                height="43"
+                src="../assets/images/main-logo.svg"
+                alt="TMS Main Logo"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="divider"></div>
+
+      
+        <nav class="mt-4 flex min-h-[70%] flex-col justify-between gap-5">
+          <div class="px-1">
+            <div>
+              <a
+                class="mb-1 flex items-center rounded px-4 py-2 text-sm font-medium text-rkGray hover:text-orange"
+                href="/manager/index.html"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"
+                  />
+                </svg>
+
+                <span class="mx-2">Dashboard</span>
+              </a>
+            </div>
+
+            <div>
+              <div
+                id="main-menu"
+                class="px-2"
+                data-accordion="collapse"
+                data-active-classes="bg-orange rounded-md text-white"
+                data-inactive-classes="text-rkGray hover:text-orange"
+              >
+                <ul>
+                  <li class="mb-1">
+                    <div id="main-menu-dropdown-1">
+                      <button
+                        type="button"
+                        class="flex w-full items-center justify-between gap-3 px-2 py-2 text-sm text-rkGray rtl:text-right"
+                        data-accordion-target="#main-menu-dropdown-body-1"
+                        aria-expanded="false"
+                        aria-controls="main-menu-dropdown-body-1"
+                      >
+                        <div class="flex items-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-6"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z"
+                            />
+                          </svg>
+
+                          <span class="mx-2">Trips</span>
+                        </div>
+                        <svg
+                          data-accordion-icon
+                          class="h-3 w-3 shrink-0 rotate-180"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 10 6"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5 5 1 1 5"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div
+                      id="main-menu-dropdown-body-1"
+                      class="hidden"
+                      aria-labelledby="main-menu-dropdown-1"
+                    >
+                      <ul class="bg-[#EAEAEA] p-2">
+                        <li>
+                          <a
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                            href="/manager/add-new-trip.html"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              class="size-6"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                            <span class="mx-2">Add New Trip</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                            href="/manager/unplanned-trip.html"
+                          >
+                            <span class="mx-2 ps-6">Unplanned Trip</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                            href="/manager/pending-trips.html"
+                          >
+                            <span class="mx-2 ps-6">Pending Trips</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                            href="/manager/all-trips.html"
+                          >
+                            <span class="mx-2 ps-6">All Trips</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="mb-1">
+                    <div id="main-menu-dropdown-2">
+                      <button
+                        type="button"
+                        class="flex w-full items-center justify-between gap-3 px-2 py-2 text-sm text-rkGray rtl:text-right"
+                        data-accordion-target="#main-menu-dropdown-body-2"
+                        aria-expanded="false"
+                        aria-controls="main-menu-dropdown-body-2"
+                      >
+                        <div class="flex items-center">
+                         
+
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                              </svg>
+                              
+
+                          <span class="mx-2">Approval</span>
+                        </div>
+                        <svg
+                          data-accordion-icon
+                          class="h-3 w-3 shrink-0 rotate-180"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 10 6"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5 5 1 1 5"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div
+                      id="main-menu-dropdown-body-2"
+                      class="hidden"
+                      aria-labelledby="main-menu-dropdown-2"
+                    >
+                      <ul class="bg-[#EAEAEA] p-2">
+                     
+                       
+                        <li>
+                            <a
+                              class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                              href="/manager/trip-request.html"
+                            >
+                              <span class="mx-2 ps-6">Trip Request</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a
+                              class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                              href="/manager/expense-request.html"
+                            >
+                              <span class="mx-2 ps-6">Expense Request</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a
+                              class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                              href="/manager/advance-request.html"
+                            >
+                              <span class="mx-2 ps-6">Advance Request</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a
+                              class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                              href="/manager/all-request.html"
+                            >
+                              <span class="mx-2 ps-6">All Request</span>
+                            </a>
+                          </li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="mb-1">
+                    <div id="main-menu-dropdown-3">
+                      <button
+                        type="button"
+                        class="flex w-full items-center justify-between gap-3 px-2 py-2 text-sm text-rkGray rtl:text-right"
+                        data-accordion-target="#main-menu-dropdown-body-3"
+                        aria-expanded="false"
+                        aria-controls="main-menu-dropdown-body-3"
+                      >
+                        <div class="flex items-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-6"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z"
+                            />
+                          </svg>
+
+                          <span class="mx-2">Expenses & Advance</span>
+                        </div>
+                        <svg
+                          data-accordion-icon
+                          class="h-3 w-3 shrink-0 rotate-180"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 10 6"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5 5 1 1 5"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div
+                      id="main-menu-dropdown-body-3"
+                      class="hidden"
+                      aria-labelledby="main-menu-dropdown-3"
+                    >
+                      <ul class="bg-[#EAEAEA] p-2">
+                        <li>
+                          <a
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                            href="/manager/add-new-expenses.html"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              class="size-6"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                            <span class="mx-2">Add New Expenses</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                            href="/manager/add-new-advances.html"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              class="size-6"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                            <span class="mx-2">Add New Advances</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                            href="/manager/pending-request.html"
+                          >
+                            <span class="mx-2 ps-6">Pending Request</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                            href="/manager/all-request.html"
+                          >
+                            <span class="mx-2 ps-6">All Request</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="px-4">
+            <a
+              class="flex items-center rounded px-2 py-1 text-sm font-medium text-rkGray hover:text-orange"
+              href="#"
+            >
+              <svg
+                class="h-[24px] w-[24px]"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.4"
+                  d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"
+                />
+              </svg>
+
+              <span class="mx-2">Logout</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+
+      <div class="flex flex-col flex-1 overflow-hidden">
+        <header
+          class="flex items-center justify-between px-6 py-4 bg-[#F1F2F6] border-b-1 border-[#ECECEC]"
+        >
+          <div class="flex items-center">
+            <button
+              @click="sidebarOpen = true"
+              class="text-gray-500 focus:outline-none lg:hidden"
+            >
+              <svg
+                class="w-6 h-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 6H20M4 12H20M4 18H11"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </button>
+
+            <div class="hidden sm:block relative mx-4 lg:mx-0">
+              <h3 class="text-md md:text-xl font-semibold text-gray-700">
+                All Trips
+              </h3>
+            </div>
+          </div>
+
+          <div class="flex items-center notifications">
+            <div x-data="{ messageOpen: false }">
+              <div class="relative">
+                <button
+                  @click="messageOpen = ! messageOpen"
+                  class="flex text-gray-600 mx-4 focus:outline-none hover:text-orange focus:text-orange"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 0 1 1.037-.443 48.282 48.282 0 0 0 5.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"
+                    />
+                  </svg>
+                </button>
+                <div
+                  class="absolute bg-red-600 text-white badge rounded-full -top-3 end-0 text-center text-xs"
+                >
+                  1
+                </div>
+              </div>
+
+              <div
+                x-show="messageOpen"
+                @click="messageOpen = false"
+                class="fixed inset-0 z-10 w-full h-full"
+                style="display: none"
+              ></div>
+
+              <div
+                x-show="messageOpen"
+                class="absolute right-2 z-10 mt-2 overflow-hidden bg-white rounded-lg shadow-xl w-80"
+                style="display: none"
+              >
+                <div class="py-4 px-3 flex justify-between items-center gap-2">
+                  <div class="text-black text-base font-bold">Messages</div>
+                  <div>
+                    <button class="text-orange text-sm">
+                      Mark all as read
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  class="mt-2 border-t-2 border-t-[#D9D9D9] shadow overflow-auto h-80"
+                >
+                  <a href="#" class="flex items-start p-3 text-rkBlac active">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vivin</span> wants to
+                        sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00015</span>
+                        </div>
+                        <div class="text-xs text-rkGray">30 mins ago</div>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vivin</span> wants to
+                        sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00015</span>
+                        </div>
+                        <div class="text-xs text-rkGray">30 mins ago</div>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vivin</span> wants to
+                        sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00015</span>
+                        </div>
+                        <div class="text-xs text-rkGray">30 mins ago</div>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vivin</span> wants to
+                        sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00015</span>
+                        </div>
+                        <div class="text-xs text-rkGray">30 mins ago</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div x-data="{ notificationOpen: false }">
+              <div class="relative">
+                <button
+                  @click="notificationOpen = ! notificationOpen"
+                  class="flex text-gray-600 focus:outline-none hover:text-orange focus:text-orange"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
+                    />
+                  </svg>
+                </button>
+                <div
+                  class="absolute bg-red-600 text-white badge rounded-full -top-3 -end-3 text-center text-xs"
+                >
+                  1
+                </div>
+              </div>
+              <div
+                x-show="notificationOpen"
+                @click="notificationOpen = false"
+                class="fixed inset-0 z-10 w-full h-full"
+                style="display: none"
+              ></div>
+
+              <div
+                x-show="notificationOpen"
+                class="absolute right-2 z-10 mt-2 overflow-hidden bg-white rounded-lg shadow-xl w-80"
+                style="display: none"
+              >
+                <div class="py-4 px-3 flex justify-between items-center gap-2">
+                  <div class="text-black text-base font-bold">
+                    Notifications
+                  </div>
+                  <div>
+                    <button class="text-orange text-sm">
+                      Mark all as read
+                    </button>
+                  </div>
+                </div>
+
+                <div>
+                  <span
+                    class="px-4 text-orange pb-2 border-b-2 text-sm border-orange"
+                  >
+                    All
+                    <div class="badge bg-orange-200 text-sm font-medium">2</div>
+                  </span>
+                </div>
+
+                <div
+                  class="mt-2 border-t-2 border-t-[#D9D9D9] shadow overflow-auto h-80"
+                >
+                  <a href="#" class="flex items-start p-3 text-rkBlack active">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vinoth Kumar</span>
+                        wants to sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00014</span>
+                        </div>
+                        <div class="text-xs text-rkGray">5 min ago</div>
+                      </div>
+                      <div class="mt-2">
+                        <button
+                          class="btn btn-sm bg-orange hover:bg-orange-600 text-white"
+                        >
+                          Approve
+                        </button>
+
+                        <button class="btn btn-sm btn-outline">Reject</button>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vivin</span> wants to
+                        sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00015</span>
+                        </div>
+                        <div class="text-xs text-rkGray">30 mins ago</div>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vivin</span> wants to
+                        sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00015</span>
+                        </div>
+                        <div class="text-xs text-rkGray">30 mins ago</div>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vivin</span> wants to
+                        sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00015</span>
+                        </div>
+                        <div class="text-xs text-rkGray">30 mins ago</div>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vivin</span> wants to
+                        sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00015</span>
+                        </div>
+                        <div class="text-xs text-rkGray">30 mins ago</div>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="#" class="flex items-start p-3 text-rkBlac">
+                    <img
+                      class="object-cover w-8 h-8 mx-1 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
+                      alt="avatar"
+                    />
+                    <div class="mx-2 text-xs flex-grow">
+                      <div>
+                        <span class="font-bold" href="#">Vivin</span> wants to
+                        sent Trip Request
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <div>
+                          Trip ID :
+                          <span class="font-bold" href="#">TRIP-00015</span>
+                        </div>
+                        <div class="text-xs text-rkGray">30 mins ago</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="divider divider-horizontal"></div>
+
+            <div x-data="{ dropdownOpen: false }" class="relative">
+              <div class="flex gap-2 items-center">
+                <div class="hidden md:block">
+                  <div class="font-semibold text-rkBlack text-sm">
+                    Vishnu prasath
+                  </div>
+                  <div class="text-xs text-rkGray">Marketing</div>
+                </div>
+
+                <div>
+                  <button
+                    @click="dropdownOpen = !dropdownOpen"
+                    class="flex gap-2 items-center"
+                  >
+                    <span>
+                      <img
+                        class="object-cover size-10 rounded-full shadow focus:outline-none"
+                        src="https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=296&amp;q=80"
+                        alt="Your avatar"
+                      />
+                    </span>
+
+                    <span>
+                      <svg
+                        :class="{'rotate-180': dropdownOpen}"
+                        class="w-4 h-4 transition-transform duration-200"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              <div
+                x-show="dropdownOpen"
+                @click="dropdownOpen = false"
+                class="fixed inset-0 z-10 w-full h-full"
+                style="display: none"
+              ></div>
+
+              <div
+                x-show="dropdownOpen"
+                class="absolute right-0 z-10 w-48 mt-2 overflow-hidden bg-white rounded-md shadow-xl"
+                style="display: none"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-500 hover:text-white"
+                  >Profile</a
+                >
+                
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-500 hover:text-white"
+                  >Logout</a
+                >
+              </div>
+            </div>
+          </div>
+        </header>
+        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-white">
+          <div>
+            
+            
+
+
+
+
+            <div class="grid gap-3 md:grid-cols-12">
+              
+                <div class="md:col-span-9 px-6 py-8">
+
+                  <div class="sm:hidden mb-8">
+                    <h3 class="text-xl font-medium text-rkBlack">
+                      All Trips
+                    </h3>
+                  </div>
+
+                  <div class="flex gap-2 items-center mb-8">
+                    <div>
+                        <a href="all-trips.html" class="text-rkGray border border-gray-400 bg-white hover:bg-black hover:text-white font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                          </svg>
+                          </a>
+                    </div>
+                    <div>
+                        <div class="text-lg font-semibold">TRIP-00014</div>
+                    </div>
+                    <div>
+                        <div class="badge text-green-500 bg-green-100 px-3 py-1 text-xs">Approved</div>
+                    </div>
+                </div>
+    
+    
+                <div class="py-6 border-t border-b">
+                    <div class="text-base font-medium">Trip to Chennai (Showroom Visit)</div>
+                    <div class="text-rkGray text-sm">Single Trip</div>
+                </div>
+    
+    
+    
+    
+                <div class="card mt-10 bg-[#F1F2F6] relative py-5">
+                    <div class="card-body text-sm">
+                        <div class="flex gap-6 lg:gap-10 flex-wrap">
+                            <div>
+                                <div class="text-rkGray">Grade</div>
+                                <div class="text-rkBlack">3A</div>
+                            </div>
+                            <div>
+                                <div class="text-rkGray">Department</div>
+                                <div class="text-rkBlack">Marketing</div>
+                            </div>
+                            <div>
+                                <div class="text-rkGray">Name</div>
+                                <div class="text-rkBlack">Vishnu Prasad</div>
+                            </div>
+                            <div>
+                                <div class="text-rkGray">Age</div>
+                                <div class="text-rkBlack">29</div>
+                            </div>
+                            <div>
+                                <div class="text-rkGray">Gender</div>
+                                <div class="text-rkBlack">Male</div>
+                            </div>
+                            <div>
+                                <div class="text-rkGray">Phone </div>
+                                <div class="text-rkBlack">+91 95674 73412</div>
+                            </div>
+                            <div>
+                                <div class="text-rkGray">Email</div>
+                                <div class="text-rkBlack">Vishnud@ejindia.com</div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="absolute left-10 top-[-16px] text-sm h-8 px-3 flex items-center rounded-lg bg-black text-white">
+                        Passenger Details
+                    </div>
+                </div>
+    
+    
+                <div class="card mt-10 bg-[#F1F2F6] relative py-5">
+                    <div class="card-body text-sm ">
+                        <div class="flex gap-6 lg:gap-10 flex-wrap">
+                            <div>
+                                <div class="text-rkGray">Location</div>
+                                <div class="text-rkBlack">Coimbatore - Chennai</div>
+                            </div>
+                            <div>
+                                <div class="text-rkGray">Date</div>
+                                <div class="text-rkBlack">11, July 2024</div>
+                            </div>
+                            <div>
+                                <div class="text-rkGray">Name</div>
+                                <div class="text-rkBlack">Vishnu Prasad</div>
+                            </div>
+                            <div>
+                                <div class="text-rkGray">Mode of travel</div>
+                                <div class="text-rkBlack">Bus</div>
+                            </div>
+                            <div>
+                                <div class="text-rkGray">Preferred Time</div>
+                                <div class="text-rkBlack">10:30 PM</div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="absolute left-10 top-[-16px] text-sm h-8 px-3 flex items-center rounded-lg bg-black text-white">
+                        Travel Details
+                    </div>
+                </div>
+    
+    
+    
+                <div class="card mt-10 bg-[#F1F2F6] relative py-5">
+                    <div class="card-body text-sm ">
+                        <div class="flex gap-6 lg:gap-10 flex-wrap">
+                            <div>
+                                <div class="text-rkGray">Location</div>
+                                <div class="text-rkBlack">Chennai</div>
+                            </div>
+                            <div>
+                                <div class="text-rkGray">Duration of Stay</div>
+                                <div class="text-rkBlack">1 Day</div>
+                            </div>
+                            <div>
+                                <div class="text-rkGray">Preferred Area</div>
+                                <div class="text-rkBlack">Guindy</div>
+                            </div>
+                            <div>
+                                <div class="text-rkGray">Preferred Hotel</div>
+                                <div class="text-rkBlack">ITC Hotel</div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+    
+                    <div class="absolute left-10 top-[-16px] text-sm h-8 px-3 flex items-center rounded-lg bg-black text-white">
+                        Accommodation Details
+                    </div>
+                </div>
+                </div>
+
+                <div class="md:col-span-3 px-6 md:px-0">
+                  <div class="bg-[#F1F2F6] py-8 md:h-full px-4">
+                      
+                    <div class="mb-6">
+                      <div class="mb-3 text-sm text-blue-500">Requested by</div>
+
+                      <div class="flex font-medium text-black items-center bg-white rounded-s-full text-sm max-w-fit">
+                        <div>
+                          <img width="24" height="24" class="size-8 rounded-full" src="../assets/images/user.png" alt="">
+                        </div>
+                        <div class="px-2">Vishnu Prasad</div>
+                      </div>
+                      <div class="ps-10 text-xs text-rkGray mt-1">Marketing</div>
+                    </div>
+
+                    <div class="mb-6">
+                      <div class="mb-3 text-sm text-blue-500">Manager Approved</div>
+
+                      <div class="flex font-medium text-black items-center bg-white rounded-s-full text-sm max-w-fit">
+                        <div>
+                          <img width="24" height="24" class="size-8 rounded-full" src="../assets/images/user.png" alt="">
+                        </div>
+                        <div class="px-2">Vivin Raj</div>
+                      </div>
+                      <div class="ps-10 text-xs text-rkGray mt-1">Manager</div>
+                    </div>
+
+                    <div class="mb-6">
+                      <div class="mb-3 text-sm text-blue-500">Travel Desk Approved</div>
+
+                      <div class="flex font-medium text-black items-center bg-white rounded-s-full text-sm max-w-fit">
+                        <div>
+                          <img width="24" height="24" class="size-8 rounded-full" src="../assets/images/user.png" alt="">
+                        </div>
+                        <div class="px-2">Lokesh</div>
+                      </div>
+                      <div class="ps-10 text-xs text-rkGray mt-1">Travel Desk Admin</div>
+                    </div>
+
+
+                    <div class="card bg-white mt-20 max-w-[200px]">
+                        <div class="card-body mx-auto">
+                            <a href="" class="mb-5">
+                                <div class="relative">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="152" height="68" viewBox="0 0 152 68" fill="none">
+                                        <path d="M39.2495 58.7859C40.4109 58.7844 41.5611 59.0118 42.6345 59.4552C43.7079 59.8986 44.6833 60.5492 45.505 61.3698C46.3267 62.1905 46.9786 63.165 47.4234 64.2378C47.8682 65.3106 48.0971 66.4605 48.0971 67.6218L141.937 67.6218C144.311 67.6208 146.588 66.677 148.266 64.9979C149.945 63.3189 150.888 61.0419 150.888 58.6679L150.888 9.93875C150.884 7.5673 149.939 5.29431 148.261 3.61852C146.583 1.94272 144.309 1.001 141.937 1L48.0971 0.999996C48.0971 3.34344 47.1662 5.5909 45.5091 7.24796C43.852 8.90503 41.6044 9.83595 39.2609 9.83595C36.9174 9.83595 34.6699 8.90503 33.0128 7.24796C31.3557 5.5909 30.4248 3.34344 30.4248 0.999995L9.95039 0.999994C8.77501 0.999994 7.61113 1.2315 6.52522 1.68128C5.43932 2.13107 4.45264 2.79034 3.62152 3.62144C2.79039 4.45254 2.1311 5.4392 1.6813 6.52508C1.23151 7.61096 1 8.77481 1 9.95016L0.999997 58.6793C1.00201 61.0497 1.94432 63.3225 3.62016 64.9991C5.29599 66.6756 7.56848 67.6188 9.93896 67.6218L30.4133 67.6218C30.4133 65.2784 31.3443 63.0309 33.0014 61.3739C34.6585 59.7168 36.906 58.7859 39.2495 58.7859Z" fill="#F1F2F6" stroke="#DADADA" stroke-width="0.757066"/>
+                                      </svg>
+                                    <div class="flex absolute top-0 left-0 items-center h-full p-1">
+                                        <div class="size-10">
+                                            <img  width="42" height="42" src="../assets/images/progress.gif" alt="">
+                                        </div>
+                                        <div class="uppercase">
+                                            <div class="text-orange-500 font-semibold text-sm">Download</div>
+                                            <div class="text-xs">Travel Ticket</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="relative">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="152" height="68" viewBox="0 0 152 68" fill="none">
+                                        <path d="M39.2495 58.7859C40.4109 58.7844 41.5611 59.0118 42.6345 59.4552C43.7079 59.8986 44.6833 60.5492 45.505 61.3698C46.3267 62.1905 46.9786 63.165 47.4234 64.2378C47.8682 65.3106 48.0971 66.4605 48.0971 67.6218L141.937 67.6218C144.311 67.6208 146.588 66.677 148.266 64.9979C149.945 63.3189 150.888 61.0419 150.888 58.6679L150.888 9.93875C150.884 7.5673 149.939 5.29431 148.261 3.61852C146.583 1.94272 144.309 1.001 141.937 1L48.0971 0.999996C48.0971 3.34344 47.1662 5.5909 45.5091 7.24796C43.852 8.90503 41.6044 9.83595 39.2609 9.83595C36.9174 9.83595 34.6699 8.90503 33.0128 7.24796C31.3557 5.5909 30.4248 3.34344 30.4248 0.999995L9.95039 0.999994C8.77501 0.999994 7.61113 1.2315 6.52522 1.68128C5.43932 2.13107 4.45264 2.79034 3.62152 3.62144C2.79039 4.45254 2.1311 5.4392 1.6813 6.52508C1.23151 7.61096 1 8.77481 1 9.95016L0.999997 58.6793C1.00201 61.0497 1.94432 63.3225 3.62016 64.9991C5.29599 66.6756 7.56848 67.6188 9.93896 67.6218L30.4133 67.6218C30.4133 65.2784 31.3443 63.0309 33.0014 61.3739C34.6585 59.7168 36.906 58.7859 39.2495 58.7859Z" fill="#F1F2F6" stroke="#DADADA" stroke-width="0.757066"/>
+                                      </svg>
+                                    <div class="flex absolute top-0 left-0 items-center h-full p-1">
+                                        <div class="size-10">
+                                            <img width="42" height="42" src="../assets/images/progress.gif" alt="">
+                                        </div>
+                                        <div class="uppercase">
+                                            <div class="text-orange-500 font-semibold text-sm">Download</div>
+                                            <div class="text-xs">Accomodation</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                  </div>
+                </div>
+            </div>
+
+         
+        
+
+
+          </div>
+        </main>
+        <footer class="bg-[#F1F2F6]">
+          <div class="text-xs text-center py-1">
+            Emerald © <span id="current-year"></span> All Rights Reserved.
+            Developed by BBIT
+          </div>
+        </footer>
+      </div>
+    </div>
+
+
+
+    
+    <script
+     src="../assets/js/alpine.min.js"
+    ></script>
+    <script src="../assets/js/flowbite.min.js"></script>
+    <script src="../assets/js/simple-datatables.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+
+  </body>
+</html>
