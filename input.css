@@ -295,3 +295,72 @@ padding: 16px 14px;
 input[disabled] {
   @apply focus:ring-0 focus:border-0;
 }
+
+
+.bordered-table {
+  border-collapse: separate; /* Ensures border radius is visible */
+  border-spacing: 0; /* Removes gaps between table cells */
+  border: none;
+}
+
+.bordered-table th,
+.bordered-table td {
+  @apply border border-gray-200;
+}
+
+/* Add rounded corners to the first and last cells in the table */
+.bordered-table tr:first-child td:first-child,
+.bordered-table tr:first-child th:first-child {
+  @apply rounded-tl-lg; /* Top-left corner */
+}
+
+.bordered-table tr:first-child td:last-child,
+.bordered-table tr:first-child th:last-child {
+  @apply rounded-tr-lg; /* Top-right corner */
+}
+
+.bordered-table tr:last-child td:first-child,
+.bordered-table tr:last-child th:first-child {
+  @apply rounded-bl-lg; /* Bottom-left corner */
+}
+
+.bordered-table tr:last-child td:last-child,
+.bordered-table tr:last-child th:last-child {
+  @apply rounded-br-lg; /* Bottom-right corner */
+}
+
+
+.rk-table thead{
+  @apply border bg-gray-100 text-black;
+}
+.rk-table tr td,.rk-table tr th{
+  @apply border border-gray-200;
+}
+
+
+.round-trip::after{
+        content: "";
+        position: absolute;
+        background-image: url(../images/add-new-trip.png);
+        width: 50px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 80%;
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+}
+.multi-trip::after{
+  content: "";
+  position: absolute;
+  background-image: url(../images/add-new-trip.png);
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 80%;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}

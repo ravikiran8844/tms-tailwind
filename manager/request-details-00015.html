@@ -1,9 +1,15 @@
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ALl Trips - Emerald TMS</title>
+    <title>Trip details - Emerald TMS</title>
     <link rel="stylesheet" href="../assets/css/tailwind.css" />
   </head>
   <body>
@@ -20,7 +26,7 @@
       >
         <div class="flex items-center justify-center mt-8">
           <div>
-            <a href="/user">
+            <a href="/manager">
               <img
                 width="193"
                 height="43"
@@ -32,7 +38,7 @@
         </div>
         <div class="divider"></div>
 
-      
+        
         <nav class="mt-4 flex min-h-[70%] flex-col justify-between gap-5">
           <div class="px-1">
             <div>
@@ -421,7 +427,7 @@
 
             <div class="hidden sm:block relative mx-4 lg:mx-0">
               <h3 class="text-md md:text-xl font-semibold text-gray-700">
-                All Trips
+                Trip details
               </h3>
             </div>
           </div>
@@ -641,13 +647,14 @@
                       <div class="flex justify-between items-center">
                         <div>
                           Trip ID :
-                          <span class="font-bold" href="#">TRIP-00014</span>
+                          <span class="font-bold" href="#">TRIP-00029</span>
                         </div>
                         <div class="text-xs text-rkGray">5 min ago</div>
                       </div>
                       <div class="mt-2">
                         <button
-                          class="btn btn-sm bg-orange hover:bg-orange-600 text-white"
+                        type="button"
+                       class="btn btn-sm bg-orange hover:bg-orange-600 text-white"
                         >
                           Approve
                         </button>
@@ -837,233 +844,404 @@
           </div>
         </header>
         <main class="flex-1 overflow-x-hidden overflow-y-auto bg-white">
-          <div class="grid gap-3 md:grid-cols-12 h-full">
+            
+            
+
+
+
+
+            <div class="grid gap-3 md:grid-cols-12 h-full" x-data="{ tab: 1 }">
               
-            <div class="md:col-span-9 px-6 py-8">
+                <div class="md:col-span-9 px-6 py-8">
 
-              <div class="sm:hidden mb-8">
-                <h3 class="text-xl font-medium text-rkBlack">
-                  All Trips
-                </h3>
-              </div>
-
-              <div class="flex justify-between gap-3 items-center mb-8">
-                <div class="flex gap-2 items-center">
-                  <div>
-                      <a href="/manager/all-request.html" class="text-rkGray border border-gray-400 bg-white hover:bg-black hover:text-white font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-2">
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
-                        </svg>
-                        </a>
+                  <div class="sm:hidden mb-8">
+                    <h3 class="text-xl font-medium text-rkBlack">
+                      Trip details
+                    </h3>
                   </div>
-                  <div>
-                      <div class="text-lg font-semibold">TRIP-00014</div>
+
+                 <div  class="flex justify-between gap-4 items-center mb-8 flex-wrap">
+                  <div class="flex-grow">
+                    <div class="flex gap-2 items-center">
+                      <div>
+                          <a href="/manager/trip-request.html" class="text-rkGray border border-gray-400 bg-white hover:bg-black hover:text-white font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-2">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                            </svg>
+                            </a>
+                      </div>
+                      <div>
+                          <div class="text-lg font-semibold">TRIP-00015</div>
+                      </div>
+                      <div>
+                          <div class="badge text-orange-500 bg-orange-100 px-3 py-1 text-xs">Pending APPROVAL</div>
+                      </div>
+                    </div>
+                    <div class="py-4 border-t mt-4">
+                      <div class="text-base font-medium">Trip to Chennai (Showroom Visit)</div>
+                      <div class="text-rkGray text-sm">Round Trip</div>
                   </div>
-                  <div>
-                      <div class="badge text-green-500 bg-green-100 px-3 py-1 text-xs">Approved</div>
                   </div>
-                </div>
 
-                <div>
-                  <div class="text-blue-500 text-lg">Trip Request</div>
-                </div>
-              </div>
-
-
-            <div class="py-6 border-t border-b">
-                <div class="text-base font-medium">Trip to Chennai (Showroom Visit)</div>
-                <div class="text-rkGray text-sm">Single Trip</div>
-            </div>
-
-
-
-
-            <div class="card mt-10 bg-[#F1F2F6] relative py-5">
-                <div class="card-body text-sm">
-                    <div class="flex gap-6 lg:gap-10 flex-wrap">
-                        <div>
-                            <div class="text-rkGray">Grade</div>
-                            <div class="text-rkBlack">3A</div>
-                        </div>
-                        <div>
-                            <div class="text-rkGray">Department</div>
-                            <div class="text-rkBlack">Marketing</div>
-                        </div>
-                        <div>
-                            <div class="text-rkGray">Name</div>
-                            <div class="text-rkBlack">Vishnu Prasad</div>
-                        </div>
-                        <div>
-                            <div class="text-rkGray">Age</div>
-                            <div class="text-rkBlack">29</div>
-                        </div>
-                        <div>
-                            <div class="text-rkGray">Gender</div>
-                            <div class="text-rkBlack">Male</div>
-                        </div>
-                        <div>
-                            <div class="text-rkGray">Phone </div>
-                            <div class="text-rkBlack">+91 95674 73412</div>
-                        </div>
-                        <div>
-                            <div class="text-rkGray">Email</div>
-                            <div class="text-rkBlack">Vishnud@ejindia.com</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="absolute left-10 top-[-16px] text-sm h-8 px-3 flex items-center rounded-lg bg-black text-white">
-                    Passenger Details
-                </div>
-            </div>
-
-
-            <div class="card mt-10 bg-[#F1F2F6] relative py-5">
-                <div class="card-body text-sm ">
-                    <div class="flex gap-6 lg:gap-10 flex-wrap">
-                        <div>
-                            <div class="text-rkGray">Location</div>
-                            <div class="text-rkBlack">Coimbatore - Chennai</div>
-                        </div>
-                        <div>
-                            <div class="text-rkGray">Date</div>
-                            <div class="text-rkBlack">11, July 2024</div>
-                        </div>
-                        <div>
-                            <div class="text-rkGray">Name</div>
-                            <div class="text-rkBlack">Vishnu Prasad</div>
-                        </div>
-                        <div>
-                            <div class="text-rkGray">Mode of travel</div>
-                            <div class="text-rkBlack">Bus</div>
-                        </div>
-                        <div>
-                            <div class="text-rkGray">Preferred Time</div>
-                            <div class="text-rkBlack">10:30 PM</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="absolute left-10 top-[-16px] text-sm h-8 px-3 flex items-center rounded-lg bg-black text-white">
-                    Travel Details
-                </div>
-            </div>
-
-
-
-            <div class="card mt-10 bg-[#F1F2F6] relative py-5">
-                <div class="card-body text-sm ">
-                    <div class="flex gap-6 lg:gap-10 flex-wrap">
-                        <div>
-                            <div class="text-rkGray">Location</div>
-                            <div class="text-rkBlack">Chennai</div>
-                        </div>
-                        <div>
-                            <div class="text-rkGray">Duration of Stay</div>
-                            <div class="text-rkBlack">1 Day</div>
-                        </div>
-                        <div>
-                            <div class="text-rkGray">Preferred Area</div>
-                            <div class="text-rkBlack">Guindy</div>
-                        </div>
-                        <div>
-                            <div class="text-rkGray">Preferred Hotel</div>
-                            <div class="text-rkBlack">ITC Hotel</div>
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-
-                <div class="absolute left-10 top-[-16px] text-sm h-8 px-3 flex items-center rounded-lg bg-black text-white">
-                    Accommodation Details
-                </div>
-            </div>
-            </div>
-
-            <div class="md:col-span-3 px-6 md:px-0">
-              <div class="bg-[#F1F2F6] py-8 md:h-full px-4">
                   
-                <div class="mb-6">
-                  <div class="mb-3 text-sm text-blue-500">Requested by</div>
-
-                  <div class="flex font-medium text-black items-center bg-white rounded-s-full text-sm max-w-fit">
-                    <div>
-                      <img width="24" height="24" class="size-8 rounded-full" src="../assets/images/user.png" alt="">
+                 <div>
+                  <div x-cloak  x-show="tab === 1" >
+                    <div class="flex items-center gap-1 text-sm font-semibold text-rkBlack mb-2">
+                      <span>
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1.873 2.2326H4.23504V0.458596C4.23504 0.205421 4.42772 0 4.6652 0H9.33422C9.5717 0 9.76438 0.205421 9.76438 0.458596V2.2326H12.1264C12.6417 2.2326 13.1105 2.45713 13.45 2.81898L13.4746 2.84764C13.7989 3.20712 14 3.69497 14 4.23V11.0038C14 11.5531 13.7894 12.0529 13.45 12.4142L13.4225 12.4405C13.0848 12.7868 12.6272 13 12.1264 13H1.87301C1.35939 13 0.890571 12.7755 0.550583 12.413C0.210595 12.0524 0 11.5532 0 11.0032V4.22942C0 3.68126 0.210609 3.18205 0.550024 2.82018C0.888893 2.45713 1.3577 2.232 1.87357 2.232L1.873 2.2326ZM8.40449 5.39508C8.40449 5.14191 8.59717 4.93649 8.83465 4.93649C9.07213 4.93649 9.26482 5.14191 9.26482 5.39508V9.83827C9.26482 10.0914 9.07213 10.2969 8.83465 10.2969C8.59717 10.2969 8.40449 10.0914 8.40449 9.83827V5.39508ZM6.56954 5.39508C6.56954 5.14191 6.76223 4.93649 6.99971 4.93649C7.23719 4.93649 7.42987 5.14191 7.42987 5.39508V9.83827C7.42987 10.0914 7.23719 10.2969 6.99971 10.2969C6.76223 10.2969 6.56954 10.0914 6.56954 9.83827V5.39508ZM4.7346 5.39508C4.7346 5.14191 4.92729 4.93649 5.16477 4.93649C5.40225 4.93649 5.59493 5.14191 5.59493 5.39508V9.83827C5.59493 10.0914 5.40225 10.2969 5.16477 10.2969C4.92729 10.2969 4.7346 10.0914 4.7346 9.83827V5.39508ZM5.09531 2.2326H8.90399V0.917116H5.09531V2.2326ZM11.4979 3.14979V12.0834H12.1263C12.3963 12.0834 12.6416 11.9705 12.8231 11.7866L12.8416 11.7657C13.0253 11.5699 13.1396 11.3 13.1396 11.0038V4.23001C13.1396 3.9428 13.0332 3.68126 12.8606 3.48658L12.8416 3.46748C12.6579 3.27162 12.4047 3.14981 12.1263 3.14981L11.4979 3.14979ZM2.50141 12.0834V3.14979H1.87297C1.59516 3.14979 1.34143 3.27161 1.15771 3.46746C0.973425 3.66272 0.859732 3.93263 0.859732 4.23V11.0038C0.859732 11.3 0.973994 11.5705 1.15771 11.7657C1.3403 11.9622 1.59348 12.0834 1.87297 12.0834L2.50141 12.0834ZM3.36174 3.14979V12.0834H10.6376V3.14979H3.36174Z" fill="#2D2D2D"></path>
+                          </svg>
+                          
+                      </span>
+                      <span>Transport Eligibility</span>
                     </div>
-                    <div class="px-2">Vishnu Prasad</div>
-                  </div>
-                  <div class="ps-10 text-xs text-rkGray mt-1">Marketing</div>
-                </div>
 
-                <div class="mb-6">
-                  <div class="mb-3 text-sm text-blue-500">Manager Approved</div>
-
-                  <div class="flex font-medium text-black items-center bg-white rounded-s-full text-sm max-w-fit">
                     <div>
-                      <img width="24" height="24" class="size-8 rounded-full" src="../assets/images/user.png" alt="">
+                      <table class="table bordered-table table-sm rounded-lg border border-rkLight text-sm shadow-sm">
+                        <tbody><tr>
+                          <td class="font-semibold text-rkBlack">Air</td>
+                          <td class="text-rkGray">No</td>
+                        </tr>
+                        <tr>
+                          <td class="font-semibold text-rkBlack">Train</td>
+                          <td class="text-rkGray">2nd class sleeper</td>
+                        </tr>
+                        <tr>
+                          <td class="font-semibold text-rkBlack">Bus</td>
+                          <td class="text-rkGray">Non AC Bus</td>
+                        </tr>
+                      </tbody></table>
                     </div>
-                    <div class="px-2">Vivin Raj</div>
                   </div>
-                  <div class="ps-10 text-xs text-rkGray mt-1">Manager</div>
-                </div>
+                 </div>
 
-                <div class="mb-6">
-                  <div class="mb-3 text-sm text-blue-500">Travel Desk Approved</div>
 
-                  <div class="flex font-medium text-black items-center bg-white rounded-s-full text-sm max-w-fit">
-                    <div>
-                      <img width="24" height="24" class="size-8 rounded-full" src="../assets/images/user.png" alt="">
+                 </div>
+    
+    
+                  
+      
+    
+                  <div class="w-full  mx-auto mt-8">
+                    <!-- Tabs -->
+                    <div class="flex flex-wrap gap-2 border-b-2 mb-4 bg-gray-100 rounded-lg px-2">
+                      <button 
+                        @click="tab = 1" 
+                        :class="tab === 1 ? 'border-orange-500 text-orange-500' : 'border-transparent text-gray-500'" 
+                        class="p-4 border-b-2 font-semibold text-sm focus:outline-none flex gap-1 items-center"
+                      >
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-inherit" viewBox="0 0 15 13" fill="currentColor">
+                        <path d="M10.1636 1.83305C10.1636 0.915549 9.42259 0.174517 8.50508 0.174517L6.51009 0.173828C5.59259 0.173828 4.85156 0.91486 4.85156 1.83236V2.6444H4.5517V3.63292L4.85156 3.87969L5.11626 4.09132V6.0856H3.8989V4.09132L4.46347 3.63221V2.6437H3.38672V12.8258H11.6457V2.6444H10.1808V1.83305L10.1636 1.83305ZM5.61052 2.64441V1.83236C5.61052 1.33811 6.01654 0.932085 6.5108 0.932085H8.48708C8.98134 0.932085 9.38736 1.33811 9.38736 1.83236V2.64441H5.61052Z" fill="currentColor"/>
+                        <path d="M0 3.79159V11.6625C0 12.2981 0.51148 12.8095 1.14705 12.8095H2.29411V2.64453H1.14705C0.51148 2.64453 0 3.1567 0 3.79159Z" fill="currentColor"/>
+                        <path d="M13.8541 2.64453H12.707V12.8267H13.8541C14.4897 12.8267 15.0011 12.3152 15.0011 11.6796V3.79159C15.0011 3.1567 14.4897 2.64453 13.8541 2.64453Z" fill="currentColor"/>
+                      </svg>
+                      
+                      Transport
+                      </button>
+                      <button 
+                        @click="tab = 2" 
+                        :class="tab === 2 ? 'border-orange-500 text-orange-500' : 'border-transparent text-gray-500'" 
+                        class="p-4 border-b-2 font-semibold text-sm focus:outline-none flex gap-1 items-center"
+                      >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="currentColor">
+                        <path d="M17.1064 13.0063H15.9808V11.0458C16.8813 10.6705 17.1367 9.17571 17.1367 8.32501C17.1367 7.42856 16.797 5.53062 15.6162 5.53062C14.4354 5.53062 14.0959 7.42856 14.0959 8.32501C14.0959 9.17571 14.3513 10.6707 15.2519 11.0458V13.0063H13.6406C13.6406 9.34006 13.6406 5.67382 13.6406 2.00735C13.6406 0.902653 12.7379 0 11.6332 0H5.50198C4.39729 0 3.49463 0.902653 3.49463 2.00735C3.49463 5.67382 3.49463 9.34006 3.49463 13.0063H1.88356V11.0458C2.78391 10.6705 3.03928 9.17571 3.03928 8.32501C3.03928 7.42856 2.69978 5.53062 1.519 5.53062C0.33799 5.53062 -0.00151062 7.42856 -0.00151062 8.32501C-0.00151062 9.17571 0.25386 10.6707 1.15444 11.0458V13.0063H0.0288296V13.7354C5.7215 13.7386 11.4137 13.7354 17.1064 13.7354V13.0063ZM12.9117 7.51315H11.519V6.63164H12.9117V7.51315ZM10.7899 7.51315H8.93216V6.63164H10.7899V7.51315ZM8.20305 7.51315H6.32074V6.63164H8.20305V7.51315ZM5.59186 7.51315H4.22351V6.63164H5.59186V7.51315ZM4.22351 8.24226H12.9117V13.0063H10.0647V9.18169C9.06663 9.18169 8.06858 9.18169 7.07054 9.18169V13.0063H4.22351V8.24226ZM12.9117 5.90276H11.519V5.02125H12.9117V5.90276ZM10.7899 5.90276H8.93216V5.02125H10.7899V5.90276ZM8.20305 5.90276H6.32074V5.02125H8.20305V5.90276ZM5.59186 5.90276H4.22351V5.02125H5.59186V5.90276ZM12.9117 4.29214H11.519V3.22882H12.9117V4.29214ZM10.7899 4.29214H8.93216V3.22882H10.7899V4.29214ZM8.20305 4.29214H6.32074V3.22882H8.20305V4.29214ZM5.59186 4.29214H4.22351V3.22882H5.59186V4.29214ZM7.79965 9.91057H9.33579V13.0063H7.79965V9.91057ZM1.88356 9.77909C1.88356 9.29961 1.15444 9.29961 1.15444 9.77909V10.111C0.833332 9.62508 0.727598 8.89253 0.727598 8.32501C0.727598 7.92069 0.920912 6.2595 1.519 6.2595C2.11709 6.2595 2.3104 7.92069 2.3104 8.32501C2.3104 8.89299 2.20467 9.62463 1.88356 10.111V9.77909ZM15.9808 9.77909C15.9808 9.29961 15.2519 9.29961 15.2519 9.77909V10.111C14.9308 9.62508 14.8248 8.89253 14.8248 8.32501C14.8248 7.92069 15.0181 6.2595 15.6162 6.2595C16.2143 6.2595 16.4076 7.92069 16.4076 8.32501C16.4076 8.89299 16.3019 9.62463 15.9808 10.111V9.77909ZM12.9117 2.49994H4.22351V2.00735C4.22351 1.30491 4.79954 0.72888 5.50198 0.72888H11.6332C12.3357 0.72888 12.9117 1.30491 12.9117 2.00735V2.49994Z" fill="currentColor"/>
+                      </svg>
+                      Accommodation
+                      </button>
+                      <button 
+                        @click="tab = 3" 
+                        :class="tab === 3 ? 'border-orange-500 text-orange-500' : 'border-transparent text-gray-500'" 
+                        class="p-4 border-b-2 font-semibold text-sm focus:outline-none flex gap-1 items-center"
+                      >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="currentColor">
+                        <path d="M15.0765 14.642C14.7691 13.7712 14.0759 13.0916 13.1983 12.8013L12.0167 12.4086C12.3889 12.1901 12.6758 11.8486 12.8226 11.4456C13.2427 10.2811 13.2324 9.00737 12.7919 7.84972C13.9905 7.39895 14.6496 6.78427 14.6496 6.10812C14.6496 5.25781 13.6217 4.51678 11.8255 4.06943L11.2962 1.95219C11.1425 1.34092 10.5961 0.914062 9.96777 0.914062H6.21138C5.58304 0.914062 5.03666 1.34092 4.8864 1.94878L4.35709 4.06601C2.56085 4.51337 1.53297 5.2544 1.53297 6.10471C1.53297 6.78427 2.19205 7.39895 3.39067 7.84631C2.95015 9.00396 2.93649 10.2777 3.35994 11.4422C3.50678 11.8486 3.79363 12.1901 4.16586 12.4052L2.9843 12.7979C2.10667 13.0882 1.41345 13.7677 1.10611 14.6385L0.1875 17.21L0.70315 17.3944L1.62176 14.8229C1.82324 14.2492 2.23302 13.7712 2.76916 13.4843L4.66785 16.0967C4.44246 16.346 4.25806 16.6294 4.12829 16.9368L4.01902 17.1929L4.52101 17.408L4.63028 17.1519C5.01617 16.247 5.90745 15.6596 6.89094 15.663H9.29845C10.2819 15.663 11.1732 16.2504 11.5591 17.1519L11.6684 17.408L12.1704 17.1929L12.0611 16.9368C11.9279 16.6294 11.7469 16.3426 11.5215 16.0967L13.4202 13.4843C13.9564 13.7712 14.3662 14.2492 14.5676 14.8229L15.4862 17.3944L16.0019 17.21L15.0765 14.642ZM9.29162 15.12H6.88412C6.86704 15.12 6.85338 15.12 6.83631 15.12L4.5654 12.8491L5.12544 12.6613C5.57621 12.6681 6.0099 12.8252 6.36164 13.1052L6.4675 13.1906C6.92509 13.556 7.49197 13.7541 8.07592 13.7541H8.09982C8.68377 13.7541 9.25064 13.556 9.70824 13.1906L9.8141 13.1052C10.1658 12.8252 10.5995 12.6681 11.0503 12.6613L11.6103 12.8491L9.34284 15.12C9.32577 15.12 9.30869 15.12 9.29162 15.12ZM6.15333 15.2088C5.76061 15.3079 5.39181 15.482 5.0708 15.7279L3.28481 13.276L3.98487 13.0438L6.15333 15.2088ZM12.1943 13.0438L12.8943 13.276L11.1083 15.7313C10.7873 15.4854 10.4185 15.3113 10.0258 15.2122L12.1943 13.0438ZM5.41571 2.08196C5.50791 1.71656 5.83574 1.46045 6.21138 1.46045H9.96777C10.3434 1.46045 10.6712 1.71656 10.7634 2.08196L11.5967 5.41148C10.5005 5.92372 9.30186 6.19008 8.08957 6.19349C6.87729 6.19349 5.68207 5.92713 4.58247 5.41148L5.41571 2.08196ZM2.07935 6.10471C2.07935 5.58564 2.90234 5.03926 4.20684 4.67045L4.00194 5.49344C3.97121 5.61638 4.02926 5.74614 4.14537 5.8042L4.1522 5.80761C5.37473 6.41888 6.72362 6.73646 8.09299 6.73646C9.46236 6.73646 10.8112 6.41546 12.0338 5.80761L12.0406 5.8042C12.1533 5.74614 12.2148 5.61638 12.184 5.49344L11.9791 4.67045C13.2836 5.03926 14.1066 5.58564 14.1066 6.10471C14.1066 7.00966 11.6377 8.01705 8.09641 8.01705C4.55516 8.01705 2.07935 7.00966 2.07935 6.10471ZM3.87218 11.2578C3.49312 10.2094 3.50678 9.06201 3.90974 8.02388C5.07422 8.3722 6.54263 8.56343 8.08957 8.56343C9.63652 8.56343 11.1049 8.3722 12.2728 8.02047C12.6758 9.05859 12.6894 10.206 12.3104 11.2544C12.1226 11.77 11.6308 12.1115 11.0844 12.1149C10.5005 12.1149 9.93362 12.313 9.47602 12.6784L9.37016 12.7638C9.0116 13.0506 8.56425 13.2077 8.10323 13.2077H8.07933C7.61832 13.2077 7.17097 13.0506 6.8124 12.7638L6.70654 12.6784C6.24894 12.313 5.68207 12.1149 5.09812 12.1149C4.54832 12.1149 4.05999 11.77 3.87218 11.2578Z" fill="currentColor" stroke="currentColor" stroke-width="0.228954"/>
+                        <path d="M9.18138 16.2109H6.99585C6.84559 16.2109 6.72266 16.3339 6.72266 16.4841V17.3037H7.26904V16.7573H8.90819V17.3037H9.45457V16.4841C9.45457 16.3339 9.33164 16.2109 9.18138 16.2109Z" fill="currentColor" stroke="currentColor" stroke-width="0.228954"/>
+                        <path d="M11.3299 11.1673C11.6031 10.4092 11.6987 9.59987 11.6031 8.80078L11.0601 8.86566C11.1455 9.57938 11.0601 10.3033 10.8177 10.9795C10.7699 11.1127 10.6982 11.239 10.6094 11.3517L11.0362 11.6932C11.1626 11.5361 11.2616 11.3585 11.3299 11.1673Z" fill="currentColor" stroke="currentColor" stroke-width="0.228954"/>
+                      </svg>
+                      
+                      Passenger Details
+                      </button>
                     </div>
-                    <div class="px-2">Lokesh</div>
-                  </div>
-                  <div class="ps-10 text-xs text-rkGray mt-1">Travel Desk Admin</div>
-                </div>
-
-
-                <div class="card bg-white mt-20 max-w-[200px]">
-                    <div class="card-body mx-auto">
-                        <a href="" class="mb-5">
-                            <div class="relative">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="152" height="68" viewBox="0 0 152 68" fill="none">
-                                    <path d="M39.2495 58.7859C40.4109 58.7844 41.5611 59.0118 42.6345 59.4552C43.7079 59.8986 44.6833 60.5492 45.505 61.3698C46.3267 62.1905 46.9786 63.165 47.4234 64.2378C47.8682 65.3106 48.0971 66.4605 48.0971 67.6218L141.937 67.6218C144.311 67.6208 146.588 66.677 148.266 64.9979C149.945 63.3189 150.888 61.0419 150.888 58.6679L150.888 9.93875C150.884 7.5673 149.939 5.29431 148.261 3.61852C146.583 1.94272 144.309 1.001 141.937 1L48.0971 0.999996C48.0971 3.34344 47.1662 5.5909 45.5091 7.24796C43.852 8.90503 41.6044 9.83595 39.2609 9.83595C36.9174 9.83595 34.6699 8.90503 33.0128 7.24796C31.3557 5.5909 30.4248 3.34344 30.4248 0.999995L9.95039 0.999994C8.77501 0.999994 7.61113 1.2315 6.52522 1.68128C5.43932 2.13107 4.45264 2.79034 3.62152 3.62144C2.79039 4.45254 2.1311 5.4392 1.6813 6.52508C1.23151 7.61096 1 8.77481 1 9.95016L0.999997 58.6793C1.00201 61.0497 1.94432 63.3225 3.62016 64.9991C5.29599 66.6756 7.56848 67.6188 9.93896 67.6218L30.4133 67.6218C30.4133 65.2784 31.3443 63.0309 33.0014 61.3739C34.6585 59.7168 36.906 58.7859 39.2495 58.7859Z" fill="#F1F2F6" stroke="#DADADA" stroke-width="0.757066"/>
-                                  </svg>
-                                <div class="flex absolute top-0 left-0 items-center h-full p-1">
-                                    <div class="size-10">
-                                        <img  width="42" height="42" src="../assets/images/progress.gif" alt="">
+                  
+                    <!-- Tab Contents -->
+                    <div  x-cloak  x-show="tab === 1" >
+                      
+                        <div>
+                            <div class="text-sm mt-10 mb-4 font-semibold">Travel Information</div>
+        
+        
+                            <div class="relative round-trip pl-12">
+                              <div class="card relative bg-gray-100 rounded-lg border-1 border-gray-200 mb-10">
+                                <div class="card-body text-sm">
+                                    <div class="flex flex-wrap gap-6 lg:gap-10">
+                                      <div>
+                                        <div class="text-rkGray">Location</div>
+                                        <div class="text-rkBlack">Coimbatore - Chennai</div>
+                                      </div>
+                                      <div>
+                                        <div class="text-rkGray">Date</div>
+                                        <div class="text-rkBlack">11 July 2024</div>
+                                      </div>
+                                      <div>
+                                        <div class="text-rkGray">Mode of travel</div>
+                                        <div class="text-rkBlack">Bus</div>
+                                      </div>
+                                      <div>
+                                        <div class="text-rkGray">Preferred Time</div>
+                                        <div class="text-rkBlack">10:30 PM</div>
+                                      </div>
+                                      
+                                     
                                     </div>
-                                    <div class="uppercase">
-                                        <div class="text-orange-500 font-semibold text-sm">Download</div>
-                                        <div class="text-xs">Travel Ticket</div>
+                                  </div>
+                
+                                  
+                                </div>
+  
+  
+  
+                                <div class="card relative bg-gray-100 rounded-lg border-1 border-gray-200">
+                                  <div class="card-body text-sm">
+                                      <div class="flex flex-wrap gap-6 lg:gap-10">
+                                        <div>
+                                          <div class="text-rkGray">Location</div>
+                                          <div class="text-rkBlack">Chennai - Coimbatore</div>
+                                        </div>
+                                        <div>
+                                          <div class="text-rkGray">Date</div>
+                                          <div class="text-rkBlack">13 July 2024</div>
+                                        </div>
+                                        <div>
+                                          <div class="text-rkGray">Mode of travel</div>
+                                          <div class="text-rkBlack">Train</div>
+                                        </div>
+                                        <div>
+                                          <div class="text-rkGray">Preferred Time</div>
+                                          <div class="text-rkBlack">3:30 PM</div>
+                                        </div>
+                                        
+                                       
+                                      </div>
                                     </div>
+                  
+                                    
                                 </div>
                             </div>
-                        </a>
-                        <a href="">
-                            <div class="relative">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="152" height="68" viewBox="0 0 152 68" fill="none">
-                                    <path d="M39.2495 58.7859C40.4109 58.7844 41.5611 59.0118 42.6345 59.4552C43.7079 59.8986 44.6833 60.5492 45.505 61.3698C46.3267 62.1905 46.9786 63.165 47.4234 64.2378C47.8682 65.3106 48.0971 66.4605 48.0971 67.6218L141.937 67.6218C144.311 67.6208 146.588 66.677 148.266 64.9979C149.945 63.3189 150.888 61.0419 150.888 58.6679L150.888 9.93875C150.884 7.5673 149.939 5.29431 148.261 3.61852C146.583 1.94272 144.309 1.001 141.937 1L48.0971 0.999996C48.0971 3.34344 47.1662 5.5909 45.5091 7.24796C43.852 8.90503 41.6044 9.83595 39.2609 9.83595C36.9174 9.83595 34.6699 8.90503 33.0128 7.24796C31.3557 5.5909 30.4248 3.34344 30.4248 0.999995L9.95039 0.999994C8.77501 0.999994 7.61113 1.2315 6.52522 1.68128C5.43932 2.13107 4.45264 2.79034 3.62152 3.62144C2.79039 4.45254 2.1311 5.4392 1.6813 6.52508C1.23151 7.61096 1 8.77481 1 9.95016L0.999997 58.6793C1.00201 61.0497 1.94432 63.3225 3.62016 64.9991C5.29599 66.6756 7.56848 67.6188 9.93896 67.6218L30.4133 67.6218C30.4133 65.2784 31.3443 63.0309 33.0014 61.3739C34.6585 59.7168 36.906 58.7859 39.2495 58.7859Z" fill="#F1F2F6" stroke="#DADADA" stroke-width="0.757066"/>
-                                  </svg>
-                                <div class="flex absolute top-0 left-0 items-center h-full p-1">
-                                    <div class="size-10">
-                                        <img width="42" height="42" src="../assets/images/progress.gif" alt="">
-                                    </div>
-                                    <div class="uppercase">
-                                        <div class="text-orange-500 font-semibold text-sm">Download</div>
-                                        <div class="text-xs">Accomodation</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
 
+
+                        </div>
+                      
+                     <div class="mt-6 flex justify-end items-center">
+                        <button @click="tab = 2" class="btn btn-sm px-6 btn-outline">
+                            Next
+                          </button>
+                     </div>
+                    </div>
+                  
+                    <div  x-cloak  x-show="tab === 2" >
+                      
+                        <div>
+                            <div class="text-sm mt-10 mb-4 font-semibold">Preferred Stay Details</div>
+        
+        
+                            <div class="card relative bg-gray-100 rounded-lg border-1 border-gray-200">
+                                <div class="card-body text-sm">
+                                  <div class="flex flex-wrap gap-6 lg:gap-10">
+                                    <div>
+                                      <div class="text-rkGray">Location</div>
+                                      <div class="text-rkBlack">Chennai</div>
+                                    </div>
+                                    <div>
+                                      <div class="text-rkGray">Duration of Stay</div>
+                                      <div class="text-rkBlack">1 Day</div>
+                                    </div>
+                                    <div>
+                                      <div class="text-rkGray">Preferred Area</div>
+                                      <div class="text-rkBlack">Guindy</div>
+                                    </div>
+                                    <div>
+                                      <div class="text-rkGray">Age</div>
+                                      <div class="text-rkBlack">29</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-rkGray">Preferred Hotel</div>
+                                        <div class="text-rkBlack">ITC Hotel</div>
+                                      </div>
+                                     
+                                   
+                                  </div>
+                                </div>
+              
+                                
+                              </div>
+                        </div>
+    
+    
+                      <div class="flex justify-between mt-6">
+                        <button @click="tab = 1" class="btn btn-sm px-6 btn-outline">
+                          Previous
+                        </button>
+                        <button @click="tab = 3" class="btn btn-sm px-6 btn-outline">
+                          Next
+                        </button>
+                      </div>
+                    </div>
+                  
+                    <div  x-cloak  x-show="tab === 3" >
+                     
+                        <div>
+                            <div class="text-sm mt-10 mb-4 font-semibold">Passenger Details</div>
+        
+        
+                            <div class="card relative bg-gray-100 rounded-lg border-1 border-gray-200">
+                                <div class="card-body text-sm">
+                                  <div class="flex flex-wrap gap-6 lg:gap-10">
+                                    <div>
+                                      <div class="text-rkGray">Grade</div>
+                                      <div class="text-rkBlack">3A</div>
+                                    </div>
+                                    <div>
+                                      <div class="text-rkGray">Department</div>
+                                      <div class="text-rkBlack">Marketing</div>
+                                    </div>
+                                    <div>
+                                      <div class="text-rkGray">Name</div>
+                                      <div class="text-rkBlack">Vishnu Prasad</div>
+                                    </div>
+                                    <div>
+                                      <div class="text-rkGray">Age</div>
+                                      <div class="text-rkBlack">29</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-rkGray">Gender</div>
+                                        <div class="text-rkBlack">Male</div>
+                                      </div>
+                                      <div>
+                                        <div class="text-rkGray">Phone</div>
+                                        <div class="text-rkBlack">+91 95674 73412</div>
+                                      </div>
+                                      <div>
+                                        <div class="text-rkGray">Email</div>
+                                        <div class="text-rkBlack">Vishnud@ejindia.com</div>
+                                      </div>
+                                   
+                                  </div>
+                                </div>
+              
+                                
+                              </div>
+                        </div>
+    
+                      <div class="flex justify-between mt-6">
+                        <button @click="tab = 2" class="btn btn-sm px-6 btn-outline">
+                          Back
+                        </button>
+                        <div>
+                          <button
+                          onclick="reject_modal.showModal()"
+
+                          class="btn btn-sm px-6 btn-outline">
+                            Reject
+                          </button>
+                          <button  
+                          onclick="success_modal.showModal()"
+                          class="btn btn-sm px-6 btn-warning bg-orange-500 text-white">
+                            Approve
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  
+    
+    
+               
                 </div>
 
+               
+               
+               
+                <div class="md:col-span-3 px-6 md:px-0">
+                  <div class="bg-[#F1F2F6] py-8 md:h-full px-4">
+                      
+                    <div class="mb-6">
+                      <div class="mb-3 text-sm text-blue-500">Requested by</div>
 
-              </div>
+                      <div class="flex font-medium text-black items-center bg-white rounded-s-full text-sm max-w-fit">
+                        <div>
+                          <img width="24" height="24" class="size-8 rounded-full" src="../assets/images/user.png" alt="">
+                        </div>
+                        <div class="px-2">Vishnu Prasad</div>
+                      </div>
+                      <div class="ps-10 text-xs text-rkGray mt-1">Marketing</div>
+                    </div>
+
+ 
+
+                  </div>
+                </div>
             </div>
-        </div>
         </main>
+
+
+        <dialog id="success_modal" class="modal">
+          <div class="modal-box py-16">
+            
+            <div class="text-center mb-8">
+              <div>
+                <img class="m-auto" width="120" height="120" src="../assets/images/success.gif" alt="">
+              </div>
+              <div class="mb-2 flex items-center justify-center gap-1"><span>
+                Trip ID:
+              </span> <span class="text-green-500 font-semibold text-xl">TRIP-00015</span>
+            </div>
+              <div class="text-2xl">Your Details Updated Successfully</div>
+            </div>
+
+              <form method="dialog" class="text-center">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn bg-orange-500 text-white hover:bg-orange-500">Ok</button>
+              </form>
+          </div>
+        </dialog>
+
+
+
+
+        <dialog id="reject_modal" class="modal">
+          <div class="modal-box py-16">
+            
+            <div class="text-center mb-8">
+              <div class="mb-2 flex items-center justify-center gap-1"><span>
+                Trip ID:
+              </span> <span class="text-green-500 font-semibold text-xl">TRIP-00015</span>
+            </div>
+              <div class="text-2xl">Travel Request Rejected</div>
+            </div>
+
+            <div class="my-10">
+                   
+              <div class="text-sm mb-1">
+                  Remarks
+              </div>
+              <div>
+                  <textarea class="h-24 resize-none text-xs w-full border border-[#DADADA] rounded-md bg-gray-100" name="" placeholder="Type your remarks to reject the trip" id=""></textarea>
+              </div>
+
+          </div>
+
+
+              <form method="dialog" class="text-center">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn bg-orange-500 text-white hover:bg-orange-500">Ok</button>
+              </form>
+          </div>
+        </dialog>
+
+
+
+
         <footer class="bg-[#F1F2F6]">
           <div class="text-xs text-center py-1">
             Emerald © <span id="current-year"></span> All Rights Reserved.
@@ -1086,3 +1264,26 @@
 
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

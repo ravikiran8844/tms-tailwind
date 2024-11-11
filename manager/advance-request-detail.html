@@ -842,169 +842,235 @@
           </div>
         </header>
         <main class="flex-1 overflow-y-auto overflow-x-hidden bg-white">
-          <div>
-            <div class="grid gap-3 md:grid-cols-12">
-              <div class="px-6 py-8 md:col-span-9">
-                <div class="mb-8 sm:hidden">
-                  <h3 class="text-xl font-medium text-rkBlack">
-                    Advance Request Details
-                  </h3>
-                </div>
-
-                <div class="mb-8 flex items-center justify-between gap-3">
-                  <div class="flex items-center gap-2">
-                    <div>
-                      <a
-                        href="/manager/advance-request.html"
-                        class="me-2 inline-flex items-center rounded-lg border border-gray-400 bg-white p-2 text-center text-sm font-medium text-rkGray hover:bg-black hover:text-white"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                          class="size-4"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                    <div>
-                      <div class="text-lg font-semibold">TRIP-00014</div>
-                    </div>
-                    <div>
-                      <div
-                        class="badge bg-orange-100 px-3 py-1 text-xs text-orange-500"
-                      >
-                        Pending APPROVAL
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div
-                      class="bg-green-100 p-2 text-sm font-semibold text-green-500"
-                    >
-                      Eligibity amount for User ₹3,000
-                    </div>
-                  </div>
-                </div>
-
-                <div class="border-b border-t py-6">
-                  <div class="text-base font-medium">
-                    Trip to Chennai (Showroom Visit)
-                  </div>
-                  <div class="text-sm text-rkGray">Single Trip</div>
-                </div>
-
-               
-
-                <div>
-                    <div class="text-sm font-semibold my-4">Employee Details</div>
-
-
-                    <div class="card relative py-5 rounded-none">
-                        <div class="card-body text-sm">
-                          <div class="flex flex-wrap gap-6 lg:gap-10">
-                            <div>
-                              <div class="text-rkGray">Grade</div>
-                              <div class="text-rkBlack">3A</div>
-                            </div>
-                            <div>
-                              <div class="text-rkGray">Department</div>
-                              <div class="text-rkBlack">Marketing</div>
-                            </div>
-                            <div>
-                              <div class="text-rkGray">Name</div>
-                              <div class="text-rkBlack">Vishnu Prasad</div>
-                            </div>
-                         
-                            <div>
-                              <div class="text-rkGray">Phone</div>
-                              <div class="text-rkBlack">+91 95674 73412</div>
-                            </div>
-                            <div>
-                              <div class="text-rkGray">Email</div>
-                              <div class="text-rkBlack">Vishnud@ejindia.com</div>
-                            </div>
-                          </div>
-                        </div>
-      
-                        
-                      </div>
-                </div>
-
-
-
-                <div>
-                    <div class="text-sm font-semibold mt-6 mb-4">Request Details</div>
-
-
-                    <div class="card relative py-5 bg-gray-100 rounded-none">
-                        <div class="card-body text-sm">
-                          <div class="flex flex-wrap gap-6 lg:gap-10">
-                            <div>
-                              <div class="text-rkGray">Journey Date</div>
-                              <div class="text-rkBlack">11 July 2024</div>
-                            </div>
-                            <div>
-                              <div class="text-rkGray">Requesting Amount</div>
-                              <div class="text-rkBlack">₹1,000</div>
-                            </div>
-                            <div>
-                              <div class="text-rkGray">Payee Account No</div>
-                              <div class="text-rkBlack">657895432093</div>
-                            </div>
-                            <div>
-                              <div class="text-rkGray">Remarks</div>
-                              <div class="text-rkBlack">-</div>
-                            </div>
-                           
-                          </div>
-                        </div>
-      
-                        
-                      </div>
-                </div>
-
-
+          <div class="grid gap-3 md:grid-cols-12 h-full">
+            <div class="px-6 py-8 md:col-span-9">
+              <div class="mb-8 sm:hidden">
+                <h3 class="text-xl font-medium text-rkBlack">
+                  Advance Request Details
+                </h3>
               </div>
 
-              <div class="px-6 md:col-span-3 md:px-0">
-                <div class="bg-[#F1F2F6] px-4 py-8 md:h-full">
-                  <div class="mb-6">
-                    <div class="mb-3 text-sm text-blue-500">Requested by</div>
-
-                    <div
-                      class="flex max-w-fit items-center rounded-s-full bg-white text-sm font-medium text-black"
+              <div class="mb-8 flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <div>
+                    <a
+                      href="/manager/advance-request.html"
+                      class="me-2 inline-flex items-center rounded-lg border border-gray-400 bg-white p-2 text-center text-sm font-medium text-rkGray hover:bg-black hover:text-white"
                     >
-                      <div>
-                        <img
-                          width="24"
-                          height="24"
-                          class="size-8 rounded-full"
-                          src="../assets/images/user.png"
-                          alt=""
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-4"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
                         />
-                      </div>
-                      <div class="px-2">Vishnu Prasad</div>
-                    </div>
-                    <div class="mt-1 ps-10 text-xs text-rkGray">Marketing</div>
+                      </svg>
+                    </a>
                   </div>
+                  <div>
+                    <div class="text-lg font-semibold">TRIP-00014</div>
+                  </div>
+                  <div>
+                    <div
+                      class="badge bg-orange-100 px-3 py-1 text-xs text-orange-500"
+                    >
+                      Pending APPROVAL
+                    </div>
+                  </div>
+                </div>
 
-              
+                <div>
+                  <div
+                    class="bg-green-100 p-2 text-sm font-semibold text-green-500"
+                  >
+                    Eligibity amount for User ₹3,000
+                  </div>
+                </div>
+              </div>
+
+              <div class="border-b border-t py-6">
+                <div class="text-base font-medium">
+                  Trip to Chennai (Showroom Visit)
+                </div>
+                <div class="text-sm text-rkGray">Single Trip</div>
+              </div>
+
+             
+
+              <div>
+                  <div class="text-sm font-medium my-4">Employee Details</div>
+
+
+                  <div class="card relative py-5 rounded-none">
+                      <div class="card-body text-sm">
+                        <div class="flex flex-wrap gap-6 lg:gap-10">
+                          <div>
+                            <div class="text-rkGray">Grade</div>
+                            <div class="text-rkBlack">3A</div>
+                          </div>
+                          <div>
+                            <div class="text-rkGray">Department</div>
+                            <div class="text-rkBlack">Marketing</div>
+                          </div>
+                          <div>
+                            <div class="text-rkGray">Name</div>
+                            <div class="text-rkBlack">Vishnu Prasad</div>
+                          </div>
+                       
+                          <div>
+                            <div class="text-rkGray">Phone</div>
+                            <div class="text-rkBlack">+91 95674 73412</div>
+                          </div>
+                          <div>
+                            <div class="text-rkGray">Email</div>
+                            <div class="text-rkBlack">Vishnud@ejindia.com</div>
+                          </div>
+                        </div>
+                      </div>
+    
+                      
+                    </div>
+              </div>
+
+
+
+              <div>
+                  <div class="text-sm font-medium mt-6 mb-4">Request Details</div>
+
+
+                  <div class="card relative py-5 bg-gray-100 rounded-none">
+                      <div class="card-body text-sm">
+                        <div class="flex flex-wrap gap-6 lg:gap-10">
+                          <div>
+                            <div class="text-rkGray">Journey Date</div>
+                            <div class="text-rkBlack">11 July 2024</div>
+                          </div>
+                          <div>
+                            <div class="text-rkGray">Requesting Amount</div>
+                            <div class="text-rkBlack">₹1,000</div>
+                          </div>
+                          <div>
+                            <div class="text-rkGray">Payee Account No</div>
+                            <div class="text-rkBlack">657895432093</div>
+                          </div>
+                          <div>
+                            <div class="text-rkGray">Remarks</div>
+                            <div class="text-rkBlack">-</div>
+                          </div>
+                         
+                        </div>
+                      </div>
+    
+                      
+                    </div>
+              </div>
+
+
+              <div class="mt-6 flex justify-end items-center gap-4">
+                  <div>
+                      <button onclick="reject_modal.showModal()" class="bg-white text-black border border-gray-400 rounded-md text-sm p-2 px-5">Reject</button>
+                  </div>
+                  <div>
+                      <button onclick="success_modal.showModal()" class="bg-orange-500 text-white rounded-md text-sm p-2 px-5 ">Approve</button>
+                  </div>
+              </div>
+
+
+            </div>
+
+            <div class="px-6 md:col-span-3 md:px-0">
+              <div class="bg-[#F1F2F6] px-4 py-8 md:h-full">
+                <div class="mb-6">
+                  <div class="mb-3 text-sm text-blue-500">Requested by</div>
+
+                  <div
+                    class="flex max-w-fit items-center rounded-s-full bg-white text-sm font-medium text-black"
+                  >
+                    <div>
+                      <img
+                        width="24"
+                        height="24"
+                        class="size-8 rounded-full"
+                        src="../assets/images/user.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="px-2">Vishnu Prasad</div>
+                  </div>
+                  <div class="mt-1 ps-10 text-xs text-rkGray">Marketing</div>
+                </div>
 
             
-                </div>
+
+          
               </div>
             </div>
           </div>
         </main>
+
+
+
+
+
+
+
+
+        <dialog id="success_modal" class="modal">
+          <div class="modal-box py-16">
+            
+            <div class="text-center mb-8">
+              <div>
+                <img class="m-auto" width="120" height="120" src="../assets/images/success.gif" alt="">
+              </div>
+              <div class="mb-2 flex items-center justify-center gap-1"><span>
+                Trip ID:
+              </span> <span class="text-green-500 font-semibold text-xl">TRIP-00014</span>
+            </div>
+              <div>Your Travel Request Submitted Successfully </div>
+            </div>
+
+              <form method="dialog" class="text-center">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn bg-orange-500 text-white hover:bg-orange-500">Ok</button>
+              </form>
+          </div>
+        </dialog>
+
+
+        <dialog id="reject_modal" class="modal">
+          <div class="modal-box py-16">
+            
+            <div class="text-center text-lg font-medium mb-8">
+                Travel Request Rejected
+            </div>
+
+            <div class="mb-8">
+                       
+              <div class="text-sm mb-1">
+                  Remarks
+              </div>
+              <div>
+                  <textarea class="h-28 bg-gray-100 resize-none text-xs w-full border border-[#DADADA] focus:ring-0 focus:border-orange-500 active:border-orange-500 rounded-md" name="" placeholder="Type your remarks to reject the trip" id=""></textarea>
+              </div>
+
+          </div>
+
+              <form method="dialog" class="text-center">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn bg-orange-500 text-white hover:bg-orange-500">Ok</button>
+              </form>
+          </div>
+        </dialog>
+
+
+
+
         <footer class="bg-[#F1F2F6]">
           <div class="py-1 text-center text-xs">
             Emerald © <span id="current-year"></span> All Rights Reserved.

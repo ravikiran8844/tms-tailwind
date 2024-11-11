@@ -2178,6 +2178,10 @@ input.tab:checked + .tab-content,
     background-color: var(--btn-color, var(--fallback-b2));
     border-color: var(--btn-color, var(--fallback-b2));
   }
+
+  .btn-warning{
+    --btn-color: var(--fallback-wa);
+  }
 }
 
 @supports (color: color-mix(in oklab, black, black)){
@@ -2221,6 +2225,18 @@ input.tab:checked + .tab-content,
   outline-style: solid;
   outline-width: 2px;
   outline-offset: 2px;
+}
+
+@supports (color: oklch(0% 0 0)){
+  .btn-warning{
+    --btn-color: var(--wa);
+  }
+}
+
+.btn-warning{
+  --tw-text-opacity: 1;
+  color: var(--fallback-wac,oklch(var(--wac)/var(--tw-text-opacity)));
+  outline-color: var(--fallback-wa,oklch(var(--wa)/1));
 }
 
 .btn.glass{
@@ -3838,6 +3854,11 @@ details.collapse summary::-webkit-details-marker{
   margin-bottom: 0.25rem;
 }
 
+.my-10{
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .my-12{
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -4020,6 +4041,14 @@ details.collapse summary::-webkit-details-marker{
   height: 5rem;
 }
 
+.h-24{
+  height: 6rem;
+}
+
+.h-28{
+  height: 7rem;
+}
+
 .h-3{
   height: 0.75rem;
 }
@@ -4060,12 +4089,28 @@ details.collapse summary::-webkit-details-marker{
   height: 100vh;
 }
 
+.h-3\/4{
+  height: 75%;
+}
+
 .min-h-\[70\%\]{
   min-height: 70%;
 }
 
 .min-h-screen{
   min-height: 100vh;
+}
+
+.min-h-7{
+  min-height: 1.75rem;
+}
+
+.min-h-\[100vh\]{
+  min-height: 100vh;
+}
+
+.min-h-\[75vh\]{
+  min-height: 75vh;
 }
 
 .w-1\/2{
@@ -4247,6 +4292,10 @@ details.collapse summary::-webkit-details-marker{
 
 .items-start{
   align-items: flex-start;
+}
+
+.items-end{
+  align-items: flex-end;
 }
 
 .items-center{
@@ -4499,6 +4548,10 @@ details.collapse summary::-webkit-details-marker{
   border-color: rgb(234 234 234 / var(--tw-border-opacity));
 }
 
+.border-transparent{
+  border-color: transparent;
+}
+
 .border-r-gray-200{
   --tw-border-opacity: 1;
   border-right-color: rgb(229 231 235 / var(--tw-border-opacity));
@@ -4729,6 +4782,10 @@ details.collapse summary::-webkit-details-marker{
   padding-inline-end: 0.875rem;
 }
 
+.pl-12{
+  padding-left: 3rem;
+}
+
 .ps-10{
   padding-inline-start: 2.5rem;
 }
@@ -4878,6 +4935,10 @@ details.collapse summary::-webkit-details-marker{
 .text-green-500{
   --tw-text-opacity: 1;
   color: rgb(14 159 110 / var(--tw-text-opacity));
+}
+
+.text-inherit{
+  color: inherit;
 }
 
 .text-orange{
@@ -5407,6 +5468,89 @@ input[disabled]:focus{
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
+.bordered-table {
+  border-collapse: separate;
+  /* Ensures border radius is visible */
+  border-spacing: 0;
+  /* Removes gaps between table cells */
+  border: none;
+}
+
+.bordered-table th,
+.bordered-table td{
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+/* Add rounded corners to the first and last cells in the table */
+
+.bordered-table tr:first-child td:first-child,
+.bordered-table tr:first-child th:first-child{
+  border-top-left-radius: 0.5rem;
+  /* Top-left corner */
+}
+
+.bordered-table tr:first-child td:last-child,
+.bordered-table tr:first-child th:last-child{
+  border-top-right-radius: 0.5rem;
+  /* Top-right corner */
+}
+
+.bordered-table tr:last-child td:first-child,
+.bordered-table tr:last-child th:first-child{
+  border-bottom-left-radius: 0.5rem;
+  /* Bottom-left corner */
+}
+
+.bordered-table tr:last-child td:last-child,
+.bordered-table tr:last-child th:last-child{
+  border-bottom-right-radius: 0.5rem;
+  /* Bottom-right corner */
+}
+
+.rk-table thead{
+  border-width: 1px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.rk-table tr td,.rk-table tr th{
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+.round-trip::after{
+  content: "";
+  position: absolute;
+  background-image: url(../images/add-new-trip.png);
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 80%;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.multi-trip::after{
+  content: "";
+  position: absolute;
+  background-image: url(../images/add-new-trip.png);
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 80%;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
 .focus\:select-warning:focus{
   --tw-border-opacity: 1;
   border-color: var(--fallback-wa,oklch(var(--wa)/var(--tw-border-opacity)));
@@ -5563,6 +5707,11 @@ input[disabled]:focus{
 .focus\:ring-yellow-500:focus{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(194 120 3 / var(--tw-ring-opacity));
+}
+
+.active\:border-orange-500:active{
+  --tw-border-opacity: 1;
+  border-color: rgb(247 141 30 / var(--tw-border-opacity));
 }
 
 .active\:focus\:border-\[\#DEDEDE\]:focus:active{
@@ -5728,6 +5877,14 @@ input[disabled]:focus{
 
   .md\:h-full{
     height: 100%;
+  }
+
+  .md\:h-screen{
+    height: 100vh;
+  }
+
+  .md\:min-h-screen{
+    min-height: 100vh;
   }
 
   .md\:grid-cols-12{

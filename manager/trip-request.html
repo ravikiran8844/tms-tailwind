@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pending Request - Emerald TMS</title>
+    <title>Trip Request - Emerald TMS</title>
     <link rel="stylesheet" href="../assets/css/tailwind.css" />
   </head>
   <body>
@@ -165,6 +165,7 @@
                       </ul>
                     </div>
                   </li>
+
                   <li class="mb-1">
                     <div id="main-menu-dropdown-2">
                       <button
@@ -173,6 +174,90 @@
                         data-accordion-target="#main-menu-dropdown-body-2"
                         aria-expanded="false"
                         aria-controls="main-menu-dropdown-body-2"
+                      >
+                        <div class="flex items-center">
+                         
+
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                              </svg>
+                              
+
+                          <span class="mx-2">Approval</span>
+                        </div>
+                        <svg
+                          data-accordion-icon
+                          class="h-3 w-3 shrink-0 rotate-180"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 10 6"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5 5 1 1 5"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div
+                      id="main-menu-dropdown-body-2"
+                      class="hidden"
+                      aria-labelledby="main-menu-dropdown-2"
+                    >
+                      <ul class="bg-[#EAEAEA] p-2">
+                     
+                       
+                        <li>
+                            <a
+                              class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                              href="/manager/trip-request.html"
+                            >
+                              <span class="mx-2 ps-6">Trip Request</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a
+                              class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                              href="/manager/expense-request.html"
+                            >
+                              <span class="mx-2 ps-6">Expense Request</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a
+                              class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                              href="/manager/advance-request.html"
+                            >
+                              <span class="mx-2 ps-6">Advance Request</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a
+                              class="flex items-center rounded px-2 py-1 text-sm text-rkGray hover:bg-[#F1F1F1] hover:text-orange"
+                              href="/manager/all-request.html"
+                            >
+                              <span class="mx-2 ps-6">All Request</span>
+                            </a>
+                          </li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="mb-1">
+                    <div id="main-menu-dropdown-3">
+                      <button
+                        type="button"
+                        class="flex w-full items-center justify-between gap-3 px-2 py-2 text-sm text-rkGray rtl:text-right"
+                        data-accordion-target="#main-menu-dropdown-body-3"
+                        aria-expanded="false"
+                        aria-controls="main-menu-dropdown-body-3"
                       >
                         <div class="flex items-center">
                           <svg
@@ -211,9 +296,9 @@
                       </button>
                     </div>
                     <div
-                      id="main-menu-dropdown-body-2"
+                      id="main-menu-dropdown-body-3"
                       class="hidden"
-                      aria-labelledby="main-menu-dropdown-2"
+                      aria-labelledby="main-menu-dropdown-3"
                     >
                       <ul class="bg-[#EAEAEA] p-2">
                         <li>
@@ -335,7 +420,7 @@
 
             <div class="relative mx-4 hidden sm:block lg:mx-0">
               <h3 class="text-md font-semibold text-gray-700 md:text-xl">
-                Pending Request
+                Trip Request
               </h3>
             </div>
           </div>
@@ -753,80 +838,187 @@
         <main class="flex-1 overflow-y-auto overflow-x-hidden bg-white">
           <div class="container mx-auto px-6 py-8">
             <div class="mb-8 sm:hidden">
-              <h3 class="text-xl font-medium text-rkBlack">Pending Request</h3>
+              <h3 class="text-xl font-medium text-rkBlack">Trip Request</h3>
             </div>
 
-            <div class="relative overflow-x-auto">
-              <div class="sm:absolute sm:right-2 max-sm:mb-5">
-                <div class="flex gap-1 items-center">
-                  <label class="block min-w-fit text-sm">Request Filter</label>
-                  <select class="select select-sm  focus:select-warning text-xs select-gray-700 select-bordered max-w-xs m-1">
-                    <option>All</option>
-                    <option>All Advances</option>
-                    <option>All Expenses</option>
-                  </select>
+            
+
+            <div class="flex gap-4 justify-between flex-wrap items-end">
+              <div class="flex flex-wrap gap-4">
+                <div class="flex flex-col gap-2">
+                  <label  class="text-sm font-semibold text-gray-900">Name</label>
+                  <input type="text"  class="w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500" placeholder="Enter Name" required="">
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label  class="text-sm font-semibold text-gray-900">Department</label>
+                  <input type="text"  class="w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500" placeholder="Enter Department" required="">
                 </div>
               </div>
+  
+              <div>
+                <div class="flex gap-2 items-center">
+                  <label  class="min-w-fit text-sm font-semibold text-gray-900">Trip ID</label>
+                  <input type="text"  class="w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500" placeholder="Enter Trip ID" required="">
+                </div>
+              </div>
+  
+            </div>
 
-              <table id="all-trips-table" class="table table-sm tms-table ">
-                <thead class="text-black">
-                  <tr>
-                    <th>
-                      <span class="text-center">REQUESTED DATE</span>
-                    </th>
-                    <th>
-                      <span class="text-center">TRIP ID</span>
-                    </th>
-                    <th>
-                      <span class="text-center">AMOUNT</span>
-                    </th>
-                    <th>
-                      <span class="text-center"> NOTES </span>
-                    </th>
-                    <th>
-                      <span class="text-center"> STATUS </span>
-                    </th>
-                    <th>
-                      <span class="text-center"> APPROVER </span>
-                    </th>
-                  </tr>
+
+            <div class="mt-10 overflow-x-auto">
+              <table class="table text-center text-sm rk-table">
+                <thead>
+                  <th>Name</th>
+                  <th>Department</th>
+                  <th>Trip</th>
+                  <th>Requested Date</th>
+                  <th>Destination</th>
+                  <th  class="min-w-[150px]">Details</th>
                 </thead>
-
                 <tbody>
-                  <tr onclick="redirectTo('/manager/request-details.html')" class="cursor-pointer">
+                  <tr>
+                    <td>Vishnu Prasad</td>
+                    <td>Audit</td>
                     <td>
-                        <div class="text-blue-500">11 July 2024</div>
-                    </td>
-                    <td>
-                        <div>TRIP-00014</div>
-                    </td>
-                    <td>
-                        <div>Rs.1,000.00</div>
-                    </td>
-                    <td>
-                        <div>Reason for Advance request..</div>
-                    </td>
-                    <td>
-                        <div class="badge bg-orange-100 text-orange-500">
-                          Pending
+                      <div class="card bg-[#F1F2F6] w-[320px] m-auto">
+                        <div class="card-body">
+                            <div class="text-center space-y-1">
+                                <div>Trip-00014</div>
+                                <div class="text-blue-500">Meeting with prospect (Showro..)</div>
+                                <div class="badge bg-orange-200 text-xs text-orange">Pending APPROVAL</div>
+                            </div>
                         </div>
+
+                    </div>
                     </td>
                     <td>
-                        <div class="flex items-center justify-center gap-1">
-                          <div>
-                            <img
-                              class="size-8 rounded-full"
-                              src="../assets/images/user.png"
-                              alt=""
-                            />
-                          </div>
-                          <div>Vivin Raj</div>
+                      <div>9 July 2024</div>
+                      <div class="text-gray-500">3:15 PM</div>
+                    </td>
+                    <td>
+                      <div class="flex items-center justify-center gap-2 font-semibold flex-wrap">
+                        <span>Coimbatore</span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                <rect width="25" height="25" rx="6.25" fill="#F1F2F6"></rect>
+                                <path d="M18.4836 13.0987L12.893 17.3977C12.5115 17.6788 12.038 17.3481 12.038 16.8025V14.438H6.69725C6.44732 14.438 6.25 14.19 6.25 13.8759V11.1311C6.25 10.817 6.44732 10.569 6.69725 10.569H12.038V8.20454C12.038 7.6589 12.5247 7.31168 12.893 7.6093L18.4836 11.9083C18.8388 12.1728 18.8388 12.8342 18.4836 13.0987Z" fill="#2D2D2D"></path>
+                              </svg>
+                        </span>
+                        <span>Chennai</span>
+                    </div>
+                    </td>
+                    <td>
+                      <a href="/manager/request-details-00014.html" class="text-green-500 flex items-center justify-center">
+                        View Details <span>
+                            <svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+                              </svg>                                      
+                        </span>
+                    </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Sundar</td>
+                    <td>Marketing</td>
+                    <td>
+                      <div class="card bg-[#F1F2F6] w-[320px] m-auto">
+                        <div class="card-body">
+                            <div class="text-center space-y-1">
+                                <div>Trip-00015</div>
+                                <div class="text-blue-500">Meeting with prospect (Showro..)</div>
+                                <div class="badge bg-orange-200 text-xs text-orange">Pending APPROVAL</div>
+                            </div>
                         </div>
+
+                    </div>
+                    </td>
+                    <td>
+                      <div>9 July 2024</div>
+                      <div class="text-gray-500">3:15 PM</div>
+                    </td>
+                    <td>
+                      <div class="flex items-center justify-center gap-2 font-semibold flex-wrap">
+                        <span>Coimbatore</span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                <rect width="25" height="25" rx="6.25" fill="#F1F2F6"></rect>
+                                <path d="M18.4836 13.0987L12.893 17.3977C12.5115 17.6788 12.038 17.3481 12.038 16.8025V14.438H6.69725C6.44732 14.438 6.25 14.19 6.25 13.8759V11.1311C6.25 10.817 6.44732 10.569 6.69725 10.569H12.038V8.20454C12.038 7.6589 12.5247 7.31168 12.893 7.6093L18.4836 11.9083C18.8388 12.1728 18.8388 12.8342 18.4836 13.0987Z" fill="#2D2D2D"></path>
+                              </svg>
+                        </span>
+                        <span>Madurai</span>
+                    </div>
+                    </td>
+                    <td>
+                      <a href="/manager/request-details-00015.html" class="text-green-500 flex items-center justify-center">
+                        View Details <span>
+                            <svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+                              </svg>                                      
+                        </span>
+                    </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Udhay</td>
+                    <td>Marketing</td>
+                    <td>
+                      <div class="card bg-[#F1F2F6] w-[320px] m-auto">
+                        <div class="card-body">
+                            <div class="text-center space-y-1">
+                                <div>Trip-00016</div>
+                                <div class="text-blue-500">Meeting with prospect (Showro..)</div>
+                                <div class="badge bg-orange-200 text-xs text-orange">Pending APPROVAL</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    </td>
+                    <td>
+                      <div>9 July 2024</div>
+                      <div class="text-gray-500">3:15 PM</div>
+                    </td>
+                    <td>
+                      <div class="flex items-center justify-center gap-2 font-semibold flex-wrap">
+                        <span>Coimbatore</span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                <rect width="25" height="25" rx="6.25" fill="#F1F2F6"></rect>
+                                <path d="M18.4836 13.0987L12.893 17.3977C12.5115 17.6788 12.038 17.3481 12.038 16.8025V14.438H6.69725C6.44732 14.438 6.25 14.19 6.25 13.8759V11.1311C6.25 10.817 6.44732 10.569 6.69725 10.569H12.038V8.20454C12.038 7.6589 12.5247 7.31168 12.893 7.6093L18.4836 11.9083C18.8388 12.1728 18.8388 12.8342 18.4836 13.0987Z" fill="#2D2D2D"></path>
+                              </svg>
+                        </span>
+                        <span>Madurai</span>
+                        <span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                              <rect width="25" height="25" rx="6.25" fill="#F1F2F6"></rect>
+                              <path d="M18.4836 13.0987L12.893 17.3977C12.5115 17.6788 12.038 17.3481 12.038 16.8025V14.438H6.69725C6.44732 14.438 6.25 14.19 6.25 13.8759V11.1311C6.25 10.817 6.44732 10.569 6.69725 10.569H12.038V8.20454C12.038 7.6589 12.5247 7.31168 12.893 7.6093L18.4836 11.9083C18.8388 12.1728 18.8388 12.8342 18.4836 13.0987Z" fill="#2D2D2D"></path>
+                            </svg>
+                      </span>
+                      <span>Pollachi</span>
+                      <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                            <rect width="25" height="25" rx="6.25" fill="#F1F2F6"></rect>
+                            <path d="M18.4836 13.0987L12.893 17.3977C12.5115 17.6788 12.038 17.3481 12.038 16.8025V14.438H6.69725C6.44732 14.438 6.25 14.19 6.25 13.8759V11.1311C6.25 10.817 6.44732 10.569 6.69725 10.569H12.038V8.20454C12.038 7.6589 12.5247 7.31168 12.893 7.6093L18.4836 11.9083C18.8388 12.1728 18.8388 12.8342 18.4836 13.0987Z" fill="#2D2D2D"></path>
+                          </svg>
+                    </span>
+                    <span>Coimbatore</span>
+                    </div>
+                    </td>
+                    <td>
+                      <a href="/manager/request-details-00016.html" class="text-green-500 flex items-center justify-center">
+                        View Details <span>
+                            <svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+                              </svg>                                      
+                        </span>
+                    </a>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
+
+
+
           </div>
         </main>
         <footer class="bg-[#F1F2F6]">
