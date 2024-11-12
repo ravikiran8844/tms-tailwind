@@ -229,10 +229,13 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   padding: 20px;
   text-align: center;
   text-transform: uppercase;
+  border: 1px solid #ECECEC;
+
 }
 .tms-table td{
   padding: 22px;
   text-align: center;
+  border: 1px solid #ECECEC;
 }
 
 

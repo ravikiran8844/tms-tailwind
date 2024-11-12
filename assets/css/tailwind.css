@@ -3406,6 +3406,21 @@ details.collapse summary::-webkit-details-marker{
   border-start-end-radius: inherit;
 }
 
+.select-md{
+  height: 3rem;
+  min-height: 3rem;
+  padding-left: 1rem;
+  padding-right: 2.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  line-height: 2;
+}
+
+[dir="rtl"] .select-md{
+  padding-left: 2.5rem;
+  padding-right: 1rem;
+}
+
 .select-sm{
   height: 2rem;
   min-height: 2rem;
@@ -3848,6 +3863,10 @@ details.collapse summary::-webkit-details-marker{
   right: -10px;
 }
 
+.right-\[-5px\]{
+  right: -5px;
+}
+
 .start-0{
   inset-inline-start: 0px;
 }
@@ -3872,28 +3891,12 @@ details.collapse summary::-webkit-details-marker{
   top: -16px;
 }
 
-.top-\[\]{
-  top: ;
-}
-
-.right-\[\]{
-  right: ;
-}
-
-.right-\[-20px\]{
-  right: -20px;
-}
-
-.right-\[-0px\]{
-  right: -0px;
-}
-
-.right-\[-5px\]{
-  right: -5px;
-}
-
 .top-\[-5px\]{
   top: -5px;
+}
+
+.top-\[20px\]{
+  top: 20px;
 }
 
 .z-10{
@@ -3912,6 +3915,10 @@ details.collapse summary::-webkit-details-marker{
   z-index: 40;
 }
 
+.z-50{
+  z-index: 50;
+}
+
 .col-span-12{
   grid-column: span 12 / span 12;
 }
@@ -3924,12 +3931,12 @@ details.collapse summary::-webkit-details-marker{
   margin: 0.25rem;
 }
 
-.m-auto{
-  margin: auto;
-}
-
 .m-2{
   margin: 0.5rem;
+}
+
+.m-auto{
+  margin: auto;
 }
 
 .mx-1{
@@ -4140,6 +4147,10 @@ details.collapse summary::-webkit-details-marker{
   height: 2rem;
 }
 
+.h-16{
+  height: 4rem;
+}
+
 .h-20{
   height: 5rem;
 }
@@ -4184,6 +4195,10 @@ details.collapse summary::-webkit-details-marker{
   height: 24px;
 }
 
+.h-auto{
+  height: auto;
+}
+
 .h-full{
   height: 100%;
 }
@@ -4192,8 +4207,8 @@ details.collapse summary::-webkit-details-marker{
   height: 100vh;
 }
 
-.h-auto{
-  height: auto;
+.max-h-\[650px\]{
+  max-height: 650px;
 }
 
 .min-h-\[70\%\]{
@@ -4206,6 +4221,10 @@ details.collapse summary::-webkit-details-marker{
 
 .w-1\/2{
   width: 50%;
+}
+
+.w-16{
+  width: 4rem;
 }
 
 .w-28{
@@ -4288,6 +4307,10 @@ details.collapse summary::-webkit-details-marker{
 .max-w-fit{
   max-width: -moz-fit-content;
   max-width: fit-content;
+}
+
+.max-w-lg{
+  max-width: 32rem;
 }
 
 .max-w-md{
@@ -4451,6 +4474,12 @@ details.collapse summary::-webkit-details-marker{
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+.space-y-4 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
 .space-y-5 > :not([hidden]) ~ :not([hidden]){
@@ -4687,6 +4716,11 @@ details.collapse summary::-webkit-details-marker{
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-blue-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 100 242 / var(--tw-bg-opacity));
+}
+
 .bg-gray-100{
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -4761,6 +4795,10 @@ details.collapse summary::-webkit-details-marker{
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-opacity-50{
+  --tw-bg-opacity: 0.5;
+}
+
 .object-cover{
   -o-object-fit: cover;
      object-fit: cover;
@@ -4768,6 +4806,10 @@ details.collapse summary::-webkit-details-marker{
 
 .p-1{
   padding: 0.25rem;
+}
+
+.p-10{
+  padding: 2.5rem;
 }
 
 .p-2{
@@ -4786,12 +4828,12 @@ details.collapse summary::-webkit-details-marker{
   padding: 1rem;
 }
 
-.p-8{
-  padding: 2rem;
+.p-5{
+  padding: 1.25rem;
 }
 
-.p-10{
-  padding: 2.5rem;
+.p-8{
+  padding: 2rem;
 }
 
 .px-1{
@@ -4888,6 +4930,10 @@ details.collapse summary::-webkit-details-marker{
 
 .pl-12{
   padding-left: 3rem;
+}
+
+.ps-1{
+  padding-inline-start: 0.25rem;
 }
 
 .ps-10{
@@ -5488,11 +5534,13 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   padding: 20px;
   text-align: center;
   text-transform: uppercase;
+  border: 1px solid #ECECEC;
 }
 
 .tms-table td{
   padding: 22px;
   text-align: center;
+  border: 1px solid #ECECEC;
 }
 
 /* table2 */
@@ -6076,6 +6124,10 @@ input[disabled]:focus{
 
   .lg\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:justify-between{
+    justify-content: space-between;
   }
 
   .lg\:gap-10{
