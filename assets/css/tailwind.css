@@ -4072,6 +4072,14 @@ details.collapse summary::-webkit-details-marker{
   margin-top: 2rem;
 }
 
+.ml-20{
+  margin-left: 5rem;
+}
+
+.ml-10{
+  margin-left: 2.5rem;
+}
+
 .block{
   display: block;
 }
@@ -4492,6 +4500,18 @@ details.collapse summary::-webkit-details-marker{
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+
+.space-y-10 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+}
+
+.space-y-8 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
 .overflow-auto{
@@ -4962,6 +4982,18 @@ details.collapse summary::-webkit-details-marker{
 
 .pt-20{
   padding-top: 5rem;
+}
+
+.pt-10{
+  padding-top: 2.5rem;
+}
+
+.pl-10{
+  padding-left: 2.5rem;
+}
+
+.pl-16{
+  padding-left: 4rem;
 }
 
 .text-center{

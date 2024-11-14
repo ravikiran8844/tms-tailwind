@@ -268,7 +268,7 @@
 
                     <div class="relative mx-4 hidden sm:block lg:mx-0">
                         <h3 class="text-md font-semibold text-gray-700 md:text-xl">
-                            All Request
+                            User Trip details
                         </h3>
                     </div>
                 </div>
@@ -436,7 +436,7 @@
                                         <div class="flex items-center justify-between">
                                             <div>
                                                 Trip ID :
-                                                <span class="font-bold" href="#">TRIP-00014</span>
+                                                <span class="font-bold" href="#">TRIP-00015</span>
                                             </div>
                                             <div class="text-xs text-rkGray">5 min ago</div>
                                         </div>
@@ -598,13 +598,13 @@
                 <div class="grid h-full gap-3 md:grid-cols-12">
                     <div class="px-6 py-8 md:col-span-9">
                         <div class="mb-8 sm:hidden">
-                            <h3 class="text-xl font-medium text-rkBlack">All Request</h3>
+                            <h3 class="text-xl font-medium text-rkBlack">User Trip details</h3>
                         </div>
 
                         <div class="mb-8 flex items-center justify-between gap-3">
                             <div class="flex items-start gap-2">
                                 <div>
-                                    <a href="/travel-desk/all-requests.html"
+                                    <a href="/travel-desk/pending-requests.html"
                                         class="me-2 inline-flex items-center rounded-lg border border-gray-400 bg-white p-2 text-center text-sm font-medium text-rkGray hover:bg-black hover:text-white">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="size-4">
@@ -614,12 +614,12 @@
                                     </a>
                                 </div>
                                 <div>
-                                    <div class="text-lg font-semibold">TRIP-00014</div>
+                                    <div class="text-lg font-semibold">TRIP-00015</div>
                                     <div class="text-xs text-gray-400">Trip Requests</div>
                                 </div>
                                 <div>
-                                    <div class="badge bg-green-100 px-3 py-1 text-xs text-green-500">
-                                        Closed
+                                    <div class="badge bg-orange-100 uppercase px-3 py-1 text-xs text-orange-500">
+                                        Pending APPROVAL
                                     </div>
                                 </div>
                             </div>
@@ -756,95 +756,186 @@
                             </div>
                         </div>
 
-                        <div class="card relative mt-10 bg-[#F1F2F6] py-5">
-                            <div class="card-body text-sm">
-                                <div class="flex flex-wrap gap-6 lg:gap-10 lg:justify-between">
-                                    <div>
-                                        <div class="text-rkGray">Location</div>
-                                        <div class="text-rkBlack">Coimbatore - Chennai</div>
+                        <div class="round-trip relative pl-12">
+                            <div class="card relative mt-10 bg-[#F1F2F6] py-5">
+                                <div class="card-body text-sm space-y-8">
+                                    <div class="flex flex-wrap gap-6 lg:gap-10 lg:justify-between">
+                                        <div>
+                                            <div class="text-rkGray">Location</div>
+                                            <div class="text-rkBlack">Coimbatore - Chennai</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-rkGray">Date</div>
+                                            <div class="text-rkBlack">11, July 2024</div>
+                                        </div>
+    
+                                        <div>
+                                            <div class="text-rkGray">Mode of travel</div>
+                                            <div class="text-rkBlack">Bus</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-rkGray">Preferred Time</div>
+                                            <div class="text-rkBlack">10:30 PM</div>
+                                        </div>
+    
+                                        <div>
+    
+                                            <button onclick="openModal('upload-modal1')"
+                                                class="py-2 flex-nowrap bg-white text-orange-500 px-4 rounded-lg border-2 text-sm border-dashed flex items-center gap-1 justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="size-4">
+                                                    <path fill-rule="evenodd"
+                                                        d="M11.47 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06l-3.22-3.22V16.5a.75.75 0 0 1-1.5 0V4.81L8.03 8.03a.75.75 0 0 1-1.06-1.06l4.5-4.5ZM3 15.75a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg>
+                                                <span class="text-black">upload</span>
+                                            </button>
+    
+    
+    
+    
+                                        </div>
+    
+    
+    
+    
+    
                                     </div>
-                                    <div>
-                                        <div class="text-rkGray">Date</div>
-                                        <div class="text-rkBlack">11, July 2024</div>
+    
+    
+                                    <div class="flex flex-wrap gap-6 lg:gap-10 lg:justify-between">
+                                        <div>
+                                            <div class="text-rkGray">Location</div>
+                                            <div class="text-rkBlack">Chennai - Coimbatore</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-rkGray">Date</div>
+                                            <div class="text-rkBlack">1, July 2024</div>
+                                        </div>
+    
+                                        <div>
+                                            <div class="text-rkGray">Mode of travel</div>
+                                            <div class="text-rkBlack">Bus</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-rkGray">Preferred Time</div>
+                                            <div class="text-rkBlack">10:30 PM</div>
+                                        </div>
+    
+                                        <div>
+    
+                                            <button onclick="openModal('upload-modal2')"
+                                                class="py-2 flex-nowrap bg-white text-orange-500 px-4 rounded-lg border-2 text-sm border-dashed flex items-center gap-1 justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="size-4">
+                                                    <path fill-rule="evenodd"
+                                                        d="M11.47 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06l-3.22-3.22V16.5a.75.75 0 0 1-1.5 0V4.81L8.03 8.03a.75.75 0 0 1-1.06-1.06l4.5-4.5ZM3 15.75a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg>
+                                                <span class="text-black">upload</span>
+                                            </button>
+    
+    
+    
+    
+                                        </div>
+    
+    
+    
+    
+    
                                     </div>
-
-                                    <div>
-                                        <div class="text-rkGray">Mode of travel</div>
-                                        <div class="text-rkBlack">Bus</div>
-                                    </div>
-                                    <div>
-                                        <div class="text-rkGray">Preferred Time</div>
-                                        <div class="text-rkBlack">10:30 PM</div>
-                                    </div>
-
-                                    <div>
-
-                                        <button onclick="openModal('upload-modal1')"
-                                            class="py-2 flex-nowrap bg-white text-orange-500 px-4 rounded-lg border-2 text-sm border-dashed flex items-center gap-1 justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor" class="size-4">
-                                                <path fill-rule="evenodd"
-                                                    d="M11.47 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06l-3.22-3.22V16.5a.75.75 0 0 1-1.5 0V4.81L8.03 8.03a.75.75 0 0 1-1.06-1.06l4.5-4.5ZM3 15.75a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z"
-                                                    clip-rule="evenodd"></path>
-                                            </svg>
-                                            <span class="text-black">upload</span>
-                                        </button>
-
-
-
-
-                                    </div>
-
-
-
-
-
+    
+    
                                 </div>
-                            </div>
-
-
-                            <div id="upload-modal1" class="hidden">
-                                <div
-                                    class="fixed inset-0 top-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    
+    
+                                <div id="upload-modal1" class="hidden">
                                     <div
-                                        class="bg-white p-5 rounded-lg shadow-lg  w-full max-w-lg  max-h-[650px] overflow-y-auto">
-                                        <input type="file" accept="image/*" multiple id="fileInput1" class="hidden"
-                                            onchange="previewImages('fileInput1', 'preview1')">
-                                        <label for="fileInput1" type="file" id="fileInput-1" multiple=""
-                                            accept="image/*"
-                                            class="h-40 flex-col bg-gray-100 w-full rounded-lg p-10 flex justify-center items-center">
-                                            <div class="mb-2">
-                                                <span class="btn btn-circle bg-white text-orange-500">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                        fill="currentColor" class="size-6">
-                                                        <path fill-rule="evenodd"
-                                                            d="M11.47 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06l-3.22-3.22V16.5a.75.75 0 0 1-1.5 0V4.81L8.03 8.03a.75.75 0 0 1-1.06-1.06l4.5-4.5ZM3 15.75a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z"
-                                                            clip-rule="evenodd"></path>
-                                                    </svg>
-                                                </span>
+                                        class="fixed inset-0 top-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                                        <div
+                                            class="bg-white p-5 rounded-lg shadow-lg  w-full max-w-lg  max-h-[650px] overflow-y-auto">
+                                            <input type="file" accept="image/*" multiple id="fileInput1" class="hidden"
+                                                onchange="previewImages('fileInput1', 'preview1')">
+                                            <label for="fileInput1" type="file" id="fileInput-1" multiple=""
+                                                accept="image/*"
+                                                class="h-40 flex-col bg-gray-100 w-full rounded-lg p-10 flex justify-center items-center">
+                                                <div class="mb-2">
+                                                    <span class="btn btn-circle bg-white text-orange-500">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                            fill="currentColor" class="size-6">
+                                                            <path fill-rule="evenodd"
+                                                                d="M11.47 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06l-3.22-3.22V16.5a.75.75 0 0 1-1.5 0V4.81L8.03 8.03a.75.75 0 0 1-1.06-1.06l4.5-4.5ZM3 15.75a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z"
+                                                                clip-rule="evenodd"></path>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="text-blue-500">Click here</span> to upload
+                                                </div>
+                                            </label>
+    
+                                            <div id="preview1"
+                                                class="flex flex-wrap justify-center items-center gap-2 mt-4"></div>
+    
+                                            <div class="text-center mt-6">
+                                                <button onclick="closeModal('upload-modal1')"
+                                                    class="btn bg-orange-500 text-white hover:bg-orange-600 hover:text-white">Update</button>
                                             </div>
-                                            <div>
-                                                <span class="text-blue-500">Click here</span> to upload
-                                            </div>
-                                        </label>
-
-                                        <div id="preview1"
-                                            class="flex flex-wrap justify-center items-center gap-2 mt-4"></div>
-
-                                        <div class="text-center mt-6">
-                                            <button onclick="closeModal('upload-modal1')"
-                                                class="btn bg-orange-500 text-white hover:bg-orange-600 hover:text-white">Update</button>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-
-                            <div
-                                class="absolute left-10 top-[-16px] flex h-8 items-center rounded-lg bg-black px-3 text-sm text-white">
-                                Travel Details
+    
+    
+    
+                                <div id="upload-modal2" class="hidden">
+                                    <div
+                                        class="fixed inset-0 top-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                                        <div
+                                            class="bg-white p-5 rounded-lg shadow-lg  w-full max-w-lg  max-h-[650px] overflow-y-auto">
+                                            <input type="file" accept="image/*" multiple id="fileInput2" class="hidden"
+                                                onchange="previewImages('fileInput2', 'preview2')">
+                                            <label for="fileInput2" type="file" id="fileInput-2" multiple=""
+                                                accept="image/*"
+                                                class="h-40 flex-col bg-gray-100 w-full rounded-lg p-10 flex justify-center items-center">
+                                                <div class="mb-2">
+                                                    <span class="btn btn-circle bg-white text-orange-500">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                            fill="currentColor" class="size-6">
+                                                            <path fill-rule="evenodd"
+                                                                d="M11.47 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06l-3.22-3.22V16.5a.75.75 0 0 1-1.5 0V4.81L8.03 8.03a.75.75 0 0 1-1.06-1.06l4.5-4.5ZM3 15.75a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z"
+                                                                clip-rule="evenodd"></path>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="text-blue-500">Click here</span> to upload
+                                                </div>
+                                            </label>
+    
+                                            <div id="preview2"
+                                                class="flex flex-wrap justify-center items-center gap-2 mt-4"></div>
+    
+                                            <div class="text-center mt-6">
+                                                <button onclick="closeModal('upload-modal2')"
+                                                    class="btn bg-orange-500 text-white hover:bg-orange-600 hover:text-white">Update</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+    
+                             
+    
+    
+                                <div
+                                    class="absolute left-10 top-[-16px] flex h-8 items-center rounded-lg bg-black px-3 text-sm text-white">
+                                    Travel Details
+                                </div>
                             </div>
                         </div>
+
+                      
 
                         <div class="card relative mt-10 bg-[#F1F2F6] py-5">
                             <div class="card-body text-sm">
@@ -866,7 +957,7 @@
                                         <div class="text-rkBlack">ITC Hotel</div>
                                     </div>
                                     <div>
-                                        <button onclick="openModal('upload-modal2')"
+                                        <button onclick="openModal('upload-modal3')"
                                             class="py-2 flex-nowrap bg-white text-orange-500 px-4 rounded-lg border-2 text-sm border-dashed flex items-center gap-1 justify-center">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                                 fill="currentColor" class="size-4">
@@ -886,14 +977,14 @@
                             </div>
 
 
-                            <div id="upload-modal2" class="hidden">
+                            <div id="upload-modal3" class="hidden">
                                 <div
                                     class="fixed inset-0 top-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
                                     <div
                                         class="bg-white p-5 rounded-lg shadow-lg  w-full max-w-lg  max-h-[650px] overflow-y-auto">
-                                        <input type="file" accept="image/*" multiple id="fileInput2" class="hidden"
-                                            onchange="previewImages('fileInput2', 'preview2')">
-                                        <label for="fileInput2" type="file" id="fileInput-1" multiple=""
+                                        <input type="file" accept="image/*" multiple id="fileInput3" class="hidden"
+                                            onchange="previewImages('fileInput3', 'preview3')">
+                                        <label for="fileInput3" type="file" id="fileInput-3" multiple=""
                                             accept="image/*"
                                             class="h-40 flex-col bg-gray-100 w-full rounded-lg p-10 flex justify-center items-center">
                                             <div class="mb-2">
@@ -911,11 +1002,11 @@
                                             </div>
                                         </label>
 
-                                        <div id="preview2"
+                                        <div id="preview3"
                                             class="flex flex-wrap justify-center items-center gap-2 mt-4"></div>
 
                                         <div class="text-center mt-6">
-                                            <button onclick="closeModal('upload-modal2')"
+                                            <button onclick="closeModal('upload-modal3')"
                                                 class="btn bg-orange-500 text-white hover:bg-orange-600 hover:text-white">Update</button>
                                         </div>
                                     </div>
@@ -953,7 +1044,7 @@
                             </div>
 
                             <div class="mb-6">
-                                <div class="mb-3 text-sm text-blue-500">Manager Approved</div>
+                                <div class="mb-3 text-sm text-blue-500">Approved by</div>
 
                                 <div
                                     class="flex max-w-fit items-center rounded-s-full bg-white text-sm font-medium text-black">
@@ -966,23 +1057,9 @@
                                 <div class="mt-1 ps-10 text-xs text-rkGray">Manager</div>
                             </div>
 
-                            <div class="mb-6">
-                                <div class="mb-3 text-sm text-blue-500">
-                                    Travel Desk Approved
-                                </div>
+                      
 
-                                <div
-                                    class="flex max-w-fit items-center rounded-s-full bg-white text-sm font-medium text-black">
-                                    <div>
-                                        <img width="24" height="24" class="size-8 rounded-full"
-                                            src="../assets/images/user.png" alt="" />
-                                    </div>
-                                    <div class="px-2">Lokesh</div>
-                                </div>
-                                <div class="mt-1 ps-10 text-xs text-rkGray">
-                                    Travel Desk Admin
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -1007,7 +1084,7 @@
             <div>
               Trip ID:
               <span class="text-base font-semibold text-green-500"
-                >TRIP-00014</span
+                >TRIP-00015</span
               >
             </div>
             <div class="text-lg">
