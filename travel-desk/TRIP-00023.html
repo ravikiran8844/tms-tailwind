@@ -653,7 +653,7 @@
                       <div class="flex justify-between items-center">
                         <div>
                           Trip ID :
-                          <span class="font-bold" href="#">TRIP-00014</span>
+                          <span class="font-bold" href="#">TRIP-00023</span>
                         </div>
                         <div class="text-xs text-rkGray">5 min ago</div>
                       </div>
@@ -838,7 +838,7 @@
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-500 hover:text-white"
                   >Profile</a
                 >
-
+                
                 <a
                   href="#"
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-500 hover:text-white"
@@ -849,198 +849,191 @@
           </div>
         </header>
         <main class="flex-1 overflow-x-hidden overflow-y-auto bg-white">
-          <div class="container  px-6 py-8 mx-auto">
-            <div class="sm:hidden mb-8">
-              <h3 class="text-xl font-medium text-rkBlack">All Trips</h3>
-            </div>
+          <div class="grid gap-3 md:grid-cols-12 h-full">
+              
+            <div class="md:col-span-9 px-6 py-8">
 
-            <div class="relative overflow-x-auto">
-              <div class="sm:absolute sm:right-2 max-sm:mb-5">
-                <div class="flex gap-1 items-center">
-                  <label class="block min-w-fit text-sm">Trip Filter</label>
-                  <select class="select select-sm  focus:select-warning text-xs select-gray-700 select-bordered max-w-xs m-1">
-                    <option>All</option>
-                    <option>Approved</option>
-                    <option>Pending</option>
-                    <option>Rejected</option>
-                    <option>Delete</option>
-                  </select>
-                </div>
+              <div class="sm:hidden mb-8">
+                <h3 class="text-xl font-medium text-rkBlack">
+                  All Trips
+                </h3>
               </div>
 
-              <table id="all-trips-table" class="table table-sm tms-table">
-                <thead class="text-black">
-                  <tr >
-                    <th>
-                      <span class="flex items-center justify-center"> Trip ID </span>
-                    </th>
-                    <th>
-                      <span class="flex items-center justify-center"> Purpose of Trip </span>
-                    </th>
-                    <th>
-                      <span class="flex items-center justify-center"> Destination </span>
-                    </th>
-                    <th>
-                      <span class="flex items-center justify-center">
-                        Requested Date
-                      </span>
-                    </th>
-                    <th>
-                        <span class="flex items-center justify-center">
-                            Manager Approval
-                        </span>
-                      </th>
-                      <th>
-                        <span class="flex items-center justify-center">
-                            Travel Desk Approval
-                        </span>
-                      </th>
-                      <th>
-                        <span class="flex items-center justify-center">
-                            Download Tickets
-                        </span>
-                      </th>
-                  </tr>
-                </thead>
-                <tbody>
-                    <tr class="bg-white hover:bg-gray-50 cursor-pointer" onclick="redirectTo('/travel-desk/TRIP-00014.html')">
-                      <td>
-                          <div>TRIP-00014</div>
-                      </td>
-                      <td>
-                          <div class="text-blue-500">Showroom Visit</div>
-                      </td>
-                      <td>
-                          <div class="flex items-center gap-1">
-                            <span>Coimbatore</span>
-                            <span>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                                <rect width="25" height="25" rx="6.25" fill="#F1F2F6"></rect>
-                                <path d="M18.4836 13.0987L12.893 17.3977C12.5115 17.6788 12.038 17.3481 12.038 16.8025V14.438H6.69725C6.44732 14.438 6.25 14.19 6.25 13.8759V11.1311C6.25 10.817 6.44732 10.569 6.69725 10.569H12.038V8.20454C12.038 7.6589 12.5247 7.31168 12.893 7.6093L18.4836 11.9083C18.8388 12.1728 18.8388 12.8342 18.4836 13.0987Z" fill="#2D2D2D"></path>
-                              </svg>
-                            </span>
-                            <span>Chennai</span>
-                          </div>
-                      </td>
-                      <td>
-                          <div>9, July 2024</div>
-                      </td>
-                      <td>
-                          <div class="text-green-500">Approved</div>
-                      </td>
-                      <td>
-                          <div class="text-green-500">Approved</div>
-                      </td>
-                      <td>
-                        <button class="btn btn-sm bg-black text-white hover:bg-black hover:text-white">
-                          Download
-                        </button>
-                      </td>
-                    </tr>
-                  
-                    <tr class="bg-white hover:bg-gray-50 cursor-pointer" onclick="redirectTo('/travel-desk/TRIP-00029.html')">
-                      <td>
-                        <div>TRIP-00029</div>
-                      </td>
-                      <td>
-                          <div class="text-blue-500">Showroom Visit</div>
-                      </td>
-                      <td>
-                          <div class="flex items-center gap-1">
-                            <span>Coimbatore</span>
-                            <span>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                                <rect width="25" height="25" rx="6.25" fill="#F1F2F6"></rect>
-                                <path d="M18.4836 13.0987L12.893 17.3977C12.5115 17.6788 12.038 17.3481 12.038 16.8025V14.438H6.69725C6.44732 14.438 6.25 14.19 6.25 13.8759V11.1311C6.25 10.817 6.44732 10.569 6.69725 10.569H12.038V8.20454C12.038 7.6589 12.5247 7.31168 12.893 7.6093L18.4836 11.9083C18.8388 12.1728 18.8388 12.8342 18.4836 13.0987Z" fill="#2D2D2D"></path>
-                              </svg>
-                            </span>
-                            <span>Chennai</span>
-                          </div>
-                      </td>
-                      <td>
-                          <div>9, July 2024</div>
-                      </td>
-                      <td>
-                          <div class="text-red-500">Rejected</div>
-                      </td>
-                      <td>
-                          <div>-</div>
-                      </td>
-                      <td>
-                          <div>-</div>
-                      </td>
-                    </tr>
-                  
-                    <tr class="bg-white hover:bg-gray-50 cursor-pointer" onclick="redirectTo('/travel-desk/TRIP-00001.html')">
-                      <td>
-                      <div>
-                        TRIP-00001
-                      </div>
-                      </td>
-                      <td>
-                          <div class="text-blue-500">Showroom Visit</div>
-                      </td>
-                      <td>
-                          <div class="flex items-center gap-1">
-                            <span>Coimbatore</span>
-                            <span>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                                <rect width="25" height="25" rx="6.25" fill="#F1F2F6"></rect>
-                                <path d="M18.4836 13.0987L12.893 17.3977C12.5115 17.6788 12.038 17.3481 12.038 16.8025V14.438H6.69725C6.44732 14.438 6.25 14.19 6.25 13.8759V11.1311C6.25 10.817 6.44732 10.569 6.69725 10.569H12.038V8.20454C12.038 7.6589 12.5247 7.31168 12.893 7.6093L18.4836 11.9083C18.8388 12.1728 18.8388 12.8342 18.4836 13.0987Z" fill="#2D2D2D"></path>
-                              </svg>
-                            </span>
-                            <span>Chennai</span>
-                          </div>
-                      </td>
-                      <td>
-                        9, July 2024
-                      </td>
-                      <td>
-                          <div class="text-green-500">Approved</div>
-                      </td>
-                      <td>
-                          <div class="text-orange-500">Pending</div>
-                      </td>
-                      <td>
-                          <div>-</div>
-                      </td>
-                    </tr>
-                  
-                    <tr class="bg-white hover:bg-gray-50 cursor-pointer" onclick="redirectTo('/travel-desk/TRIP-00023.html')">
-                      <td>
-                        <div>
-                          TRIP-00023
-                        </div>
-                      </td>
-                      <td>
-                          <div class="text-blue-500">Showroom Visit</div>
-                      </td>
-                      <td>
-                          <div class="flex items-center gap-1">
-                            <span>Coimbatore</span>
-                            <span>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                                <rect width="25" height="25" rx="6.25" fill="#F1F2F6"></rect>
-                                <path d="M18.4836 13.0987L12.893 17.3977C12.5115 17.6788 12.038 17.3481 12.038 16.8025V14.438H6.69725C6.44732 14.438 6.25 14.19 6.25 13.8759V11.1311C6.25 10.817 6.44732 10.569 6.69725 10.569H12.038V8.20454C12.038 7.6589 12.5247 7.31168 12.893 7.6093L18.4836 11.9083C18.8388 12.1728 18.8388 12.8342 18.4836 13.0987Z" fill="#2D2D2D"></path>
-                              </svg>
-                            </span>
-                            <span>Chennai</span>
-                          </div>
-                      </td>
-                      <td>
-                        <div>9, July 2024</div>
-                      </td>
-                      <td colspan="3">
-                          <div class="text-red-500">Trip Request Deleted by User</div>
-                      </td>
-                      
-                    </tr>
-                  </tbody>
-                  
-
-              </table>
+              <div class="flex gap-2 items-center mb-8">
+                <div>
+                    <a href="all-trips.html" class="text-rkGray border border-gray-400 bg-white hover:bg-black hover:text-white font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                      </svg>
+                      </a>
+                </div>
+                <div>
+                    <div class="text-lg font-semibold">TRIP-00023</div>
+                </div>
+                <div>
+                    <div class="badge text-red-500 bg-red-100 px-3 py-1 text-xs">Request Deleted</div>
+                </div>
             </div>
-          </div>
+
+
+            <div class="py-6 border-t border-b">
+                <div class="text-base font-medium">Trip to Chennai (Showroom Visit)</div>
+                <div class="text-rkGray text-sm">Single Trip</div>
+            </div>
+
+
+
+
+            <div class="card mt-10 bg-[#F1F2F6] relative py-5">
+                <div class="card-body text-sm">
+                    <div class="flex gap-6 lg:gap-10 flex-wrap">
+                        <div>
+                            <div class="text-rkGray">Grade</div>
+                            <div class="text-rkBlack">3A</div>
+                        </div>
+                        <div>
+                            <div class="text-rkGray">Department</div>
+                            <div class="text-rkBlack">Marketing</div>
+                        </div>
+                        <div>
+                            <div class="text-rkGray">Name</div>
+                            <div class="text-rkBlack">Vishnu Prasad</div>
+                        </div>
+                        <div>
+                            <div class="text-rkGray">Age</div>
+                            <div class="text-rkBlack">29</div>
+                        </div>
+                        <div>
+                            <div class="text-rkGray">Gender</div>
+                            <div class="text-rkBlack">Male</div>
+                        </div>
+                        <div>
+                            <div class="text-rkGray">Phone </div>
+                            <div class="text-rkBlack">+91 95674 73412</div>
+                        </div>
+                        <div>
+                            <div class="text-rkGray">Email</div>
+                            <div class="text-rkBlack">Vishnud@ejindia.com</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute left-10 top-[-16px] text-sm h-8 px-3 flex items-center rounded-lg bg-black text-white">
+                    Passenger Details
+                </div>
+            </div>
+
+
+            <div class="card mt-10 bg-[#F1F2F6] relative py-5">
+                <div class="card-body text-sm ">
+                    <div class="flex gap-6 lg:gap-10 flex-wrap">
+                        <div>
+                            <div class="text-rkGray">Location</div>
+                            <div class="text-rkBlack">Coimbatore - Chennai</div>
+                        </div>
+                        <div>
+                            <div class="text-rkGray">Date</div>
+                            <div class="text-rkBlack">11, July 2024</div>
+                        </div>
+                        <div>
+                            <div class="text-rkGray">Name</div>
+                            <div class="text-rkBlack">Vishnu Prasad</div>
+                        </div>
+                        <div>
+                            <div class="text-rkGray">Mode of travel</div>
+                            <div class="text-rkBlack">Bus</div>
+                        </div>
+                        <div>
+                            <div class="text-rkGray">Preferred Time</div>
+                            <div class="text-rkBlack">10:30 PM</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute left-10 top-[-16px] text-sm h-8 px-3 flex items-center rounded-lg bg-black text-white">
+                    Travel Details
+                </div>
+            </div>
+
+
+
+            <div class="card mt-10 bg-[#F1F2F6] relative py-5">
+                <div class="card-body text-sm ">
+                    <div class="flex gap-6 lg:gap-10 flex-wrap">
+                        <div>
+                            <div class="text-rkGray">Location</div>
+                            <div class="text-rkBlack">Chennai</div>
+                        </div>
+                        <div>
+                            <div class="text-rkGray">Duration of Stay</div>
+                            <div class="text-rkBlack">1 Day</div>
+                        </div>
+                        <div>
+                            <div class="text-rkGray">Preferred Area</div>
+                            <div class="text-rkBlack">Guindy</div>
+                        </div>
+                        <div>
+                            <div class="text-rkGray">Preferred Hotel</div>
+                            <div class="text-rkBlack">ITC Hotel</div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="absolute left-10 top-[-16px] text-sm h-8 px-3 flex items-center rounded-lg bg-black text-white">
+                    Accommodation Details
+                </div>
+            </div>
+            </div>
+
+            <div class="md:col-span-3 px-6 md:px-0">
+              <div class="bg-[#F1F2F6] py-8 md:h-full px-4">
+                  
+                <div class="mb-6">
+                  <div class="mb-3 text-sm text-blue-500">Requested by</div>
+
+                  <div class="flex font-medium text-black items-center bg-white rounded-s-full text-sm max-w-fit">
+                    <div>
+                      <img width="24" height="24" class="size-8 rounded-full" src="../assets/images/user.png" alt="">
+                    </div>
+                    <div class="px-2">Vishnu Prasad</div>
+                  </div>
+                  <div class="ps-10 text-xs text-rkGray mt-1">Marketing</div>
+                </div>
+
+                <div class="mb-6">
+                  <div class="mb-3 text-sm text-blue-500">Request Deleted by</div>
+
+                  <div class="flex font-medium text-black items-center bg-white rounded-s-full text-sm max-w-fit">
+                    <div>
+                      <img width="24" height="24" class="size-8 rounded-full" src="../assets/images/user.png" alt="">
+                    </div>
+                    <div class="px-2">Vishnu Prasad</div>
+                  </div>
+                  <div class="ps-10 text-xs text-rkGray mt-1">Marketing</div>
+                </div>
+
+
+                
+               
+
+
+                <div class="mt-20">
+                   
+                    <div class="text-sm mb-1">
+                        Remarks
+                    </div>
+                    <div>
+                        <textarea class="h-40 resize-none text-xs w-full border border-[#DADADA] rounded-md" name="" placeholder="Please plan for some other day" id=""></textarea>
+                    </div>
+
+                </div>
+
+
+              </div>
+            </div>
+        </div>
         </main>
         <footer class="bg-[#F1F2F6]">
           <div class="text-xs text-center py-1">
@@ -1051,22 +1044,16 @@
       </div>
     </div>
 
-    <script src="../assets/js/alpine.min.js"></script>
+
+
+    
+    <script
+     src="../assets/js/alpine.min.js"
+    ></script>
     <script src="../assets/js/flowbite.min.js"></script>
     <script src="../assets/js/simple-datatables.js"></script>
     <script src="../assets/js/main.js"></script>
 
-    <script>
-      if (
-        document.getElementById("all-trips-table") &&
-        typeof simpleDatatables.DataTable !== "undefined"
-      ) {
-        const dataTable = new simpleDatatables.DataTable("#all-trips-table", {
-          searchable: true,
-          sortable: false,
-          perPageSelect: false
-        });
-      }
-    </script>
+
   </body>
 </html>
