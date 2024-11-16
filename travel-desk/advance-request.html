@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - Emerald TMS</title>
+    <title>Advance Request - Emerald TMS</title>
     <link rel="stylesheet" href="../assets/css/tailwind.css" />
   </head>
   <body>
@@ -291,7 +291,7 @@
 
             <div class="relative mx-4 hidden sm:block lg:mx-0">
               <h3 class="text-md font-semibold text-gray-700 md:text-xl">
-                Dashboard
+                Advance Request 
               </h3>
             </div>
           </div>
@@ -708,8 +708,101 @@ Lokesh </div>
         <main class="flex-1 overflow-y-auto overflow-x-hidden bg-white">
           <div class="container mx-auto px-6 py-8">
             <div class="mb-6 sm:hidden">
-              <h3 class="text-xl font-medium text-rkBlack">Dashboard</h3>
+              <h3 class="text-xl font-medium text-rkBlack">Advance Request</h3>
             </div>
+
+
+            
+          <div class="flex gap-4 justify-between flex-wrap items-end">
+            <div class="flex flex-wrap gap-4">
+              <div class="flex flex-col gap-2">
+                <label class="text-sm font-semibold text-gray-900">Trip ID</label>
+                <input type="text"
+                  class="w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
+                  placeholder="Enter Trip ID" required="">
+              </div>
+              <div class="flex flex-col gap-2">
+                <label class="text-sm font-semibold text-gray-900">Name</label>
+                <input type="text"
+                  class="w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500"
+                  placeholder="Enter Name" required="">
+              </div>
+
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label class="text-sm font-semibold text-gray-900">Filter by</label>
+              <select class="select select-md focus:select-warning text-xs select-gray-700 select-bordered max-w-xs">
+                <option>All Request</option>
+                <option>Approved Request</option>
+                <option>Pending Request</option>
+                <option>Rejected Request</option>
+                <option>Deleted Request</option>
+              </select>
+            </div>
+
+          </div>
+
+
+          
+
+
+
+          <div class="mt-5 overflow-x-auto">
+            <table class="table table-sm tms-table text-center" id="expense-request-table">
+              <thead class="uppercase">
+                <th>Expense Details</th>
+                <th>Trip Id</th>
+                <th>Advance Received</th>
+                <th>Reimbursable Amount</th>
+                <th>Status</th>
+                <th>Details</th>
+              </thead>
+
+              <tbody>
+                <tr class="group" >
+                  <td>
+                      <div class="flex items-center gap-2">
+                        <div class="flex items-center me-2">
+                          <div class="size-6 border border-gray-300 rounded-md group-hover:bg-orange-500">
+
+                          </div>
+                        </div>
+                        <div>
+                          <div>12 July - 13 July, 2024</div>
+                          <div class="text-blue-500">
+                            Food and Transport Expenses
+                          </div>
+                        </div>
+                      </div>
+                  </td>
+                  <td>
+                      <div>
+                        <div>TRIP-00014</div>
+                        <div class="text-gray-400">Chennai</div>
+                      </div>
+                  </td>
+                  <td>
+                      <div>₹1,000.00</div>
+                  </td>
+                  <td>
+                      <div>₹500.00</div>
+                  </td>
+                  <td>
+                      <div
+                        class="bg-green-100 text-green-500 badge font-medium uppercase"
+                      >
+                        SUBMITTED
+                      </div>
+                  </td>
+                  <td>
+                      <a href="/travel-desk/advance-request-trip-00014.html" class="text-orange-500">View Details</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
 
           
           </div>
@@ -727,6 +820,21 @@ Lokesh </div>
     <script src="../assets/js/flowbite.min.js"></script>
     <script src="../assets/js/simple-datatables.js"></script>
     <script src="../assets/js/main.js"></script>
+
+    <script>
+      if (
+        document.getElementById("expense-request-table") &&
+        typeof simpleDatatables.DataTable !== "undefined"
+      ) {
+        const dataTable = new simpleDatatables.DataTable("#expense-request-table", {
+          searchable: false,
+          sortable: false,
+          perPageSelect: false,
+          perPage: 10
+        });
+      }
+    </script>
+
 
   
   </body>
