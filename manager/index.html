@@ -462,6 +462,7 @@
               ></div>
 
               <div
+                @click.away="messageOpen = false"
                 x-show="messageOpen"
                 class="absolute right-2 z-10 mt-2 w-80 overflow-hidden rounded-lg bg-white shadow-xl"
                 style="display: none"
@@ -599,6 +600,7 @@
               ></div>
 
               <div
+                @click.away="notificationOpen = false"
                 x-show="notificationOpen"
                 class="absolute right-2 z-10 mt-2 w-80 overflow-hidden rounded-lg bg-white shadow-xl"
                 style="display: none"

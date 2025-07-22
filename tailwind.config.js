@@ -40,4 +40,7 @@ module.exports = {
       datatables: true,
     }),
   ],
+  daisyui: {
+    themes: ["light"],
+  },
 };
